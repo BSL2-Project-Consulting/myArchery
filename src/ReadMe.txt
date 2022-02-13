@@ -1,0 +1,2 @@
+um die php dateien auszuführen muss XAMPP insatliert und der apache server und MySQL server aktiv sein. wichtig ist auch das sich der gesamte ordner in XAMPP\htdocs befindet. 
+Danach kann man in google oder einem anderen browser "localhost/myAchery/LoginPage.php" aufrufen 
