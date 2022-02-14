@@ -21,6 +21,8 @@
     if(empty($tmppassword)) {array_push($errors, "Password is required!");}
 
     //encrypt password
+    // er hod söwa keinen plan xd ---
+
     $encryptpassword = hash('md5', $tmppassword);
 
     //check db for inserted Username and Password and get the data 
