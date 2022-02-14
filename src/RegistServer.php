@@ -42,7 +42,7 @@
     //register user if no error
     if(count($errors) == 0 ) {
         //password encrypt
-        $encryptpassword = hash('sha512', $tmppassword);
+        $encryptpassword = hash('md5', $tmppassword);
 
         //insert
         $insertquery = "INSERT INTO user (username, password, vname, nname, email) VALUES ('$tmpusername', '$encryptpassword', '$tmpfirstname', '$tmplastname', '$tmpemail');";

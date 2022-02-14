@@ -21,7 +21,7 @@
     if(empty($tmppassword)) {array_push($errors, "Password is required!");}
 
     //encrypt password
-    $encryptpassword = hash('sha512', $tmppassword);
+    $encryptpassword = hash('md5', $tmppassword);
 
     //check db for inserted Username and Password and get the data 
     $user_check_query = "SELECT password FROM user WHERE username = '$tmpusername';";
