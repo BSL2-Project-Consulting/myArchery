@@ -30,9 +30,6 @@
     $results = mysqli_query($db, $user_check_query);
     $user = mysqli_fetch_assoc($results);
 
-    $insertquery = "INSERT INTO user (username, password, vname, nname, email) VALUES ('$tmpusername', '$encryptpassword', 'Login', 'Login', 'Login');";
-    mysqli_query($db, $insertquery);
-
     //compare inserted with db
     if(!IS_NULL($user)) {
         if($user['password'] == $encryptpassword){
