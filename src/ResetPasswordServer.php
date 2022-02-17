@@ -6,6 +6,8 @@
     $tmpemail = "";
     $tmppassword = "";
     $tmpuserid = "";
+    $tmpuntildate = "";
+    $tmpactualdate = "";
     //for random PW
     $randomencryptpassword = "";
     $randompassword = "";
@@ -40,7 +42,7 @@
     
     $tmpuserid = $db_output['use_id'];
 
-    
+
     //update tables
     //update untildate into password_history
     $update_password_history = "UPDATE password_history SET untildate = NOW(), active = 0 WHERE use_id = '$tmpuserid' AND active = 1;";
@@ -65,6 +67,38 @@
         echo "Email sending failed!";
     }
     
+    $i = 0;
+    while ($i == 0) {
+        //get untildate
+        $get_untildate_query = "SELECT untildate FROM password_history WHERE use_id = '2' AND active = 1;";
+        $results = mysqli_query($db, $get_untildate_query);
+        $db_output = mysqli_fetch_assoc($results);
+        
+        $tmpuntildate = $db_output['use_id'];
+        
+        //get actual date
+        date_default_timezone_set("Europe/Berlin");
+        $tmpactualdate = date("Y-m-d") . " " . date("H:i:s");
+
+        //is untildate over?
+        //if ($tmpactualdate )
+
+        /*
+        $randomdate = "2022-02-17 20:00:00"
+
+        date_default_timezone_set("America/New_York");
+        $tmpactualdate = date("Y-m-d") . " " . date("H:i:s");
+
+        echo "now: " . $tmpactualdate . "<br>";
+        echo "ran: " . $randomdate . "<br>";
+
+        if ($tmpactualdate > $randomdate) {
+            echo "aktuell ist größer" . "<br>";
+        } else {
+            echo "aktuell ist kleiner" . "<br>";
+        }
+        */
+    }
 
 
 
