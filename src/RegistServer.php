@@ -32,11 +32,11 @@
     //check db for existing Username
     $user_check_query = "SELECT username, email FROM user WHERE username = '$tmpusername' OR email = '$tmpemail' LIMIT 1;";
     $results = mysqli_query($db, $user_check_query);
-    $user = mysqli_fetch_assoc($results);
+    $db_output = mysqli_fetch_assoc($results);
 
-    if($user) {
-        if($user['username'] === $tmpusername){array_push($errors, "Username already exists!");}
-        if($user['email'] === $tmpemail){array_push($errors, "E-Mail already registered!");}
+    if($db_output) {
+        if($db_output['username'] === $tmpusername){array_push($errors, "Username already exists!");}
+        if($db_output['email'] === $tmpemail){array_push($errors, "E-Mail already registered!");}
     }
 
     //register user if no error
@@ -44,10 +44,17 @@
         //password encrypt
         $encryptpassword = hash('sha256', $tmppassword);
 
-        //insert
+        //insert into user
         $insertquery_user = "INSERT INTO user (username, password, vname, nname, email) VALUES ('$tmpusername', '$encryptpassword', '$tmpfirstname', '$tmplastname', '$tmpemail');";
-        // id aus db hollen und einfügen 
-        $insertquery_password_history = "INSERT INTO password_history (password, fromdate, use_id) VALUES ('$encryptpassword', NOW(), '1');";
+        
+        //get id 
+        $db_output = NULL;
+        $user_check_query = "SELECT use_id FROM user WHERE username = '$tmpusername';";
+        $results = mysqli_query($db, $user_check_query);
+        $db_output = mysqli_fetch_assoc($results);
+        
+        //insert into password_history
+        $insertquery_password_history = "INSERT INTO password_history (password, fromdate, use_id) VALUES ('$encryptpassword', NOW(), '$db_output');";
 
         //run query
         mysqli_query($db, $insertquery_user);
