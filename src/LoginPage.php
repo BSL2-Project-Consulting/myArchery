@@ -24,6 +24,7 @@
           </div>
           
           <button type="submit" name="login_user" class="btn-login">Log-In</button>
+          <a href="SendMail.php">Send Mail to julian</a>
 
           <p class="register-paragraph">Not a User? <a href="RegistPage.php">Register</a> instead!</p>
         
