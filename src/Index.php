@@ -10,14 +10,6 @@
 
 <!DOCTYPE html>
 <html>
-    <nav>
-    <ul>
-        <li><a href="Index.php">Home</a></li>
-        <li><a href="Events.php">Events</a></li>
-        <li><a href="Kontakt.php">Contact</a></li>
-        <li><a href="LoginPage.php">Login</a></li>
-    </ul>
-    </nav>
   <head>
     <title>MyArchery</title>
     <link rel="stylesheet" href="Styles/styles_for_index.css" />
