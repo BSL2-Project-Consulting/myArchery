@@ -44,20 +44,14 @@
         //password encrypt
         $encryptpassword = hash('sha256', $tmppassword);
 
-        //insert into user
+        //insert into user query
         $insertquery_user = "INSERT INTO user (username, password, vname, nname, email) VALUES ('$tmpusername', '$encryptpassword', '$tmpfirstname', '$tmplastname', '$tmpemail');";
-        
-        //get id 
-        $db_output = NULL;
-        $user_check_query = "SELECT use_id FROM user WHERE username = '$tmpusername';";
-        $results = mysqli_query($db, $user_check_query);
-        $db_output = mysqli_fetch_assoc($results);
-        
-        //insert into password_history
-        $insertquery_password_history = "INSERT INTO password_history (password, fromdate, use_id) VALUES ('$encryptpassword', NOW(), '$db_output');";
-
         //run query
         mysqli_query($db, $insertquery_user);
+
+     
+        
+        //run query
         mysqli_query($db, $insertquery_password_history);
         $_SESSION['username'] = $tmpusername;
         $_SESSION['success'] = "You are now part of the community!";

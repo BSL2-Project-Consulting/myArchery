@@ -4,7 +4,7 @@
 
     if(isset($_SESSION['username'])){
         $_SESSION['msg'] = "You must log in first to view this page";
-        header('loaction: LoginPage.php');
+        header('location: LoginPage.php');
     }
 
 ?>
