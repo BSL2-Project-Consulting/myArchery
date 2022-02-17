@@ -1,6 +1,6 @@
 body{
 	margin: 0 auto;
-  	background-color: grey;
+  	background-color: rgba(31, 31, 31, 0.7);
 	background-repeat: no-repeat;
 	background-size: 100% 720px;
 }

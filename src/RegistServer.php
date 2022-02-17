@@ -42,13 +42,16 @@
     //register user if no error
     if(count($errors) == 0 ) {
         //password encrypt
-        $encryptpassword = hash('md5', $tmppassword);
+        $encryptpassword = hash('sha256', $tmppassword);
 
         //insert
-        $insertquery = "INSERT INTO user (username, password, vname, nname, email) VALUES ('$tmpusername', '$encryptpassword', '$tmpfirstname', '$tmplastname', '$tmpemail');";
+        $insertquery_user = "INSERT INTO user (username, password, vname, nname, email) VALUES ('$tmpusername', '$encryptpassword', '$tmpfirstname', '$tmplastname', '$tmpemail');";
+        // id aus db hollen und einfügen 
+        $insertquery_password_history = "INSERT INTO password_history (password, fromdate, use_id) VALUES ('$encryptpassword', NOW(), '1');";
 
         //run query
-        mysqli_query($db, $insertquery);
+        mysqli_query($db, $insertquery_user);
+        mysqli_query($db, $insertquery_password_history);
         $_SESSION['username'] = $tmpusername;
         $_SESSION['success'] = "You are now part of the community!";
 

@@ -1,6 +1,6 @@
 body{
 	margin: 0 auto;
-  	background-color: grey;
+  	background-color: rgba(31, 31, 31, 0.7);
 	background-repeat: no-repeat;
 	background-size: 100% 720px;
 }
@@ -35,7 +35,7 @@ input[type="text"],input[type="email"],input[type="password"]{
 	height: 705px;
 	text-align: center;
 	margin: 0 auto;
-	background-color: rgba(54, 63, 71, 0.7);
+	background-color: rgba(119, 119, 119, 0.7);
 	margin-top: 160px;
 }
 

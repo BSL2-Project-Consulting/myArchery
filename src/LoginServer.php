@@ -3,12 +3,12 @@
     session_start();
 
     //variables
-    $tmpusername = " ";
-    $tmppassword = " ";
+    $tmpusername = "";
+    $tmppassword = "";
 
     $errors = array();
 
-    //connect to db
+    //connect to dbs
     $db = mysqli_connect('localhost', 'root', 'test1234', 'myarchery') or die("could't connect to database");
 
     //Log-In Users --------------------------------------------------------------------------------------------------------
@@ -21,9 +21,8 @@
     if(empty($tmppassword)) {array_push($errors, "Password is required!");}
 
     //encrypt password
-    // er hod söwa keinen plan xd ---
-
-    $encryptpassword = hash('md5', $tmppassword);
+    // $encryptpassword = "";
+    $encryptpassword = hash('sha256', $tmppassword);
 
     //check db for inserted Username and Password and get the data 
     $user_check_query = "SELECT password FROM user WHERE username = '$tmpusername';";
