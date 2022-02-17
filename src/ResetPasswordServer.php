@@ -39,7 +39,7 @@
     $tmpuserid = $db_output['use_id'];
 
     //update untildate into password_history
-    $update_password_history = "UPDATE password_history SET Untildate = NOW() WHERE use_id = '$tmpuserid' AND untildate is NULL;";
+    $update_password_history = "UPDATE password_history SET Untildate = NOW() AND active = 0 WHERE use_id = '$tmpuserid' AND active = 1;";
     mysqli_query($db, $update_password_history);
 
     //insert new entry for user in password_history
