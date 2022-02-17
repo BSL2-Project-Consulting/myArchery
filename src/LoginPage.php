@@ -3,6 +3,7 @@
   <head>
     <title>Log-In Page</title>
     <link rel="stylesheet" href="Styles/styles_for_login.css" />
+    <script src="eastereggs.js"></script>
   </head>
   <body>
     <div class="container">
@@ -23,9 +24,8 @@
             <a class="reset-password" href="ResetPasswordPage.php">Forgot password?</a>
           </div>
           
-          <button type="submit" name="login_user" class="btn-login">Log-In</button>
-          <a href="SendMail.php">Send Mail to julian</a>
-
+          <button type="submit" id="submit" name="login_user" class="btn-login">Log-In</button>
+          
           <p class="register-paragraph">Not a User? <a href="RegistPage.php">Register</a> instead!</p>
         
       </form>
