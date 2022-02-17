@@ -7,7 +7,7 @@
   <body>
     <div class="container">
       <img src="Bilder/logo.png" alt="logo.png" class="logo"/>
-      <form action="ResetPasswordServer" method="post" >
+      <form action="ResetPasswordServer.php" method="post" >
 
           <div class="reset-text">
             We will replace your password with a random one and send it to you by email. 
@@ -20,7 +20,7 @@
 
           <!-- Email -->
           <div class="form-input">
-            <p class="email-paragraph">Username:</p>
+            <p class="email-paragraph">E-Mail:</p>
             <input type="text" name="email" placeholder="Enter your E-Mail" required/>	
           </div>
 

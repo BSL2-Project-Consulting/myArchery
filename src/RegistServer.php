@@ -49,10 +49,17 @@
         //run query
         mysqli_query($db, $insertquery_user);
 
-     
+        $user_check_query = "SELECT use_id FROM user WHERE username = '$tmpusername';";
+        $results = mysqli_query($db, $user_check_query);
+        $db_output = mysqli_fetch_assoc($results);
         
+        $tmpuserid = $db_output['use_id'];
+        
+        //insert into user query
+        $insertquery_password_history = "INSERT INTO password_history (password, fromdate, use_id) VALUES ('$encryptpassword', NOW(), '$tmpuserid');";
         //run query
         mysqli_query($db, $insertquery_password_history);
+
         $_SESSION['username'] = $tmpusername;
         $_SESSION['success'] = "You are now part of the community!";
 
