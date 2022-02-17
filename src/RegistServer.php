@@ -14,7 +14,7 @@
     //connect to db
     $db = mysqli_connect('localhost', 'root', 'test1234', 'myarchery') or die("could't connect to database");
 
-    //Register Users ------------------------------------------------------------------------------------------------------
+    //Register Users -----------------------------------------------------------------------------
     //get inserted values
     $tmpfirstname = $_POST["firstname"];
     $tmplastname = $_POST["lastname"];
