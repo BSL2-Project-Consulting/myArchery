@@ -62,6 +62,14 @@
 
     include('SendMail.php');
     
+<<<<<<< HEAD
+=======
+    if (mail($to_email, $subject, $body, $headers)) {
+        echo "Email successfully sent to $to_email...";
+    } else {
+        echo "Email sending failed!";
+    }
+>>>>>>> parent of fb65c92 (pw reset done)
     
     $i = 0;
     while ($i == 0) {
@@ -96,6 +104,9 @@
     
     $tmpuserid = $db_output['use_id'];
     */
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of fb65c92 (pw reset done)
 
 ?>
