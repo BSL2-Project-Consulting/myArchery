@@ -27,13 +27,19 @@
     if(empty($tmpemail)) {array_push($errors, "E-Mail is required!");}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 0f1e790 (changed reset pw)
     if(count($errors) == 0 ) {
         
     } else {
         include('Errors.php');
         die();
     }
+<<<<<<< HEAD
+>>>>>>> parent of 0f1e790 (changed reset pw)
+=======
 >>>>>>> parent of 0f1e790 (changed reset pw)
 
     //random Password
@@ -58,7 +64,11 @@
     mysqli_query($db, $update_password_history);
     //insert new entry for user in password_history
 <<<<<<< HEAD
+<<<<<<< HEAD
     $insertquery_password_history = "INSERT INTO password_history (password, fromdate, untildate, use_id) VALUES ('$randomencryptpassword', NOW(), DATE_ADD(NOW(), INTERVAL 20 MINUTE), '$tmpuserid');";
+=======
+    $insertquery_password_history = "INSERT INTO password_history (password, fromdate, untildate, is_temp, use_id) VALUES ('$randomencryptpassword', NOW(), DATE_ADD(NOW(), INTERVAL 2 MINUTE), '1', '$tmpuserid');";
+>>>>>>> parent of 0f1e790 (changed reset pw)
 =======
     $insertquery_password_history = "INSERT INTO password_history (password, fromdate, untildate, is_temp, use_id) VALUES ('$randomencryptpassword', NOW(), DATE_ADD(NOW(), INTERVAL 2 MINUTE), '1', '$tmpuserid');";
 >>>>>>> parent of 0f1e790 (changed reset pw)
@@ -73,6 +83,7 @@
     $subject = "New MyArchery password!";
     $body = "Hi, This is your new password: \"$randompassword\" !";
     $headers = "From: myarchery.bslinz2@gmail.com";
+<<<<<<< HEAD
     
     if (mail($to_email, $subject, $body, $headers)) {
 <<<<<<< HEAD
@@ -96,11 +107,26 @@
         
         $tmpuntildate = $db_output['use_id'];
 =======
+=======
+    
+    if (mail($to_email, $subject, $body, $headers)) {
+        echo "Email successfully sent to $to_email..." . '<br>';
+    } else {
+        echo "Email sending failed!" . '<br>';
+    }
+    
+    $i = 0;
+    while ($i == 0) {
+        //get untildate
+>>>>>>> parent of 0f1e790 (changed reset pw)
         $get_untildate_query = "SELECT untildate FROM password_history WHERE use_id = '$tmpuserid' AND is_active = 1;";
         $results = mysqli_query($db, $get_untildate_query);
         $db_output = mysqli_fetch_assoc($results);
         
         $tmpuntildate = $db_output['untildate'];
+<<<<<<< HEAD
+>>>>>>> parent of 0f1e790 (changed reset pw)
+=======
 >>>>>>> parent of 0f1e790 (changed reset pw)
         
         //get actual date
@@ -110,6 +136,7 @@
         //is untildate over?
         if ($tmpuntildate > $tmpactualdate) {
             sleep(60);
+<<<<<<< HEAD
 <<<<<<< HEAD
         } 
 
@@ -129,6 +156,46 @@
     $tmpuserid = $db_output['use_id'];
     */
 
+=======
+        } else {
+            $i++;
+        }
+    }
+
+    
+    //get last pw from password_history
+    $get_untildate_query = "SELECT password FROM password_history WHERE use_id = '$tmpuserid' AND is_temp = 0 AND is_active = 0 ORDER BY phy_id DESC LIMIT 1;";
+    $results = mysqli_query($db, $get_untildate_query);
+    $db_output = mysqli_fetch_assoc($results);
+    
+    $tmpoldpassword = $db_output['password'];
+
+
+    //update tables (now he inserts the previous password)
+    //update untildate into password_history
+    $update_password_history = "UPDATE password_history SET untildate = NOW(), is_active = 0 WHERE use_id = '$tmpuserid' AND is_active = 1;";
+    mysqli_query($db, $update_password_history);
+    //insert new entry for user in password_history
+    $insertquery_password_history = "INSERT INTO password_history (password, fromdate, is_temp, is_active, use_id) VALUES ('$tmpoldpassword', NOW(), '0', '1', '$tmpuserid');";
+    mysqli_query($db, $insertquery_password_history);
+    //insert old pw in user
+    $insertquery_user = "UPDATE user SET password = '$tmpoldpassword' WHERE use_id = '$tmpuserid';";
+    mysqli_query($db, $insertquery_user);
+
+
+    //send mail for test
+    $to_email = "julian.pichler4@gmail.com";
+    $subject = "We changed you pw back!";
+    $body = "Sheeeh wieder altes pw in DB!";
+    $headers = "From: myarchery.bslinz2@gmail.com";
+    
+    if (mail($to_email, $subject, $body, $headers)) {
+        echo "Email successfully sent to $to_email..." . '<br>';
+    } else {
+        echo "Email sending failed!" . '<br>';
+    }
+
+>>>>>>> parent of 0f1e790 (changed reset pw)
 =======
         } else {
             $i++;
