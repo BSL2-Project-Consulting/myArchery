@@ -48,11 +48,7 @@
     $update_password_history = "UPDATE password_history SET untildate = NOW(), active = 0 WHERE use_id = '$tmpuserid' AND active = 1;";
     mysqli_query($db, $update_password_history);
     //insert new entry for user in password_history
-<<<<<<< HEAD
-    $insertquery_password_history = "INSERT INTO password_history (password, fromdate, use_id) VALUES ('$randomencryptpassword', NOW(), '$tmpuserid');";
-=======
     $insertquery_password_history = "INSERT INTO password_history (password, fromdate, untildate, use_id) VALUES ('$randomencryptpassword', NOW(), DATE_ADD(NOW(), INTERVAL 20 MINUTE), '$tmpuserid');";
->>>>>>> parent of fb65c92 (pw reset done)
     mysqli_query($db, $insertquery_password_history);
     //insert new pw in user
     $insertquery_user = "UPDATE user SET password = '$randomencryptpassword' WHERE use_id = '$tmpuserid';";
@@ -60,32 +56,12 @@
    
 
     //send mail
-<<<<<<< HEAD
     $_SESSION['to_email'] = "julian.pichler4@gmail.com";
     $_SESSION['subject'] = "New MyArchery password!";
     $_SESSION['emailbody'] = "Hi, This is your new password: \"$randompassword\" !";
-    
+
     include('SendMail.php');
-
-
-    //pushin errors/msg's
-    if(count($message) == 0 ) {
-        
-    } else {
-        include('Message.php');
-        die();
-    }
-=======
-    $to_email = "julian.pichler4@gmail.com";
-    $subject = "New MyArchery password!";
-    $body = "Hi, This is your new password: \"$randompassword\" !";
-    $headers = "From: myarchery.bslinz2@gmail.com";
     
-    if (mail($to_email, $subject, $body, $headers)) {
-        echo "Email successfully sent to $to_email...";
-    } else {
-        echo "Email sending failed!";
-    }
     
     $i = 0;
     while ($i == 0) {
@@ -120,7 +96,6 @@
     
     $tmpuserid = $db_output['use_id'];
     */
->>>>>>> parent of fb65c92 (pw reset done)
 
 
 ?>
