@@ -6,7 +6,7 @@
     $tmpusername = "";
     $tmppassword = "";
 
-    $errors = array();
+    $message = array();
 
     //connect to dbs
     $db = mysqli_connect('localhost', 'root', 'test1234', 'myarchery') or die("could't connect to database");
@@ -17,8 +17,8 @@
     $tmppassword = $_POST["password"]; 
     
     //check if we get some
-    if(empty($tmpusername)) {array_push($errors, "Username is required!");}
-    if(empty($tmppassword)) {array_push($errors, "Password is required!");}
+    if(empty($tmpusername)) {array_push($message, "Username is required!");}
+    if(empty($tmppassword)) {array_push($message, "Password is required!");}
 
     //encrypt password
     // $encryptpassword = "";
@@ -38,13 +38,13 @@
 
             header('location: index.php');
         } else {
-            array_push($errors, "Password incorrect! Please try again!");
-            include('Errors.php');
+            array_push($message, "Password incorrect! Please try again!");
+            include('Message.php');
             die();
         }
     } else {
-        array_push($errors, "Username unknown! Please register first!");
-        include('Errors.php');
+        array_push($message, "Username unknown! Please register first!");
+        include('Message.php');
         die();
     }
 

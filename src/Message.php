@@ -10,13 +10,13 @@
 
       <img src="Bilder/logo.png" alt="logo.png" class="logo"/>
                     
-      <?php if(count($errors) > 0 ) : ?>
+      <?php if(count($message) > 0 ) : ?>
           
           <div class="error_msg">
 
-              <?php foreach($errors as $error) : ?>
+              <?php foreach($message as $msg) : ?>
 
-                  <p><?php echo $error ?></p>
+                  <p><?php echo $msg ?></p>
 
               <?php endforeach ?>
 
