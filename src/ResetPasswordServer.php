@@ -77,27 +77,15 @@
         $tmpuntildate = $db_output['use_id'];
         
         //get actual date
-        date_default_timezone_set("Europe/Berlin");
+        date_default_timezone_set("Europe/Vienna");
         $tmpactualdate = date("Y-m-d") . " " . date("H:i:s");
 
         //is untildate over?
-        //if ($tmpactualdate )
+        if ($tmpuntildate > $tmpactualdate) {
+            sleep(60);
+        } 
 
-        /*
-        $randomdate = "2022-02-17 20:00:00"
-
-        date_default_timezone_set("America/New_York");
-        $tmpactualdate = date("Y-m-d") . " " . date("H:i:s");
-
-        echo "now: " . $tmpactualdate . "<br>";
-        echo "ran: " . $randomdate . "<br>";
-
-        if ($tmpactualdate > $randomdate) {
-            echo "aktuell ist größer" . "<br>";
-        } else {
-            echo "aktuell ist kleiner" . "<br>";
-        }
-        */
+        
     }
 
 
