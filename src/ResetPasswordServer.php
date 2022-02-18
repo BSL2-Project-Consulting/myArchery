@@ -9,7 +9,6 @@
     $tmpuntildate = "";
     $tmpactualdate = "";
     //for random PW
-    $tmpoldpassword = "";
     $randomencryptpassword = "";
     $randompassword = "";
     $characters = '.-0123456789abc.-defghijklm.-nopqrstuvwx.-yzABCDEFGHIJKLM.-NOPQRSTUVWXYZ.-';
@@ -25,9 +24,13 @@
     $tmpemail = $_POST["email"];
     
     //check if we get some
+<<<<<<< HEAD
     if(empty($tmpemail)) {array_push($message, "E-Mail is required!");}
+=======
+    if(empty($tmpemail)) {array_push($errors, "E-Mail is required!");}
 
- 
+>>>>>>> parent of fb65c92 (pw reset done)
+
     //random Password
     for ($i = 0; $i < 10; $i++) {
         $randompassword .= $characters[rand(0, $charactersLength - 1)];
@@ -46,10 +49,14 @@
 
     //update tables
     //update untildate into password_history
-    $update_password_history = "UPDATE password_history SET untildate = NOW(), is_active = 0 WHERE use_id = '$tmpuserid' AND is_active = 1;";
+    $update_password_history = "UPDATE password_history SET untildate = NOW(), active = 0 WHERE use_id = '$tmpuserid' AND active = 1;";
     mysqli_query($db, $update_password_history);
     //insert new entry for user in password_history
+<<<<<<< HEAD
     $insertquery_password_history = "INSERT INTO password_history (password, fromdate, use_id) VALUES ('$randomencryptpassword', NOW(), '$tmpuserid');";
+=======
+    $insertquery_password_history = "INSERT INTO password_history (password, fromdate, untildate, use_id) VALUES ('$randomencryptpassword', NOW(), DATE_ADD(NOW(), INTERVAL 20 MINUTE), '$tmpuserid');";
+>>>>>>> parent of fb65c92 (pw reset done)
     mysqli_query($db, $insertquery_password_history);
     //insert new pw in user
     $insertquery_user = "UPDATE user SET password = '$randomencryptpassword' WHERE use_id = '$tmpuserid';";
@@ -57,6 +64,7 @@
    
 
     //send mail
+<<<<<<< HEAD
     $_SESSION['to_email'] = "julian.pichler4@gmail.com";
     $_SESSION['subject'] = "New MyArchery password!";
     $_SESSION['emailbody'] = "Hi, This is your new password: \"$randompassword\" !";
@@ -71,6 +79,52 @@
         include('Message.php');
         die();
     }
+=======
+    $to_email = "julian.pichler4@gmail.com";
+    $subject = "New MyArchery password!";
+    $body = "Hi, This is your new password: \"$randompassword\" !";
+    $headers = "From: myarchery.bslinz2@gmail.com";
+    
+    if (mail($to_email, $subject, $body, $headers)) {
+        echo "Email successfully sent to $to_email...";
+    } else {
+        echo "Email sending failed!";
+    }
+    
+    $i = 0;
+    while ($i == 0) {
+        //get untildate
+        $get_untildate_query = "SELECT untildate FROM password_history WHERE use_id = '2' AND active = 1;";
+        $results = mysqli_query($db, $get_untildate_query);
+        $db_output = mysqli_fetch_assoc($results);
+        
+        $tmpuntildate = $db_output['use_id'];
+        
+        //get actual date
+        date_default_timezone_set("Europe/Vienna");
+        $tmpactualdate = date("Y-m-d") . " " . date("H:i:s");
+
+        //is untildate over?
+        if ($tmpuntildate > $tmpactualdate) {
+            sleep(60);
+        } 
+
+        
+    }
+
+
+
+
+    //check every min if password is expired
+    //get fromdate
+    /*
+    $user_check_query = "SELECT use_id FROM user WHERE email = '$tmpemail';";
+    $results = mysqli_query($db, $user_check_query);
+    $db_output = mysqli_fetch_assoc($results);
+    
+    $tmpuserid = $db_output['use_id'];
+    */
+>>>>>>> parent of fb65c92 (pw reset done)
 
 
 ?>
