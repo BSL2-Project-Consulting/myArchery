@@ -24,12 +24,8 @@
     $tmpemail = $_POST["email"];
     
     //check if we get some
-<<<<<<< HEAD
-    if(empty($tmpemail)) {array_push($message, "E-Mail is required!");}
-=======
     if(empty($tmpemail)) {array_push($errors, "E-Mail is required!");}
 
->>>>>>> parent of fb65c92 (pw reset done)
 
     //random Password
     for ($i = 0; $i < 10; $i++) {
