@@ -56,7 +56,7 @@
         $tmpuserid = $db_output['use_id'];
         
         //insert into user query
-        $insertquery_password_history = "INSERT INTO password_history (password, fromdate, use_id) VALUES ('$encryptpassword', NOW(), '$tmpuserid');";
+        $insertquery_password_history = "INSERT INTO password_history (password, fromdate, is_temp, use_id) VALUES ('$encryptpassword', NOW(), 0, '$tmpuserid');";
         //run query
         mysqli_query($db, $insertquery_password_history);
 
