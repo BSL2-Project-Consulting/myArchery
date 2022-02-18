@@ -3,20 +3,20 @@
 <html>
   <head>
     <title>Error Page</title>
-    <link rel="stylesheet" href="Styles/styles_for_errors.css" />
+    <link rel="stylesheet" href="Styles/styles_for_message.css" />
   </head>
   <body>
     <div class="container">
 
       <img src="Bilder/logo.png" alt="logo.png" class="logo"/>
                     
-      <?php if(count($errors) > 0 ) : ?>
+      <?php if(count($_SESSION['outputmsg']) > 0 ) : ?>
           
           <div class="error_msg">
 
-              <?php foreach($errors as $error) : ?>
+              <?php foreach($_SESSION['outputmsg'] as $msg) : ?>
 
-                  <p><?php echo $error ?></p>
+                  <p><?php echo $msg ?></p>
 
               <?php endforeach ?>
 

@@ -9,7 +9,7 @@
     $tmpusername = " ";
     $tmppassword = " ";
 
-    $errors = array();
+    $_SESSION['outputmsg'] = array();
 
     //connect to db
     $db = mysqli_connect('localhost', 'root', 'test1234', 'myarchery') or die("could't connect to database");
@@ -23,11 +23,11 @@
     $tmppassword = $_POST["password"];
 
     //check if we get some
-    if(empty($tmpfirstname)) {array_push($errors, "First name is required!");}
-    if(empty($tmplastname)) {array_push($errors, "Last name is required!");}
-    if(empty($tmpemail)) {array_push($errors, "Email is required!");}
-    if(empty($tmpusername)) {array_push($errors, "Username is required!");}
-    if(empty($tmppassword)) {array_push($errors, "Password is required!");}
+    if(empty($tmpfirstname)) {array_push($_SESSION['outputmsg'], "First name is required!");}
+    if(empty($tmplastname)) {array_push($_SESSION['outputmsg'], "Last name is required!");}
+    if(empty($tmpemail)) {array_push($_SESSION['outputmsg'], "Email is required!");}
+    if(empty($tmpusername)) {array_push($_SESSION['outputmsg'], "Username is required!");}
+    if(empty($tmppassword)) {array_push($_SESSION['outputmsg'], "Password is required!");}
 
     //check db for existing Username
     $user_check_query = "SELECT username, email FROM user WHERE username = '$tmpusername' OR email = '$tmpemail' LIMIT 1;";
@@ -35,12 +35,12 @@
     $db_output = mysqli_fetch_assoc($results);
 
     if($db_output) {
-        if($db_output['username'] === $tmpusername){array_push($errors, "Username already exists!");}
-        if($db_output['email'] === $tmpemail){array_push($errors, "E-Mail already registered!");}
+        if($db_output['username'] === $tmpusername){array_push($_SESSION['outputmsg'], "Username already exists!");}
+        if($db_output['email'] === $tmpemail){array_push($_SESSION['outputmsg'], "E-Mail already registered!");}
     }
 
     //register user if no error
-    if(count($errors) == 0 ) {
+    if(count($_SESSION['outputmsg']) == 0 ) {
         //password encrypt
         $encryptpassword = hash('sha256', $tmppassword);
 
@@ -56,7 +56,7 @@
         $tmpuserid = $db_output['use_id'];
         
         //insert into user query
-        $insertquery_password_history = "INSERT INTO password_history (password, fromdate, is_temp, use_id) VALUES ('$encryptpassword', NOW(), 0, '$tmpuserid');";
+        $insertquery_password_history = "INSERT INTO password_history (password, fromdate, use_id) VALUES ('$encryptpassword', NOW(), '$tmpuserid');";
         //run query
         mysqli_query($db, $insertquery_password_history);
 
@@ -65,7 +65,7 @@
 
         header('location: index.php');
     } else {
-        include('Errors.php');
+        include('Message.php');
         die();
     }
 
