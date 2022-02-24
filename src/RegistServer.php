@@ -35,8 +35,8 @@
     $db_output = mysqli_fetch_assoc($results);
 
     if($db_output) {
-        if($db_output['username'] === $tmpusername){array_push($_SESSION['outputmsg'], "Username already exists!");}
-        if($db_output['email'] === $tmpemail){array_push($_SESSION['outputmsg'], "E-Mail already registered!");}
+        if($db_output['username'] == $tmpusername){array_push($_SESSION['outputmsg'], "Username already exists!");}
+        if($db_output['email'] == $tmpemail){array_push($_SESSION['outputmsg'], "E-Mail already registered!");}
     }
 
     //register user if no error
