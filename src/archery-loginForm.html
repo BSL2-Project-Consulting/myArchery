@@ -22,16 +22,20 @@
                 <img src="" alt="tw">
                 <img src="" alt="gp">
             </div> -->
-            <form id="login" class="input-group">
-                <input type="text" class="input-field" placeholder="Enter Name" required>
-                <input type="password" class="input-field" placeholder="Enter Password" required>
+            <form id="login" action="LoginServer.php" class="input-group" method="post">
+                <input type="text" name="username" class="input-field" placeholder="Enter Username" required>
+                <input type="password" name="password" class="input-field" placeholder="Enter Password" required>
+                <a class="reset-password" href="ResetPasswordPage.php">Forgot password?</a>
+                <br>
                 <input type="checkbox" class="check-box"><span>Remember Password</span>
                 <button type="submit" class="submit-btn">Log In</button>
             </form>
-            <form id="register" class="input-group">
-                <input type="text" class="input-field" placeholder="Enter Name" required>
-                <input type="email" class="input-field" placeholder="Enter Email" required>
-                <input type="password" class="input-field" placeholder="Enter Password" required>
+            <form id="register" action="RegistServer.php" class="input-group" method="post">
+                <input type="text" name="firstname" class="input-field" placeholder="Enter First Name" required>
+                <input type="text" name="lastname" class="input-field" placeholder="Enter Last Name" required>
+                <input type="email" name="email" class="input-field" placeholder="Enter Email" required>
+                <input type="text" name="username" class="input-field" placeholder="Enter Username" required>
+                <input type="password" name="password" class="input-field" placeholder="Enter Password" required>
                 <input type="checkbox" class="check-box"><span>I agree to the terms & Conditions</span>
                 <button type="submit" class="submit-btn">Register</button>
             </form>

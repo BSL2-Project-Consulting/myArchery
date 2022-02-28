@@ -56,14 +56,14 @@
         $tmpuserid = $db_output['use_id'];
         
         //insert into user query
-        $insertquery_password_history = "INSERT INTO password_history (password, fromdate, use_id) VALUES ('$encryptpassword', NOW(), '$tmpuserid');";
+        $insertquery_password_history = "INSERT INTO password_history (password, fromdate, is_active, use_id) VALUES ('$encryptpassword', NOW(), '1', '$tmpuserid');";
         //run query
         mysqli_query($db, $insertquery_password_history);
 
         $_SESSION['username'] = $tmpusername;
         $_SESSION['success'] = "You are now part of the community!";
 
-        header('location: index.php');
+        header('location: archery-UI.php');
     } else {
         include('Message.php');
         die();

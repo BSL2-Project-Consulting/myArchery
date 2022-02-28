@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Error Page</title>
+    <title>Message Page</title>
     <link rel="stylesheet" href="Styles/styles_for_message.css" />
   </head>
   <body>
@@ -26,8 +26,7 @@
       
       <br>
 
-      <a href="RegistPage.php" class="button">Go to Registration</a>
-      <a href="LoginPage.php" class="button">Go to Log-In</a>
+      <a href="archery-loginForm.html" class="button">Log-In or Regist</a>
 
     </div>
   </body>

@@ -26,7 +26,7 @@
 
           <button type="submit" name="reset_password" class="btn-reset">Reset Password</button>
 
-          <p class="login-paragraph">Password remembered? <a href="LoginPage.php">Login</a> instead!</p>
+          <p class="login-paragraph">Password remembered? <a href="archery-loginForm.html">Login</a> instead!</p>
         
       </form>
     </div>

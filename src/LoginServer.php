@@ -36,7 +36,7 @@
             $_SESSION['username'] = $tmpusername;
             $_SESSION['success'] = "Your Log-In was successfully!";
 
-            header('location: index.php');
+            header('location: archery-UI.php');
         } else {
             array_push($_SESSION['outputmsg'], "Password incorrect! Please try again!");
             include('Message.php');

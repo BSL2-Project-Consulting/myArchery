@@ -1,3 +1,12 @@
+<?php 
+    session_start();
+    
+    if(!isset($_SESSION['username'])){
+        header('location: LoginPage.php');
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,17 +60,17 @@
                     <div class="navbar-nav" style="padding-left: 1rem;">
                         <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle ">Login</a>
                         <div class="dropdown-menu login-form">
-                            <form action="" method="post">
+                            <form action="LoginServer.php" method="post">
                                 <div class="form-group">
                                     <label>Username</label>
-                                    <input type="text" class="form-control" required="required">
+                                    <input type="text" name="username" class="form-control" required="required">
                                 </div>
                                 <div class="form-group">
                                     <div class="clearfix">
                                         <label>Password</label>
                                         <a href="#" class="float-right text-muted"><small>Forgot?</small></a>
                                     </div>
-                                    <input type="password" class="form-control" required="required">
+                                    <input type="password" name="password" class="form-control" required="required">
                                 </div>
                                 <input type="submit" class="btn btn-primary btn-block" value="Login">
                             </form>
@@ -77,7 +86,7 @@
 
         <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
             <h1>Archery</h1>
-            <h2>Software to bring your archery club to a new level.</h2>
+            <h2>Our Software to bring your archery club to a new level.</h2>
             <a href="archery-eventCreate.html" class="btn-get-started scrollto">Get Started</a>
             <img src="assets/img/logo/logo_archery.png" class="img-fluid" data-aos="zoom-in" data-aos-delay="150">
         </div>
