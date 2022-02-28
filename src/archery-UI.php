@@ -68,7 +68,7 @@
                                 <div class="form-group">
                                     <div class="clearfix">
                                         <label>Password</label>
-                                        <a href="#" class="float-right text-muted"><small>Forgot?</small></a>
+                                        <a href="ResetPasswordPage.php" class="float-right text-muted"><small>Forgot?</small></a>
                                     </div>
                                     <input type="password" name="password" class="form-control" required="required">
                                 </div>
