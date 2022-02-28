@@ -63,7 +63,7 @@
         $_SESSION['username'] = $tmpusername;
         $_SESSION['success'] = "You are now part of the community!";
 
-        header('location: archery-UI.php');
+        header('location: archery-UI.html');
     } else {
         include('Message.php');
         die();
