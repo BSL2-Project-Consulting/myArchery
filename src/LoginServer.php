@@ -34,9 +34,9 @@
         if($user['password'] == $encryptpassword){
             //Log-In User
             $_SESSION['username'] = $tmpusername;
-            $_SESSION['success'] = "Your Log-In was successfully!";
+            $_SESSION['success'] = "Your Log-In was successful!";
 
-            header('location: archery-UI.html');
+            header('location: index.html');
         } else {
             array_push($_SESSION['outputmsg'], "Password incorrect! Please try again!");
             include('Message.php');
