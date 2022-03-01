@@ -26,7 +26,12 @@
             </div> -->
             <form id="login" action="LoginServer.php" class="input-group" method="post">
                 <input type="text" name="username" class="input-field" placeholder="Enter Username" required>
-                <input type="password" name="password" class="input-field" placeholder="Enter Password" required>
+                <input type="password" name="password" class="input-field" placeholder="Enter Password" required> 
+                <br>
+                <br>
+                <div class="g-signin2" data-onsuccess="oauthlogin"></div>
+                <br>
+                <br>
                 <a class="reset-password" href="ResetPasswordPage.php">Forgot password?</a>
                 <br>
                 <input type="checkbox" class="check-box"><span>Remember Password</span>
