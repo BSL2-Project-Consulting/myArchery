@@ -12,7 +12,7 @@
           <div class="reset-text">
             We will replace your password with a random one and send it to you by email. 
             After that you have 20 minutes to log-in and change your password by yourself. 
-            If you don't change your password within the 20 minutes, we will re-enter your old password.
+            If you don't change your password within the 20 minutes, we will reset it to your old password.
             (in case you are not who you pretend to be)
           </div>
           
