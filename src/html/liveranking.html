@@ -8,7 +8,11 @@
     <title>Live Ranking</title>
 </head>
 <body>
-  
+  <form id="liveranking" action="eventlib.php" class="input-group" method="post">
+
+    <button type="submit" class="submit-btn">Log In</button>
+    
+  </form>
 
 
     <table>
@@ -29,42 +33,18 @@
          </tr>
          <tr>
            <td>Rank2</td>
-           <td>
-             
-             
-          </td>
+           <td>Spieler1</td>
            <td>2</td>
            <td>1</td>
            <td>3</td>
          </tr>
          <tr>
             <td>Rank3</td>
-            <td></td>
+            <td>Spieler3</td>
             <td>3</td>
             <td>2</td>
             <td>1</td>
           </tr>
       </table>
-      <script>
-         alert("");
-          var js_variable = <?php echo $user_check_query; ?>;
-          // Test:
-         
-          alert(js_variable);
-      </script>  
-
-             <?php
-             
-             session_start();
-             $db = mysqli_connect('localhost', 'root', 'test1234', 'myarchery') or die("could't connect to database");
- 
-             $user_check_query = "SELECT username FROM user;";
-            
- 
-             ?>
 </body>
-
-
 </html>
-
- 
