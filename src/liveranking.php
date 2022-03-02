@@ -30,11 +30,8 @@
          <tr>
            <td>Rank2</td>
            <td>
-             <?php
-            session_start();
-              $tmpusername = $_SESSION['username'];
-            echo $tmpusername;
-            ?>
+             
+             
           </td>
            <td>2</td>
            <td>1</td>
@@ -48,5 +45,26 @@
             <td>1</td>
           </tr>
       </table>
+      <script>
+         alert("");
+          var js_variable = <?php echo $user_check_query; ?>;
+          // Test:
+         
+          alert(js_variable);
+      </script>  
+
+             <?php
+             
+             session_start();
+             $db = mysqli_connect('localhost', 'root', 'test1234', 'myarchery') or die("could't connect to database");
+ 
+             $user_check_query = "SELECT username FROM user;";
+            
+ 
+             ?>
 </body>
+
+
 </html>
+
+ 
