@@ -10,7 +10,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/logo/logo_archery.png" rel="icon">
+    <link href="../src/assets/img/logo/logo_archery.png" rel="icon">
 
     <!-- Google Fonts -->
     <link
@@ -18,15 +18,17 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css " rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="../src/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../src/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../src/assets/vendor/boxicons/css/boxicons.min.css " rel="stylesheet">
+    <link href="../src/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../src/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="../src/assets/css/archery-event.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="../src/assets/css/style.css" rel="stylesheet">
+    <link href="../src/assets/css/archery-event.css" rel="stylesheet">
 
     <!-- Navbar Login Form Input -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -40,16 +42,16 @@
     <!-- ========= Header =========== -->
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
-            <h1 class="logo">ARCHERY<a href="index.html" class="logo"><img src="assets/img/logo/firmen_logo.jfif" alt=""
+            <h1 class="logo">ARCHERY<a href="../html/index.html" class="logo"><img src="../src/assets/img/logo/firmen_logo.jfif" alt=""
                         class="img-fluid"></a></h1>
             <nav id="navbar" class="navbar navbar-expand-lg ">
                 <ul>
                     <li><a class="nav-link scrollto active" href="#">Home</a></li>
                     <li><a class="nav-link scrollto" href="#">About</a></li>
                     <li><a class="nav-link scrollto" href="#">All Events</a></li>
-                    <li><a class="nav-link scrollto" href="archery-eventCreate.html">Create Events</a></li>
-                    <li><a class="nav-link srollto" href="archery-event.html">Current Event</a></li>
-                    <li><a class="nav-link scrollto" href="liveranking.html">Live Ranking</a></li>
+                    <li><a class="nav-link scrollto" href="../html/archery-eventCreate.html">Create Events</a></li>
+                    <li><a class="nav-link srollto" href="../html/archery-event.html">Current Event</a></li>
+                    <li><a class="nav-link scrollto" href="../html/liveranking.html">Live Ranking</a></li>
                     <div class="navbar-nav" style="padding-left: 1rem;">
                         <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle ">Login</a>
                         <div class="dropdown-menu login-form">
@@ -61,7 +63,7 @@
                                 <div class="form-group">
                                     <div class="clearfix">
                                         <label>Password</label>
-                                        <a href="ResetPasswordPage.php"
+                                        <a href="../src/assets/php/ResetPasswordPage.php"
                                             class="float-right text-muted"><small>Forgot?</small></a>
                                     </div>
                                     <input type="password" name="password" class="form-control" required="required">
@@ -71,7 +73,7 @@
                             </form>
                         </div>
                     </div>
-                    <img src="assets/img/icons/login_icon.png"
+                    <img src="../src/assets/img/icons/login_icon.png"
                         style="max-width: 20px; max-height: 20px; margin-left: 5px; margin-bottom: 1px;">
                 </ul>
             </nav>
@@ -81,11 +83,15 @@
     <section id="current-event">
 
         <form action="">
-            <div>
+            <div class="time">
                 <label for="beginEventTime">Event Start:</label>
                 <input type="text" id="beginEventTime" name="beginEventTime" value="1.1.2000 19:00">
                 <label for="endEventTime">Event End:</label>
                 <input type="text" id="endEventTime" name="endEventTime" value="2.2.2222 16:00">
+            </div>
+
+            <div class="profile">
+                <img src="../src/assets/img/icons/Profilbild1.png" class="profile"> 
             </div>
         </form>
 
