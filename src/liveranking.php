@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="liveranking.js"></script>
     <title>Live Ranking</title>
+    <script>
+        
+'var name = <?php echo json_encode($name); ?>;
+
+      </script>
+
 </head>
 <body>
   
@@ -30,11 +36,8 @@
          <tr>
            <td>Rank2</td>
            <td>
-             <?php
-            session_start();
-              $tmpusername = $_SESSION['username'];
-            echo $tmpusername;
-            ?>
+             
+             
           </td>
            <td>2</td>
            <td>1</td>
@@ -48,5 +51,20 @@
             <td>1</td>
           </tr>
       </table>
+        
+
+             <?php
+             
+             session_start();
+             $db = mysqli_connect('localhost', 'root', 'test1234', 'myarchery') or die("could't connect to database");
+ 
+             $user_check_query = "SELECT username FROM user;";
+            
+ 
+             ?>
 </body>
+
+
 </html>
+
+ 
