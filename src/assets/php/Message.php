@@ -26,7 +26,7 @@
       
       <br>
 
-      <a href="archery-loginForm.html" class="button">Log-In or Regist</a>
+      <a href="login.html" class="button">Log-In or Regist</a>
 
     </div>
   </body>
