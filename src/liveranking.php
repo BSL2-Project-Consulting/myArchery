@@ -6,11 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="liveranking.js"></script>
     <title>Live Ranking</title>
-    <script>
-        
-'var name = <?php echo json_encode($name); ?>;
 
-      </script>
+    <?php
+                 $db = mysqli_connect('localhost', 'root', 'test1234', 'myarchery') or die("could't connect to database");              
+                 
+
+                  $user_check_query = "SELECT username FROM user ";
+                  $results = mysqli_query($db, $user_check_query);
+                  $temp = array();
+                 while($db_output = mysqli_fetch_assoc($results))
+                 {
+                  $temp[] = $db_output['username'];
+                  
+                 }
+
+                
+                  
+                 
+                 
+
+                 
+                
+                 
+                 
+             ?>
+
+             
+    
 
 </head>
 <body>
@@ -28,15 +50,31 @@
         </tr>
         <tr>
           <td>Rank1</td>
-          <td>Spieler2</td>
-          <td>1</td>
-          <td>3</td>
+          <td>
+          <script>
+      
+      document.write(<?php echo json_encode($temp[1]); ?>);
+            </script>
+          </td>
+          <td>
+            <script>
+              var punktetier1 = 1;
+              document.write(punktetier1);
+              </script>
+          </td>
+          <td>
+          <script>
+              </script>
+          </td>
           <td>2</td>
          </tr>
          <tr>
            <td>Rank2</td>
            <td>
-             
+           <script>
+      
+      document.write(<?php echo json_encode($temp[0]); ?>);
+            </script>
              
           </td>
            <td>2</td>
@@ -45,7 +83,12 @@
          </tr>
          <tr>
             <td>Rank3</td>
-            <td></td>
+            <td>
+            <script>
+      
+      document.write(<?php echo json_encode($temp[2]); ?>);
+            </script>
+            </td>
             <td>3</td>
             <td>2</td>
             <td>1</td>
@@ -53,15 +96,7 @@
       </table>
         
 
-             <?php
              
-             session_start();
-             $db = mysqli_connect('localhost', 'root', 'test1234', 'myarchery') or die("could't connect to database");
- 
-             $user_check_query = "SELECT username FROM user;";
-            
- 
-             ?>
 </body>
 
 
