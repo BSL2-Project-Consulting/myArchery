@@ -1,2 +1,5 @@
+<?php
 $tmpusername = $_SESSION['username'];
-echo Hallo;
+echo $tmpusername;
+
+?>
