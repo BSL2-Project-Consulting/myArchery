@@ -60,10 +60,12 @@
         //run query
         mysqli_query($db, $insertquery_password_history);
 
+        
         $_SESSION['username'] = $tmpusername;
+
         $_SESSION['success'] = "You are now part of the community!";
 
-        header('location: archery-UI.html');
+        header('location: index.html');
     } else {
         include('Message.php');
         die();

@@ -8,11 +8,7 @@
     <title>Live Ranking</title>
 </head>
 <body>
-  <form id="liveranking" action="eventlib.php" class="input-group" method="post">
-
-    <button type="submit" class="submit-btn">Log In</button>
-    
-  </form>
+  
 
 
     <table>
@@ -33,14 +29,20 @@
          </tr>
          <tr>
            <td>Rank2</td>
-           <td>Spieler1</td>
+           <td>
+             <?php
+            session_start();
+              $tmpusername = $_SESSION['username'];
+            echo $tmpusername;
+            ?>
+          </td>
            <td>2</td>
            <td>1</td>
            <td>3</td>
          </tr>
          <tr>
             <td>Rank3</td>
-            <td>Spieler3</td>
+            <td></td>
             <td>3</td>
             <td>2</td>
             <td>1</td>
