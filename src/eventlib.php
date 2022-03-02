@@ -1,5 +1,4 @@
 <?php
-$tmpusername = $_SESSION['username'];
-echo $tmpusername;
+  $tmpusername = $_SESSION['username'];
 
 ?>
