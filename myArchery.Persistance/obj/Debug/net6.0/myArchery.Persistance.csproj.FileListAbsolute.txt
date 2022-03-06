@@ -1,0 +1,12 @@
+C:\Users\baamsti\source\repos\myArchery\myArchery.Persistance\bin\Debug\net6.0\myArchery.Persistance.deps.json
+C:\Users\baamsti\source\repos\myArchery\myArchery.Persistance\bin\Debug\net6.0\myArchery.Persistance.dll
+C:\Users\baamsti\source\repos\myArchery\myArchery.Persistance\bin\Debug\net6.0\myArchery.Persistance.pdb
+C:\Users\baamsti\source\repos\myArchery\myArchery.Persistance\obj\Debug\net6.0\myArchery.Persistance.csproj.AssemblyReference.cache
+C:\Users\baamsti\source\repos\myArchery\myArchery.Persistance\obj\Debug\net6.0\myArchery.Persistance.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\baamsti\source\repos\myArchery\myArchery.Persistance\obj\Debug\net6.0\myArchery.Persistance.AssemblyInfoInputs.cache
+C:\Users\baamsti\source\repos\myArchery\myArchery.Persistance\obj\Debug\net6.0\myArchery.Persistance.AssemblyInfo.cs
+C:\Users\baamsti\source\repos\myArchery\myArchery.Persistance\obj\Debug\net6.0\myArchery.Persistance.csproj.CoreCompileInputs.cache
+C:\Users\baamsti\source\repos\myArchery\myArchery.Persistance\obj\Debug\net6.0\myArchery.Persistance.dll
+C:\Users\baamsti\source\repos\myArchery\myArchery.Persistance\obj\Debug\net6.0\refint\myArchery.Persistance.dll
+C:\Users\baamsti\source\repos\myArchery\myArchery.Persistance\obj\Debug\net6.0\myArchery.Persistance.pdb
+C:\Users\baamsti\source\repos\myArchery\myArchery.Persistance\obj\Debug\net6.0\ref\myArchery.Persistance.dll
