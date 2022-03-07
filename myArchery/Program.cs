@@ -11,7 +11,7 @@ builder.Services.AddDbContext<myarcheryContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 // RequireConfirmedAccount == email bestätigung
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<myarcheryContext>();
 builder.Services.AddRazorPages();
 

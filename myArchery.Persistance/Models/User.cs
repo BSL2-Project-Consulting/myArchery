@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 
 namespace myArchery.Persistance.Models
 {
-    public partial class User
+    public partial class User : IdentityUser
     {
         public User()
         {
