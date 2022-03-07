@@ -12,7 +12,7 @@ namespace myArchery.Services
             }
         }
 
-        public static int AddUser(User user)
+        public static int AddUser(User user, int isActive = 1)
         {
             using (myarcheryContext db = new myarcheryContext())
             {
