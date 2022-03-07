@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace myArchery.Persistance.Models
 {
-    public partial class User : IdentityUser
+    public partial class User
     {
         public User()
         {
