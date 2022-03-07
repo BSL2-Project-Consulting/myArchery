@@ -10,7 +10,18 @@ namespace myArchery.Services
     {
         public static void GenerateDummyValues()
         {
+            GenerateDummyUser();
+            GenerateDummyEvent();
+        }
 
+        private static void GenerateDummyUser()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void GenerateDummyEvent()
+        {
+            throw new NotImplementedException();
         }
     }
 }

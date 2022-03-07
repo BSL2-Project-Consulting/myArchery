@@ -6,7 +6,14 @@ namespace myArchery.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            if (Session["Username"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
         }
     }
 }

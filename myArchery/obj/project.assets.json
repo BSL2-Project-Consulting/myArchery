@@ -3307,7 +3307,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Microsoft.AspNet.Identity.EntityFramework": "2.2.3",
-          "Microsoft.EntityFrameworkCore": "6.0.1",
+          "Microsoft.EntityFrameworkCore": "6.0.2",
           "MySql.Data": "8.0.28",
           "Pomelo.EntityFrameworkCore.MySql": "6.0.1"
         },
