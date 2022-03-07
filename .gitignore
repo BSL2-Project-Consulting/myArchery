@@ -1,1 +1,2 @@
+# Ignore Local Debug files from Visual Studio
 /Debug/*
