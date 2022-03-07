@@ -6,7 +6,7 @@ namespace myArchery.Controllers
     {
         public IActionResult Index()
         {
-            if (Session["Username"] != null)
+            if (ViewData["Username"] != null)
             {
                 return View();
             }
