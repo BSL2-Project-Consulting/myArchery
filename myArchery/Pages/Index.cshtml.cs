@@ -17,7 +17,6 @@ namespace myArchery.Pages
 
         }
 
-        [HttpPost]
         public void Test()
         {
             Console.WriteLine("Test");

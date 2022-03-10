@@ -15,7 +15,8 @@
           "Microsoft.EntityFrameworkCore.Tools": "6.0.2",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.2",
           "Pomelo.EntityFrameworkCore.MySql": "6.0.1",
-          "myArchery.Persistance": "1.0.0"
+          "myArchery.Persistance": "1.0.0",
+          "myArchery.Services": "1.0.0"
         },
         "runtime": {
           "myArchery.dll": {}
@@ -2538,6 +2539,14 @@
         "runtime": {
           "myArchery.Persistance.dll": {}
         }
+      },
+      "myArchery.Services/1.0.0": {
+        "dependencies": {
+          "myArchery.Persistance": "1.0.0"
+        },
+        "runtime": {
+          "myArchery.Services.dll": {}
+        }
       }
     }
   },
@@ -4004,6 +4013,11 @@
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
     "myArchery.Persistance/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "myArchery.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

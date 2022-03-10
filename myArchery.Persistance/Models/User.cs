@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace myArchery.Persistance.Models
@@ -23,6 +22,7 @@ namespace myArchery.Persistance.Models
         public string Nname { get; set; } = null!;
         public string Email { get; set; } = null!;
         public sbyte Isactive { get; set; }
+        public sbyte Getnewsletter { get; set; }
 
         public virtual ICollection<Arrow> Arrows { get; set; }
         public virtual ICollection<EventUserRole> EventUserRoles { get; set; }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -32,7 +31,6 @@ namespace myArchery.Persistance.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseMySql("server=localhost;database=myarchery;user=root;password=test1234", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.4.22-mariadb"));
             }
         }
@@ -115,7 +113,9 @@ namespace myArchery.Persistance.Models
                     .HasColumnType("int(11)")
                     .HasColumnName("eve_id");
 
-                entity.Property(e => e.Enddate).HasColumnName("enddate");
+                entity.Property(e => e.Enddate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("enddate");
 
                 entity.Property(e => e.Isprivat)
                     .HasColumnType("tinyint(4)")
@@ -133,7 +133,9 @@ namespace myArchery.Persistance.Models
                     .HasMaxLength(64)
                     .HasColumnName("password");
 
-                entity.Property(e => e.Startdate).HasColumnName("startdate");
+                entity.Property(e => e.Startdate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("startdate");
 
                 entity.HasOne(d => d.Par)
                     .WithMany(p => p.Events)
@@ -376,9 +378,14 @@ namespace myArchery.Persistance.Models
                     .HasMaxLength(45)
                     .HasColumnName("email");
 
+                entity.Property(e => e.Getnewsletter)
+                    .HasColumnType("tinyint(4)")
+                    .HasColumnName("getnewsletter");
+
                 entity.Property(e => e.Isactive)
                     .HasColumnType("tinyint(4)")
-                    .HasColumnName("isactive");
+                    .HasColumnName("isactive")
+                    .HasDefaultValueSql("'1'");
 
                 entity.Property(e => e.Nname)
                     .HasMaxLength(45)
