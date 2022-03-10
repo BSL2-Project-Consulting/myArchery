@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using myArchery.Persistance.Models;
 
-namespace myArchery.Persistance.Models
+namespace myArchery.Persistance
 {
     public partial class myarcheryContext : DbContext
     {

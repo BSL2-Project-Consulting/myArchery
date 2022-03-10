@@ -1,6 +1,4 @@
-﻿using myArchery.Persistance.Models;
-
-namespace myArchery.Services
+﻿namespace myArchery.Services
 {
     public static class UserService
     {

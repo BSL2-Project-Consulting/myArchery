@@ -8,12 +8,5 @@ namespace myArchery.Controllers
         {
             return View();
         }
-
-        public ActionResult Test()
-        {
-            Console.WriteLine("Test");
-
-            return View();
-        }
     }
 }
