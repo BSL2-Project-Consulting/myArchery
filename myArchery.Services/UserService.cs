@@ -14,7 +14,15 @@ namespace myArchery.Services
 
         public static int AddUser(string vname,string nname,string username,string email,string password)
         {
-            User user = new User();
+            User user = new User
+            {
+                Vname = vname,
+                Nname = nname,
+                Username = username,
+                Email = email,
+                Password = password
+            };
+            
             using (myarcheryContext db = new myarcheryContext())
             {
                 db.Users.Add(user);
