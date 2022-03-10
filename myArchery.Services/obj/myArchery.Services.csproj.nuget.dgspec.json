@@ -48,10 +48,6 @@
               "target": "Package",
               "version": "[2.2.3, )"
             },
-            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.0.2, )"
-            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.2, )"
@@ -127,20 +123,6 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "Microsoft.AspNet.Identity.EntityFramework": {
-              "target": "Package",
-              "version": "[2.2.3, )"
-            },
-            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.0.2, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.0.2, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
