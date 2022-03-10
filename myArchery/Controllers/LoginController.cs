@@ -22,21 +22,20 @@ namespace myArchery.Controllers
             string email = "";
             string password = "";
 
-            //if (UserService.UserExists(username, email))
-            //{
-            //    //User does exist
-            //    return RedirectToAction("Index");
-            //}
-            //else
-            //{
-            //    //User doesn't exist in the db
+            if (UserService.UserExists(username, email))
+            {
+                //User does exist
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                //User doesn't exist in the db
 
-            //    UserService.AddUser(vname, nname, username, email, password.ConvertToSha256());
-            //    ViewBag.Username = username;
+                UserService.AddUser(vname, nname, username, email, password.ConvertToSha256());
+                ViewBag.Username = username;
 
-            //    return View();
-            //}            
-            return View();
+                return View();
+            }
         }
     }
 }

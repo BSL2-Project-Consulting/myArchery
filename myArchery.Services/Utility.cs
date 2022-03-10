@@ -28,6 +28,11 @@ namespace myArchery.Services
             throw new NotImplementedException();
         }
 
+        private static void GenerateRoles()
+        {
+            throw new NotImplementedException();
+        }
+
         public static string ConvertToSha256(this string pw)
         {
             string hashedPW = pw;
