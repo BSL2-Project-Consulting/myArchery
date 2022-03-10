@@ -3556,6 +3556,19 @@
         "runtime": {
           "bin/placeholder/myArchery.Persistance.dll": {}
         }
+      },
+      "myArchery.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "myArchery.Persistance": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/myArchery.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/myArchery.Services.dll": {}
+        }
       }
     }
   },
@@ -10709,6 +10722,11 @@
       "type": "project",
       "path": "../myArchery.Persistance/myArchery.Persistance.csproj",
       "msbuildProject": "../myArchery.Persistance/myArchery.Persistance.csproj"
+    },
+    "myArchery.Services/1.0.0": {
+      "type": "project",
+      "path": "../myArchery.Services/myArchery.Services.csproj",
+      "msbuildProject": "../myArchery.Services/myArchery.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -10720,7 +10738,8 @@
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.2",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.2",
       "Pomelo.EntityFrameworkCore.MySql >= 6.0.1",
-      "myArchery.Persistance >= 1.0.0"
+      "myArchery.Persistance >= 1.0.0",
+      "myArchery.Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -10757,6 +10776,9 @@
           "projectReferences": {
             "C:\\xampp\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj": {
               "projectPath": "C:\\xampp\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj"
+            },
+            "C:\\xampp\\htdocs\\myArchery\\myArchery.Services\\myArchery.Services.csproj": {
+              "projectPath": "C:\\xampp\\htdocs\\myArchery\\myArchery.Services\\myArchery.Services.csproj"
             }
           }
         }

@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\myArchery.Persistance\myArchery.Persistance.csproj" />
+    <ProjectReference Include="..\myArchery.Services\myArchery.Services.csproj" />
   </ItemGroup>
 
 </Project>

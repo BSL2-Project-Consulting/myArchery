@@ -12,7 +12,7 @@ namespace myArchery.Controllers
             }
             else
             {
-                return RedirectToAction("Login");
+                return View("Login");
             }
         }
     }
