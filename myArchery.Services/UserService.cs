@@ -10,7 +10,7 @@ namespace myArchery.Services
             {
                 return db.Users.FirstOrDefault(x => x.Username == name && x.Isactive == 1);
             }
-        }
+        }       
 
         public static int AddUser(string vname,string nname,string username,string email,string password)
         {
@@ -36,7 +36,7 @@ namespace myArchery.Services
         /// <param name="username">username that is bound to a user</param>
         /// <param name="email">email adress that is bound to a user</param>
         /// <returns>true when user does exist. false when user doesnt exist</returns>
-        public static bool UserExists(string username, string email)
+        public static bool UserExists(string? username = null, string? email = null)
         {
             using (myarcheryContext db = new myarcheryContext())
             {

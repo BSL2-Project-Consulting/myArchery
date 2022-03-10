@@ -1,8 +1,10 @@
 ﻿@page
+@using myArchery.Services;
 @model IndexModel
 @{
     ViewData["Title"] = "myArchery";
     ViewData["Username"] = "bamsti";
+    Utility.GenerateDummyValues();
 }
 <!DOCTYPE html>
 <html lang="en">
