@@ -1,5 +1,5 @@
 # Ignore Local Debug files from Visual Studio
-*/myarchery/bin/Debug/*
+myarchery/bin/Debug/*
 *.cache
 myArchery/.vs/myArchery/v17/.suo
 *.cache
