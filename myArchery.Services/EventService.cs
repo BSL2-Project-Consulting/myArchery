@@ -9,8 +9,14 @@ namespace myArchery.Services
 {
     public static class EventService
     {
-        public static int CreateEvent(Event evt)
+        public static int CreateEvent(string name, DateTime startDate, DateTime endDate, sbyte isPrivate, int par_id)
         {            
+            Event evt = new Event();
+            evt.Name = name;
+            evt.Startdate = startDate;
+            evt.Enddate = endDate;
+            evt.Isprivat = isPrivate;
+            evt.Par = ParcourService.GetParcourById(par_id);
             using (myarcheryContext db = new myarcheryContext())
             {
                 db.Events.Add(evt);
