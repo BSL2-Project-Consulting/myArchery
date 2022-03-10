@@ -16,5 +16,18 @@ namespace myArchery.Pages
         {
 
         }
+
+        [HttpPost]
+        public void Test()
+        {
+            Console.WriteLine("Test");
+        }
+
+        public ActionResult Test(int id)
+        {
+            Console.WriteLine("Test");
+
+            return ReturnToAction("Index");
+        }
     }
 }

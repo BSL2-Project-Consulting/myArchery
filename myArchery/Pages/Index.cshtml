@@ -52,14 +52,14 @@
                 <ul>
                     <li><a class="nav-link scrollto active" href="#">Home</a></li>
                     <li><a class="nav-link scrollto" href="#">About</a></li>
-                    <li><a class="nav-link scrollto" href="@{Controllers.EventController}">All Events</a></li>
+                    <li><a class="nav-link scrollto" href="">All Events</a></li>
                     <li><a class="nav-link scrollto" href="../html/archery-eventCreate.html">Create Events</a></li>
                     <li><a class="nav-link srollto" href="../html/archery-event.html">Current Event</a></li>
                     <li><a class="nav-link scrollto" href="../src/assets/php/liveranking.php">Live Ranking</a></li>
                     <div class="navbar-nav" style="padding-left: 1rem;">
                         <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle ">Login</a>
                         <div class="dropdown-menu login-form">
-                            <form action="LoginServer.php" method="post">
+                            <form action="@Url.Action("MyAction", "MyController")" method="post">
                                 <div class="form-group">
                                     <label>Username</label>
                                     <input type="text" name="username" class="form-control" required="required">
