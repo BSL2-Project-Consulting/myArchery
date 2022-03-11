@@ -2367,12 +2367,8 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "C:\\Users\\danie\\.nuget\\packages\\": {}
-=======
     "C:\\Users\\kendo\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
->>>>>>> 10836eaab4bee96c7ca7a5ea2d5326a41f8d45d4
   },
   "project": {
     "version": "1.0.0",
@@ -2380,20 +2376,15 @@
       "projectUniqueName": "C:\\xampp\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj",
       "projectName": "myArchery.Persistance",
       "projectPath": "C:\\xampp\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj",
-<<<<<<< HEAD
-      "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
-=======
       "packagesPath": "C:\\Users\\kendo\\.nuget\\packages\\",
->>>>>>> 10836eaab4bee96c7ca7a5ea2d5326a41f8d45d4
       "outputPath": "C:\\xampp\\htdocs\\myArchery\\myArchery.Persistance\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-<<<<<<< HEAD
-        "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
         "C:\\Users\\kendo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
->>>>>>> 10836eaab4bee96c7ca7a5ea2d5326a41f8d45d4
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
