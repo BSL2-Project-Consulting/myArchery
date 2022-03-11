@@ -17,9 +17,9 @@ namespace myArchery.Services
 
         private static void GenerateDummyUser()
         {
-            if (!UserService.UserExists("admin", null))
+            if (!UserService.UserExists(username: "admin"))
             {
-                UserService.AddUser("admin", "admin", "admin", "admin@myarchery.com", "admin".ConvertToSha256());
+                UserService.AddUser("admin", "admin", "admin", "admin@myarchery.com", "admin".ConvertToSha256(), false);
             }
         }
 
