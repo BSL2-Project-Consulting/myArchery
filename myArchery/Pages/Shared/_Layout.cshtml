@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -9,47 +9,28 @@
     <link rel="stylesheet" href="assets/css/style.css" asp-append-version="true" />
 </head>
 <body>
-    <!-- ========= Header =========== -->
-    <header id="header" class="fixed-top">
-        <div class="container d-flex align-items-center justify-content-between">
-            <h1 class="logo">ARCHERY<a href="index.cshtml" class="logo"><img src="assets/img/logo/firmen_logo.jfif"
-                        alt="" class="img-fluid"></a></h1>
-            <nav id="navbar" class="navbar navbar-expand-lg ">
-                <ul>
-                    <li><a class="nav-link scrollto active" href="#">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#">About</a></li>
-                    <li><a class="nav-link scrollto" href="AllEvents">All Events</a></li>
-                    <li><a class="nav-link scrollto" href="CreateEvent">Create Events</a></li>
-                    <li><a class="nav-link scrollto" href="CurrentEvent">Current Event</a></li>
-                    <li><a class="nav-link scrollto" href="LiveRanking">LiveRanking</a></li>
-                    <li><a class="nav-link scrollto" href="Login">Login</a></li>
-                    <div class="navbar-nav" style="padding-left: 1rem;">
-                        <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle ">Login</a>
-                        <div class="dropdown-menu login-form">
-                            <form action="@Url.Action("Test", "IndexController")" method="post">
-                                <div class="form-group">
-                                    <label>Username</label>
-                                    <input type="text" name="username" class="form-control" required="required">
-                                </div>
-                                <div class="form-group">
-                                    <div class="clearfix">
-                                        <label>Password</label>
-                                        <a href="../src/assets/php/ResetPasswordPage.php" class="float-right text-muted"><small>Forgot?</small></a>
-                                    </div>
-                                    <input type="password" name="password" class="form-control" required="required">
-                                </div>
-                                <input type="submit" class="btn btn-primary btn-block" value="Login">
-                            </form>
-                        </div>
-                    </div>
-                    <img src="assets/img/icons/login_icon.png"
-                        style="max-width: 20px; max-height: 20px; margin-left: 5px; margin-bottom: 1px;">
-                </ul>
-            </nav>
-        </div>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">myArchery</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
     </header>
-
-    <!-- Header end-->
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

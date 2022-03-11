@@ -1,4 +1,4 @@
 # Ignore Local Debug files from Visual Studio
-**/obj/**
-**/.vs/**
-**/bin/**
+obj/
+.vs/
+bin/
