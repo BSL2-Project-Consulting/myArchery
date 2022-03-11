@@ -2367,23 +2367,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\julia\\.nuget\\packages\\": {},
+    "C:\\Users\\kendo\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\XAMPP\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj",
+      "projectUniqueName": "C:\\xampp\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj",
       "projectName": "myArchery.Persistance",
-      "projectPath": "H:\\XAMPP\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj",
-      "packagesPath": "C:\\Users\\julia\\.nuget\\packages\\",
-      "outputPath": "H:\\XAMPP\\htdocs\\myArchery\\myArchery.Persistance\\obj\\",
+      "projectPath": "C:\\xampp\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj",
+      "packagesPath": "C:\\Users\\kendo\\.nuget\\packages\\",
+      "outputPath": "C:\\xampp\\htdocs\\myArchery\\myArchery.Persistance\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\julia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kendo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
