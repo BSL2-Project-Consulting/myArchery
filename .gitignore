@@ -1,6 +1,7 @@
 # Ignore Local Debug files from Visual Studio
 **\myarchery\bin\**
 **\myArchery.Services\bin\**
+**\myArchery.Services\obj\**
 **\myArchery.lib\obj\**
 **\myArchery.Persistance\bin\**
 **\myArchery.Persistance\obj\**
