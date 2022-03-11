@@ -8,8 +8,7 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\kendo\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\danie\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -17,15 +16,11 @@
       "projectUniqueName": "C:\\xampp\\htdocs\\myArchery\\myArchery.lib\\myArchery.lib.csproj",
       "projectName": "myArchery.lib",
       "projectPath": "C:\\xampp\\htdocs\\myArchery\\myArchery.lib\\myArchery.lib.csproj",
-      "packagesPath": "C:\\Users\\kendo\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
       "outputPath": "C:\\xampp\\htdocs\\myArchery\\myArchery.lib\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\kendo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
