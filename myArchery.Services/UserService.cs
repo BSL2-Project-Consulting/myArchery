@@ -2,6 +2,14 @@
 {
     public static class UserService
     {
+        public static ICollection<User>? GetUsersInEventById(int id)
+        {
+            using (myarcheryContext db = new myarcheryContext())
+            {
+                return null;
+            }
+        }
+
         public static User? GetUserByName(string name)
         {
             using (myarcheryContext db = new myarcheryContext())
@@ -30,7 +38,7 @@
             }
         }
 
-        public static User? ModifyUser(int id, string? vname = null, string? nname = null, string? username = null, string? email = null, string? password = null)
+        public static User? ModifyUser(int id, string? vname = null, string? nname = null, string? username = null, string? email = null, string? password = null, int getNewsletter = 0)
         {
             var user = GetUserById(id);
             if (user != null)
@@ -40,6 +48,7 @@
                 user.Username = username ?? user.Username;
                 user.Email = email ?? user.Email;
                 user.Password = password ?? user.Password;
+                user.Getnewsletter = getNewsletter == 1;
 
                 using (myarcheryContext db = new myarcheryContext())
                 {
