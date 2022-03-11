@@ -12,6 +12,7 @@
     <script src="../src/assets/js/eastereggs.js"></script>
 </head>
 
+
 <body>
     <div class="hero">
         <div class="form-box">
@@ -20,23 +21,23 @@
                 <button class="toogle-btn" onclick="logined()">Login</button>
                 <button class="toogle-btn" onclick="registered()">Register</button>
             </div>
-<!--             <div class="social icons">
-                <img src="" alt="fb">
-                <img src="" alt="tw">
-                <img src="" alt="gp">
+            <!-- <div class="social-icons">
+                <img src="../src/assets/img/icons/facebook_img.png" alt="fb">
+                <img src="../src/assets/img/icons/twitter_img.png" alt="tw">
+                <img src="../src/assets/img/icons/google_img.png" alt="gp">
             </div> -->
             <form id="login" action="LoginServer.php" class="input-group" method="post">
-                <input type="text" name="username" class="input-field" placeholder="Enter Username" required>
+                <input type="text"  name="username" class="input-field" placeholder="Enter Username" required>
                 <input type="password" name="password" class="input-field" placeholder="Enter Password" required> 
                 <br>
                 <br>
                 <div style="color: black" class="g-signin2" data-onsuccess="oauthlogin" ></div>
                 <br>
                 <br>
-                <a class="reset-password" href="../html/resetPassword.html">Forgot password?</a>
+                <a class="btn" href="../html/resetPassword.html">Forgot password?</a>
                 <br>
                 <input type="checkbox" class="check-box"><span>Remember Password</span>
-                <button type="submit" class="submit-btn">Log In</button>
+                <button type="submit" class="submit-btn">Login</button>
             </form>
             <form id="register" action="RegistServer.php" class="input-group" method="post">
                 <input type="text" name="firstname" class="input-field" placeholder="Enter First Name" required>
@@ -44,7 +45,7 @@
                 <input type="email" name="email" class="input-field" placeholder="Enter Email" required>
                 <input type="text" name="username" class="input-field" placeholder="Enter Username" required>
                 <input type="password" name="password" class="input-field" placeholder="Enter Password" required>
-                <input type="checkbox" class="check-box"><span>I agree to the terms & Conditions</span>
+                <input type="checkbox" class="check-box"><span style="color: white !important;">I agree to the terms & Conditions</span>
                 <button type="submit" class="submit-btn">Register</button>
             </form>
         </div>
