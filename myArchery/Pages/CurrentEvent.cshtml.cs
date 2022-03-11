@@ -13,7 +13,7 @@ namespace myArchery.Pages
 {
     public class CurrentEventModel : PageModel
     {
-        private readonly myArchery.Persistance.myarcheryContext _context;
+        private readonly myarcheryContext _context;
 
         public CurrentEventModel(myarcheryContext context)
         {
