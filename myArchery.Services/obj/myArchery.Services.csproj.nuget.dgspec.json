@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.Services\\myArchery.Services.csproj": {}
+    "H:\\XAMPP\\htdocs\\myArchery\\myArchery.Services\\myArchery.Services.csproj": {}
   },
   "projects": {
-    "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj": {
+    "H:\\XAMPP\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj",
+        "projectUniqueName": "H:\\XAMPP\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj",
         "projectName": "myArchery.Persistance",
-        "projectPath": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj",
-        "packagesPath": "C:\\Users\\baamsti\\.nuget\\packages\\",
-        "outputPath": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.Persistance\\obj\\",
+        "projectPath": "H:\\XAMPP\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj",
+        "packagesPath": "C:\\Users\\julia\\.nuget\\packages\\",
+        "outputPath": "H:\\XAMPP\\htdocs\\myArchery\\myArchery.Persistance\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\baamsti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\julia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -80,17 +84,21 @@
         }
       }
     },
-    "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.Services\\myArchery.Services.csproj": {
+    "H:\\XAMPP\\htdocs\\myArchery\\myArchery.Services\\myArchery.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.Services\\myArchery.Services.csproj",
+        "projectUniqueName": "H:\\XAMPP\\htdocs\\myArchery\\myArchery.Services\\myArchery.Services.csproj",
         "projectName": "myArchery.Services",
-        "projectPath": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.Services\\myArchery.Services.csproj",
-        "packagesPath": "C:\\Users\\baamsti\\.nuget\\packages\\",
-        "outputPath": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.Services\\obj\\",
+        "projectPath": "H:\\XAMPP\\htdocs\\myArchery\\myArchery.Services\\myArchery.Services.csproj",
+        "packagesPath": "C:\\Users\\julia\\.nuget\\packages\\",
+        "outputPath": "H:\\XAMPP\\htdocs\\myArchery\\myArchery.Services\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\baamsti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\julia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -104,8 +112,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj": {
-                "projectPath": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj"
+              "H:\\XAMPP\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj": {
+                "projectPath": "H:\\XAMPP\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj"
               }
             }
           }
