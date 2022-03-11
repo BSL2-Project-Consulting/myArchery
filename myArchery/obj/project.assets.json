@@ -10743,24 +10743,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\julia\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\danie\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\XAMPP\\htdocs\\myArchery\\myArchery\\myArchery.csproj",
+      "projectUniqueName": "C:\\xampp\\htdocs\\myArchery\\myArchery\\myArchery.csproj",
       "projectName": "myArchery",
-      "projectPath": "H:\\XAMPP\\htdocs\\myArchery\\myArchery\\myArchery.csproj",
-      "packagesPath": "C:\\Users\\julia\\.nuget\\packages\\",
-      "outputPath": "H:\\XAMPP\\htdocs\\myArchery\\myArchery\\obj\\",
+      "projectPath": "C:\\xampp\\htdocs\\myArchery\\myArchery\\myArchery.csproj",
+      "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
+      "outputPath": "C:\\xampp\\htdocs\\myArchery\\myArchery\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\julia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10774,11 +10769,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "H:\\XAMPP\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj": {
-              "projectPath": "H:\\XAMPP\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj"
+            "C:\\xampp\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj": {
+              "projectPath": "C:\\xampp\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj"
             },
-            "H:\\XAMPP\\htdocs\\myArchery\\myArchery.Services\\myArchery.Services.csproj": {
-              "projectPath": "H:\\XAMPP\\htdocs\\myArchery\\myArchery.Services\\myArchery.Services.csproj"
+            "C:\\xampp\\htdocs\\myArchery\\myArchery.Services\\myArchery.Services.csproj": {
+              "projectPath": "C:\\xampp\\htdocs\\myArchery\\myArchery.Services\\myArchery.Services.csproj"
             }
           }
         }

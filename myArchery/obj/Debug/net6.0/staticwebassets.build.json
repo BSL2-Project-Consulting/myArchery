@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YLMBZ0JOnCtsVNpbcFySN7aAva9jnDkEwfl8D6/4dds=",
+  "Hash": "SwiLEm+ENsNQUtfYALr3oa0Gua567l2uHsm0bnMa36s=",
   "Source": "myArchery",
   "BasePath": "_content/myArchery",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "myArchery\\wwwroot",
       "Source": "myArchery",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\css\\site.css",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\css\\site.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\css\\site.css"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\favicon.ico",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\favicon.ico",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\favicon.ico"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\js\\site.js",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\js\\site.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -65,13 +65,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\js\\site.js"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -82,13 +82,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -99,13 +99,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -116,13 +116,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -133,13 +133,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -150,13 +150,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -167,13 +167,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -184,13 +184,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -201,13 +201,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -218,13 +218,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -235,13 +235,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -252,13 +252,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -269,13 +269,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -286,13 +286,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -303,13 +303,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -320,13 +320,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -337,13 +337,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -354,13 +354,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -371,13 +371,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -388,13 +388,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -405,13 +405,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -422,13 +422,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -439,13 +439,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -456,13 +456,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -473,13 +473,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -490,13 +490,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -507,13 +507,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -524,13 +524,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -541,13 +541,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -558,13 +558,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -575,13 +575,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -592,13 +592,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -609,13 +609,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -626,13 +626,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -643,13 +643,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -660,13 +660,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -677,13 +677,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -694,13 +694,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -711,13 +711,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -728,13 +728,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -745,13 +745,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -762,13 +762,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -779,13 +779,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -796,13 +796,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -813,13 +813,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\LICENSE",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -830,13 +830,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\LICENSE"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -847,13 +847,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.js"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -864,13 +864,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.js"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -881,13 +881,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.map"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery\\LICENSE.txt",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -898,13 +898,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery\\LICENSE.txt"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -915,13 +915,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.js"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -932,13 +932,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -949,13 +949,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.js"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -966,13 +966,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -983,13 +983,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation\\LICENSE.md"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1000,13 +1000,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1017,13 +1017,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -1034,13 +1034,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baamsti\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+      "OriginalItemSpec": "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.2\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\obj\\Debug\\net6.0\\scopedcss\\bundle\\myArchery.styles.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\obj\\Debug\\net6.0\\scopedcss\\bundle\\myArchery.styles.css",
       "SourceId": "myArchery",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "myArchery.styles.css",
       "AssetKind": "All",
@@ -1051,13 +1051,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\obj\\Debug\\net6.0\\scopedcss\\bundle\\myArchery.styles.css"
+      "OriginalItemSpec": "C:\\xampp\\htdocs\\myArchery\\myArchery\\obj\\Debug\\net6.0\\scopedcss\\bundle\\myArchery.styles.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\myArchery.bundle.scp.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\myArchery.bundle.scp.css",
       "SourceId": "myArchery",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "myArchery.bundle.scp.css",
       "AssetKind": "All",
@@ -1068,13 +1068,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\myArchery.bundle.scp.css"
+      "OriginalItemSpec": "C:\\xampp\\htdocs\\myArchery\\myArchery\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\myArchery.bundle.scp.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\css\\archery-event.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\css\\archery-event.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/css/archery-event.css",
       "AssetKind": "All",
@@ -1088,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\archery-event.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\css\\archery-loginForm.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\css\\archery-loginForm.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/css/archery-loginForm.css",
       "AssetKind": "All",
@@ -1105,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\archery-loginForm.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\css\\site.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\css\\site.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/css/site.css",
       "AssetKind": "All",
@@ -1122,10 +1122,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\site.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\css\\style.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\css\\style.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/css/style.css",
       "AssetKind": "All",
@@ -1139,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\style.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\css\\styles_for_message.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\css\\styles_for_message.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/css/styles_for_message.css",
       "AssetKind": "All",
@@ -1156,10 +1156,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\styles_for_message.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\css\\styles_for_resetpassword.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\css\\styles_for_resetpassword.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/css/styles_for_resetpassword.css",
       "AssetKind": "All",
@@ -1173,10 +1173,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\styles_for_resetpassword.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\img\\background.jpg",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\img\\background.jpg",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/img/background.jpg",
       "AssetKind": "All",
@@ -1190,10 +1190,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\background.jpg"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\img\\icons\\login_icon.png",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\img\\icons\\login_icon.png",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/img/icons/login_icon.png",
       "AssetKind": "All",
@@ -1207,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\icons\\login_icon.png"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\img\\icons\\Profilbild1.png",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\img\\icons\\Profilbild1.png",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/img/icons/Profilbild1.png",
       "AssetKind": "All",
@@ -1224,10 +1224,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\icons\\Profilbild1.png"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\img\\logo.png",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\img\\logo.png",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/img/logo.png",
       "AssetKind": "All",
@@ -1241,10 +1241,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\logo.png"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\img\\logo\\firmen_logo.jfif",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\img\\logo\\firmen_logo.jfif",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/img/logo/firmen_logo.jfif",
       "AssetKind": "All",
@@ -1258,10 +1258,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\logo\\firmen_logo.jfif"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\img\\logo\\logo_archery.png",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\img\\logo\\logo_archery.png",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/img/logo/logo_archery.png",
       "AssetKind": "All",
@@ -1275,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\logo\\logo_archery.png"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\js\\archery.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\js\\archery.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/js/archery.js",
       "AssetKind": "All",
@@ -1292,10 +1292,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\archery.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\js\\eastereggs.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\js\\eastereggs.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/js/eastereggs.js",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\eastereggs.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\js\\liveranking.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\js\\liveranking.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/js/liveranking.js",
       "AssetKind": "All",
@@ -1326,10 +1326,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\liveranking.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\js\\loginlib.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\js\\loginlib.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/js/loginlib.js",
       "AssetKind": "All",
@@ -1343,10 +1343,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\loginlib.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\js\\site.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\js\\site.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/js/site.js",
       "AssetKind": "All",
@@ -1360,10 +1360,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\site.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -1377,10 +1377,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -1394,10 +1394,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -1411,10 +1411,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -1428,10 +1428,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -1445,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -1462,10 +1462,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -1479,10 +1479,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -1496,10 +1496,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -1513,10 +1513,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -1530,10 +1530,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -1547,10 +1547,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -1564,10 +1564,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -1581,10 +1581,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -1598,10 +1598,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -1615,10 +1615,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -1632,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -1649,10 +1649,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -1666,10 +1666,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -1683,10 +1683,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -1700,10 +1700,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -1717,10 +1717,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -1734,10 +1734,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -1751,10 +1751,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -1768,10 +1768,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -1785,10 +1785,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -1802,10 +1802,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -1819,10 +1819,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -1836,10 +1836,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -1853,10 +1853,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -1870,10 +1870,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -1887,10 +1887,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -1904,10 +1904,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -1921,10 +1921,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -1938,10 +1938,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -1955,10 +1955,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -1972,10 +1972,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -1989,10 +1989,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -2006,10 +2006,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -2023,10 +2023,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -2040,10 +2040,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -2057,10 +2057,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -2074,10 +2074,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -2091,10 +2091,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -2108,10 +2108,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\LICENSE",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -2125,10 +2125,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -2142,10 +2142,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -2159,10 +2159,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -2176,10 +2176,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery\\LICENSE.txt",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -2193,10 +2193,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -2210,10 +2210,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -2227,10 +2227,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -2244,10 +2244,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -2261,10 +2261,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -2278,10 +2278,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -2295,10 +2295,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -2312,10 +2312,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -2329,10 +2329,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\aos\\aos.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\aos\\aos.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/aos/aos.css",
       "AssetKind": "All",
@@ -2346,10 +2346,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\aos\\aos.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\aos\\aos.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\aos\\aos.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/aos/aos.js",
       "AssetKind": "All",
@@ -2363,10 +2363,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\aos\\aos.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap.css",
       "AssetKind": "All",
@@ -2380,10 +2380,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -2397,10 +2397,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.min.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.min.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -2414,10 +2414,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.min.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -2431,10 +2431,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -2448,10 +2448,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -2465,10 +2465,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -2482,10 +2482,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -2499,10 +2499,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -2516,10 +2516,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -2533,10 +2533,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.min.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -2550,10 +2550,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.min.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -2567,10 +2567,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -2584,10 +2584,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -2601,10 +2601,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -2618,10 +2618,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -2635,10 +2635,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -2652,10 +2652,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -2669,10 +2669,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -2686,10 +2686,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -2703,10 +2703,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -2720,10 +2720,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -2737,10 +2737,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -2754,10 +2754,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -2771,10 +2771,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -2788,10 +2788,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -2805,10 +2805,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -2822,10 +2822,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -2839,10 +2839,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -2856,10 +2856,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -2873,10 +2873,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -2890,10 +2890,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -2907,10 +2907,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -2924,10 +2924,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.js.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -2941,10 +2941,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -2958,10 +2958,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -2975,10 +2975,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -2992,10 +2992,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.js.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -3009,10 +3009,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.min.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -3026,10 +3026,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.min.js.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -3043,10 +3043,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/js/bootstrap.js",
       "AssetKind": "All",
@@ -3060,10 +3060,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.js.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.js.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -3077,10 +3077,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.min.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.min.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -3094,10 +3094,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.min.js.map",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -3111,10 +3111,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap-icons/bootstrap-icons.css",
       "AssetKind": "All",
@@ -3128,10 +3128,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.json",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.json",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap-icons/bootstrap-icons.json",
       "AssetKind": "All",
@@ -3145,10 +3145,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.json"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff",
       "AssetKind": "All",
@@ -3162,10 +3162,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff2",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff2",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2",
       "AssetKind": "All",
@@ -3179,10 +3179,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff2"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap-icons\\index.html",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\bootstrap-icons\\index.html",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/bootstrap-icons/index.html",
       "AssetKind": "All",
@@ -3196,10 +3196,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\bootstrap-icons\\index.html"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\boxicons\\css\\animations.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\boxicons\\css\\animations.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/boxicons/css/animations.css",
       "AssetKind": "All",
@@ -3213,10 +3213,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\boxicons\\css\\animations.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\boxicons\\css\\boxicons.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\boxicons\\css\\boxicons.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/boxicons/css/boxicons.css",
       "AssetKind": "All",
@@ -3230,10 +3230,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\boxicons\\css\\boxicons.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\boxicons\\css\\boxicons.min.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\boxicons\\css\\boxicons.min.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/boxicons/css/boxicons.min.css",
       "AssetKind": "All",
@@ -3247,10 +3247,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\boxicons\\css\\boxicons.min.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\boxicons\\css\\transformations.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\boxicons\\css\\transformations.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/boxicons/css/transformations.css",
       "AssetKind": "All",
@@ -3264,10 +3264,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\boxicons\\css\\transformations.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\boxicons\\fonts\\boxicons.eot",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\boxicons\\fonts\\boxicons.eot",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/boxicons/fonts/boxicons.eot",
       "AssetKind": "All",
@@ -3281,10 +3281,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\boxicons\\fonts\\boxicons.eot"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\boxicons\\fonts\\boxicons.svg",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\boxicons\\fonts\\boxicons.svg",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/boxicons/fonts/boxicons.svg",
       "AssetKind": "All",
@@ -3298,10 +3298,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\boxicons\\fonts\\boxicons.svg"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\boxicons\\fonts\\boxicons.ttf",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\boxicons\\fonts\\boxicons.ttf",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/boxicons/fonts/boxicons.ttf",
       "AssetKind": "All",
@@ -3315,10 +3315,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\boxicons\\fonts\\boxicons.ttf"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\boxicons\\fonts\\boxicons.woff",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\boxicons\\fonts\\boxicons.woff",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/boxicons/fonts/boxicons.woff",
       "AssetKind": "All",
@@ -3332,10 +3332,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\boxicons\\fonts\\boxicons.woff"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\boxicons\\fonts\\boxicons.woff2",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\boxicons\\fonts\\boxicons.woff2",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/boxicons/fonts/boxicons.woff2",
       "AssetKind": "All",
@@ -3349,10 +3349,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\boxicons\\fonts\\boxicons.woff2"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\glightbox\\css\\glightbox.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\glightbox\\css\\glightbox.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/glightbox/css/glightbox.css",
       "AssetKind": "All",
@@ -3366,10 +3366,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\glightbox\\css\\glightbox.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\glightbox\\css\\glightbox.min.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\glightbox\\css\\glightbox.min.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/glightbox/css/glightbox.min.css",
       "AssetKind": "All",
@@ -3383,10 +3383,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\glightbox\\css\\glightbox.min.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\glightbox\\js\\glightbox.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\glightbox\\js\\glightbox.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/glightbox/js/glightbox.js",
       "AssetKind": "All",
@@ -3400,10 +3400,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\glightbox\\js\\glightbox.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\glightbox\\js\\glightbox.min.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\glightbox\\js\\glightbox.min.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/glightbox/js/glightbox.min.js",
       "AssetKind": "All",
@@ -3417,10 +3417,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\glightbox\\js\\glightbox.min.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\isotope-layout\\isotope.pkgd.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\isotope-layout\\isotope.pkgd.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/isotope-layout/isotope.pkgd.js",
       "AssetKind": "All",
@@ -3434,10 +3434,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\isotope-layout\\isotope.pkgd.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\isotope-layout\\isotope.pkgd.min.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\isotope-layout\\isotope.pkgd.min.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/isotope-layout/isotope.pkgd.min.js",
       "AssetKind": "All",
@@ -3451,10 +3451,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\isotope-layout\\isotope.pkgd.min.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\php-email-form\\validate.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\php-email-form\\validate.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/php-email-form/validate.js",
       "AssetKind": "All",
@@ -3468,10 +3468,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\php-email-form\\validate.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\swiper\\swiper-bundle.min.css",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\swiper\\swiper-bundle.min.css",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/swiper/swiper-bundle.min.css",
       "AssetKind": "All",
@@ -3485,10 +3485,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\swiper\\swiper-bundle.min.css"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\swiper\\swiper-bundle.min.js",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\vendor\\swiper\\swiper-bundle.min.js",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "assets/vendor/swiper/swiper-bundle.min.js",
       "AssetKind": "All",
@@ -3502,10 +3502,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\vendor\\swiper\\swiper-bundle.min.js"
     },
     {
-      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\favicon.ico",
+      "Identity": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\favicon.ico",
       "SourceId": "myArchery",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "ContentRoot": "C:\\xampp\\htdocs\\myArchery\\myArchery\\wwwroot\\",
       "BasePath": "_content/myArchery",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
