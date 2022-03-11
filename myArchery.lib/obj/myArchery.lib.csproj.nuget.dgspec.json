@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.lib\\myArchery.lib.csproj": {}
+    "E:\\Users\\0\\Documents\\GitHub\\myArchery\\myArchery.lib\\myArchery.lib.csproj": {}
   },
   "projects": {
-    "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.lib\\myArchery.lib.csproj": {
+    "E:\\Users\\0\\Documents\\GitHub\\myArchery\\myArchery.lib\\myArchery.lib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.lib\\myArchery.lib.csproj",
+        "projectUniqueName": "E:\\Users\\0\\Documents\\GitHub\\myArchery\\myArchery.lib\\myArchery.lib.csproj",
         "projectName": "myArchery.lib",
-        "projectPath": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.lib\\myArchery.lib.csproj",
-        "packagesPath": "C:\\Users\\baamsti\\.nuget\\packages\\",
-        "outputPath": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.lib\\obj\\",
+        "projectPath": "E:\\Users\\0\\Documents\\GitHub\\myArchery\\myArchery.lib\\myArchery.lib.csproj",
+        "packagesPath": "C:\\Users\\0\\.nuget\\packages\\",
+        "outputPath": "E:\\Users\\0\\Documents\\GitHub\\myArchery\\myArchery.lib\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\baamsti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\0\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -54,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

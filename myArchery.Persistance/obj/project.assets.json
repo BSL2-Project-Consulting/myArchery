@@ -2367,19 +2367,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\baamsti\\.nuget\\packages\\": {}
+    "C:\\Users\\0\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj",
+      "projectUniqueName": "E:\\Users\\0\\Documents\\GitHub\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj",
       "projectName": "myArchery.Persistance",
-      "projectPath": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj",
-      "packagesPath": "C:\\Users\\baamsti\\.nuget\\packages\\",
-      "outputPath": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.Persistance\\obj\\",
+      "projectPath": "E:\\Users\\0\\Documents\\GitHub\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj",
+      "packagesPath": "C:\\Users\\0\\.nuget\\packages\\",
+      "outputPath": "E:\\Users\\0\\Documents\\GitHub\\myArchery\\myArchery.Persistance\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\baamsti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\0\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2441,7 +2441,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

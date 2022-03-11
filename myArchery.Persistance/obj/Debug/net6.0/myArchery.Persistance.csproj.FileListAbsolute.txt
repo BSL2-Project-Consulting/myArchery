@@ -46,3 +46,15 @@ H:\XAMPP\htdocs\myArchery\myArchery.Persistance\obj\Debug\net6.0\myArchery.Persi
 H:\XAMPP\htdocs\myArchery\myArchery.Persistance\obj\Debug\net6.0\refint\myArchery.Persistance.dll
 H:\XAMPP\htdocs\myArchery\myArchery.Persistance\obj\Debug\net6.0\myArchery.Persistance.pdb
 H:\XAMPP\htdocs\myArchery\myArchery.Persistance\obj\Debug\net6.0\ref\myArchery.Persistance.dll
+E:\Users\0\Documents\GitHub\myArchery\myArchery.Persistance\bin\Debug\net6.0\myArchery.Persistance.deps.json
+E:\Users\0\Documents\GitHub\myArchery\myArchery.Persistance\bin\Debug\net6.0\myArchery.Persistance.dll
+E:\Users\0\Documents\GitHub\myArchery\myArchery.Persistance\bin\Debug\net6.0\myArchery.Persistance.pdb
+E:\Users\0\Documents\GitHub\myArchery\myArchery.Persistance\obj\Debug\net6.0\myArchery.Persistance.csproj.AssemblyReference.cache
+E:\Users\0\Documents\GitHub\myArchery\myArchery.Persistance\obj\Debug\net6.0\myArchery.Persistance.GeneratedMSBuildEditorConfig.editorconfig
+E:\Users\0\Documents\GitHub\myArchery\myArchery.Persistance\obj\Debug\net6.0\myArchery.Persistance.AssemblyInfoInputs.cache
+E:\Users\0\Documents\GitHub\myArchery\myArchery.Persistance\obj\Debug\net6.0\myArchery.Persistance.AssemblyInfo.cs
+E:\Users\0\Documents\GitHub\myArchery\myArchery.Persistance\obj\Debug\net6.0\myArchery.Persistance.csproj.CoreCompileInputs.cache
+E:\Users\0\Documents\GitHub\myArchery\myArchery.Persistance\obj\Debug\net6.0\myArchery.Persistance.dll
+E:\Users\0\Documents\GitHub\myArchery\myArchery.Persistance\obj\Debug\net6.0\refint\myArchery.Persistance.dll
+E:\Users\0\Documents\GitHub\myArchery\myArchery.Persistance\obj\Debug\net6.0\myArchery.Persistance.pdb
+E:\Users\0\Documents\GitHub\myArchery\myArchery.Persistance\obj\Debug\net6.0\ref\myArchery.Persistance.dll
