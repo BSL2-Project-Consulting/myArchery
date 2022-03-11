@@ -19,16 +19,20 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Development/XAMPP/htdocs/myArchery/myArchery/Pages/AllEvents.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWxsRXZlbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Development/XAMPP/htdocs/myArchery/myArchery/Pages/CreateEvent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlRXZlbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Development/XAMPP/htdocs/myArchery/myArchery/Pages/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+[D:/Development/XAMPP/htdocs/myArchery/myArchery/Pages/CurrentEvent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VycmVudEV2ZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Development/XAMPP/htdocs/myArchery/myArchery/Pages/event.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZXZlbnQuY3NodG1s
+[D:/Development/XAMPP/htdocs/myArchery/myArchery/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Development/XAMPP/htdocs/myArchery/myArchery/Pages/Index.cshtml]

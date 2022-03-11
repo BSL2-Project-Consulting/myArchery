@@ -5,5 +5,6 @@ myArchery.Services\obj\**
 myArchery.lib\obj\**
 myArchery.Persistance\bin\**
 myArchery.Persistance\obj\**
-myArchery\obj\**
+myArchery\obj\Debug**
+myarchery\obj\**
 myArchery\.vs\**
