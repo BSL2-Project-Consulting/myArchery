@@ -2,6 +2,14 @@
 {
     public static class UserService
     {
+        public static ICollection<User>? GetUsersInEventById(int id)
+        {
+            using (myarcheryContext db = new myarcheryContext())
+            {
+                return null;
+            }
+        }
+
         public static User? GetUserByName(string name)
         {
             using (myarcheryContext db = new myarcheryContext())
