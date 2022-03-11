@@ -5,11 +5,11 @@ using myArchery.Persistance.Models;
 
 namespace myArchery.Pages.AllEvents
 {
-    public class AllEventsModel : PageModel
+    public class IndexModel : PageModel
     {
         private readonly myarcheryContext _context;
 
-        public AllEventsModel(myarcheryContext context)
+        public IndexModel(myarcheryContext context)
         {
             _context = context;
         }
