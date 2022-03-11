@@ -29,6 +29,7 @@ namespace myArchery.Controllers
             string username = "";
             string email = "";
             string password = "";
+            bool getNewsletter = false;
 
             if (UserService.UserExists(username, email))
             {
@@ -39,7 +40,7 @@ namespace myArchery.Controllers
             {
                 //User doesn't exist in the db
 
-                UserService.AddUser(vname, nname, username, email, password.ConvertToSha256());
+                UserService.AddUser(vname, nname, username, email, password.ConvertToSha256(), getNewsletter);
                 ViewBag.Username = username;
 
                 return View();

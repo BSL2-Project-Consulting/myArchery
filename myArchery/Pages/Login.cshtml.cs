@@ -37,7 +37,9 @@ namespace myArchery.Pages
                 return Page();
             }
 
-            UserService.AddUser(User.Vname, User.Nname, User.Username, User.Email, User.Password.ConvertToSha256());
+            UserService.AddUser(User.Vname, User.Nname, User.Username, User.Email, User.Password.ConvertToSha256(), User.Getnewsletter);
+
+            await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
         }

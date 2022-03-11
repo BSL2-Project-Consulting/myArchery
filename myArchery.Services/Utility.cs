@@ -19,7 +19,7 @@ namespace myArchery.Services
         {
             if (!UserService.UserExists("admin", null))
             {
-                UserService.AddUser("admin", "admin", "admin", "admin@myarchery.com", "admin".ConvertToSha256());
+                UserService.AddUser("admin", "admin", "admin", "admin@myarchery.com", "admin".ConvertToSha256(), false);
             }
         }
 
