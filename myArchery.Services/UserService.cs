@@ -10,7 +10,7 @@
             }
         }       
 
-        public static int AddUser(string vname,string nname,string username,string email,string password)
+        public static int AddUser(string vname,string nname,string username,string email,string password, bool getNewsletter)
         {
             User user = new User
             {
@@ -18,7 +18,9 @@
                 Nname = nname,
                 Username = username,
                 Email = email,
-                Password = password
+                Password = password,
+                Isactive = 1,
+                Getnewsletter = getNewsletter
             };
             
             using (myarcheryContext db = new myarcheryContext())
