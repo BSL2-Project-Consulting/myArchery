@@ -41,5 +41,7 @@ namespace myArchery.Pages
 
             return RedirectToPage("./Index");
         }
+
+
     }
 }

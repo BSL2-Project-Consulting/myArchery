@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "myArchery", "myArchery.cspr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "myArchery.Persistance", "..\myArchery.Persistance\myArchery.Persistance.csproj", "{0579775C-407E-448E-ACD0-58F184BED777}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myArchery.Services", "..\myArchery.Services\myArchery.Services.csproj", "{8D7FD2D0-4B56-4F28-9AE1-21B1B8195EBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "myArchery.Services", "..\myArchery.Services\myArchery.Services.csproj", "{8D7FD2D0-4B56-4F28-9AE1-21B1B8195EBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
