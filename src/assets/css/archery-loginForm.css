@@ -59,11 +59,11 @@
 
 .social-icons {
     margin: 30px auto;
-    position: inherit;
     text-align: center;
-    width: 10px !important;
-    height: 10px !important;
+    width: 20px !important;
+    height: 20px !important;
     background-color: transparent;
+    
 }
 
 .social-icons img {
@@ -123,6 +123,16 @@ span{
     left: 450px;
     color: white;
     text-decoration: white;
+}
+
+.container {
+    height: 20px;
+    width: 20px;
+}
+
+.col-sm {
+    height: 20px;
+    width: 2opx;
 }
 
 /* p{
