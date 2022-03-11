@@ -10,7 +10,7 @@
             }
         }       
 
-        public static int AddUser(string vname,string nname,string username,string email,string password)
+        public static int AddUser(string vname,string nname,string username,string email,string password, bool subNewsletter)
         {
             User user = new User
             {
@@ -18,7 +18,9 @@
                 Nname = nname,
                 Username = username,
                 Email = email,
-                Password = password
+                Password = password,
+                Isactive = 1,
+                Getnewsletter = subNewsletter
             };
             
             using (myarcheryContext db = new myarcheryContext())
@@ -28,7 +30,7 @@
             }
         }
 
-        public static User? ModifyUser(int id, string? vname = null, string? nname = null, string? username = null, string? email = null, string? password = null)
+        public static User? ModifyUser(int id, string? vname = null, string? nname = null, string? username = null, string? email = null, string? password = null, int isActive = 0)
         {
             var user = GetUserById(id);
             if (user != null)
