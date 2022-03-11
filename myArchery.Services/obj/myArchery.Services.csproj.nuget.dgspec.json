@@ -10,11 +10,20 @@
         "projectUniqueName": "C:\\xampp\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj",
         "projectName": "myArchery.Persistance",
         "projectPath": "C:\\xampp\\htdocs\\myArchery\\myArchery.Persistance\\myArchery.Persistance.csproj",
+<<<<<<< HEAD
         "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
+=======
+        "packagesPath": "C:\\Users\\kendo\\.nuget\\packages\\",
+>>>>>>> 10836eaab4bee96c7ca7a5ea2d5326a41f8d45d4
         "outputPath": "C:\\xampp\\htdocs\\myArchery\\myArchery.Persistance\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\kendo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+>>>>>>> 10836eaab4bee96c7ca7a5ea2d5326a41f8d45d4
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -86,11 +95,20 @@
         "projectUniqueName": "C:\\xampp\\htdocs\\myArchery\\myArchery.Services\\myArchery.Services.csproj",
         "projectName": "myArchery.Services",
         "projectPath": "C:\\xampp\\htdocs\\myArchery\\myArchery.Services\\myArchery.Services.csproj",
+<<<<<<< HEAD
         "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
+=======
+        "packagesPath": "C:\\Users\\kendo\\.nuget\\packages\\",
+>>>>>>> 10836eaab4bee96c7ca7a5ea2d5326a41f8d45d4
         "outputPath": "C:\\xampp\\htdocs\\myArchery\\myArchery.Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\kendo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+>>>>>>> 10836eaab4bee96c7ca7a5ea2d5326a41f8d45d4
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
