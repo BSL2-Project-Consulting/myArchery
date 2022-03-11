@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\xampp\\htdocs\\myArchery\\myArchery.lib\\myArchery.lib.csproj": {}
+    "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.lib\\myArchery.lib.csproj": {}
   },
   "projects": {
-    "C:\\xampp\\htdocs\\myArchery\\myArchery.lib\\myArchery.lib.csproj": {
+    "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.lib\\myArchery.lib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\xampp\\htdocs\\myArchery\\myArchery.lib\\myArchery.lib.csproj",
+        "projectUniqueName": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.lib\\myArchery.lib.csproj",
         "projectName": "myArchery.lib",
-        "projectPath": "C:\\xampp\\htdocs\\myArchery\\myArchery.lib\\myArchery.lib.csproj",
-        "packagesPath": "C:\\Users\\kendo\\.nuget\\packages\\",
-        "outputPath": "C:\\xampp\\htdocs\\myArchery\\myArchery.lib\\obj\\",
+        "projectPath": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.lib\\myArchery.lib.csproj",
+        "packagesPath": "C:\\Users\\baamsti\\.nuget\\packages\\",
+        "outputPath": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery.lib\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\kendo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\baamsti\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

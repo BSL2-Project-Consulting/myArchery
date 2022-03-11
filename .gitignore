@@ -7,3 +7,9 @@ myArchery/.vs/myArchery/v17/.suo
 *.v2
 myArchery/.vs/myArchery/v17/.suo
 *.cache
+myArchery.Services\bin\Debug\*
+myArchery.lib\obj\*
+myArchery.Persistance\bin\*
+myArchery.Persistance\obj\*
+myArchery\obj\*
+myArchery\.vs\*
