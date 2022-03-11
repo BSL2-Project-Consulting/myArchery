@@ -13,19 +13,9 @@ namespace myArchery.Pages
 {
     public class CurrentEventModel : PageModel
     {
-        private readonly myarcheryContext _context;
-
-        public CurrentEventModel(myarcheryContext context)
+        public void OnGet()
         {
-            _context = context;
-        }
 
-        public IList<Event> Event { get;set; }
-
-        public async Task OnGetAsync()
-        {
-            Event = await _context.Events
-                .Include(x => x.Par).ToListAsync();
         }
     }
 }

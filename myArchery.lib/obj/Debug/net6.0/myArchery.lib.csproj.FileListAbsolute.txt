@@ -1,0 +1,12 @@
+D:\Development\XAMPP\htdocs\myArchery\myArchery.lib\bin\Debug\net6.0\myArchery.lib.deps.json
+D:\Development\XAMPP\htdocs\myArchery\myArchery.lib\bin\Debug\net6.0\myArchery.lib.dll
+D:\Development\XAMPP\htdocs\myArchery\myArchery.lib\bin\Debug\net6.0\myArchery.lib.pdb
+D:\Development\XAMPP\htdocs\myArchery\myArchery.lib\obj\Debug\net6.0\myArchery.lib.csproj.AssemblyReference.cache
+D:\Development\XAMPP\htdocs\myArchery\myArchery.lib\obj\Debug\net6.0\myArchery.lib.GeneratedMSBuildEditorConfig.editorconfig
+D:\Development\XAMPP\htdocs\myArchery\myArchery.lib\obj\Debug\net6.0\myArchery.lib.AssemblyInfoInputs.cache
+D:\Development\XAMPP\htdocs\myArchery\myArchery.lib\obj\Debug\net6.0\myArchery.lib.AssemblyInfo.cs
+D:\Development\XAMPP\htdocs\myArchery\myArchery.lib\obj\Debug\net6.0\myArchery.lib.csproj.CoreCompileInputs.cache
+D:\Development\XAMPP\htdocs\myArchery\myArchery.lib\obj\Debug\net6.0\myArchery.lib.dll
+D:\Development\XAMPP\htdocs\myArchery\myArchery.lib\obj\Debug\net6.0\refint\myArchery.lib.dll
+D:\Development\XAMPP\htdocs\myArchery\myArchery.lib\obj\Debug\net6.0\myArchery.lib.pdb
+D:\Development\XAMPP\htdocs\myArchery\myArchery.lib\obj\Debug\net6.0\ref\myArchery.lib.dll
