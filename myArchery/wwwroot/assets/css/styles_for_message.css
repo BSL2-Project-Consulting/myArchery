@@ -1,0 +1,38 @@
+body{
+	margin: 0 auto;
+  	background-color: rgba(233, 233, 233, 0.7);
+	background-repeat: no-repeat;
+	background-size: 100% 720px;
+}
+
+.container{
+	width: 500px;
+	height: 350px;
+	text-align: center;
+	margin: 0 auto;
+	background-color: rgba(119, 119, 119, 0.7);
+	margin-top: 160px;
+}
+
+.container img{
+	width: 200px;
+	height: 200px;
+	margin-top: -100px;
+    margin-bottom: 10px;
+}
+
+.error_msg {
+    color: white;
+    font-size: 25px;
+}
+
+a.button{
+    padding: 15px 30px;
+	border: solid black 2px;
+	background-color: #27ae60;
+	color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+
