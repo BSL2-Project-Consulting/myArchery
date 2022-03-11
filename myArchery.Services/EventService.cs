@@ -1,12 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using myArchery.Persistance.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace myArchery.Services
+﻿namespace myArchery.Services
 {
     public static class EventService
     {
@@ -21,6 +13,7 @@ namespace myArchery.Services
             
 
             // TODO: Add Includes for Roles, Event and User
+            // Add user to event as Creator
 
             using (myarcheryContext db = new myarcheryContext())
             {
@@ -37,11 +30,20 @@ namespace myArchery.Services
             }
         }
 
-        public static Event JoinEvent(int id, string password, string username)
+        public static Event? JoinEvent(int id, string password, string username)
         {
             using (myarcheryContext db = new myarcheryContext())
             {
-                var evt = db.Events.Where(x => x.Password == password.ConvertToSha256() && x.EveId == id);
+                var evt = db.Events.FirstOrDefault(x => x.EveId == id && x.Password == password.ConvertToSha256());
+
+                var user = db.Users.FirstOrDefault(x => x.Username == username);
+                if (user != null)
+                {
+                    // add user to event as Player
+                }
+
+                db.SaveChanges();
+                return evt;
             }
         }
 

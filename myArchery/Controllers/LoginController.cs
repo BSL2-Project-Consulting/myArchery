@@ -1,10 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using myArchery.Persistance;
 using myArchery.Services;
 
 namespace myArchery.Controllers
 {
     public class LoginController : Controller
     {
+        private readonly myarcheryContext _db;
+
+        public LoginController(myarcheryContext context)
+        {
+            _db = context;
+        }
+
         public IActionResult Index()
         {
             return View();
