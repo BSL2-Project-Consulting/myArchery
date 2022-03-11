@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YLMBZ0JOnCtsVNpbcFySN7aAva9jnDkEwfl8D6/4dds=",
+  "Hash": "Al5GF/5djTLyJrO+OQZQTMGakDycWkV6nRFfWTEl59k=",
   "Source": "myArchery",
   "BasePath": "_content/myArchery",
   "Mode": "Default",
@@ -1358,6 +1358,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\js\\site.js"
+    },
+    {
+      "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\js\\style.css",
+      "SourceId": "myArchery",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\",
+      "BasePath": "_content/myArchery",
+      "RelativePath": "assets/js/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\style.css"
     },
     {
       "Identity": "D:\\Development\\XAMPP\\htdocs\\myArchery\\myArchery\\wwwroot\\assets\\lib\\bootstrap\\dist\\css\\bootstrap.css",
