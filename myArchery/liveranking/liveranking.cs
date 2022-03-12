@@ -4,11 +4,11 @@ using System.Linq;
  
 namespace myArchery.liveranking
 {
-    class liveranking
+    class Liveranking
     {
         static void Main(string[] args)
         {
-            Dictionary<string, int> scores = new Dictionary<string, int>
+            Dictionary<string, int> scores = new()
             {
 
                 /*Name aus Datenbank
