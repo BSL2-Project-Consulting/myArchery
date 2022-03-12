@@ -20,7 +20,16 @@ namespace myArchery.Controllers
 
         public IActionResult Login()
         {
+            Console.WriteLine("Login");
+            return View();
+        }
+
+        public IActionResult Register()
+        {
+            Console.WriteLine("Register");
             // get all inputs
+            
+
 
             // check if user exists with given properties
 
@@ -34,7 +43,7 @@ namespace myArchery.Controllers
             if (UserService.UserExists(username, email))
             {
                 //User does exist
-                return RedirectToAction("Index");
+                return View("Login");
             }
             else
             {
@@ -43,7 +52,7 @@ namespace myArchery.Controllers
                 UserService.AddUser(vname, nname, username, email, password.ConvertToSha256(), getNewsletter);
                 ViewBag.Username = username;
 
-                return View();
+                return View("Index");
             }
         }
     }

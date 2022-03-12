@@ -1,7 +1,12 @@
 @page
+@using myArchery.Services
 @model myArchery.Pages.AllEvents.IndexModel
 @{
-	ViewData["Title"] = "All Events";
+    ViewData["Title"] = "All Events";
+
+    List<User> tmp = new List<User> { new Persistance.Models.User { Username = "Daniel", Isactive = 64}};
+
+    //var users = UserService.GetUsersInEventById(UserService.GetUserCurrentEventId(ViewData["Username"])).ToList();
 }
 
 <h1>CurrentEvent</h1>
@@ -12,7 +17,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
+            <th>                
                 @Html.DisplayNameFor(model => model.Event[0].Name)
             </th>
             <th>
