@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using myArchery.Persistance;
+using myArchery.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,3 +41,5 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.Run();
+
+//Utility.GenerateDummyValues();
