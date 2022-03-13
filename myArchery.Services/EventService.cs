@@ -55,7 +55,11 @@
                 return db.SaveChanges();
             }
         }
+
+
         /* 
+         SQL select for Linq statement below
+
          -- users current event's (you have to set username)
         SELECT 
 	        u.username,
@@ -67,12 +71,83 @@
         ORDER BY u.username
          */
 
-        public static void GetUsersCurrentEventsByName(string username)
+        /// <summary>
+        /// Gets the Current Running Event a specified user is in
+        /// </summary>
+        /// <param name="username">The username that is used to retrieve the events</param>
+        /// <returns>List of events with EventId and Event Name</returns>
+        public static object GetUsersCurrentEventsByUsername(string username)
         {
             using (myarcheryContext db = new myarcheryContext())
             {
-                var res = db.Users.
+                var res = from users in db.Users
+                          where users.Username == username
+                          join eventRoles in db.EventUserRoles on users.UseId equals eventRoles.UseId
+                          join events in db.Events on eventRoles.EveId equals events.EveId
+                          into result1
+                          from finalResult in result1
+                          where finalResult.Startdate < DateTime.UtcNow
+                          where finalResult.Enddate > DateTime.UtcNow
+                          select new
+                          {
+                              finalResult.EveId,
+                              finalResult.Name
+                          };
+
+                return res.ToList();                
             }
-        } 
+        }
+
+        /// <summary>
+        /// Gets the Completed Event a specified user is in
+        /// </summary>
+        /// <param name="username">The username that is used to retrieve the events</param>
+        /// <returns>List of events with EventId and Event Name</returns>
+        public static object GetUsersPastEventsByUsername(string username)
+        {
+            using (myarcheryContext db = new myarcheryContext())
+            {
+                var res = from users in db.Users
+                          where users.Username == username
+                          join eventRoles in db.EventUserRoles on users.UseId equals eventRoles.UseId
+                          join events in db.Events on eventRoles.EveId equals events.EveId
+                          into result1
+                          from finalResult in result1
+                          where finalResult.Enddate < DateTime.UtcNow
+                          select new
+                          {
+                              finalResult.EveId,
+                              finalResult.Name
+                          };
+
+                return res.ToList();
+            }
+        }
+
+        /// <summary>
+        /// Gets the Ongoing Event a specified user is in
+        /// </summary>
+        /// <param name="username">The username that is used to retrieve the events</param>
+        /// <returns>List of events with EventId and Event Name</returns>
+        public static object GetUsersOngoingEventsByUsername(string username)
+        {
+            using (myarcheryContext db = new myarcheryContext())
+            {
+                var res = from users in db.Users
+                          where users.Username == username
+                          join eventRoles in db.EventUserRoles on users.UseId equals eventRoles.UseId
+                          join events in db.Events on eventRoles.EveId equals events.EveId
+                          into result1
+                          from finalResult in result1
+                          where finalResult.Startdate > DateTime.UtcNow
+                          select new
+                          {
+                              finalResult.EveId,
+                              finalResult.Name
+                          };
+
+                return res.ToList();
+            }
+        }
     }
 }
