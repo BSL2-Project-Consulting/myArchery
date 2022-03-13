@@ -38,7 +38,7 @@ namespace myArchery.Controllers
             string username = "";
             string email = "";
             string password = "";
-            bool getNewsletter = false;
+            int getNewsletter = 0;
 
             if (UserService.UserExists(username, email))
             {

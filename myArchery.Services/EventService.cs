@@ -5,7 +5,7 @@
         public static int CreateEvent(string name, DateTime startDate, DateTime endDate, sbyte isPrivate, int par_id, string username)
         {            
             Event evt = new Event();
-            evt.Name = name;
+            evt.Eventname = name;
             evt.Startdate = startDate;
             evt.Enddate = endDate;
             evt.Isprivat = isPrivate;
@@ -91,7 +91,7 @@
                           select new
                           {
                               finalResult.EveId,
-                              finalResult.Name
+                              finalResult.Eventname
                           };
 
                 return res.ToList();                
@@ -117,7 +117,7 @@
                           select new
                           {
                               finalResult.EveId,
-                              finalResult.Name
+                              finalResult.Eventname
                           };
 
                 return res.ToList();
@@ -143,7 +143,7 @@
                           select new
                           {
                               finalResult.EveId,
-                              finalResult.Name
+                              finalResult.Eventname
                           };
 
                 return res.ToList();
@@ -181,9 +181,9 @@
                           from finalResult in result1
                           select new
                           {
-                              finalResult.Name,
+                              finalResult.Rolename,
                               user.Use.Username,
-                              //events.Name as "EventName",
+                              events.Eventname
                           };
 
                 return res.ToList();
