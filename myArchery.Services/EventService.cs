@@ -162,6 +162,12 @@
         ORDER BY e.name, r.name;
         */
 
+
+        /// <summary>
+        /// Get all Users in an Event with Roles by given event id
+        /// </summary>
+        /// <param name="eve_id">Event Id that coresponds with Event in the db</param>
+        /// <returns>List of objects with Event Name</returns>
         public static object GetAllUsersFromEventWithRoles(int eve_id)
         {
             using (myarcheryContext db = new myarcheryContext())
