@@ -149,5 +149,39 @@
                 return res.ToList();
             }
         }
+
+        /*
+        SELECT 
+	        e.name AS 'Event',
+            u.username AS 'Username',
+            r.name AS 'Role'
+        FROM event_user_roles eur
+        LEFT JOIN event e ON eur.eve_id = e.eve_id
+        LEFT JOIN user u ON eur.use_id = u.use_id
+        LEFT JOIN roles r ON eur.rol_id = r.rol_id
+        ORDER BY e.name, r.name;
+        */
+
+        public static object GetAllUsersFromEventWithRoles(int eve_id)
+        {
+            using (myarcheryContext db = new myarcheryContext())
+            {
+                var res = from eventUserRoles in db.EventUserRoles
+                          where eventUserRoles.EveId == eve_id
+                          join events in db.Events on eventUserRoles.EveId equals events.EveId
+                          join user in db.EventUserRoles on eventUserRoles.UseId equals user.UseId
+                          join roles in db.Roles on eventUserRoles.RolId equals roles.RolId
+                          into result1
+                          from finalResult in result1
+                          select new
+                          {
+                              finalResult.Name,
+                              user.Use.Username,
+                              //events.Name as "EventName",
+                          };
+
+                return res.ToList();
+            }
+        }
     }
 }
