@@ -18,7 +18,7 @@
     <thead>
         <tr>
             <th>                
-                @Html.DisplayNameFor(model => model.Event[0].Name)
+                @Html.DisplayNameFor(model => model.Event[0].Eventname)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Event[0].Startdate)
@@ -39,7 +39,7 @@
 @foreach (var item in Model.Event) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.Eventname)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Startdate)
@@ -51,7 +51,7 @@
                 @Html.DisplayFor(modelItem => item.Isprivat)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Par.Name)
+                @Html.DisplayFor(modelItem => item.Par.Parcourname)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.EveId">Edit</a> |

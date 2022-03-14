@@ -10,11 +10,11 @@
             }
         }
 
-        public static User? GetUserByName(string name)
+        public static User GetUserByName(string name)
         {
             using (myarcheryContext db = new myarcheryContext())
             {
-                return db.Users.FirstOrDefault(x => x.Username == name && x.Isactive == 1);
+                return db.Users.First(x => x.Username == name && x.Isactive == 1);
             }
         }       
 

@@ -1,4 +1,6 @@
-﻿namespace myArchery.Services
+﻿using myArchery.Services.TmpClasses;
+
+namespace myArchery.Services
 {
     public static class EventService
     {
@@ -150,7 +152,7 @@
             }
         }
 
-        /*
+		/*
         SELECT 
 	        e.name AS 'Event',
             u.username AS 'Username',
@@ -163,31 +165,69 @@
         */
 
 
-        /// <summary>
-        /// Get all Users in an Event with Roles by given event id
-        /// </summary>
-        /// <param name="eve_id">Event Id that coresponds with Event in the db</param>
-        /// <returns>List of objects with Event Name</returns>
-        public static object GetAllUsersFromEventWithRoles(int eve_id)
+		/// <summary>
+		/// Get all Users in an Event with Roles by given event id
+		/// </summary>
+		/// <param name="eve_id">Event Id that coresponds with Event in the db</param>
+		/// <returns>List of objects with Event Name</returns>
+		public static List<EventUser> GetAllUsersFromEventWithRoles(int eveId)
         {
             using (myarcheryContext db = new myarcheryContext())
             {
                 var res = from eventUserRoles in db.EventUserRoles
-                          where eventUserRoles.EveId == eve_id
+                          where eventUserRoles.EveId == eveId
                           join events in db.Events on eventUserRoles.EveId equals events.EveId
                           join user in db.EventUserRoles on eventUserRoles.UseId equals user.UseId
                           join roles in db.Roles on eventUserRoles.RolId equals roles.RolId
                           into result1
                           from finalResult in result1
-                          select new
+                          select new EventUser
                           {
-                              finalResult.Rolename,
-                              user.Use.Username,
-                              events.Eventname
+                              Rolename = finalResult.Rolename,
+                              Username = user.Use.Username,
+                              Eventname = events.Eventname
+                          };
+
+				return res.ToList();
+            }
+        }
+
+        /*
+         -- all users in an event and their points (you have to set eve_id)
+        SELECT 
+	        e.eventname AS 'Event Name',
+            u.username AS 'Username',
+            SUM(p.value) AS 'Punkte'
+        FROM event_user_roles eur
+        LEFT JOIN event e ON eur.eve_id = e.eve_id
+        LEFT JOIN user u ON eur.use_id = u.use_id
+        LEFT JOIN arrow a ON eur.evusro_id = a.evusro_id
+        LEFT JOIN points p ON a.poi_id = p.poi_id
+        WHERE eur.eve_id = 1
+        GROUP BY e.eventname, u.username
+        */
+
+        public static List<UsersWithPoints> GetUsersWithPointsFromEventById(int eveId)
+		{
+			using (myarcheryContext db = new myarcheryContext())
+			{
+                var res = from eventuserroles in db.EventUserRoles
+                          where eventuserroles.EveId == eveId
+                          join eve in db.Events on eventuserroles.EveId equals eve.EveId
+                          join user in db.Users on eventuserroles.UseId equals user.UseId
+                          join arrow in db.Arrows on eventuserroles.EvusroId equals arrow.EvusroId
+                          join points in db.Points on arrow.PoiId equals points.PoiId
+                          into result1
+                          from finalResult in result1
+                          select new UsersWithPoints
+                          {
+                              Username = user.Username,
+                              Points = arrow.Poi.Value,
                           };
 
                 return res.ToList();
+                          
             }
-        }
+		}
     }
 }

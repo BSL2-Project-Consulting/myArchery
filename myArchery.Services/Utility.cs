@@ -9,28 +9,9 @@ namespace myArchery.Services
 {
     public static class Utility
     {
-        public static void GenerateDummyValues()
+        public static List<T> CreateList<T>(params T[] elements)
         {
-            GenerateDummyUser();
-            GenerateDummyEvent();
-        }
-
-        private static void GenerateDummyUser()
-        {
-            if (!UserService.UserExists(username: "admin"))
-            {
-                UserService.AddUser("admin", "admin", "admin", "admin@myarchery.com", "admin".ConvertToSha256(), false);
-            }
-        }
-
-        private static void GenerateDummyEvent()
-        {
-            throw new NotImplementedException();
-        }
-
-        private static void GenerateRoles()
-        {
-            throw new NotImplementedException();
+            return new List<T>(elements);
         }
 
         public static string ConvertToSha256(this string pw)
