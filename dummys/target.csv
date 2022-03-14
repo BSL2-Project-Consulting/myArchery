@@ -1,9 +1,10 @@
+tar_id,targetname
 1,Adler
 2,Alpensteinbock
-3,Bär
+3,BÃ¤r
 4,Biber
-5,Büffel
-6,Eichhörnchen
+5,BÃ¼ffel
+6,EichhÃ¶rnchen
 7,Elch
 8,Ente
 9,Falke
@@ -11,7 +12,7 @@
 11,Ferkel
 12,Fischotter
 13,Flusspferd
-14,Franz das Wiesel
+14,"Franz das Wiesel"
 15,Frischling
 16,Frosch
 17,Fuchs
@@ -21,13 +22,13 @@
 21,Gnu
 22,Goldschakal
 23,Hirsch
-24,Hyäne
+24,HyÃ¤ne
 25,Kauz
 26,Kormoran
 27,Krokodil
 28,Kuh
 29,Leopard
-30,Löwe
+30,LÃ¶we
 31,Luchs
 32,Mader
 33,Murmeltier
@@ -45,11 +46,11 @@
 45,Schwan
 46,Schwein
 47,Spinne
-48,Strauß
+48,StrauÃŸ
 49,T-Rex
 50,Uhu
 51,Walross
-52,Waschbär
+52,WaschbÃ¤r
 53,Wiesel
 54,Wildkaninchen
 55,Wildschwein

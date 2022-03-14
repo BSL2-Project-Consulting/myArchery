@@ -1,5 +1,5 @@
-1,BSV Perlstein,Perlstein,4444,Perlweg 3,11
-2,Bogensportzentrum Roddorf,Roddorf,2819,Wegweg 11,23
-3,BSV Zell Bad,Zell am Bad,9029,Zellberg e,14
-4,dummypar,pra,4343,dcd 4,2
-5,123456789abchedkelas fehejsneifn jsod7384n hsiekfn,frss,3434,gehge 5,7
+par_id,parcourname,town,postalcode,street_housenumber,counttargets
+1,"BSV Perlstein",Perlstein,4444,"Perlweg 3",11
+2,"Bogensportzentrum Roddorf",Roddorf,2819,"Wegweg 11",23
+3,"BSV Zell Bad","Zell am Bad",9029,"Zellberg e",14
+4,dummypar,pra,4343,"dcd 4",2
