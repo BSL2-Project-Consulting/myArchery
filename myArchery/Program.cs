@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using myArchery.Persistance;
+using myArchery.Persistance.Models;
 using myArchery.Services;
 
 var builder = WebApplication.CreateBuilder(args);
