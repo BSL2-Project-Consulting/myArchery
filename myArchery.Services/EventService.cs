@@ -78,7 +78,7 @@ namespace myArchery.Services
         /// </summary>
         /// <param name="username">The username that is used to retrieve the events</param>
         /// <returns>List of events with EventId and Event Name</returns>
-        public static object GetUsersCurrentEventsByUsername(string username)
+        public static List<EventWithId> GetUsersCurrentEventsByUsername(string username)
         {
             using (myarcheryContext db = new myarcheryContext())
             {
@@ -90,10 +90,10 @@ namespace myArchery.Services
                           from finalResult in result1
                           where finalResult.Startdate < DateTime.UtcNow
                           where finalResult.Enddate > DateTime.UtcNow
-                          select new
+                          select new EventWithId
                           {
-                              finalResult.EveId,
-                              finalResult.Eventname
+                              Eventname = finalResult.Eventname,
+                              Id = finalResult.EveId
                           };
 
                 return res.ToList();                

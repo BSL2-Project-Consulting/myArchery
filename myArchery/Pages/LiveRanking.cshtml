@@ -3,29 +3,29 @@
 @model myArchery.Pages.LiveRankingModel
 @{
 	ViewData["Username"] = "User1";
-	//var tmp = EventService.GetAllUsersFromEventWithRoles(UserService.GetUserByName("User1").UseId);
+	var users = EventService.GetUsersWithPointsFromEventById(EventService.GetUsersCurrentEventsByUsername("User1")[0].Id);
 
-	List<User> tmp = new List<User> { new Persistance.Models.User { Username = "Daniel", Isactive = 64},
-									new Persistance.Models.User { Username = "Bastian", Isactive = 23},
-									new Persistance.Models.User { Username = "Julian", Isactive = 34},
-									new Persistance.Models.User { Username = "Fabian", Isactive = 64},
-									new Persistance.Models.User { Username = "Bastian", Isactive = 23},
-									new Persistance.Models.User { Username = "Julian", Isactive = 34},
-									new Persistance.Models.User { Username = "Daniel", Isactive = 64},
-									new Persistance.Models.User { Username = "Bastian", Isactive = 23},
-									new Persistance.Models.User { Username = "Julian", Isactive = 34},
-									new Persistance.Models.User { Username = "Daniel", Isactive = 64},
-									new Persistance.Models.User { Username = "Bastian", Isactive = 23},
-									new Persistance.Models.User { Username = "Julian", Isactive = 34}};
-
-
+	//List<User> tmp = new List<User> { new Persistance.Models.User { Username = "Daniel", Isactive = 64},
+	//								new Persistance.Models.User { Username = "Bastian", Isactive = 23},
+	//								new Persistance.Models.User { Username = "Julian", Isactive = 34},
+	//								new Persistance.Models.User { Username = "Fabian", Isactive = 64},
+	//								new Persistance.Models.User { Username = "Bastian", Isactive = 23},
+	//								new Persistance.Models.User { Username = "Julian", Isactive = 34},
+	//								new Persistance.Models.User { Username = "Daniel", Isactive = 64},
+	//								new Persistance.Models.User { Username = "Bastian", Isactive = 23},
+	//								new Persistance.Models.User { Username = "Julian", Isactive = 34},
+	//								new Persistance.Models.User { Username = "Daniel", Isactive = 64},
+	//								new Persistance.Models.User { Username = "Bastian", Isactive = 23},
+	//								new Persistance.Models.User { Username = "Julian", Isactive = 34}};
 
 
 
 
-	tmp = tmp.OrderByDescending(x => x.Isactive).ToList();      //Sortiert nach Punkte -> Sortierte Liste ->  Objekt Liste
 
-	var repheight = 400 / 5 * tmp.Count + "px";
+
+	var tmp = users.OrderByDescending(x => x.Points);      //Sortiert nach Punkte -> Sortierte Liste ->  Objekt Liste
+
+	var repheight = 400 / 5 * tmp.Count() + "px";
 	
 
 
@@ -74,7 +74,7 @@
 @foreach (var item in tmp) {
 				int counter = 1;
 
-						string value =  @Math.Floor(item.Isactive / maxPoints * 100) + "%" ;		//max value berücksichtigen Max Wert/aktuelle Punkte
+						string value =  @Math.Floor(item.Points / maxPoints * 100) + "%" ;		//max value berücksichtigen Max Wert/aktuelle Punkte
 
 
 				<div class="lboard_mem">
@@ -88,7 +88,7 @@
 			</div>
 		</div>
 		<div class="points">
-						@item.Isactive
+						@item.Points
 		</div>
 	</div>
 
