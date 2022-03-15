@@ -27,21 +27,37 @@ namespace myArchery.Pages
         }
 
         [BindProperty]
-        public User User { get; set; }
+        public new User User { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnLoginAsync()
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            UserService.AddUser(User.Vname, User.Nname, User.Username, User.Email, User.Password.ConvertToSha256(), User.Getnewsletter);
+            ViewData["Username"] = User.Username;
+            await UserService.AddUser(User.Vname, User.Nname, User.Username, User.Email, User.Password.ConvertToSha256(), User.Getnewsletter);
 
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
+        }
+
+        public async Task<IActionResult> OnRegisterAsync()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            ViewData["Username"] = User.Username;
+            await UserService.AddUser(User.Vname, User.Nname, User.Username, User.Email, User.Password.ConvertToSha256(), User.Getnewsletter);
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToPage("./Login");
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace myArchery.Services
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace myArchery.Services
 {
     public static class UserService
     {
@@ -6,6 +8,9 @@
         {
             using (myarcheryContext db = new myarcheryContext())
             {
+
+                // FUCKING TODO
+
                 return null;
             }
         }
@@ -18,9 +23,9 @@
             }
         }       
 
-        public static int AddUser(string vname,string nname,string username,string email,string password, int getNewsletter)
+        public static async Task<int> AddUser(string vname,string nname,string username,string email,string password, int getNewsletter)
         {
-            User user = new User
+            User user = new()
             {
                 Vname = vname,
                 Nname = nname,
@@ -34,13 +39,13 @@
             using (myarcheryContext db = new myarcheryContext())
             {
                 db.Users.Add(user);
-                return db.SaveChanges();
+                return await db.SaveChangesAsync();
             }
         }
 
-        public static User? ModifyUser(int id, string? vname = null, string? nname = null, string? username = null, string? email = null, string? password = null, int getNewsletter = 0)
+        public static async Task<User?> ModifyUser(int id, string? vname = null, string? nname = null, string? username = null, string? email = null, string? password = null, int getNewsletter = 0)
         {
-            var user = GetUserById(id);
+            var user = await GetUserById(id);
             if (user != null)
             {
                 user.Vname = vname ?? user.Vname;
@@ -53,7 +58,7 @@
                 using (myarcheryContext db = new myarcheryContext())
                 {
                     db.Users.Update(user);
-                    db.SaveChanges();
+                    await db.SaveChangesAsync();
                     return user;
                 }
             }           
@@ -65,11 +70,12 @@
         /// </summary>
         /// <param name="id">Id that is coresponding with a user</param>
         /// <returns>Found user or null</returns>
-        private static User? GetUserById(int id)
+        public static async Task<User?> GetUserById(int id)
         {
             using (myarcheryContext db = new myarcheryContext())
             {
-                return db.Users.FirstOrDefault(x => x.UseId == id);
+                var tmp = await db.Users.FirstOrDefaultAsync(x => x.UseId == id);
+                return tmp;
             }
         }
 
@@ -79,11 +85,11 @@
         /// <param name="username">username that is bound to a user</param>
         /// <param name="email">email adress that is bound to a user</param>
         /// <returns>true when user does exist. false when user doesnt exist</returns>
-        public static bool UserExists(string? username = null, string? email = null)
+        public static async Task<bool> UserExists(string? username = null, string? email = null)
         {            
             using (myarcheryContext db = new myarcheryContext())
             {
-                var user = db.Users.FirstOrDefault(x => x.Username == username || x.Email == email);
+                var user = await db.Users.FirstOrDefaultAsync(x => x.Username == username || x.Email == email);
                 return user != null;
             }
         }
@@ -94,17 +100,17 @@
         /// </summary>
         /// <param name="id">Id that is coresponding with the user in the db</param>
         /// <returns>Amount of affected rows</returns>
-        public static int RemoveUserById(int id)
+        public static async Task<int> RemoveUserById(int id)
         {
-            var user = GetUserById(id);
+            var user = await GetUserById(id);
             if (user != null)
             {
-                ModifyUser(id, username: "//del//" + user.Username);
+                await ModifyUser(id, username: "//del//" + user.Username);
                 
                 using (myarcheryContext db = new myarcheryContext())
                 {
                     db.Users.Update(user);
-                    return db.SaveChanges();
+                    return await db.SaveChangesAsync();
                 }
             }
 

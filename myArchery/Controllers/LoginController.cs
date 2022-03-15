@@ -24,7 +24,7 @@ namespace myArchery.Controllers
             return View();
         }
 
-        public IActionResult Register()
+        public async Task<IActionResult> Register()
         {
             Console.WriteLine("Register");
             // get all inputs
@@ -40,7 +40,7 @@ namespace myArchery.Controllers
             string password = "";
             int getNewsletter = 0;
 
-            if (UserService.UserExists(username, email))
+            if (await UserService.UserExists(username, email))
             {
                 //User does exist
                 return View("Login");
@@ -49,7 +49,7 @@ namespace myArchery.Controllers
             {
                 //User doesn't exist in the db
 
-                UserService.AddUser(vname, nname, username, email, password.ConvertToSha256(), getNewsletter);
+                await UserService.AddUser(vname, nname, username, email, password.ConvertToSha256(), getNewsletter);
                 ViewBag.Username = username;
 
                 return View("Index");

@@ -9,6 +9,6 @@ namespace myArchery.Services.TmpClasses
     public class EventWithId
     {
         public int Id { get; set; }
-        public string Eventname { get; set; }
+        public string? Eventname { get; set; }
     }
 }
