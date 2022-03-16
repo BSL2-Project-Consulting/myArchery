@@ -49,14 +49,14 @@ namespace myArchery.Pages
             if (RegisterUser != null && RegisterUser.Username != null)
             {
                 Console.WriteLine("---- Registered");
-                if (!UserService.UserExists(RegisterUser.Username).GetAwaiter().GetResult())
+                if (!UserService.UserExists(RegisterUser.Username))
                 {
                     int tmpNewsletter;
                     if (GetNewsletterChecked == true) tmpNewsletter = 1;
                     else tmpNewsletter = 0;
 
                     var addUserRes = UserService.AddUser(RegisterUser.Vname, RegisterUser.Nname, RegisterUser.Username, RegisterUser.Email, RegisterUser.Password.ConvertToSha256(), tmpNewsletter);
-                    addUserRes.GetAwaiter().GetResult();
+                    
                     Console.WriteLine($"Added {RegisterUser.Username} to db.");
 
                     using (myarcheryContext db = new myarcheryContext())

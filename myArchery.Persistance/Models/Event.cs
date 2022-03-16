@@ -14,8 +14,8 @@ namespace myArchery.Persistance.Models
 
         public int EveId { get; set; }
         public string Name { get; set; } = null!;
-        public DateOnly Startdate { get; set; }
-        public DateOnly Enddate { get; set; }
+        public DateTime Startdate { get; set; }
+        public DateTime Enddate { get; set; }
         public sbyte Isprivat { get; set; }
         public string? Password { get; set; }
         public int ParId { get; set; }

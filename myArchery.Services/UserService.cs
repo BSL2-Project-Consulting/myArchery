@@ -4,8 +4,6 @@ namespace myArchery.Services
 {
     public static class UserService
     {
-<<<<<<< Updated upstream
-=======
 
         public static List<User> GetAllUsers()
         {
@@ -26,7 +24,6 @@ namespace myArchery.Services
             }
         }
 
->>>>>>> Stashed changes
         public static User? GetUserByName(string name)
         {
             using (myarcheryContext db = new myarcheryContext())
@@ -35,7 +32,7 @@ namespace myArchery.Services
             }
         }       
 
-        public static int AddUser(string vname,string nname,string username,string email,string password)
+        public static int AddUser(string vname,string nname,string username,string email,string password, int tmpNewsletter)
         {
             User user = new User
             {
