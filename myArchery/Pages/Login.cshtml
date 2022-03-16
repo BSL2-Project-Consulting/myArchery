@@ -1,7 +1,7 @@
 ﻿@page
 @model myArchery.Pages.LoginModel
 @{
-    ViewData["Title"] = "Login";
+    
 }
 
     <!--
@@ -59,7 +59,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
-    <link rel="stylesheet" href="~/assets/css/archery-loginForm.css">
+    <link rel="stylesheet" href="assets/css/archery-loginForm.css">
+    <link rel="stylesheet" href="~/assets/css/site.css" />
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="assets/js/eastereggs.js"></script>
 </head>
@@ -118,8 +119,8 @@
                 <input type="email" name="email" class="input-field" placeholder="Enter Email" required>
                 <input type="text" name="username" class="input-field" placeholder="Enter Username" required>
                 <input type="password" name="password" class="input-field" placeholder="Enter Password" required>
-                <input type="checkbox" class="check-box"><span style="color: white !important;">I agree to the terms & Conditions</span>
-                <button type="submit" value="Create" class="submit-btn" asp-action="Register">Register</button>
+                <input type="checkbox" asp-for="GetNewsletterChecked" class="check-box"><span style="color: white !important;">I agree to the terms & Conditions</span>
+                <button type="submit" value="Create" class="submit-btn" asp-action="@Model.OnRegisterAsync()">Register</button>
             </form>
         </div>
     </div>

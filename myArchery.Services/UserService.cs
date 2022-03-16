@@ -2,8 +2,17 @@
 
 namespace myArchery.Services
 {
-    public static class UserService
+    public class UserService
     {
+
+        public static List<User> GetAllUsers()
+        {
+            using (myarcheryContext db = new myarcheryContext())
+            {
+                return db.Users.ToList();
+            }
+        }
+
         public static ICollection<User>? GetUsersInEventById(int id)
         {
             using (myarcheryContext db = new myarcheryContext())
