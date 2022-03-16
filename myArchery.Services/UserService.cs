@@ -4,6 +4,29 @@ namespace myArchery.Services
 {
     public static class UserService
     {
+<<<<<<< Updated upstream
+=======
+
+        public static List<User> GetAllUsers()
+        {
+            using (myarcheryContext db = new myarcheryContext())
+            {
+                return db.Users.ToList();
+            }
+        }
+
+        public static ICollection<User>? GetUsersInEventById(int id)
+        {
+            using (myarcheryContext db = new myarcheryContext())
+            {
+
+                // FUCKING TODO
+
+                return null;
+            }
+        }
+
+>>>>>>> Stashed changes
         public static User? GetUserByName(string name)
         {
             using (myarcheryContext db = new myarcheryContext())

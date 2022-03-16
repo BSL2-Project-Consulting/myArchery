@@ -1,4 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+<<<<<<< Updated upstream
+=======
+using myArchery.Persistance;
+using myArchery.Persistance.Models;
+>>>>>>> Stashed changes
 using myArchery.Services;
 
 namespace myArchery.Controllers
@@ -12,6 +17,7 @@ namespace myArchery.Controllers
 
         public IActionResult Login()
         {
+<<<<<<< Updated upstream
             // get all inputs
 
             // check if user exists with given properties
@@ -36,6 +42,17 @@ namespace myArchery.Controllers
                 
                 return View();
             }            
+=======
+            Console.WriteLine("Login");
+            return View();
+        }
+
+        public IActionResult Forgot_Password()
+        {
+            Console.WriteLine("Forgot Password");
+
+            return RedirectToPage("./Index");
+>>>>>>> Stashed changes
         }
     }
 }
