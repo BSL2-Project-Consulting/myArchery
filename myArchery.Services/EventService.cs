@@ -219,6 +219,8 @@ namespace myArchery.Services
                           join points in db.Points on arrow.PoiId equals points.PoiId
                           into result1
                           from finalResult in result1
+                          orderby user.Username
+                          orderby eve.Eventname
                           select new UsersWithPoints
                           {
                               Username = user.Username,
