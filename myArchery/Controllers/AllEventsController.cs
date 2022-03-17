@@ -2,7 +2,7 @@
 
 namespace myArchery.Controllers
 {
-    public class EventController : Controller
+    public class AllEventsController : Controller
     {
         public IActionResult Index()
         {

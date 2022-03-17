@@ -1,0 +1,64 @@
+@page
+@using myArchery.Services
+@model myArchery.Pages.AllEvents.IndexModel
+@{
+    ViewData["Title"] = "All Events";
+
+    List<User> tmp = new List<User> { new Persistance.Models.User { Username = "Daniel", Isactive = 64}};
+
+    //var users = UserService.GetUsersInEventById(UserService.GetUserCurrentEventId(ViewData["Username"])).ToList();
+}
+
+<h1>CurrentEvent</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>                
+                @Html.DisplayNameFor(model => model.Event[0].Eventname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event[0].Startdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event[0].Enddate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event[0].Isprivat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event[0].Par)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Event) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Eventname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Startdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Enddate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Isprivat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Par.Parcourname)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.EveId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.EveId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.EveId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>﻿

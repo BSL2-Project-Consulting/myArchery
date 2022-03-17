@@ -14,10 +14,9 @@ namespace myArchery.Pages
 
         public void OnGet()
         {
-
+            
         }
 
-        [HttpPost]
         public void Test()
         {
             Console.WriteLine("Test");

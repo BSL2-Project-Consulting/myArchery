@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "myArchery", "myArchery.cspr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "myArchery.Persistance", "..\myArchery.Persistance\myArchery.Persistance.csproj", "{0579775C-407E-448E-ACD0-58F184BED777}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myArchery.Services", "..\myArchery.Services\myArchery.Services.csproj", "{8D7FD2D0-4B56-4F28-9AE1-21B1B8195EBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "myArchery.Services", "..\myArchery.Services\myArchery.Services.csproj", "{8D7FD2D0-4B56-4F28-9AE1-21B1B8195EBA}"
+<<<<<<< HEAD
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myArchery.lib", "..\myArchery.lib\myArchery.lib.csproj", "{EE176436-3BAF-47F7-80C3-7C6EB00381E2}"
+=======
+>>>>>>> 10836eaab4bee96c7ca7a5ea2d5326a41f8d45d4
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +32,10 @@ Global
 		{8D7FD2D0-4B56-4F28-9AE1-21B1B8195EBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D7FD2D0-4B56-4F28-9AE1-21B1B8195EBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D7FD2D0-4B56-4F28-9AE1-21B1B8195EBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE176436-3BAF-47F7-80C3-7C6EB00381E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE176436-3BAF-47F7-80C3-7C6EB00381E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE176436-3BAF-47F7-80C3-7C6EB00381E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE176436-3BAF-47F7-80C3-7C6EB00381E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,11 +1,4 @@
-﻿using myArchery.Persistance.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace myArchery.Services
+﻿namespace myArchery.Services
 {
     public static class ParcourService
     {
@@ -13,7 +6,7 @@ namespace myArchery.Services
         {
             Parcour parcour = new Parcour
             {
-                Name = name,
+                Parcourname = name,
                 StreetHousenumber = adress,
                 Postalcode = postalCode,
                 Town = town,
@@ -33,7 +26,7 @@ namespace myArchery.Services
         {
             var parcour = GetParcourById(par_id);
 
-            parcour.Name = name ?? parcour.Name;
+            parcour.Parcourname = name ?? parcour.Parcourname;
             parcour.StreetHousenumber = adress ?? parcour.StreetHousenumber;
             if (postalCode != 0)
             {

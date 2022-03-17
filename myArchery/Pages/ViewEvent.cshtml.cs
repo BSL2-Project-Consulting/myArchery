@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace myArchery.Pages.Event
+namespace myArchery.Pages
 {
-    public class IndexModel : PageModel
+    public class ViewEventModel : PageModel
     {
         public void OnGet()
         {
