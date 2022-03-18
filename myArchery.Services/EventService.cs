@@ -4,22 +4,26 @@ namespace myArchery.Services
 {
     public static class EventService
     {
-        public static int CreateEvent(string name, DateTime startDate, DateTime endDate, sbyte isPrivate, int par_id, string username)
+        public static int CreateEvent(string name, DateTime startDate, DateTime endDate, sbyte isPrivate, int par_id, string username, int arrowAmount, string? password, List<Point> points)
         {            
-            Event evt = new Event();
-            evt.Eventname = name;
-            evt.Startdate = startDate;
-            evt.Enddate = endDate;
-            evt.Isprivat = isPrivate;
-            evt.Par = ParcourService.GetParcourById(par_id);
-            
+            Event newEvt = new()
+            {
+                Eventname = name,
+                Startdate = startDate,
+                Enddate = endDate,
+                Par = ParcourService.GetParcourById(par_id),
+                Isprivat = isPrivate,
+                Arrowamount = arrowAmount,
+                Password = password,
+                Points = points
+            };
 
             // TODO: Add Includes for Roles, Event and User
             // Add user to event as Creator
 
             using (myarcheryContext db = new myarcheryContext())
             {
-                db.Events.Add(evt);
+                db.Events.Add(newEvt);
                 return db.SaveChanges();
             }
         }
