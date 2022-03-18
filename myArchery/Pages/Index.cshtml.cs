@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using myArchery.Services;
 
 namespace myArchery.Pages
 {
@@ -14,7 +15,8 @@ namespace myArchery.Pages
 
         public void OnGet()
         {
-            
+            Console.WriteLine(DateTime.Now);
+            Console.WriteLine(EventService.GetAllPublicEvents().Startdate);
         }
 
         public void Test()

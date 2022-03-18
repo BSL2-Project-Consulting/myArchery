@@ -1,9 +1,13 @@
 ﻿@page
 @using myArchery.Services
+@using myArchery.Services.TmpClasses
 @model myArchery.Pages.LiveRankingModel
 @{
 	ViewData["Username"] = "User1";
-	var users = EventService.GetUsersWithPointsFromEventById(EventService.GetUsersCurrentEventsByUsername("User1")[0].Id);
+
+	var eventId = EventService.GetUsersCurrentEventsByUsername("User1");
+
+	var users = EventService.GetUsersWithPointsFromEventById(1);
 
 	//List<User> tmp = new List<User> { new Persistance.Models.User { Username = "Daniel", Isactive = 64},
 	//								new Persistance.Models.User { Username = "Bastian", Isactive = 23},
@@ -17,10 +21,6 @@
 	//								new Persistance.Models.User { Username = "Daniel", Isactive = 64},
 	//								new Persistance.Models.User { Username = "Bastian", Isactive = 23},
 	//								new Persistance.Models.User { Username = "Julian", Isactive = 34}};
-
-
-
-
 
 
 	var tmp = users.OrderByDescending(x => x.Points);      //Sortiert nach Punkte -> Sortierte Liste ->  Objekt Liste
