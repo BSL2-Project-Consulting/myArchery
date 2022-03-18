@@ -15,8 +15,7 @@ namespace myArchery.Pages
 
         public void OnGet()
         {
-            Console.WriteLine(DateTime.Now);
-            Console.WriteLine(EventService.GetAllPublicEvents().Startdate);
+            Utility.SendEmail("myarchery.bslinz2@gmail.com", "Pichler du bist toll :)");
         }
 
         public void Test()

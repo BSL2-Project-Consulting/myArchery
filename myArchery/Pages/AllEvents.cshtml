@@ -3,6 +3,7 @@
 @model myArchery.Pages.AllEvents.IndexModel
 @{
     ViewData["Title"] = "All Events";
+    Layout = "_Layout";
 }
 
 <h1>All Events</h1>
@@ -42,6 +43,7 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Isprivat)
+                @{}
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Par.Parcourname)
