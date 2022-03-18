@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using myArchery.Persistance;
-<<<<<<< HEAD
+
 using myArchery.Persistance.Models;
-=======
->>>>>>> development
+
 using myArchery.Services;
 
 namespace myArchery.Controllers
@@ -24,13 +23,9 @@ namespace myArchery.Controllers
 
         public IActionResult Forgot_Password()
         {
-<<<<<<< HEAD
             Console.WriteLine("Forgot Password");
 
             return RedirectToPage("./Index");
-=======
-            Console.WriteLine("Login");
-            return View();
         }
 
         public async Task<IActionResult> Register()
@@ -63,7 +58,6 @@ namespace myArchery.Controllers
 
                 return View("Index");
             }
->>>>>>> development
         }
     }
 }
