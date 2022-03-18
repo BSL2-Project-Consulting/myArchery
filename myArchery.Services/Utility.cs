@@ -12,11 +12,6 @@ namespace myArchery.Services
 {
     public static class Utility
     {
-        public static List<T> CreateList<T>(params T[] elements)
-        {
-            return new List<T>(elements);
-        }
-
         public static string ConvertToSha256(this string pw)
         {
             string hashedPW = pw;
