@@ -107,7 +107,7 @@
                     <input type="password" asp-for="LoginUser.Password" class="input-field" />
                     <span asp-validation-for="LoginUser.Password" class="text-danger"></span>
                 </div> 
-                <a class="btn" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"> @Html.ActionLink("Forgot Password?", "Forgot_Password", "Login", routeValues:null, htmlAttributes: new{id = "forgotLink"})</a>
+                <a class="btn" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif" href="resetPassword">Forget Password</a>
                 <br>
                 <input type="checkbox" class="check-box"><span>Remember Password</span>
                 <button type="submit" class="submit-btn" asp-action="LoginAsync()" >Login</button>
