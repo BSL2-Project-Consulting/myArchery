@@ -1,4 +1,5 @@
-﻿using System;
+﻿using myArchery.Services.TmpClasses;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace myArchery.Services
@@ -57,6 +59,11 @@ namespace myArchery.Services
             Console.WriteLine("---- Email sent");
 
             return true;
+        }
+
+        public static string GetUserWithPointsAsJson(List<UsersWithPoints> users)
+        {
+            return JsonSerializer.Serialize(users);
         }
     }
 }
