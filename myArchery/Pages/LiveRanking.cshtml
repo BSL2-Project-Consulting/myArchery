@@ -1,54 +1,110 @@
 ﻿@page
+@using myArchery.Services
 @model myArchery.Pages.LiveRankingModel
 @{
+	ViewData["Username"] = "User1";
+	var users = EventService.GetUsersWithPointsFromEventById(EventService.GetUsersCurrentEventsByUsername("User1")[0].Id);
+
+	//List<User> tmp = new List<User> { new Persistance.Models.User { Username = "Daniel", Isactive = 64},
+	//								new Persistance.Models.User { Username = "Bastian", Isactive = 23},
+	//								new Persistance.Models.User { Username = "Julian", Isactive = 34},
+	//								new Persistance.Models.User { Username = "Fabian", Isactive = 64},
+	//								new Persistance.Models.User { Username = "Bastian", Isactive = 23},
+	//								new Persistance.Models.User { Username = "Julian", Isactive = 34},
+	//								new Persistance.Models.User { Username = "Daniel", Isactive = 64},
+	//								new Persistance.Models.User { Username = "Bastian", Isactive = 23},
+	//								new Persistance.Models.User { Username = "Julian", Isactive = 34},
+	//								new Persistance.Models.User { Username = "Daniel", Isactive = 64},
+	//								new Persistance.Models.User { Username = "Bastian", Isactive = 23},
+	//								new Persistance.Models.User { Username = "Julian", Isactive = 34}};
+
+
+
+
+
+
+	var tmp = users.OrderByDescending(x => x.Points);      //Sortiert nach Punkte -> Sortierte Liste ->  Objekt Liste
+
+	var repheight = 400 / 5 * tmp.Count() + "px";
+	
+
+
+	double maxPoints = 50;
+    
+
+
+
+
+
+
+	
 }
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="assets/js/liveranking.js"></script>
-    <title>Live Ranking</title>
+	<meta charset="UTF-8">
+	<title>Leader Board using HTML CSS and Javascript</title>
+	<link rel="stylesheet" href="~/assets/js/style.css">
 </head>
 <body>
-  <form id="liveranking" action="eventlib.php" class="input-group" method="post">
-
-    <button type="submit" class="submit-btn">Log In</button>
-    
-  </form>
 
 
-    <table>
-        <tr>
-          <th></th>
-          <th>Name</th>
-          <th>Tier1</th>
-          <th>Tier2</th>
-          <th>Tier3</th>
-          <th>Zwischenpunkte</th>
-        </tr>
-        <tr>
-          <td>Rank1</td>
-          <td>Spieler2</td>
-          <td>1</td>
-          <td>3</td>
-          <td>2</td>
-         </tr>
-         <tr>
-           <td>Rank2</td>
-           <td>Spieler1</td>
-           <td>2</td>
-           <td>1</td>
-           <td>3</td>
-         </tr>
-         <tr>
-            <td>Rank3</td>
-            <td>Spieler3</td>
-            <td>3</td>
-            <td>2</td>
-            <td>1</td>
-          </tr>
-      </table>
+
+
+	
+	
+
+
+
+
+<div class="wrapper">
+	<div class="lboard_section" style="height:@repheight">
+		<div class="lboard_tabs">
+			<div class="tabs">
+				<ul>
+					<li data-li="today">Today</li>
+					<li class="active" data-li="month">Month</li>
+					<li data-li="year">Year</li>
+				</ul>
+			</div>
+		</div>
+		
+				<div class="lboard_wrap" style="height:@repheight">
+			<div class="lboard_item today" style="display: none;">
+@foreach (var item in tmp) {
+				int counter = 1;
+
+						string value =  @Math.Floor(item.Points / maxPoints * 100) + "%" ;		//max value berücksichtigen Max Wert/aktuelle Punkte
+
+
+				<div class="lboard_mem">
+	<div class="img">
+		<img src="~/assets/img/icons/login_icon.png" alt="standardpic">
+	</div>
+	<div class="name_bar">
+						<p><span> @counter.</span> @item.Username </p>
+		<div class="bar_wrap">
+			<div class="inner_bar" style="width: @value"></div>
+			</div>
+		</div>
+		<div class="points">
+						@item.Points
+		</div>
+	</div>
+
+				<div>
+
+				</div>
+				
+					counter++;
+				
+			}
+		</div>
+</div>
+		
+	</div>
+</div>	
+
+<script src="~/assets/js/liveranking.js"></script>
 </body>
 </html>

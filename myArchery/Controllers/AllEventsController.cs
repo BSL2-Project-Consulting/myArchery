@@ -1,0 +1,19 @@
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace myArchery.Controllers
+{
+    public class AllEventsController : Controller
+    {
+        public IActionResult Index()
+        {
+            if (ViewData["Username"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return View("Login");
+            }
+        }
+    }
+}

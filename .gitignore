@@ -1,13 +1,15 @@
 # Ignore Local Debug files from Visual Studio
-myarchery/bin/Debug/*
-*.cache
+**/obj/**
+**/.vs/**
+**/bin/**
+
+**\obj\**
+**\.vs\**
+**\bin\**
+
+**\v17\.suo
+**/v17/.suo
+
+**\myArchery\.vs\myArchery\v17\.suo
 myArchery/.vs/myArchery/v17/.suo
 *.cache
-*.v1
-*.v2
-myArchery/.vs/myArchery/v17/.suo
-*.cache
-myArchery.Services/obj/Debug/net6.0/myArchery.Services.GeneratedMSBuildEditorConfig.editorconfig~development_Fabian
-myArchery/obj/Debug/net6.0/myArchery.AssemblyInfo.cs~development_Fabian
-myArchery/obj/Debug/net6.0/myArchery.GeneratedMSBuildEditorConfig.editorconfig~development_Fabian
-myArchery/obj/Debug/net6.0/myArchery.pdb~development_Fabian

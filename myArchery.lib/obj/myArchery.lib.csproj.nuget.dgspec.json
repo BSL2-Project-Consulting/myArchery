@@ -1,25 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ProgramData\\hifi\\GitHubDesktop\\app-2.9.4\\myArchery\\myArchery.lib\\myArchery.lib.csproj": {}
+    "C:\\xampp\\htdocs\\myArchery\\myArchery.lib\\myArchery.lib.csproj": {}
   },
   "projects": {
-    "C:\\ProgramData\\hifi\\GitHubDesktop\\app-2.9.4\\myArchery\\myArchery.lib\\myArchery.lib.csproj": {
+    "C:\\xampp\\htdocs\\myArchery\\myArchery.lib\\myArchery.lib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ProgramData\\hifi\\GitHubDesktop\\app-2.9.4\\myArchery\\myArchery.lib\\myArchery.lib.csproj",
+        "projectUniqueName": "C:\\xampp\\htdocs\\myArchery\\myArchery.lib\\myArchery.lib.csproj",
         "projectName": "myArchery.lib",
-        "projectPath": "C:\\ProgramData\\hifi\\GitHubDesktop\\app-2.9.4\\myArchery\\myArchery.lib\\myArchery.lib.csproj",
-        "packagesPath": "C:\\Users\\hifi\\.nuget\\packages\\",
-        "outputPath": "C:\\ProgramData\\hifi\\GitHubDesktop\\app-2.9.4\\myArchery\\myArchery.lib\\obj\\",
+        "projectPath": "C:\\xampp\\htdocs\\myArchery\\myArchery.lib\\myArchery.lib.csproj",
+        "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
+        "outputPath": "C:\\xampp\\htdocs\\myArchery\\myArchery.lib\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\hifi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -59,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

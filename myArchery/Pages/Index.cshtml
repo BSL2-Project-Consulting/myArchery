@@ -1,9 +1,8 @@
 ﻿@page
 @using myArchery.Services;
-@model IndexModel
+@model myArchery.Pages.IndexModel
 @{
     ViewData["Title"] = "myArchery";
-    ViewData["Username"] = "bamsti";
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -53,30 +52,11 @@
                 <ul>
                     <li><a class="nav-link scrollto active" href="#">Home</a></li>
                     <li><a class="nav-link scrollto" href="#">About</a></li>
-                    <li><a class="nav-link scrollto" href="Event">All Events</a></li>
+                    <li><a class="nav-link scrollto" href="AllEvents">All Events</a></li>
                     <li><a class="nav-link scrollto" href="CreateEvent">Create Events</a></li>
                     <li><a class="nav-link scrollto" href="CurrentEvent">Current Event</a></li>
                     <li><a class="nav-link scrollto" href="LiveRanking">LiveRanking</a></li>
                     <li><a class="nav-link scrollto" href="Login">Login</a></li>
-                    <div class="navbar-nav" style="padding-left: 1rem;">
-                        <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle ">Login</a>
-                        <div class="dropdown-menu login-form">
-                            <form action="@Url.Action("Test", "IndexController")" method="post">
-                                <div class="form-group">
-                                    <label>Username</label>
-                                    <input type="text" name="username" class="form-control" required="required">
-                                </div>
-                                <div class="form-group">
-                                    <div class="clearfix">
-                                        <label>Password</label>
-                                        <a href="../src/assets/php/ResetPasswordPage.php" class="float-right text-muted"><small>Forgot?</small></a>
-                                    </div>
-                                    <input type="password" name="password" class="form-control" required="required">
-                                </div>
-                                <input type="submit" class="btn btn-primary btn-block" value="Login">
-                            </form>
-                        </div>
-                    </div>
                     <img src="assets/img/icons/login_icon.png"
                         style="max-width: 20px; max-height: 20px; margin-left: 5px; margin-bottom: 1px;">
                 </ul>
@@ -88,7 +68,6 @@
         <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
             <h1>Archery</h1>
             <h2>Our Software to bring your archery club to a new level.</h2>
-            <h2>TEST ============================================</h2>
             <a href="html/archery-eventCreate.html" class="btn-get-started scrollto">Get Started</a>
             <img src="assets/img/logo/logo_archery.png" class="img-fluid" data-aos="zoom-in" data-aos-delay="150">
         </div>
