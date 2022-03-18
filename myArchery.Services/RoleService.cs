@@ -11,7 +11,7 @@
         {
             Role role = new Role
             {
-                Rolename = name
+                Name = name
             };
 
             using (myarcheryContext db = new myarcheryContext())

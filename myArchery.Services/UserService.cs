@@ -1,25 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace myArchery.Services
+﻿namespace myArchery.Services
 {
-    public class UserService
+    public static class UserService
     {
-
-        public static List<User> GetAllUsers()
-        {
-            using (myarcheryContext db = new myarcheryContext())
-            {
-                return db.Users.ToList();
-            }
-        }
-
         public static ICollection<User>? GetUsersInEventById(int id)
         {
             using (myarcheryContext db = new myarcheryContext())
             {
-
-                // FUCKING TODO
-
                 return null;
             }
         }
@@ -32,9 +18,9 @@ namespace myArchery.Services
             }
         }       
 
-        public static async Task<int> AddUser(string vname,string nname,string username,string email,string password, int getNewsletter)
+        public static int AddUser(string vname,string nname,string username,string email,string password, bool getNewsletter)
         {
-            User user = new()
+            User user = new User
             {
                 Vname = vname,
                 Nname = nname,
@@ -48,13 +34,13 @@ namespace myArchery.Services
             using (myarcheryContext db = new myarcheryContext())
             {
                 db.Users.Add(user);
-                return await db.SaveChangesAsync();
+                return db.SaveChanges();
             }
         }
 
-        public static async Task<User?> ModifyUser(int id, string? vname = null, string? nname = null, string? username = null, string? email = null, string? password = null, int getNewsletter = 0)
+        public static User? ModifyUser(int id, string? vname = null, string? nname = null, string? username = null, string? email = null, string? password = null, int getNewsletter = 0)
         {
-            var user = await GetUserById(id);
+            var user = GetUserById(id);
             if (user != null)
             {
                 user.Vname = vname ?? user.Vname;
@@ -62,12 +48,12 @@ namespace myArchery.Services
                 user.Username = username ?? user.Username;
                 user.Email = email ?? user.Email;
                 user.Password = password ?? user.Password;
-                user.Getnewsletter = getNewsletter;
+                user.Getnewsletter = getNewsletter == 1;
 
                 using (myarcheryContext db = new myarcheryContext())
                 {
                     db.Users.Update(user);
-                    await db.SaveChangesAsync();
+                    db.SaveChanges();
                     return user;
                 }
             }           
@@ -79,12 +65,11 @@ namespace myArchery.Services
         /// </summary>
         /// <param name="id">Id that is coresponding with a user</param>
         /// <returns>Found user or null</returns>
-        public static async Task<User?> GetUserById(int id)
+        private static User? GetUserById(int id)
         {
             using (myarcheryContext db = new myarcheryContext())
             {
-                var tmp = await db.Users.FirstOrDefaultAsync(x => x.UseId == id);
-                return tmp;
+                return db.Users.FirstOrDefault(x => x.UseId == id);
             }
         }
 
@@ -94,11 +79,11 @@ namespace myArchery.Services
         /// <param name="username">username that is bound to a user</param>
         /// <param name="email">email adress that is bound to a user</param>
         /// <returns>true when user does exist. false when user doesnt exist</returns>
-        public static async Task<bool> UserExists(string? username = null, string? email = null)
+        public static bool UserExists(string? username = null, string? email = null)
         {            
             using (myarcheryContext db = new myarcheryContext())
             {
-                var user = await db.Users.FirstOrDefaultAsync(x => x.Username == username || x.Email == email);
+                var user = db.Users.FirstOrDefault(x => x.Username == username || x.Email == email);
                 return user != null;
             }
         }
@@ -109,17 +94,17 @@ namespace myArchery.Services
         /// </summary>
         /// <param name="id">Id that is coresponding with the user in the db</param>
         /// <returns>Amount of affected rows</returns>
-        public static async Task<int> RemoveUserById(int id)
+        public static int RemoveUserById(int id)
         {
-            var user = await GetUserById(id);
+            var user = GetUserById(id);
             if (user != null)
             {
-                await ModifyUser(id, username: "//del//" + user.Username);
+                ModifyUser(id, username: "//del//" + user.Username);
                 
                 using (myarcheryContext db = new myarcheryContext())
                 {
                     db.Users.Update(user);
-                    return await db.SaveChangesAsync();
+                    return db.SaveChanges();
                 }
             }
 

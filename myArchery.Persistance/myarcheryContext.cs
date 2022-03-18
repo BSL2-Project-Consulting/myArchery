@@ -32,9 +32,7 @@ namespace myArchery.Persistance
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySql("server=localhost;database=myarchery;user=root;password=test1234", ServerVersion.Parse("10.4.22-mariadb"))
-                                .EnableDetailedErrors()
-                                .EnableSensitiveDataLogging();
+                optionsBuilder.UseMySql("server=localhost;database=myarchery;user=root;password=test1234", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.4.22-mariadb"));
             }
         }
 
@@ -50,23 +48,21 @@ namespace myArchery.Persistance
 
                 entity.ToTable("arrow");
 
-                entity.HasIndex(e => e.EvusroId, "fk_arrow_event_user_roles1_idx");
+                entity.HasIndex(e => e.EveId, "fk_arrow_event1_idx");
 
                 entity.HasIndex(e => e.PataId, "fk_arrow_parcours_target1_idx");
 
                 entity.HasIndex(e => e.PoiId, "fk_arrow_points1_idx");
 
+                entity.HasIndex(e => e.UseId, "fk_arrow_user1_idx");
+
                 entity.Property(e => e.ArrId)
                     .HasColumnType("int(11)")
                     .HasColumnName("arr_id");
 
-                entity.Property(e => e.EvusroId)
+                entity.Property(e => e.EveId)
                     .HasColumnType("int(11)")
-                    .HasColumnName("evusro_id");
-
-                entity.Property(e => e.Hitdatetime)
-                    .HasColumnType("datetime")
-                    .HasColumnName("hitdatetime");
+                    .HasColumnName("eve_id");
 
                 entity.Property(e => e.PataId)
                     .HasColumnType("int(11)")
@@ -76,11 +72,15 @@ namespace myArchery.Persistance
                     .HasColumnType("int(11)")
                     .HasColumnName("poi_id");
 
-                entity.HasOne(d => d.Evusro)
+                entity.Property(e => e.UseId)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("use_id");
+
+                entity.HasOne(d => d.Eve)
                     .WithMany(p => p.Arrows)
-                    .HasForeignKey(d => d.EvusroId)
+                    .HasForeignKey(d => d.EveId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_arrow_event_user_roles1");
+                    .HasConstraintName("fk_arrow_event1");
 
                 entity.HasOne(d => d.Pata)
                     .WithMany(p => p.Arrows)
@@ -93,6 +93,12 @@ namespace myArchery.Persistance
                     .HasForeignKey(d => d.PoiId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_arrow_points1");
+
+                entity.HasOne(d => d.Use)
+                    .WithMany(p => p.Arrows)
+                    .HasForeignKey(d => d.UseId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_arrow_user1");
             });
 
             modelBuilder.Entity<Event>(entity =>
@@ -108,21 +114,17 @@ namespace myArchery.Persistance
                     .HasColumnType("int(11)")
                     .HasColumnName("eve_id");
 
-                entity.Property(e => e.Arrowamount)
-                    .HasColumnType("int(11)")
-                    .HasColumnName("arrowamount");
-
                 entity.Property(e => e.Enddate)
                     .HasColumnType("datetime")
                     .HasColumnName("enddate");
 
-                entity.Property(e => e.Eventname)
-                    .HasMaxLength(45)
-                    .HasColumnName("eventname");
-
                 entity.Property(e => e.Isprivat)
                     .HasColumnType("tinyint(4)")
                     .HasColumnName("isprivat");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(45)
+                    .HasColumnName("name");
 
                 entity.Property(e => e.ParId)
                     .HasColumnType("int(11)")
@@ -206,9 +208,9 @@ namespace myArchery.Persistance
                     .HasColumnType("int(11)")
                     .HasColumnName("counttargets");
 
-                entity.Property(e => e.Parcourname)
+                entity.Property(e => e.Name)
                     .HasMaxLength(45)
-                    .HasColumnName("parcourname");
+                    .HasColumnName("name");
 
                 entity.Property(e => e.Postalcode)
                     .HasColumnType("int(11)")
@@ -230,31 +232,31 @@ namespace myArchery.Persistance
 
                 entity.ToTable("parcours_target");
 
-                entity.HasIndex(e => e.ParId, "fk_parcours_has_target_parcours1_idx");
+                entity.HasIndex(e => e.ParcoursParId, "fk_parcours_has_target_parcours1_idx");
 
-                entity.HasIndex(e => e.TarId, "fk_parcours_has_target_target1_idx");
+                entity.HasIndex(e => e.TargetTarId, "fk_parcours_has_target_target1_idx");
 
                 entity.Property(e => e.PataId)
                     .HasColumnType("int(11)")
                     .HasColumnName("pata_id");
 
-                entity.Property(e => e.ParId)
+                entity.Property(e => e.ParcoursParId)
                     .HasColumnType("int(11)")
-                    .HasColumnName("par_id");
+                    .HasColumnName("parcours_par_id");
 
-                entity.Property(e => e.TarId)
+                entity.Property(e => e.TargetTarId)
                     .HasColumnType("int(11)")
-                    .HasColumnName("tar_id");
+                    .HasColumnName("target_tar_id");
 
-                entity.HasOne(d => d.Par)
+                entity.HasOne(d => d.ParcoursPar)
                     .WithMany(p => p.ParcoursTargets)
-                    .HasForeignKey(d => d.ParId)
+                    .HasForeignKey(d => d.ParcoursParId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_parcours_has_target_parcours1");
 
-                entity.HasOne(d => d.Tar)
+                entity.HasOne(d => d.TargetTar)
                     .WithMany(p => p.ParcoursTargets)
-                    .HasForeignKey(d => d.TarId)
+                    .HasForeignKey(d => d.TargetTarId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_parcours_has_target_target1");
             });
@@ -277,7 +279,7 @@ namespace myArchery.Persistance
                     .HasColumnName("fromdate");
 
                 entity.Property(e => e.IsActive)
-                    .HasColumnType("int(11)")
+                    .HasColumnType("tinyint(4)")
                     .HasColumnName("is_active");
 
                 entity.Property(e => e.Password)
@@ -295,7 +297,6 @@ namespace myArchery.Persistance
                 entity.HasOne(d => d.Use)
                     .WithMany(p => p.PasswordHistories)
                     .HasForeignKey(d => d.UseId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_password_history_user");
             });
 
@@ -342,9 +343,9 @@ namespace myArchery.Persistance
                     .HasColumnType("int(11)")
                     .HasColumnName("rol_id");
 
-                entity.Property(e => e.Rolename)
+                entity.Property(e => e.Name)
                     .HasMaxLength(45)
-                    .HasColumnName("rolename");
+                    .HasColumnName("name");
             });
 
             modelBuilder.Entity<Target>(entity =>
@@ -379,11 +380,11 @@ namespace myArchery.Persistance
                     .HasColumnName("email");
 
                 entity.Property(e => e.Getnewsletter)
-                    .HasColumnType("int(11)")
+                    .HasColumnType("tinyint(4)")
                     .HasColumnName("getnewsletter");
 
                 entity.Property(e => e.Isactive)
-                    .HasColumnType("int(11)")
+                    .HasColumnType("tinyint(4)")
                     .HasColumnName("isactive")
                     .HasDefaultValueSql("'1'");
 

@@ -7,13 +7,13 @@ namespace myArchery.Persistance.Models
     {
         public Event()
         {
+            Arrows = new HashSet<Arrow>();
             EventUserRoles = new HashSet<EventUserRole>();
             Points = new HashSet<Point>();
         }
 
         public int EveId { get; set; }
-        public string Eventname { get; set; } = null!;
-        public int Arrowamount { get; set; }
+        public string Name { get; set; } = null!;
         public DateTime Startdate { get; set; }
         public DateTime Enddate { get; set; }
         public sbyte Isprivat { get; set; }
@@ -21,6 +21,7 @@ namespace myArchery.Persistance.Models
         public int ParId { get; set; }
 
         public virtual Parcour Par { get; set; } = null!;
+        public virtual ICollection<Arrow> Arrows { get; set; }
         public virtual ICollection<EventUserRole> EventUserRoles { get; set; }
         public virtual ICollection<Point> Points { get; set; }
     }

@@ -1,9 +1,6 @@
-using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using myArchery.Persistance;
-using myArchery.Persistance.Models;
-using myArchery.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -43,5 +40,3 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.Run();
-
-//Utility.GenerateDummyValues();

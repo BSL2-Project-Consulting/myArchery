@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using myArchery.Services;
 
 namespace myArchery.Pages
 {
@@ -15,7 +14,7 @@ namespace myArchery.Pages
 
         public void OnGet()
         {
-            Utility.SendEmail("myarchery.bslinz2@gmail.com", "Pichler du bist toll :)");
+            
         }
 
         public void Test()

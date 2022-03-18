@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using myArchery.Persistance;
-
-using myArchery.Persistance.Models;
-
 using myArchery.Services;
 
 namespace myArchery.Controllers
@@ -21,19 +18,9 @@ namespace myArchery.Controllers
             return View();
         }
 
-        public IActionResult Forgot_Password()
+        public IActionResult Login()
         {
-            Console.WriteLine("Forgot Password");
-
-            return RedirectToPage("./Index");
-        }
-
-        public async Task<IActionResult> Register()
-        {
-            Console.WriteLine("Register");
             // get all inputs
-            
-
 
             // check if user exists with given properties
 
@@ -42,21 +29,21 @@ namespace myArchery.Controllers
             string username = "";
             string email = "";
             string password = "";
-            int getNewsletter = 0;
+            bool getNewsletter = false;
 
-            if (await UserService.UserExists(username, email))
+            if (UserService.UserExists(username, email))
             {
                 //User does exist
-                return View("Login");
+                return RedirectToAction("Index");
             }
             else
             {
                 //User doesn't exist in the db
 
-                await UserService.AddUser(vname, nname, username, email, password.ConvertToSha256(), getNewsletter);
+                UserService.AddUser(vname, nname, username, email, password.ConvertToSha256(), getNewsletter);
                 ViewBag.Username = username;
 
-                return View("Index");
+                return View();
             }
         }
     }
