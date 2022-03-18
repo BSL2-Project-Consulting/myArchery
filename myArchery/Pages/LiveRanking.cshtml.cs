@@ -6,9 +6,7 @@ namespace myArchery.Pages
     public class LiveRankingModel : PageModel
     {
         public void OnGet()
-        { }
-        
-            
+        {
+        }
     }
-    
 }

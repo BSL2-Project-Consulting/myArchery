@@ -6,7 +6,7 @@
         {
             Parcour parcour = new Parcour
             {
-                Name = name,
+                Parcourname = name,
                 StreetHousenumber = adress,
                 Postalcode = postalCode,
                 Town = town,
@@ -26,7 +26,7 @@
         {
             var parcour = GetParcourById(par_id);
 
-            parcour.Name = name ?? parcour.Name;
+            parcour.Parcourname = name ?? parcour.Parcourname;
             parcour.StreetHousenumber = adress ?? parcour.StreetHousenumber;
             if (postalCode != 0)
             {

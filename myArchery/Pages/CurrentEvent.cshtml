@@ -43,13 +43,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="assets/js/archery.js"></script>
-
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="~/assets/css/CurrentEvent.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-
-
-
 </head>
 
 <body>
@@ -57,16 +50,16 @@
     <!-- ========= Header =========== -->
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
-            <h1 class="logo">ARCHERY<a href="../html/index.html" class="logo"><img
+            <h1 class="logo">ARCHERY<a href="Index" class="logo"><img
                         src="assets/img/logo/firmen_logo.jfif" alt="" class="img-fluid"></a></h1>
             <nav id="navbar" class="navbar navbar-expand-lg ">
                 <ul>
                     <li><a class="nav-link scrollto active" href="#">Home</a></li>
                     <li><a class="nav-link scrollto" href="#">About</a></li>
-                    <li><a class="nav-link scrollto" href="#">All Events</a></li>
-                    <li><a class="nav-link scrollto" href="../html/archery-eventCreate.html">Create Events</a></li>
-                    <li><a class="nav-link srollto" href="../html/archery-event.html">Current Event</a></li>
-                    <li><a class="nav-link scrollto" href="../html/liveranking.html">Live Ranking</a></li>
+                    <li><a class="nav-link scrollto" href="AllEvents">All Events</a></li>
+                    <li><a class="nav-link scrollto" href="CreateEvent">Create Events</a></li>
+                    <li><a class="nav-link srollto" href="CurrentEvent">Current Event</a></li>
+                    <li><a class="nav-link scrollto" href="LiveRanking">Live Ranking</a></li>
                     <div class="navbar-nav" style="padding-left: 1rem;">
                         <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle ">Login</a>
                         <div class="dropdown-menu login-form">
@@ -78,7 +71,7 @@
                                 <div class="form-group">
                                     <div class="clearfix">
                                         <label>Password</label>
-                                        <a href="../src/assets/php/ResetPasswordPage.php"
+                                        <a href="resetPassword"
                                             class="float-right text-muted"><small>Forgot?</small></a>
                                     </div>
                                     <input type="password" name="password" class="form-control" required="required">
@@ -139,34 +132,6 @@
             <span>Save</span>
         </button>
     </section>
-
-
-
-        <h1>Charts, Charts, Charts</h1>
-    <div class="container">
-        <div class="row">
-            <div class="col-6 chart">
-                <canvas id="myChart" width="500" height="400"></canvas>
-            </div>
-            <div class="col-6 chart">
-                <canvas id="myChart2" width="500" height="400"></canvas>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6 chart">
-                <canvas id="myChart3" width="500" height="400"></canvas>
-            </div>
-            <div class="col-6 chart">
-                <canvas id="myChart4" width="500" height="400"></canvas>
-            </div>
-        </div>
-    </div>
-    <script src="~/assets/js/CurrentEvent.js"></script>
-
-
-
-
-
 
 </body>
 
