@@ -10,5 +10,6 @@ namespace myArchery.Services.TmpClasses
     {
         public int Id { get; set; }
         public string? Eventname { get; set; }
+        public DateTime Date { get; set; }
     }
 }

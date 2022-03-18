@@ -24,11 +24,11 @@ namespace myArchery.Services
             }
         }
 
-        public static List<Event> GetAllPublicEvents()
+        public static Event GetAllPublicEvents()
         {
             using (myarcheryContext db = new myarcheryContext())
             {
-                return db.Events.Where(x => x.Isprivat == 0 && x.Password != null).ToList();
+                return db.Events.First(x => x.EveId == 1);
             }
         }
 
@@ -88,14 +88,13 @@ namespace myArchery.Services
                           join events in db.Events on eventRoles.EveId equals events.EveId
                           into result1
                           from finalResult in result1
-                          where finalResult.Startdate < DateTime.UtcNow
-                          where finalResult.Enddate > DateTime.UtcNow
+                          where finalResult.Startdate < DateTime.Now
                           select new EventWithId
                           {
                               Eventname = finalResult.Eventname,
-                              Id = finalResult.EveId
+                              Id = finalResult.EveId,
+                              Date = finalResult.Startdate
                           };
-
                 return res.ToList();                
             }
         }

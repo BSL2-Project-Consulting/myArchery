@@ -19,18 +19,6 @@ namespace myArchery.Pages
         {
             Console.WriteLine("All users in the DB:");
         }
-        private readonly myarcheryContext _context;
-
-        public LoginModel(myarcheryContext context)
-        {
-            Console.WriteLine("All users in the DB:");
-            _context = context;
-
-            foreach (var item in UserService.GetAllUsers())
-            {
-                Console.WriteLine(item.Username);
-            }
-        }
 
         public IActionResult OnGet()
         {
@@ -114,7 +102,7 @@ namespace myArchery.Pages
 
                     await UserService.AddUser(User.Vname, User.Nname, User.Username, User.Email, User.Password.ConvertToSha256(), tmpNewsletter);
                     Console.WriteLine($"Added {User.Username} to db.");
-                    await _context.SaveChangesAsync();
+                    
 
                     using (myarcheryContext db = new myarcheryContext())
                     {
