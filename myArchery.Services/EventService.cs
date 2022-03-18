@@ -92,8 +92,7 @@ namespace myArchery.Services
                           select new EventWithId
                           {
                               Eventname = finalResult.Eventname,
-                              Id = finalResult.EveId,
-                              Date = finalResult.Startdate
+                              Id = finalResult.EveId
                           };
                 return res.ToList();                
             }
@@ -219,14 +218,22 @@ namespace myArchery.Services
                           into result1
                           from finalResult in result1
                           orderby user.Username
-                          orderby eve.Eventname
+                          orderby eve.Eventname                          
                           select new UsersWithPoints
                           {
                               Username = user.Username,
                               Points = arrow.Poi.Value,
                           };
 
-                return res.ToList();
+                var res1 = from users in res
+                           group users by users.Username into result2
+                           select new UsersWithPoints
+                           {
+                               Username = result2.Key,
+                               Points = result2.Sum(x => x.Points)
+                           };
+
+                return res1.OrderByDescending(x => x.Points).ToList();
                           
             }
 		}
