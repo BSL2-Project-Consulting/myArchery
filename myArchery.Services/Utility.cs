@@ -34,21 +34,24 @@ namespace myArchery.Services
             return hashedPW;
         }
 
-        public static bool SendEmail(string email, string message)
-        {
-            MailMessage message1 = new MailMessage();
-            SmtpClient smtp = new SmtpClient();
-            message1.From = new MailAddress("myarchery.bslinz2@gmail.com");
-            message1.To.Add(new MailAddress(email));
-            message1.Subject = "Test";
-            message1.IsBodyHtml = false; //to make message body as html  
-            message1.Body = message;
+        public static bool SendEmail(string email, string subject, string message)
+        {            
+            SmtpClient smtp = new();
+            MailMessage message1 = new MailMessage
+            {
+                From = new MailAddress("myarchery.bslinz2@gmail.com"),            
+                Subject = subject,
+                IsBodyHtml = false, //to make message body as html  
+                Body = message
+
+            };
             smtp.Port = 587;
             smtp.Host = "smtp.gmail.com"; //for gmail host  
             smtp.EnableSsl = true;
             smtp.UseDefaultCredentials = false;
             smtp.Credentials = new NetworkCredential("myarchery.bslinz2@gmail.com", "bs-linz2-myarchery");
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            message1.To.Add(new MailAddress(email));
             smtp.Send(message1);
 
             Console.WriteLine("---- Email sent");
