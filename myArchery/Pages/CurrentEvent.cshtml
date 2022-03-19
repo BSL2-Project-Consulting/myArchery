@@ -1,11 +1,10 @@
 ﻿@page
+@using myArchery.Services
 @model myArchery.Pages.CurrentEventModel
 
 
 
-@{
-ViewData["Title"] = "CurrentEvent";
-}
+
 
 
 
@@ -189,6 +188,15 @@ hier abgebildet werden können
 
 
 <h1>Charts, Charts, Charts</h1>
+
+<div id="btnWrapper">
+  <button id="btnCanvas1"  onclick="toggle_visibility('btnCanvas1', 'myChart')">Hide My Chart </button>
+  <button id="btnCanvas2"  onclick="toggle_visibility('btnCanvas2', 'myChart2')">Hide My Chart 2 </button>
+  <button id="btnCanvas3"  onclick="toggle_visibility('btnCanvas3', 'myChart3')">Hide My Chart 3</button>
+  <button id="btnCanvas4" onclick="toggle_visibility('btnCanvas4', 'myChart4')">Hide My Chart 4</button>
+</div>
+
+
 <div class="container">
 <div class="row">
 <div class="col-6 chart">
@@ -221,3 +229,4 @@ hier abgebildet werden können
 
 
 </html>
+

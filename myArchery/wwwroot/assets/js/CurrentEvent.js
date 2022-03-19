@@ -48,7 +48,7 @@ let chart2 = new Chart(myChart2, {
 });
 
 
-let labels3 = ['Attack', 'Defense', 'Passing', 'Tackle', 'Speed'];
+let labels3 = ['Defense', 'Passing', 'Tackle', 'Speed'];
 let myChart3 = document.getElementById("myChart3").getContext('2d');
 
 let chart3 = new Chart(myChart3, {
@@ -63,7 +63,7 @@ let chart3 = new Chart(myChart3, {
                 borderColor: "rgba(179, 181, 198, 1)",
                 pointBorderColor: "#fff",
                 pointBackgroundColor: "rgba(179, 181, 198, 1)",
-                data: [50, 12, 55, 7, 29]
+                data:  [52, 55, 7, 29]
             },
             {
                 label: 'Ronaldo',
@@ -72,7 +72,7 @@ let chart3 = new Chart(myChart3, {
                 borderColor: "rgba(255, 99, 132, 1)",
                 pointBorderColor: "#fff",
                 pointBackgroundColor: "rgba(255, 99, 132, 1)",
-                data: [51, 10, 32, 20, 44]
+                data: [ 50, 32, 20, 44]
             }
         ]
     },
@@ -106,3 +106,17 @@ let chart4 = new Chart(myChart4, {
         }
     }
 });
+function toggle_visibility(buttonId, dotId) {
+
+
+    var button = document.getElementById(buttonId)
+    var dot = document.getElementById(dotId);
+
+    if (dot.style.visibility == 'hidden') {
+        dot.style.visibility = 'visible';
+        button.style.color = buttonIdToColor[buttonId];
+    } else {
+        dot.style.visibility = 'hidden';
+        button.style.color = 'black';
+    }
+}
