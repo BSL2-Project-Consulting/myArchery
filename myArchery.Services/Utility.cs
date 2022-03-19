@@ -1,38 +1,19 @@
-﻿using System;
+﻿using myArchery.Services.TmpClasses;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace myArchery.Services
 {
     public static class Utility
     {
-        public static void GenerateDummyValues()
-        {
-            GenerateDummyUser();
-            GenerateDummyEvent();
-        }
-
-        private static void GenerateDummyUser()
-        {
-            if (!UserService.UserExists(username: "admin"))
-            {
-                UserService.AddUser("admin", "admin", "admin", "admin@myarchery.com", "admin".ConvertToSha256(), false);
-            }
-        }
-
-        private static void GenerateDummyEvent()
-        {
-            throw new NotImplementedException();
-        }
-
-        private static void GenerateRoles()
-        {
-            throw new NotImplementedException();
-        }
-
         public static string ConvertToSha256(this string pw)
         {
             string hashedPW = pw;
@@ -53,8 +34,36 @@ namespace myArchery.Services
             }
 
             return hashedPW;
+        }
 
-            
+        public static bool SendEmail(string email, string subject, string message)
+        {            
+            SmtpClient smtp = new();
+            MailMessage message1 = new MailMessage
+            {
+                From = new MailAddress("myarchery.bslinz2@gmail.com"),            
+                Subject = subject,
+                IsBodyHtml = false, //to make message body as html  
+                Body = message
+
+            };
+            smtp.Port = 587;
+            smtp.Host = "smtp.gmail.com"; //for gmail host  
+            smtp.EnableSsl = true;
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = new NetworkCredential("myarchery.bslinz2@gmail.com", "bs-linz2-myarchery");
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            message1.To.Add(new MailAddress(email));
+            smtp.Send(message1);
+
+            Console.WriteLine("---- Email sent");
+
+            return true;
+        }
+
+        public static string GetUserWithPointsAsJson(List<UsersWithPoints> users)
+        {
+            return JsonSerializer.Serialize(users);
         }
     }
 }

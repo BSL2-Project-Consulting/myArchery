@@ -32,7 +32,9 @@ namespace myArchery.Persistance
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySql("server=localhost;database=myarchery;user=root;password=test1234", ServerVersion.Parse("10.4.22-mariadb"));
+                optionsBuilder.UseMySql("server=localhost;database=myarchery;user=root;password=daniel2002", ServerVersion.Parse("10.4.22-mariadb"))
+                                .EnableDetailedErrors()
+                                .EnableSensitiveDataLogging();
             }
         }
 
