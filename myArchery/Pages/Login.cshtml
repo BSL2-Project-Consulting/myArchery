@@ -110,7 +110,7 @@
                 <a class="btn" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif" href="resetPassword">Forget Password</a>
                 <br>
                 <input type="checkbox" class="check-box"><span>Remember Password</span>
-                <button type="submit" class="submit-btn" asp-action="LoginAsync()" >Login</button>
+                <button type="submit" class="submit-btn" asp-action="@Model.OnPostLoginAsync()" >Login</button>
             </form>
             <form id="register" class="input-group" method="post">
                 <input type="text" asp-for="RegisterUser.Vname" name="vname" class="input-field" placeholder="Enter First Name" required>
@@ -119,7 +119,7 @@
                 <input type="text" asp-for="RegisterUser.Username" name="username" class="input-field" placeholder="Enter Username" required>
                 <input type="password" asp-for="RegisterUser.Password" name="password" class="input-field" placeholder="Enter Password" required>
                 <input type="checkbox" asp-for="GetNewsletterChecked" class="check-box"><span style="color: white !important;">I want to get Notified for Updates and offers</span>
-                <button type="submit" class="submit-btn"  asp-action="RegisterAsync()">Register</button>
+                <button type="submit" class="submit-btn"  asp-action="@Model.OnPostRegisterAsync()">Register</button>
             </form>
         </div>
     </div>
