@@ -34,6 +34,11 @@ namespace myArchery.Services
         ORDER BY u.username, a.hitdatetime;
         */
 
+        /// <summary>
+        /// Gets all Arrows shot in an Event by given id
+        /// </summary>
+        /// <param name="eve_id">Event id that is coresponding with the given id</param>
+        /// <returns>List of Arrows with additional Info</returns>
         public static List<ArrowWithInfo> GetArrowInfo(int eve_id)
         {
             using (myarcheryContext db = new myarcheryContext())

@@ -15,7 +15,7 @@ namespace myArchery.Pages
 
         public void OnGet()
         {
-            Utility.SendEmail("myarchery.bslinz2@gmail.com", "you is toll :)", "Pichler du bist toll :)");
+           
         }
 
         public void Test()
