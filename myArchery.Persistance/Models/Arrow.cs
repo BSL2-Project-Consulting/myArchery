@@ -5,6 +5,7 @@ namespace myArchery.Persistance.Models
 {
     public partial class Arrow
     {
+        [Key]
         public int ArrId { get; set; }
         public int PoiId { get; set; }
         public int PataId { get; set; }

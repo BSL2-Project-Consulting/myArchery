@@ -5,6 +5,7 @@ namespace myArchery.Persistance.Models
 {
     public partial class PasswordHistory
     {
+        [Key]
         public int PhyId { get; set; }
         public string Password { get; set; } = null!;
         public DateTime Fromdate { get; set; }

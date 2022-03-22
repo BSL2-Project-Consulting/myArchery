@@ -11,6 +11,7 @@ namespace myArchery.Persistance.Models
             Points = new HashSet<Point>();
         }
 
+        [Key]
         public int EveId { get; set; }
         public string Eventname { get; set; } = null!;
         public int Arrowamount { get; set; }

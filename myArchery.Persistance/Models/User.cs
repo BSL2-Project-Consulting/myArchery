@@ -11,7 +11,7 @@ namespace myArchery.Persistance.Models
             EventUserRoles = new HashSet<EventUserRole>();
             PasswordHistories = new HashSet<PasswordHistory>();
         }
-
+        [Key]
         public int UseId { get; set; }
         public string Username { get; set; } = null!;
         /// <summary>
