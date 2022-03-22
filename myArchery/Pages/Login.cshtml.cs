@@ -22,7 +22,6 @@ namespace myArchery.Pages
 
         [BindProperty]
         public User LoginUser { get; set; } = new User();
-        public new User User { get; set; } = new User();
 
         [BindProperty]
         public bool GetNewsletterChecked { get; set; }
@@ -50,46 +49,17 @@ namespace myArchery.Pages
         public async Task<IActionResult> OnPostLoginAsync()
         {
             Console.WriteLine("---- Login Method");
-            Console.WriteLine($"Username Cookie is: {Request.Cookies["Username"]}");
-            if (LoginUser.Username == "" || LoginUser.Password == "" || LoginUser.Password == null || LoginUser.Username == null)
-            {
-                Console.WriteLine("Password or User Incorrect");
-            }
-
-            var tmpUser = UserService.GetUserByName(LoginUser.Username);
-            if (tmpUser == null)
+            Console.WriteLine($"Logged in User is: {User.Identity.Name}");
+            if (LoginUser.Username == string.Empty || LoginUser.Password == string.Empty || LoginUser.Password == null || LoginUser.Username == null)
             {
                 Console.WriteLine("Password or User Incorrect");
                 return Page();
             }
-            else if (tmpUser.Password != LoginUser.Password.ConvertToSha256())
-            {
-                Response.WriteAsync("Password incorrect").GetAwaiter().GetResult();
-                return Page();
-            }
-            else
-            {
-                if (RememberMe == true)
-                {
-                    Response.Cookies.Delete("Username");
-                    Response.Cookies.Append("Username", LoginUser.Username, new CookieOptions { Expires = DateTime.MaxValue });
 
-                    Console.WriteLine("Request Cookie:" + Request.Cookies["Username"]);
-
-                }
-                else
-                {
-                    Response.Cookies.Delete("Username");
-                    Response.Cookies.Append("Username", LoginUser.Username, new CookieOptions { Expires = DateTime.Now.AddDays(-1) });
-
-                    Console.WriteLine("Request Cookie:" + Request.Cookies["Username"]);
-                }
-
-                Console.WriteLine("---- Logged in as: " + LoginUser.Username);
-                Console.WriteLine("---- Redirect in Progress");
-                return RedirectToPage("Index");
-                //return RedirectToAction(actionName: "Index", controllerName: "Home/Index");
-            }
+            var result = await SignInManager.PasswordSignInAsync(LoginUser.UserName, LoginUser.Password, RememberMe, lockoutOnFailure: false);
+            return RedirectToPage("Index");
+            //return RedirectToAction(actionName: "Index", controllerName: "Home/Index");
+            
         }
 
         //public IActionResult OnPostRegisterAsync()
@@ -133,10 +103,11 @@ namespace myArchery.Pages
 
         public async Task<IActionResult> OnPostRegisterAsync()
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && RegisterUser.Password != String.Empty && RegisterUser.Password != null)
             {
-                var user = new User()
+                var user = new myArchery.Persistance.Models.User()
                 {
+<<<<<<< Updated upstream
                     UserName = LoginUser.Username,
                     Vname = LoginUser.Vname,
                     Nname = LoginUser.Nname,
@@ -153,6 +124,40 @@ namespace myArchery.Pages
                 else
                 {
                     ModelState.AddModelError("", result.Exception.Message);
+=======
+                    UserName = RegisterUser.Username,
+                    Vname = RegisterUser.Vname,
+                    Nname = RegisterUser.Nname,
+                    Email = RegisterUser.Email,
+                    Password = RegisterUser.Password,                    
+                    PasswordHash = RegisterUser.Password.ConvertToSha256(),
+                    Username = RegisterUser.Username,
+                    Getnewsletter = RegisterUser.Getnewsletter,
+                    Isactive = 1
+                };
+
+                if (!await UserService.UserExists(username: RegisterUser.Username, email: RegisterUser.Email))
+                {
+                    var result = UserManager.CreateAsync(user, RegisterUser.Password.ConvertToSha256());
+                    if (result.IsCompletedSuccessfully)
+                    {
+                        Console.WriteLine("User created Successfully");
+                        await UserService.AddUser(RegisterUser.Vname, RegisterUser.Nname, RegisterUser.Username, RegisterUser.Email, RegisterUser.Password.ConvertToSha256(), Convert.ToInt32(GetNewsletterChecked));
+                        await SignInManager.SignInAsync(user, RememberMe);
+
+                        Console.WriteLine(SignInManager);
+                        return RedirectToPage("./Index");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", result.Exception.Message);
+                    }
+                }
+                else
+                {
+                    // User already exists in DB
+                    Console.WriteLine($"{RegisterUser.UserName} already exists in the DB");
+>>>>>>> Stashed changes
                 }
 
             }

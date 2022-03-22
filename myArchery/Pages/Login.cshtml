@@ -1,8 +1,15 @@
 ﻿@page
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
 @using myArchery.Controllers
 @model myArchery.Pages.LoginModel
 @{
+<<<<<<< Updated upstream
     
+=======
+    ViewData["Title"] = User.Identity?.Name;
+>>>>>>> Stashed changes
 }
 
     <!--
@@ -60,7 +67,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< Updated upstream
     <title>Login Form</title>
+=======
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <title>Hy @User.Identity?.Name</title>
+    }
+    else
+    {
+        <title>Register / Login</title>
+    }
+>>>>>>> Stashed changes
     <link rel="stylesheet" href="assets/css/archery-loginForm.css">
     <link rel="stylesheet" href="~/assets/css/site.css" />
     <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -119,7 +137,11 @@
                 <input type="text" asp-for="RegisterUser.Username" name="username" class="input-field" placeholder="Enter Username" required>
                 <input type="password" asp-for="RegisterUser.Password" name="password" class="input-field" placeholder="Enter Password" required>
                 <input type="checkbox" asp-for="GetNewsletterChecked" class="check-box"><span style="color: white !important;">I want to get Notified for Updates and offers</span>
+<<<<<<< Updated upstream
                 <button type="submit" class="submit-btn"  asp-action="@Model.OnPostRegisterAsync()">Register</button>
+=======
+                <button type="submit" class="submit-btn"  asp-action="@await Model.OnPostRegisterAsync()">Register</button>
+>>>>>>> Stashed changes
             </form>
         </div>
     </div>
