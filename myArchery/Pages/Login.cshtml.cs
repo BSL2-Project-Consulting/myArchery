@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 using Microsoft.AspNetCore.Identity;
@@ -43,7 +44,7 @@ namespace myArchery.Pages
 
         public IActionResult OnGet()
         {
-            Console.WriteLine($"Username Cookie is: {Request.Cookies["Username"]}");
+            //Console.WriteLine(username + " is logged in.");
             return Page();
         }
 
@@ -130,7 +131,7 @@ namespace myArchery.Pages
         //    }
         //    return RedirectToPage("Index");
         //}
-
+                
         public async Task<IActionResult> OnPostRegisterAsync()
         {
             if (ModelState.IsValid)
@@ -141,7 +142,7 @@ namespace myArchery.Pages
                     Vname = LoginUser.Vname,
                     Nname = LoginUser.Nname,
                     Email = LoginUser.Email,
-                    Password = LoginUser.Password,
+                    Password = LoginUser.Password,                    
                     PasswordHash = LoginUser.Password.ConvertToSha256(),
                     Username = LoginUser.Username,
                     Getnewsletter = LoginUser.Getnewsletter
@@ -153,15 +154,26 @@ namespace myArchery.Pages
                     if (result.IsCompletedSuccessfully)
                     {
                         Console.WriteLine("User created Successfully");
-                        UserService.AddUser(User.Vname, User.Nname, User.Username, User.Email, User.Password.ConvertToSha256(), Convert.ToInt32(GetNewsletterChecked)).GetAwaiter().GetResult();
+                        await UserService.AddUser(User.Vname, User.Nname, User.Username, User.Email, User.Password.ConvertToSha256(), Convert.ToInt32(GetNewsletterChecked));
                         await SignInManager.SignInAsync(user, RememberMe);
-                        return RedirectToPage("Index");
+
+                        Console.WriteLine(SignInManager);
+                        return RedirectToPage("../Index");
                     }
                     else
                     {
                         ModelState.AddModelError("", result.Exception.Message);
                     }
                 }
+                else
+                {
+                    // User already exists in DB
+                    Console.WriteLine($"{User.UserName} already exists in the DB");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Modelstate is invalid");
             }
             return Page();
         }

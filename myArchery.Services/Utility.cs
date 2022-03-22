@@ -66,5 +66,6 @@ namespace myArchery.Services
         {
             return JsonSerializer.Serialize(users);
         }
+
     } 
 }
