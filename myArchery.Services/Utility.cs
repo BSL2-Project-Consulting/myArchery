@@ -1,6 +1,7 @@
 ﻿using myArchery.Services.TmpClasses;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Configuration;
 using System.Linq;
 using System.Net;
@@ -65,5 +66,5 @@ namespace myArchery.Services
         {
             return JsonSerializer.Serialize(users);
         }
-    }
+    } 
 }

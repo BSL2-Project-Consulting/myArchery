@@ -140,23 +140,29 @@ namespace myArchery.Pages
                     UserName = LoginUser.Username,
                     Vname = LoginUser.Vname,
                     Nname = LoginUser.Nname,
-                    Email = LoginUser.Email
+                    Email = LoginUser.Email,
+                    Password = LoginUser.Password,
+                    PasswordHash = LoginUser.Password.ConvertToSha256(),
+                    Username = LoginUser.Username,
+                    Getnewsletter = LoginUser.Getnewsletter
                 };
 
-                var result = UserManager.CreateAsync(user, LoginUser.Password.ConvertToSha256());
-                if (result.IsCompletedSuccessfully)
+                if (!UserService.UserExists(username: User.Username, email: User.Email).GetAwaiter().GetResult())
                 {
-                    Console.WriteLine("User created Successfully");
-                    await SignInManager.SignInAsync(user, RememberMe);
-                    return RedirectToPage("Index");
+                    var result = UserManager.CreateAsync(user, LoginUser.Password.ConvertToSha256());
+                    if (result.IsCompletedSuccessfully)
+                    {
+                        Console.WriteLine("User created Successfully");
+                        UserService.AddUser(User.Vname, User.Nname, User.Username, User.Email, User.Password.ConvertToSha256(), Convert.ToInt32(GetNewsletterChecked)).GetAwaiter().GetResult();
+                        await SignInManager.SignInAsync(user, RememberMe);
+                        return RedirectToPage("Index");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", result.Exception.Message);
+                    }
                 }
-                else
-                {
-                    ModelState.AddModelError("", result.Exception.Message);
-                }
-
             }
-
             return Page();
         }
     }

@@ -2,7 +2,7 @@
 @using myArchery.Controllers
 @model myArchery.Pages.LoginModel
 @{
-    
+    ViewData["Title"] = User.Identity.Name;
 }
 
     <!--
@@ -60,7 +60,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
+    <title>@User.Identity.Name</title>
     <link rel="stylesheet" href="assets/css/archery-loginForm.css">
     <link rel="stylesheet" href="~/assets/css/site.css" />
     <script src="https://apis.google.com/js/platform.js" async defer></script>

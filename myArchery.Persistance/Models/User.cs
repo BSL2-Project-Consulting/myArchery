@@ -17,10 +17,11 @@ namespace myArchery.Persistance.Models
         /// <summary>
         /// 64 weil sha265 immer 64 zeichen lang ist 
         /// </summary>
+        
         public string? Password { get; set; }
         public string? Vname { get; set; }
         public string? Nname { get; set; }
-        public override string? Email { get; set; }
+        public string? Email { get; set; }
         public int Isactive { get; set; }
         public int Getnewsletter { get; set; }
 
