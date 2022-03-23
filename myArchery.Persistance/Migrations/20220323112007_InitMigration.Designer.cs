@@ -12,8 +12,8 @@ using myArchery.Persistance;
 namespace myArchery.Persistance.Migrations
 {
     [DbContext(typeof(myarcheryContext))]
-    [Migration("20220322205456_Init")]
-    partial class Init
+    [Migration("20220323112007_InitMigration")]
+    partial class InitMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -326,10 +326,6 @@ namespace myArchery.Persistance.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Username")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Vname")

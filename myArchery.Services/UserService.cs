@@ -28,7 +28,7 @@ namespace myArchery.Services
         {
             using (myarcheryContext db = new myarcheryContext())
             {
-                return db.Users.FirstOrDefault(x => x.Username == name && x.Isactive == 1);
+                return db.Users.FirstOrDefault(x => x.UserName == name && x.Isactive == 1);
             }
         }       
 
@@ -38,7 +38,7 @@ namespace myArchery.Services
             {
                 Vname = vname,
                 Nname = nname,
-                Username = username,
+                UserName = username,
                 Email = email,
                 Password = password,
                 Isactive = 1,
@@ -59,7 +59,7 @@ namespace myArchery.Services
             {
                 user.Vname = vname ?? user.Vname;
                 user.Nname = nname ?? user.Nname;
-                user.Username = username ?? user.Username;
+                user.UserName = username ?? user.UserName;
                 user.Email = email ?? user.Email;
                 user.Password = password ?? user.Password;
                 user.Getnewsletter = getNewsletter;
@@ -98,7 +98,7 @@ namespace myArchery.Services
         {            
             using (myarcheryContext db = new myarcheryContext())
             {
-                var user = await db.Users.FirstOrDefaultAsync(x => x.Username == username || x.Email == email);
+                var user = await db.Users.FirstOrDefaultAsync(x => x.UserName == username || x.Email == email);
                 return user != null;
             }
         }
@@ -114,7 +114,7 @@ namespace myArchery.Services
             var user = await GetUserById(id);
             if (user != null)
             {
-                await ModifyUser(id, username: "//del//" + user.Username);
+                await ModifyUser(id, username: "//del//" + user.UserName);
                 
                 using (myarcheryContext db = new myarcheryContext())
                 {

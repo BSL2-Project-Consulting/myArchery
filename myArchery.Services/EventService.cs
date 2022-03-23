@@ -42,7 +42,7 @@ namespace myArchery.Services
             {
                 var evt = db.Events.FirstOrDefault(x => x.EveId == id && x.Password == password.ConvertToSha256());
 
-                var user = db.Users.FirstOrDefault(x => x.Username == username);
+                var user = db.Users.FirstOrDefault(x => x.UserName == username);
                 if (user != null)
                 {
                     // add user to event as Player
@@ -87,7 +87,7 @@ namespace myArchery.Services
             using (myarcheryContext db = new myarcheryContext())
             {
                 var res = from users in db.Users
-                          where users.Username == username
+                          where users.UserName == username
                           join eventRoles in db.EventUserRoles on users.UseId equals eventRoles.UseId
                           join events in db.Events on eventRoles.EveId equals events.EveId
                           into result1
@@ -112,7 +112,7 @@ namespace myArchery.Services
             using (myarcheryContext db = new myarcheryContext())
             {
                 var res = from users in db.Users
-                          where users.Username == username
+                          where users.UserName == username
                           join eventRoles in db.EventUserRoles on users.UseId equals eventRoles.UseId
                           join events in db.Events on eventRoles.EveId equals events.EveId
                           into result1
@@ -138,7 +138,7 @@ namespace myArchery.Services
             using (myarcheryContext db = new myarcheryContext())
             {
                 var res = from users in db.Users
-                          where users.Username == username
+                          where users.UserName == username
                           join eventRoles in db.EventUserRoles on users.UseId equals eventRoles.UseId
                           join events in db.Events on eventRoles.EveId equals events.EveId
                           into result1
@@ -186,7 +186,7 @@ namespace myArchery.Services
                           select new EventUser
                           {
                               Rolename = finalResult.Rolename,
-                              Username = user.Use.Username,
+                              Username = user.Use.UserName,
                               Eventname = events.Eventname
                           };
 
@@ -221,11 +221,11 @@ namespace myArchery.Services
                           join points in db.Points on arrow.PoiId equals points.PoiId
                           into result1
                           from finalResult in result1
-                          orderby user.Username
+                          orderby user.UserName
                           orderby eve.Eventname                          
                           select new UsersWithPoints
                           {
-                              Username = user.Username,
+                              Username = user.UserName,
                               Points = arrow.Poi.Value,
                           };
 

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace myArchery.Persistance.Migrations
 {
-    public partial class Init : Migration
+    public partial class InitMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -231,19 +231,19 @@ namespace myArchery.Persistance.Migrations
                         column: x => x.EvusroId,
                         principalTable: "EventUserRoles",
                         principalColumn: "EvusroId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Arrows_ParcoursTargets_PataId",
                         column: x => x.PataId,
                         principalTable: "ParcoursTargets",
                         principalColumn: "PataId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Arrows_Points_PoiId",
                         column: x => x.PoiId,
                         principalTable: "Points",
                         principalColumn: "PoiId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateIndex(

@@ -326,10 +326,6 @@ namespace myArchery.Persistance.Migrations
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Username")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Vname")
                         .HasColumnType("nvarchar(max)");
 
