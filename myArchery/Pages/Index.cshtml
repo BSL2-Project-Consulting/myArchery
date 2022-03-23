@@ -1,8 +1,11 @@
 ﻿@page
 @using myArchery.Services;
+
+@inject UserManager<User> UserManager;
+
 @model myArchery.Pages.IndexModel
 @{
-    ViewData["Title"] = "myArchery";
+    ViewData["Title"] = "Startseite - myArchery";
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -10,8 +13,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>Startseite - Archery </title>
+    <title>@ViewData["Title"]</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -56,7 +58,7 @@
                     <li><a class="nav-link scrollto" href="CreateEvent">Create Events</a></li>
                     <li><a class="nav-link scrollto" href="CurrentEvent">Current Event</a></li>
                     <li><a class="nav-link scrollto" href="LiveRanking">LiveRanking</a></li>
-                    <li><a class="nav-link scrollto" href="Login">Login</a></li>
+                    <partial name="_LoginPartial" />
                     <img src="assets/img/icons/login_icon.png"
                         style="max-width: 20px; max-height: 20px; margin-left: 5px; margin-bottom: 1px;">
                 </ul>

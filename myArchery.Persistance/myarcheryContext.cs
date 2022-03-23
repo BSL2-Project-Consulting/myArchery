@@ -46,7 +46,7 @@ namespace myArchery.Persistance
                 //                .EnableDetailedErrors()
                 //                .EnableSensitiveDataLogging();
 
-                optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Test;Trusted_Connection=True;");
             }
         }
 

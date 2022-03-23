@@ -5,6 +5,13 @@ namespace myArchery.Pages
 {
     public class LiveRankingModel : PageModel
     {
+        public UserManager<User> UserManager { get; }
+
+        public LiveRankingModel(UserManager<User> userManager)
+        {
+            UserManager = userManager;
+        }
+
         public void OnGet()
         {
         }

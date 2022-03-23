@@ -18,6 +18,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<myArcheryContext>();
 builder.Services.AddRazorPages();
+builder.Services.AddScoped<myArcheryContext>();
 
 var app = builder.Build();
 

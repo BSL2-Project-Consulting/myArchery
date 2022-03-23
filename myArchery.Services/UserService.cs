@@ -7,7 +7,7 @@ namespace myArchery.Services
 
         public static List<User> GetAllUsers()
         {
-            using (myarcheryContext db = new myarcheryContext())
+            using (myArcheryContext db = new myArcheryContext())
             {
                 return db.Users.ToList();
             }
@@ -15,7 +15,7 @@ namespace myArchery.Services
 
         public static ICollection<User>? GetUsersInEventById(int id)
         {
-            using (myarcheryContext db = new myarcheryContext())
+            using (myArcheryContext db = new myArcheryContext())
             {
 
                 // FUCKING TODO
@@ -26,7 +26,7 @@ namespace myArchery.Services
 
         public static User? GetUserByName(string name)
         {
-            using (myarcheryContext db = new myarcheryContext())
+            using (myArcheryContext db = new myArcheryContext())
             {
                 return db.Users.FirstOrDefault(x => x.UserName == name && x.Isactive == 1);
             }
@@ -45,8 +45,8 @@ namespace myArchery.Services
                 Getnewsletter = getNewsletter
             };
             
-            using (myarcheryContext db = new myarcheryContext())
-            {
+            using (myArcheryContext db = new myArcheryContext())
+            {                
                 db.Users.Add(user);
                 return await db.SaveChangesAsync();
             }
@@ -64,7 +64,7 @@ namespace myArchery.Services
                 user.Password = password ?? user.Password;
                 user.Getnewsletter = getNewsletter;
 
-                using (myarcheryContext db = new myarcheryContext())
+                using (myArcheryContext db = new myArcheryContext())
                 {
                     db.Users.Update(user);
                     await db.SaveChangesAsync();
@@ -81,7 +81,7 @@ namespace myArchery.Services
         /// <returns>Found user or null</returns>
         public static async Task<User?> GetUserById(int id)
         {
-            using (myarcheryContext db = new myarcheryContext())
+            using (myArcheryContext db = new myArcheryContext())
             {
                 var tmp = await db.Users.FirstOrDefaultAsync(x => x.UseId == id);
                 return tmp;
@@ -96,7 +96,7 @@ namespace myArchery.Services
         /// <returns>true when user does exist. false when user doesnt exist</returns>
         public static async Task<bool> UserExists(string? username = null, string? email = null)
         {            
-            using (myarcheryContext db = new myarcheryContext())
+            using (myArcheryContext db = new myArcheryContext())
             {
                 var user = await db.Users.FirstOrDefaultAsync(x => x.UserName == username || x.Email == email);
                 return user != null;
@@ -116,7 +116,7 @@ namespace myArchery.Services
             {
                 await ModifyUser(id, username: "//del//" + user.UserName);
                 
-                using (myarcheryContext db = new myarcheryContext())
+                using (myArcheryContext db = new myArcheryContext())
                 {
                     db.Users.Update(user);
                     return await db.SaveChangesAsync();

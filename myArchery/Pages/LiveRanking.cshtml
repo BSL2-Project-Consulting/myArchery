@@ -1,11 +1,11 @@
 ﻿@page
+@inject UserManager<User> UserManager
+
 @using myArchery.Services
 @using myArchery.Services.TmpClasses
 @model myArchery.Pages.LiveRankingModel
 @{
-	ViewData["Username"] = "User1";
-
-	var eventId = EventService.GetUsersCurrentEventsByUsername("User1");
+	var eventId = EventService.GetUsersCurrentEventsByUsername(User.Identity?.Name);
 
 	var users = EventService.GetUsersWithPointsFromEventById(eventId[0].Id);
 
