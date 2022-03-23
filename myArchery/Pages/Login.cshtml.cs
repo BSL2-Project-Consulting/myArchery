@@ -50,7 +50,7 @@ namespace myArchery.Pages
         {
             Console.WriteLine("---- Login Method");
             Console.WriteLine($"Logged in User is: {User.Identity.Name}");
-            if (LoginUser.Username == string.Empty || LoginUser.Password == string.Empty || LoginUser.Password == null || LoginUser.Username == null)
+            if (LoginUser.UserName == string.Empty || LoginUser.Password == string.Empty || LoginUser.Password == null || LoginUser.UserName == null)
             {
                 Console.WriteLine("Password or User Incorrect");
                 return Page();
@@ -107,42 +107,23 @@ namespace myArchery.Pages
             {
                 var user = new myArchery.Persistance.Models.User()
                 {
-<<<<<<< Updated upstream
-                    UserName = LoginUser.Username,
-                    Vname = LoginUser.Vname,
-                    Nname = LoginUser.Nname,
-                    Email = LoginUser.Email
-                };
-
-                var result = UserManager.CreateAsync(user, LoginUser.Password.ConvertToSha256());
-                if (result.IsCompletedSuccessfully)
-                {
-                    Console.WriteLine("User created Successfully");
-                    await SignInManager.SignInAsync(user, RememberMe);
-                    return RedirectToPage("Index");
-                }
-                else
-                {
-                    ModelState.AddModelError("", result.Exception.Message);
-=======
-                    UserName = RegisterUser.Username,
+                    UserName = RegisterUser.UserName,
                     Vname = RegisterUser.Vname,
                     Nname = RegisterUser.Nname,
                     Email = RegisterUser.Email,
                     Password = RegisterUser.Password,                    
                     PasswordHash = RegisterUser.Password.ConvertToSha256(),
-                    Username = RegisterUser.Username,
                     Getnewsletter = RegisterUser.Getnewsletter,
                     Isactive = 1
                 };
 
-                if (!await UserService.UserExists(username: RegisterUser.Username, email: RegisterUser.Email))
+                if (!await UserService.UserExists(username: RegisterUser.UserName, email: RegisterUser.Email))
                 {
                     var result = UserManager.CreateAsync(user, RegisterUser.Password.ConvertToSha256());
                     if (result.IsCompletedSuccessfully)
                     {
                         Console.WriteLine("User created Successfully");
-                        await UserService.AddUser(RegisterUser.Vname, RegisterUser.Nname, RegisterUser.Username, RegisterUser.Email, RegisterUser.Password.ConvertToSha256(), Convert.ToInt32(GetNewsletterChecked));
+                        await UserService.AddUser(RegisterUser.Vname, RegisterUser.Nname, RegisterUser.UserName, RegisterUser.Email, RegisterUser.Password.ConvertToSha256(), Convert.ToInt32(GetNewsletterChecked));
                         await SignInManager.SignInAsync(user, RememberMe);
 
                         Console.WriteLine(SignInManager);
@@ -157,7 +138,7 @@ namespace myArchery.Pages
                 {
                     // User already exists in DB
                     Console.WriteLine($"{RegisterUser.UserName} already exists in the DB");
->>>>>>> Stashed changes
+
                 }
 
             }

@@ -42,13 +42,11 @@ namespace myArchery.Persistance
         {
             if (!optionsBuilder.IsConfigured)
             {
-<<<<<<< Updated upstream
-                optionsBuilder.UseMySql("server=localhost;database=myarchery;user=root;password=daniel2002", ServerVersion.Parse("10.4.22-mariadb"))
-                                .EnableDetailedErrors()
-                                .EnableSensitiveDataLogging();
-=======
+                //optionsBuilder.UseMySql("server=localhost;database=myarchery;user=root;password=daniel2002", ServerVersion.Parse("10.4.22-mariadb"))
+                //                .EnableDetailedErrors()
+                //                .EnableSensitiveDataLogging();
+
                 optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;");
->>>>>>> Stashed changes
             }
         }
 

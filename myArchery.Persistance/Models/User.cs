@@ -13,7 +13,6 @@ namespace myArchery.Persistance.Models
         }
         [Key]
         public int UseId { get; set; }
-        public string Username { get; set; } = null!;
         /// <summary>
         /// 64 weil sha265 immer 64 zeichen lang ist 
         /// </summary>
