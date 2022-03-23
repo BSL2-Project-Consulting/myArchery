@@ -29,16 +29,16 @@ namespace myArchery.Pages
         [BindProperty]
         public bool RememberMe { get; set; }
         
-        public UserManager<User> UserManager { get; }
+        //public UserManager<User> UserManager { get; }
         
-        public SignInManager<User> SignInManager { get; }
+        //public SignInManager<User> SignInManager { get; }
 
 
-        public LoginModel(UserManager<User> userManager, SignInManager<User> signInManager)
-        {
-            UserManager = userManager;
-            SignInManager = signInManager;
-        }
+        //public LoginModel(UserManager<User> userManager, SignInManager<User> signInManager)
+        //{
+        //    UserManager = userManager;
+        //    SignInManager = signInManager;
+        //}
 
         public IActionResult OnGet()
         {
@@ -56,7 +56,7 @@ namespace myArchery.Pages
                 return Page();
             }
 
-            var result = await SignInManager.PasswordSignInAsync(LoginUser.UserName, LoginUser.Password, RememberMe, lockoutOnFailure: false);
+            //var result = await SignInManager.PasswordSignInAsync(LoginUser.UserName, LoginUser.Password, RememberMe, lockoutOnFailure: false);
             return RedirectToPage("Index");
             //return RedirectToAction(actionName: "Index", controllerName: "Home/Index");
             
@@ -119,20 +119,20 @@ namespace myArchery.Pages
 
                 if (!await UserService.UserExists(username: RegisterUser.UserName, email: RegisterUser.Email))
                 {
-                    var result = UserManager.CreateAsync(user, RegisterUser.Password.ConvertToSha256());
-                    if (result.IsCompletedSuccessfully)
-                    {
-                        Console.WriteLine("User created Successfully");
-                        await UserService.AddUser(RegisterUser.Vname, RegisterUser.Nname, RegisterUser.UserName, RegisterUser.Email, RegisterUser.Password.ConvertToSha256(), Convert.ToInt32(GetNewsletterChecked));
-                        await SignInManager.SignInAsync(user, RememberMe);
+                    //var result = UserManager.CreateAsync(user, RegisterUser.Password.ConvertToSha256());
+                    //if (result.IsCompletedSuccessfully)
+                    //{
+                    //    Console.WriteLine("User created Successfully");
+                    //    await UserService.AddUser(RegisterUser.Vname, RegisterUser.Nname, RegisterUser.UserName, RegisterUser.Email, RegisterUser.Password.ConvertToSha256(), Convert.ToInt32(GetNewsletterChecked));
+                    //    await SignInManager.SignInAsync(user, RememberMe);
 
-                        Console.WriteLine(SignInManager);
-                        return RedirectToPage("./Index");
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("", result.Exception.Message);
-                    }
+                    //    Console.WriteLine(SignInManager);
+                    return RedirectToPage("./Index");
+                    //}
+                    //else
+                    //{
+                    //    ModelState.AddModelError("", result.Exception.Message);
+                    //}
                 }
                 else
                 {

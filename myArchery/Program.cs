@@ -4,16 +4,18 @@ using Microsoft.EntityFrameworkCore;
 using myArchery.Persistance;
 using myArchery.Persistance.Models;
 using myArchery.Services;
+using myArchery.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<myarcheryContext>(options =>
+builder.Services.AddDbContext<myArcheryContext>(options =>
+    options.UseSqlServer(connectionString));builder.Services.AddDbContext<myarcheryContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-// RequireConfirmedAccount == email bestätigung
+// RequireConfirmedAccount == email bestï¿½tigung
 builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<myarcheryContext>();
 builder.Services.AddRazorPages();

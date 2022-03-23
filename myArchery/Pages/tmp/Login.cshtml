@@ -1,6 +1,4 @@
 ﻿@page
-@inject SignInManager<User> SignInManager
-@inject UserManager<User> UserManager
 
 @using myArchery.Controllers
 @model myArchery.Pages.LoginModel
@@ -63,14 +61,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @if (SignInManager.IsSignedIn(User))
-    {
-        <title>Hy @User.Identity?.Name</title>
-    }
-    else
-    {
-        <title>Register / Login</title>
-    }
+    <title>Register / Login</title>
     <link rel="stylesheet" href="assets/css/archery-loginForm.css">
     <link rel="stylesheet" href="~/assets/css/site.css" />
     <script src="https://apis.google.com/js/platform.js" async defer></script>
