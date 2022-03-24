@@ -15,7 +15,7 @@ builder.Services.AddDbContext<myArcheryContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-// RequireConfirmedAccount == email best�tigung
+// RequireConfirmedAccount == email bestätigung
 builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<myArcheryContext>();
 builder.Services.AddRazorPages();
