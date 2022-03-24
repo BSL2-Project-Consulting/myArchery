@@ -5,6 +5,7 @@ using myArchery.Persistance;
 using myArchery.Persistance.Models;
 using myArchery.Services;
 using myArchery.Data;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,8 @@ builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfi
     .AddEntityFrameworkStores<myArcheryContext>();
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<myArcheryContext>();
+
+// Add Emailconfirmation here
 
 var app = builder.Build();
 
