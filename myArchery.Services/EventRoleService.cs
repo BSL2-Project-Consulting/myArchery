@@ -9,7 +9,7 @@
                 
             };
 
-            using (myarcheryContext db = new myarcheryContext())
+            using (ArcheryDbContext db = new ArcheryDbContext())
             {
                 db.EventUserRoles.Add(role);
                 return db.SaveChanges();

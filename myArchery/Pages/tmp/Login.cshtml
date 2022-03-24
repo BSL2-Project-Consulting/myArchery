@@ -121,7 +121,6 @@
                 <input type="password" asp-for="RegisterUser.Password" name="password" class="input-field" placeholder="Enter Password" required>
                 <input type="checkbox" asp-for="GetNewsletterChecked" class="check-box"><span style="color: white !important;">I want to get Notified for Updates and offers</span>
                 <button type="submit" class="submit-btn"  asp-action="@Model.OnPostRegisterAsync()">Register</button>
-                <button type="submit" class="submit-btn"  asp-action="@await Model.OnPostRegisterAsync()">Register</button>
             </form>
         </div>
     </div>

@@ -5,9 +5,19 @@
 @using myArchery.Services.TmpClasses
 @model myArchery.Pages.LiveRankingModel
 @{
-	var eventId = EventService.GetUsersCurrentEventsByUsername(User.Identity?.Name);
+	if (User.Identity == null)
+	{
+		RedirectToPage("/Account/Login");
+	}
 
-	var users = EventService.GetUsersWithPointsFromEventById(eventId[0].Id);
+	var events = EventService.GetUsersCurrentEventsByUsername(User.Identity?.Name);
+
+	if (events.Count == 0)
+	{
+		RedirectToPage("Index");
+	}
+
+	var users = EventService.GetUsersWithPointsFromEventById(events[0].Id);
 
 	var repheight = 400 / 5 * users.Count() + "px";
 

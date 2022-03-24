@@ -1,4 +1,6 @@
-﻿namespace myArchery.Services
+﻿using myArchery.Persistance.Models;
+
+namespace myArchery.Services
 {
     public static class ParcourService
     {
@@ -15,7 +17,7 @@
             
             parcour.Counttargets = parcour.ParcoursTargets.Count;
 
-            using (myarcheryContext db = new myarcheryContext())
+            using (ArcheryDbContext db = new ArcheryDbContext())
             {
                 db.Parcours.Add(parcour);
                 return db.SaveChanges();
@@ -36,7 +38,7 @@
             parcour.ParcoursTargets = targets ?? parcour.ParcoursTargets;
             parcour.Counttargets = parcour.ParcoursTargets.Count();
 
-            using (myarcheryContext db = new myarcheryContext())
+            using (ArcheryDbContext db = new ArcheryDbContext())
             {
                 db.Parcours.Update(parcour);
                 db.SaveChanges();
@@ -52,7 +54,7 @@
         /// <returns>Returns the found Parcour</returns>
         public static Parcour GetParcourById(int par_id)
         {
-            using (myarcheryContext db = new myarcheryContext())
+            using (ArcheryDbContext db = new ArcheryDbContext())
             {
                 return db.Parcours.First(x => x.ParId == par_id);
             }
@@ -60,7 +62,7 @@
 
         public static int RemoveParcourById(int par_id)
         {
-            using (myarcheryContext db = new myarcheryContext())
+            using (ArcheryDbContext db = new ArcheryDbContext())
             {
                 db.Parcours.Remove(GetParcourById(par_id));
                 return db.SaveChanges();

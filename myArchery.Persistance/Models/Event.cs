@@ -17,7 +17,7 @@ namespace myArchery.Persistance.Models
         public int Arrowamount { get; set; }
         public DateTime Startdate { get; set; }
         public DateTime Enddate { get; set; }
-        public sbyte Isprivat { get; set; }
+        public short Isprivat { get; set; }
         public string? Password { get; set; }
         public int ParId { get; set; }
 

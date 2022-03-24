@@ -46,7 +46,7 @@ namespace myArchery.Pages
             return Page();
         }
 
-        public async Task<IActionResult> OnPostLoginAsync()
+        public IActionResult OnPostLoginAsync()
         {
             Console.WriteLine("---- Login Method");
             Console.WriteLine($"Logged in User is: {User.Identity.Name}");
@@ -55,7 +55,7 @@ namespace myArchery.Pages
                 Console.WriteLine("Password or User Incorrect");
                 return Page();
             }
-
+            
             //var result = await SignInManager.PasswordSignInAsync(LoginUser.UserName, LoginUser.Password, RememberMe, lockoutOnFailure: false);
             return RedirectToPage("Index");
             //return RedirectToAction(actionName: "Index", controllerName: "Home/Index");
@@ -101,7 +101,7 @@ namespace myArchery.Pages
         //    return RedirectToPage("Index");
         //}
 
-        public async Task<IActionResult> OnPostRegisterAsync()
+        public IActionResult OnPostRegisterAsync()
         {
             if (ModelState.IsValid && RegisterUser.Password != String.Empty && RegisterUser.Password != null)
             {
@@ -117,29 +117,29 @@ namespace myArchery.Pages
                     Isactive = 1
                 };
 
-                if (!await UserService.UserExists(username: RegisterUser.UserName, email: RegisterUser.Email))
-                {
-                    //var result = UserManager.CreateAsync(user, RegisterUser.Password.ConvertToSha256());
-                    //if (result.IsCompletedSuccessfully)
-                    //{
-                    //    Console.WriteLine("User created Successfully");
-                    //    await UserService.AddUser(RegisterUser.Vname, RegisterUser.Nname, RegisterUser.UserName, RegisterUser.Email, RegisterUser.Password.ConvertToSha256(), Convert.ToInt32(GetNewsletterChecked));
-                    //    await SignInManager.SignInAsync(user, RememberMe);
+                //if (!await UserService.UserExists(username: RegisterUser.UserName, email: RegisterUser.Email))
+                //{
+                //    //var result = UserManager.CreateAsync(user, RegisterUser.Password.ConvertToSha256());
+                //    //if (result.IsCompletedSuccessfully)
+                //    //{
+                //    //    Console.WriteLine("User created Successfully");
+                //    //    await UserService.AddUser(RegisterUser.Vname, RegisterUser.Nname, RegisterUser.UserName, RegisterUser.Email, RegisterUser.Password.ConvertToSha256(), Convert.ToInt32(GetNewsletterChecked));
+                //    //    await SignInManager.SignInAsync(user, RememberMe);
 
-                    //    Console.WriteLine(SignInManager);
-                    return RedirectToPage("./Index");
-                    //}
-                    //else
-                    //{
-                    //    ModelState.AddModelError("", result.Exception.Message);
-                    //}
-                }
-                else
-                {
-                    // User already exists in DB
-                    Console.WriteLine($"{RegisterUser.UserName} already exists in the DB");
+                //    //    Console.WriteLine(SignInManager);
+                //    return RedirectToPage("./Index");
+                //    //}
+                //    //else
+                //    //{
+                //    //    ModelState.AddModelError("", result.Exception.Message);
+                //    //}
+                //}
+                //else
+                //{
+                //    // User already exists in DB
+                //    Console.WriteLine($"{RegisterUser.UserName} already exists in the DB");
 
-                }
+                //}
 
             }
 
