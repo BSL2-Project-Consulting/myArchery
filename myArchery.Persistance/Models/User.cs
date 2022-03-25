@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 
 namespace myArchery.Persistance.Models
 {
-    public partial class User
+    public partial class User : IdentityUser
     {
         public User()
         {
@@ -16,6 +17,7 @@ namespace myArchery.Persistance.Models
         /// <summary>
         /// 64 weil sha265 immer 64 zeichen lang ist 
         /// </summary>
+        
         public string? Password { get; set; }
         public string? Vname { get; set; }
         public string? Nname { get; set; }

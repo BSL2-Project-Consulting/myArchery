@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -15,16 +17,6 @@ namespace myArchery.Pages
 {
     public class LoginModel : PageModel
     {
-        public LoginModel()
-        {
-            Console.WriteLine("All users in the DB:");
-        }
-
-        public IActionResult OnGet()
-        {
-            Console.WriteLine($"Username Cookie is: {Request.Cookies["Username"]}");
-            return Page();
-        }
 
         [BindProperty]
         public User RegisterUser { get; set; } = new User();
@@ -38,8 +30,25 @@ namespace myArchery.Pages
 
         [BindProperty]
         public bool RememberMe { get; set; }
+        
+        public UserManager<User> UserManager { get; }
+        
+        public SignInManager<User> SignInManager { get; }
 
-        public IActionResult OnPostLoginAsync()
+
+        public LoginModel(UserManager<User> userManager, SignInManager<User> signInManager)
+        {
+            UserManager = userManager;
+            SignInManager = signInManager;
+        }
+
+        public IActionResult OnGet()
+        {
+            //Console.WriteLine(username + " is logged in.");
+            return Page();
+        }
+
+        public async Task<IActionResult> OnPostLoginAsync()
         {
             Console.WriteLine("---- Login Method");
             Console.WriteLine($"Username Cookie is: {Request.Cookies["Username"]}");
@@ -79,49 +88,94 @@ namespace myArchery.Pages
 
                 Console.WriteLine("---- Logged in as: " + LoginUser.Username);
                 Console.WriteLine("---- Redirect in Progress");
-                return RedirectToPage("/Index/View");
+                return RedirectToPage("Index");
                 //return RedirectToAction(actionName: "Index", controllerName: "Home/Index");
             }
         }
 
+        //public IActionResult OnPostRegisterAsync()
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        Console.WriteLine("Input is invalid");
+        //        return Page();
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("--- Registered");
+        //        if (!UserService.UserExists(User.Username).GetAwaiter().GetResult())
+        //        {
+        //            int tmpNewsletter;
+        //            if (GetNewsletterChecked == true) tmpNewsletter = 1;
+        //            else tmpNewsletter = 0;
+
+        //            UserService.AddUser(User.Vname, User.Nname, User.Username, User.Email, User.Password.ConvertToSha256(), tmpNewsletter).GetAwaiter().GetResult();
+        //            Console.WriteLine($"Added {User.Username} to db.");
+
+
+        //            using (myarcheryContext db = new myarcheryContext())
+        //            {
+        //                foreach (var item in db.Users)
+        //                {
+        //                    Console.WriteLine(item.Username);
+        //                }
+        //            }
+
+        //            RedirectToPage("Index");
+        //            return RedirectToAction("../Index");
+        //        }
+        //        else
+        //        {
+        //            Console.WriteLine("User exists");
+        //        }
+        //    }
+        //    return RedirectToPage("Index");
+        //}
+                
         public async Task<IActionResult> OnPostRegisterAsync()
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                Console.WriteLine("Input is invalid");
-                return Page();
-            }
-            else
-            {
-                Console.WriteLine("--- Registered");
-                if (!UserService.UserExists(User.Username).GetAwaiter().GetResult())
+                var user = new User()
                 {
-                    int tmpNewsletter;
-                    if (GetNewsletterChecked == true) tmpNewsletter = 1;
-                    else tmpNewsletter = 0;
+                    UserName = LoginUser.Username,
+                    Vname = LoginUser.Vname,
+                    Nname = LoginUser.Nname,
+                    Email = LoginUser.Email,
+                    Password = LoginUser.Password,                    
+                    PasswordHash = LoginUser.Password.ConvertToSha256(),
+                    Username = LoginUser.Username,
+                    Getnewsletter = LoginUser.Getnewsletter
+                };
 
-                    await UserService.AddUser(User.Vname, User.Nname, User.Username, User.Email, User.Password.ConvertToSha256(), tmpNewsletter);
-                    Console.WriteLine($"Added {User.Username} to db.");
-                    
-
-                    using (myarcheryContext db = new myarcheryContext())
+                if (!UserService.UserExists(username: User.Username, email: User.Email).GetAwaiter().GetResult())
+                {
+                    var result = UserManager.CreateAsync(user, LoginUser.Password.ConvertToSha256());
+                    if (result.IsCompletedSuccessfully)
                     {
-                        foreach (var item in db.Users)
-                        {
-                            Console.WriteLine(item.Username);
-                        }
-                    }
+                        Console.WriteLine("User created Successfully");
+                        await UserService.AddUser(User.Vname, User.Nname, User.Username, User.Email, User.Password.ConvertToSha256(), Convert.ToInt32(GetNewsletterChecked));
+                        await SignInManager.SignInAsync(user, RememberMe);
 
-                    RedirectToPage("Index");
-                    return RedirectToAction("../Index");
+                        Console.WriteLine(SignInManager);
+                        return RedirectToPage("../Index");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", result.Exception.Message);
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("User exists");
+                    // User already exists in DB
+                    Console.WriteLine($"{User.UserName} already exists in the DB");
                 }
             }
-            return RedirectToPage("Index");
+            else
+            {
+                Console.WriteLine("Modelstate is invalid");
+            }
+            return Page();
         }
-
     }
 }

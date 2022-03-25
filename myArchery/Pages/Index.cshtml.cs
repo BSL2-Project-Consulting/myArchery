@@ -15,8 +15,7 @@ namespace myArchery.Pages
 
         public void OnGet()
         {
-            Console.WriteLine(DateTime.Now);
-            Console.WriteLine(EventService.GetAllPublicEvents().Startdate);
+           
         }
 
         public void Test()

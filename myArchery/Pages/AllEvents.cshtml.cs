@@ -7,24 +7,19 @@ namespace myArchery.Pages.AllEvents
 {
     public class IndexModel : PageModel
     {
-        private readonly myarcheryContext _context;
-
-        public IndexModel(myarcheryContext context)
+        public IndexModel()
         {
-            _context = context;
+
         }
 
         public IList<Event> Event { get; set; } = new List<Event>();
 
         public async Task OnGetAsync()
         {
-            Event = await _context.Events
-                .Include(x => x.Par).ToListAsync();
-        }
-
-        public void OnGet()
-        {
-
+            using (myarcheryContext db = new myarcheryContext())
+            {
+                Event = await db.Events.Include(x => x.Par).Where(x => x.Startdate < DateTime.Now && x.Enddate > DateTime.Now).ToListAsync();
+            }
         }
     }
 }
