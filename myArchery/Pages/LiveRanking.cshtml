@@ -33,6 +33,8 @@
 	<meta charset="UTF-8">
 	<title>Leader Board using HTML CSS and Javascript</title>
 	<link rel="stylesheet" href="~/assets/js/style.css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
 </head>
 <body>
 <div class="wrapper">
@@ -86,3 +88,26 @@
 <script src="~/assets/js/liveranking.js"></script>
 </body>
 </html>
+<script>
+    function getLatestStuff() {
+
+        // fetch the output from a context which gives us the latest id
+        $.get("isthereanupdate.aspx", function(response) {
+
+            // we have the response, now compare to the stored value
+            if(resp != lastItemId) {
+
+                // it's different, so update the variable and grab the latest content
+                lastItemId = response;
+                $("#latestStuffDiv").load("updates.aspx");
+            }
+        });
+    }
+
+    $(document).ready(function() {
+
+        // the value which initializes this comes from the server
+        var lastItemId = 7; 
+        setTimeout(getLatestStuff, 10000);
+    });
+</script>
