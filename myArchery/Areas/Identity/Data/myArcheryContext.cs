@@ -9,7 +9,7 @@ public class myArcheryContext : IdentityDbContext<User>
 {
     public myArcheryContext(DbContextOptions<myArcheryContext> options)
         : base(options)
-    {
+    {        
     }
 
     //protected override void OnModelCreating(ModelBuilder modelBuilder)
