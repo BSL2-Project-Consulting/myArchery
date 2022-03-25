@@ -19,6 +19,19 @@
 
 	var users = EventService.GetUsersWithPointsFromEventById(events[0].Id);
 
+	//List<User> tmp = new List<User> { new Persistance.Models.User { Username = "Daniel", Isactive = 64},
+	//								new Persistance.Models.User { Username = "Bastian", Isactive = 23},
+	//								new Persistance.Models.User { Username = "Julian", Isactive = 34},
+	//								new Persistance.Models.User { Username = "Fabian", Isactive = 64},
+	//								new Persistance.Models.User { Username = "Bastian", Isactive = 23},
+	//								new Persistance.Models.User { Username = "Julian", Isactive = 34},
+	//								new Persistance.Models.User { Username = "Daniel", Isactive = 64},
+	//								new Persistance.Models.User { Username = "Bastian", Isactive = 23},
+	//								new Persistance.Models.User { Username = "Julian", Isactive = 34},
+	//								new Persistance.Models.User { Username = "Daniel", Isactive = 64},
+	//								new Persistance.Models.User { Username = "Bastian", Isactive = 23},
+	//								new Persistance.Models.User { Username = "Julian", Isactive = 34}};
+
 	var repheight = 400 / 5 * users.Count() + "px";
 
 	double maxPoints = 50;
@@ -30,6 +43,7 @@
 	<meta charset="UTF-8">
 	<title>Leader Board using HTML CSS and Javascript</title>
 	<link rel="stylesheet" href="~/assets/js/style.css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 
 </head>
 <body>
@@ -84,3 +98,26 @@
 <script src="~/assets/js/liveranking.js"></script>
 </body>
 </html>
+<script>
+    function getLatestStuff() {
+
+        // fetch the output from a context which gives us the latest id
+        $.get("isthereanupdate.aspx", function(response) {
+
+            // we have the response, now compare to the stored value
+            if(resp != lastItemId) {
+
+                // it's different, so update the variable and grab the latest content
+                lastItemId = response;
+                $("#latestStuffDiv").load("updates.aspx");
+            }
+        });
+    }
+
+    $(document).ready(function() {
+
+        // the value which initializes this comes from the server
+        var lastItemId = 7; 
+        setTimeout(getLatestStuff, 10000);
+    });
+</script>
