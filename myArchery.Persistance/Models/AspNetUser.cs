@@ -16,12 +16,10 @@ namespace myArchery.Persistance.Models
 
         [Key]
         public string Id { get; set; } = null!;
-        public int UseId { get; set; }
         public string? Password { get; set; }
         public string? Vname { get; set; }
         public string? Nname { get; set; }
         public string? Email { get; set; }
-        public int Isactive { get; set; }
         public int Getnewsletter { get; set; }
         public string? UserName { get; set; }
         public string? NormalizedUserName { get; set; }

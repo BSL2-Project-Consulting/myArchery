@@ -8,7 +8,7 @@ using myArchery.Persistance.Models;
 
 #nullable disable
 
-namespace myArchery.Persistance.Migrations.ArcheryDb
+namespace myArchery.Persistance.Migrations
 {
     [DbContext(typeof(ArcheryDbContext))]
     partial class ArcheryDbContextModelSnapshot : ModelSnapshot
@@ -139,9 +139,6 @@ namespace myArchery.Persistance.Migrations.ArcheryDb
                     b.Property<int>("Getnewsletter")
                         .HasColumnType("int");
 
-                    b.Property<int>("Isactive")
-                        .HasColumnType("int");
-
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -176,9 +173,6 @@ namespace myArchery.Persistance.Migrations.ArcheryDb
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
-
-                    b.Property<int>("UseId")
-                        .HasColumnType("int");
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
@@ -319,20 +313,13 @@ namespace myArchery.Persistance.Migrations.ArcheryDb
                     b.Property<int>("RolId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UseId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UseId1")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UseId1NavigationId")
+                    b.Property<string>("UseId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("EvusroId");
 
-                    b.HasIndex("UseId1NavigationId");
+                    b.HasIndex("UseId");
 
                     b.HasIndex(new[] { "EveId" }, "IX_EventUserRole_EveId");
 
@@ -561,9 +548,9 @@ namespace myArchery.Persistance.Migrations.ArcheryDb
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("myArchery.Persistance.Models.AspNetUser", "UseId1Navigation")
+                    b.HasOne("myArchery.Persistance.Models.AspNetUser", "Use")
                         .WithMany("EventUserRoles")
-                        .HasForeignKey("UseId1NavigationId")
+                        .HasForeignKey("UseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -571,7 +558,7 @@ namespace myArchery.Persistance.Migrations.ArcheryDb
 
                     b.Navigation("Rol");
 
-                    b.Navigation("UseId1Navigation");
+                    b.Navigation("Use");
                 });
 
             modelBuilder.Entity("myArchery.Persistance.Models.ParcoursTarget", b =>

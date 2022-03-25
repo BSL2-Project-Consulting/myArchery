@@ -24,11 +24,11 @@ namespace myArchery.Services
             }
         }
 
-        internal static AspNetUser? GetUserById(int userId)
+        internal static AspNetUser? GetUserById(string userId)
         {
             using (ArcheryDbContext db = new ArcheryDbContext())
             {
-                return db.AspNetUsers.FirstOrDefault(x => x.UseId == userId);
+                return db.AspNetUsers.FirstOrDefault(x => x.Id == userId);
             }
         }
 
@@ -36,7 +36,7 @@ namespace myArchery.Services
         {
             using (ArcheryDbContext db = new ArcheryDbContext())
             {
-                return db.AspNetUsers.FirstOrDefault(x => x.UserName == name && x.Isactive == 1);
+                return db.AspNetUsers.FirstOrDefault(x => x.UserName == name);
             }
         }       
     }

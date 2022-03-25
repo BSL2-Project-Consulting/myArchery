@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace myArchery.Persistance.Migrations.ArcheryDb
+namespace myArchery.Persistance.Migrations
 {
     public partial class Init : Migration
     {
@@ -28,12 +28,10 @@ namespace myArchery.Persistance.Migrations.ArcheryDb
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    UseId = table.Column<int>(type: "int", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Vname = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Nname = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    Isactive = table.Column<int>(type: "int", nullable: false),
                     Getnewsletter = table.Column<int>(type: "int", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -261,17 +259,15 @@ namespace myArchery.Persistance.Migrations.ArcheryDb
                     EvusroId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     EveId = table.Column<int>(type: "int", nullable: false),
-                    UseId = table.Column<int>(type: "int", nullable: false),
                     RolId = table.Column<int>(type: "int", nullable: false),
-                    UseId1 = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UseId1NavigationId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    UseId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_EventUserRole", x => x.EvusroId);
                     table.ForeignKey(
-                        name: "FK_EventUserRole_AspNetUsers_UseId1NavigationId",
-                        column: x => x.UseId1NavigationId,
+                        name: "FK_EventUserRole_AspNetUsers_UseId",
+                        column: x => x.UseId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -411,9 +407,9 @@ namespace myArchery.Persistance.Migrations.ArcheryDb
                 column: "RolId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_EventUserRole_UseId1NavigationId",
+                name: "IX_EventUserRole_UseId",
                 table: "EventUserRole",
-                column: "UseId1NavigationId");
+                column: "UseId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ParcoursTarget_ParId",

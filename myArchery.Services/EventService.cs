@@ -65,7 +65,7 @@ namespace myArchery.Services
         /// <param name="pointList">List of point objects the user can hit</param>
         /// <param name="userId">Id of the User that is creating the event</param>
         /// <returns>-1 if the event already exists, otherwise the amount of changed rows will be returned</returns>
-        public static int CreateEventAndAddCreator(string eventName, int arrowAmount, DateTime startDate, DateTime endDate, sbyte isPrivate, string password, int ParId, List<Point> pointList, int userId)
+        public static int CreateEventAndAddCreator(string eventName, int arrowAmount, DateTime startDate, DateTime endDate, sbyte isPrivate, string password, int ParId, List<Point> pointList, string userId)
         {
             // Create new Event
             Event newEvent = new Event
@@ -103,7 +103,9 @@ namespace myArchery.Services
                 }
             }
 
-            EventUserRole eventUserRole = new EventUserRole { EveId = res.EveId, UseId = userId, RolId = 1 };
+            var user = UserService.GetUserById(userId);
+
+            EventUserRole eventUserRole = new EventUserRole { EveId = res.EveId, Use = user, RolId = 1 };
 
             using (ArcheryDbContext db = new ArcheryDbContext())
             {
@@ -175,7 +177,7 @@ namespace myArchery.Services
             {
                 var res = from AspNetUsers in db.AspNetUsers
                           where AspNetUsers.UserName == username
-                          join eventRoles in db.EventUserRoles on AspNetUsers.UseId equals eventRoles.UseId
+                          join eventRoles in db.EventUserRoles on AspNetUsers.Id equals eventRoles.Use.Id
                           join events in db.Events on eventRoles.EveId equals events.EveId
                           into result1
                           from finalResult in result1
@@ -200,7 +202,7 @@ namespace myArchery.Services
             {
                 var res = from AspNetUsers in db.AspNetUsers
                           where AspNetUsers.UserName == username
-                          join eventRoles in db.EventUserRoles on AspNetUsers.UseId equals eventRoles.UseId
+                          join eventRoles in db.EventUserRoles on AspNetUsers.Id equals eventRoles.Use.Id
                           join events in db.Events on eventRoles.EveId equals events.EveId
                           into result1
                           from finalResult in result1
@@ -226,7 +228,7 @@ namespace myArchery.Services
             {
                 var res = from AspNetUsers in db.AspNetUsers
                           where AspNetUsers.UserName == username
-                          join eventRoles in db.EventUserRoles on AspNetUsers.UseId equals eventRoles.UseId
+                          join eventRoles in db.EventUserRoles on AspNetUsers.Id equals eventRoles.Use.Id
                           join events in db.Events on eventRoles.EveId equals events.EveId
                           into result1
                           from finalResult in result1
@@ -266,7 +268,7 @@ namespace myArchery.Services
                 var res = from eventUserRoles in db.EventUserRoles
                           where eventUserRoles.EveId == eveId
                           join events in db.Events on eventUserRoles.EveId equals events.EveId
-                          join user in db.AspNetUsers on eventUserRoles.UseId equals user.UseId
+                          join user in db.AspNetUsers on eventUserRoles.Use.Id equals user.Id
                           join roles in db.Roles on eventUserRoles.RolId equals roles.RolId
                           into result1
                           from finalResult in result1
@@ -303,7 +305,7 @@ namespace myArchery.Services
                 var res = from eventuserroles in db.EventUserRoles
                           where eventuserroles.EveId == eveId
                           join eve in db.Events on eventuserroles.EveId equals eve.EveId
-                          join user in db.AspNetUsers on eventuserroles.UseId equals user.UseId
+                          join user in db.AspNetUsers on eventuserroles.Use.Id equals user.Id
                           join arrow in db.Arrows on eventuserroles.EvusroId equals arrow.EvusroId
                           join points in db.Points on arrow.PoiId equals points.PoiId
                           into result1
