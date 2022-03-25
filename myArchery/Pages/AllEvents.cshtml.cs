@@ -16,7 +16,7 @@ namespace myArchery.Pages.AllEvents
 
         public async Task OnGetAsync()
         {
-            using (myarcheryContext db = new myarcheryContext())
+            using (ArcheryDbContext db = new ArcheryDbContext())
             {
                 Event = await db.Events.Include(x => x.Par).Where(x => x.Startdate < DateTime.Now && x.Enddate > DateTime.Now).ToListAsync();
             }

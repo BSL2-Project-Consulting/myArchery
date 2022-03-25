@@ -1,13 +1,23 @@
 ﻿@page
+@inject UserManager<User> UserManager
+
 @using myArchery.Services
 @using myArchery.Services.TmpClasses
 @model myArchery.Pages.LiveRankingModel
 @{
-	ViewData["Username"] = "User1";
+	if (User.Identity == null)
+	{
+		RedirectToPage("/Account/Login");
+	}
 
-	var eventId = EventService.GetUsersCurrentEventsByUsername("User1");
+	var events = EventService.GetUsersCurrentEventsByUsername(User.Identity?.Name);
 
-	var users = EventService.GetUsersWithPointsFromEventById(eventId[0].Id);
+	if (events.Count == 0)
+	{
+		RedirectToPage("Index");
+	}
+
+	var users = EventService.GetUsersWithPointsFromEventById(events[0].Id);
 
 	var repheight = 400 / 5 * users.Count() + "px";
 

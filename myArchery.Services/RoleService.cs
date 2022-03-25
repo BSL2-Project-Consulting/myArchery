@@ -14,7 +14,7 @@
                 Rolename = name
             };
 
-            using (myarcheryContext db = new myarcheryContext())
+            using (ArcheryDbContext db = new ArcheryDbContext())
             {
                 db.Roles.Add(role);
                 return db.SaveChanges();
@@ -29,7 +29,7 @@
 
         public static Role? GetRoleById(int id)
         {
-            using (myarcheryContext db = new myarcheryContext())
+            using (ArcheryDbContext db = new ArcheryDbContext())
             {
                 return db.Roles.FirstOrDefault(x => x.RolId == id);
             }
@@ -42,7 +42,7 @@
         /// <returns>Amount of affected Rows</returns>
         public static int RemoveRoleById(int id)
         {
-            using (myarcheryContext db = new myarcheryContext())
+            using (ArcheryDbContext db = new ArcheryDbContext())
             {
                 var role = GetRoleById(id);
                 if (role != null)

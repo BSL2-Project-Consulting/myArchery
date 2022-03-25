@@ -9,11 +9,9 @@ namespace myArchery.Persistance.Models
         public User()
         {
             EventUserRoles = new HashSet<EventUserRole>();
-            PasswordHistories = new HashSet<PasswordHistory>();
         }
-
+        [Key]
         public int UseId { get; set; }
-        public string Username { get; set; } = null!;
         /// <summary>
         /// 64 weil sha265 immer 64 zeichen lang ist 
         /// </summary>
@@ -26,6 +24,5 @@ namespace myArchery.Persistance.Models
         public int Getnewsletter { get; set; }
 
         public virtual ICollection<EventUserRole> EventUserRoles { get; set; }
-        public virtual ICollection<PasswordHistory> PasswordHistories { get; set; }
     }
 }

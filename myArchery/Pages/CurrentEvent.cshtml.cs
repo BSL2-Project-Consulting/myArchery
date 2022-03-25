@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +14,14 @@ namespace myArchery.Pages
 {
     public class CurrentEventModel : PageModel
     {
+
+        public UserManager<User> UserManager { get; }
+
+        public CurrentEventModel(UserManager<User> userManager)
+        {
+            UserManager = userManager;
+        }
+
         public void OnGet()
         {
 

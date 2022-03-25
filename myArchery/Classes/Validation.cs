@@ -8,7 +8,7 @@ namespace myArchery.Classes
         {
             var user = (User)validationContext.ObjectInstance;
 
-            if (user.Password == null)
+            if (user.Password == string.Empty)
                 return new ValidationResult("Password ist verpflichtend");
             else
             {

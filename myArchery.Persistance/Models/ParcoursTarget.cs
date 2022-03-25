@@ -10,6 +10,7 @@ namespace myArchery.Persistance.Models
             Arrows = new HashSet<Arrow>();
         }
 
+        [Key]
         public int PataId { get; set; }
         public int ParId { get; set; }
         public int TarId { get; set; }

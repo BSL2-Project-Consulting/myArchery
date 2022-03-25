@@ -11,12 +11,13 @@ namespace myArchery.Persistance.Models
             Points = new HashSet<Point>();
         }
 
+        [Key]
         public int EveId { get; set; }
         public string Eventname { get; set; } = null!;
         public int Arrowamount { get; set; }
         public DateTime Startdate { get; set; }
         public DateTime Enddate { get; set; }
-        public sbyte Isprivat { get; set; }
+        public short Isprivat { get; set; }
         public string? Password { get; set; }
         public int ParId { get; set; }
 
