@@ -41,12 +41,12 @@ namespace myArchery.Services
         /// <returns>List of Arrows with additional Info</returns>
         public static List<ArrowWithInfo> GetArrowInfo(int eve_id)
         {
-            using (myarcheryContext db = new myarcheryContext())
+            using (ArcheryDbContext db = new ArcheryDbContext())
             {
                 var res = from arrow in db.Arrows
                           join eventUserRoles in db.EventUserRoles on arrow.EvusroId equals eventUserRoles.EvusroId
                           join points in db.Points on arrow.PoiId equals points.PoiId
-                          join user in db.Users on eventUserRoles.UseId equals user.UseId
+                          join user in db.AspNetUsers on eventUserRoles.UseId equals user.UseId
                           join events in db.Events on eventUserRoles.EveId equals events.EveId
                           join pt in db.ParcoursTargets on arrow.PataId equals pt.PataId
                           join target in db.Targets on pt.TarId equals target.TarId

@@ -80,7 +80,7 @@ namespace myArchery.Services
             };
 
             Event res;
-            using (myarcheryContext db = new myarcheryContext())
+            using (ArcheryDbContext db = new ArcheryDbContext())
             {
                 if (db.Events.Contains(newEvent)) return 1;
                 else
@@ -93,7 +93,7 @@ namespace myArchery.Services
                 }
             }
 
-            using (myarcheryContext db = new myarcheryContext())
+            using (ArcheryDbContext db = new ArcheryDbContext())
             {
                 foreach (var item in pointList)
                 {
