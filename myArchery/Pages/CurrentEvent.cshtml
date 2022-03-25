@@ -4,6 +4,69 @@
 
 @using myArchery.Services
 @model myArchery.Pages.CurrentEventModel
+
+
+
+@{
+    if (User.Identity == null)
+    {
+        RedirectToPage("/Account/Login");
+    }
+
+    var events = EventService.GetUsersCurrentEventsByUsername(User.Identity?.Name);
+
+    if (events.Count == 0)
+    {
+        RedirectToPage("Index");
+    }
+
+    var users = EventService.GetUsersWithPointsFromEventById(events[0].Id);
+
+
+    var repheight = 400 / 5 * users.Count() + "px";
+
+    double maxPoints = 50;
+
+    var tmp = ArrowService.GetArrowInfo(events[0].Id);
+
+    tmp = tmp.Where(x => x.Username == User.Identity.Name).ToList();
+
+
+    var overallPoints = users.Select(x => x.Points);
+
+
+    var points = tmp.Select(x => x.Points);
+
+    var targetName = tmp.Select(x => x.TargetName);
+
+    var username = tmp.Select(x => x.Username);
+
+
+        var hitted = 0;
+        var missed = 0;
+
+
+      foreach (var item in users) {
+       
+        if (item.Points > 0.0){
+            missed++;
+        }
+        else{
+            hitted++;
+        }
+       }
+
+
+    
+
+}
+
+
+
+	
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -215,19 +278,31 @@ hier abgebildet werden können
 
 <div class="container">
 <div class="row">
+
+
 <div class="col-6 chart">
-<canvas id="myChart" width="500" height="400"></canvas>
+
+<canvas id="myChart" width="500" height="400" onload="myChart1(@hitted, @missed)"></canvas>
+
 </div>
+
+
 <div class="col-6 chart">
-<canvas id="myChart2" width="500" height="400"></canvas>
+
+<canvas id="myChart2" width="500" height="400" onload="myChart2(@points, @points.Count(), @targetName, @targetName.Count())"></canvas>
+
 </div>
 </div>
+
 <div class="row">
+
 <div class="col-6 chart">
-<canvas id="myChart3" width="500" height="400"></canvas>
+
+<canvas id="myChart3" width="500" height="400" onload="myChart3(@points, @points.Count(), @targetName, @targetName.Count())"></canvas>
+
 </div>
 <div class="col-6 chart">
-<canvas id="myChart4" width="500" height="400"></canvas>
+<canvas id="myChart4" width="500" height="400" onload="myChart3(@username, @username.Count(), @overallPoints, @overallPoints.Count())"></canvas>
 </div>
 </div>
 </div>

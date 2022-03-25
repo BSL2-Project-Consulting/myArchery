@@ -1,4 +1,10 @@
 var tabs = document.querySelectorAll(".lboard_tabs ul li");
+"use strict";
+
+
+var connection = new signalR.HubConnectionBuilder().withUrl("/liverankingHUB").build();
+
+
 var today = document.querySelector(".today");
 var month = document.querySelector(".month");
 var year = document.querySelector(".year");
