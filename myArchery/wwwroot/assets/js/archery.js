@@ -24,7 +24,7 @@ function registered() {
     btn.style.left="110px";
 }
 
-function logined(){
+function logined() {
     login.style.left ="50px";
     register.style.left ="450px";
     btn.style.left="0";

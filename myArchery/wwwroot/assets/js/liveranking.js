@@ -2,7 +2,7 @@ var tabs = document.querySelectorAll(".lboard_tabs ul li");
 "use strict";
 
 
-var connection = new signalR.HubConnectionBuilder().withUrl("/liverankingHUB").build();
+var connection = new signalR.HubConnectionBuilder().withUrl("/liverankingHub").build();
 
 
 var today = document.querySelector(".today");
