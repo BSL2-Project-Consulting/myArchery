@@ -15,9 +15,9 @@ namespace myArchery.Pages
     public class CurrentEventModel : PageModel
     {
 
-        public UserManager<User> UserManager { get; }
+        public UserManager<AspNetUser> UserManager { get; }
 
-        public CurrentEventModel(UserManager<User> userManager)
+        public CurrentEventModel(UserManager<AspNetUser> userManager)
         {
             UserManager = userManager;
         }

@@ -29,12 +29,12 @@ namespace myArchery.Pages
         [BindProperty]
         public bool RememberMe { get; set; }
         
-        //public UserManager<User> UserManager { get; }
+        //public UserManager<AspNetUser> UserManager { get; }
         
-        //public SignInManager<User> SignInManager { get; }
+        //public SignInManager<AspNetUser> SignInManager { get; }
 
 
-        //public LoginModel(UserManager<User> userManager, SignInManager<User> signInManager)
+        //public LoginModel(UserManager<AspNetUser> userManager, SignInManager<AspNetUser> signInManager)
         //{
         //    UserManager = userManager;
         //    SignInManager = signInManager;

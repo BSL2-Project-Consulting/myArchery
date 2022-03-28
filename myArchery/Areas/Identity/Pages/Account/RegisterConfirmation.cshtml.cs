@@ -18,10 +18,10 @@ namespace myArchery.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class RegisterConfirmationModel : PageModel
     {
-        private readonly UserManager<User> _userManager;
+        private readonly UserManager<AspNetUser> _userManager;
         private readonly IEmailSender _sender;
 
-        public RegisterConfirmationModel(UserManager<User> userManager, IEmailSender sender)
+        public RegisterConfirmationModel(UserManager<AspNetUser> userManager, IEmailSender sender)
         {
             _userManager = userManager;
             _sender = sender;

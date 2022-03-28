@@ -11,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ArcheryDbContext>(options =>
+builder.Services.AddDbContext<myArcheryContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -22,8 +22,17 @@ builder.Services.AddRazorPages();
 builder.Services.AddScoped<myArcheryContext>();
 
 // Add Emailconfirmation here
+WebApplication app;
 
-var app = builder.Build();
+try
+{
+    app = builder.Build();
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"{ex.Source} : {ex.Message}");
+    throw;
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

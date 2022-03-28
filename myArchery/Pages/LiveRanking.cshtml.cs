@@ -5,9 +5,9 @@ namespace myArchery.Pages
 {
     public class LiveRankingModel : PageModel
     {
-        public UserManager<User> UserManager { get; }
+        public UserManager<AspNetUser> UserManager { get; }
 
-        public LiveRankingModel(UserManager<User> userManager)
+        public LiveRankingModel(UserManager<AspNetUser> userManager)
         {
             UserManager = userManager;
         }

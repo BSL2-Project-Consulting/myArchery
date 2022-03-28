@@ -17,9 +17,9 @@ namespace myArchery.Areas.Identity.Pages.Account
 {
     public class ConfirmEmailModel : PageModel
     {
-        private readonly UserManager<User> _userManager;
+        private readonly UserManager<AspNetUser> _userManager;
 
-        public ConfirmEmailModel(UserManager<User> userManager)
+        public ConfirmEmailModel(UserManager<AspNetUser> userManager)
         {
             _userManager = userManager;
         }

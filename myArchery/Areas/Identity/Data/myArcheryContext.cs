@@ -5,7 +5,7 @@ using myArchery.Persistance.Models;
 
 namespace myArchery.Data;
 
-public class myArcheryContext : IdentityDbContext<User>
+public class myArcheryContext : IdentityDbContext<AspNetUser>
 {
     public myArcheryContext(DbContextOptions<myArcheryContext> options)
         : base(options)
@@ -337,7 +337,7 @@ public class myArcheryContext : IdentityDbContext<User>
     //            .HasColumnName("targetname");
     //    });
 
-    //    modelBuilder.Entity<User>(entity =>
+    //    modelBuilder.Entity<AspNetUser>(entity =>
     //    {
     //        entity.HasKey(e => e.UseId)
     //            .HasName("PRIMARY");

@@ -176,8 +176,7 @@ namespace myArchery.Services
             using (ArcheryDbContext db = new ArcheryDbContext())
             {
                 var res = from AspNetUsers in db.AspNetUsers
-                          where AspNetUsers.UserName == username
-                          join eventRoles in db.EventUserRoles on AspNetUsers.Id equals eventRoles.Use.Id
+                          join eventRoles in db.EventUserRoles on AspNetUsers.Id equals eventRoles.UseId
                           join events in db.Events on eventRoles.EveId equals events.EveId
                           into result1
                           from finalResult in result1
@@ -206,11 +205,11 @@ namespace myArchery.Services
                           join events in db.Events on eventRoles.EveId equals events.EveId
                           into result1
                           from finalResult in result1
-                          where finalResult.Enddate < DateTime.UtcNow
-                          select new
+                          where finalResult.Enddate < DateTime.Now
+                          select new EventWithId
                           {
-                              finalResult.EveId,
-                              finalResult.Eventname
+                              Id = finalResult.EveId,
+                              Eventname = finalResult.Eventname
                           };
 
                 return res.ToList();
@@ -233,10 +232,10 @@ namespace myArchery.Services
                           into result1
                           from finalResult in result1
                           where finalResult.Startdate > DateTime.UtcNow
-                          select new
+                          select new EventWithId
                           {
-                              finalResult.EveId,
-                              finalResult.Eventname
+                              Id = finalResult.EveId,
+                              Eventname = finalResult.Eventname
                           };
 
                 return res.ToList();

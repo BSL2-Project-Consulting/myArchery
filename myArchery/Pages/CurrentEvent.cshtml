@@ -1,6 +1,6 @@
 ﻿@page
 
-@inject UserManager<User> UserManager
+@inject UserManager<AspNetUser> UserManager
 
 @using myArchery.Services
 @model myArchery.Pages.CurrentEventModel
@@ -13,10 +13,16 @@
         RedirectToPage("/Account/Login");
     }
 
-    var events = EventService.GetUsersCurrentEventsByUsername(User.Identity?.Name);
+
+
+    var usern = User.Identity.Name;
+    
+    
+    var events = EventService.GetUsersCurrentEventsByUsername(usern);
 
     if (events.Count == 0)
     {
+        events = new List<Services.TmpClasses.EventWithId>{new Services.TmpClasses.EventWithId()};
         RedirectToPage("Index");
     }
 
@@ -206,6 +212,7 @@ style="max-width: 20px; max-height: 20px; margin-left: 5px; margin-bottom: 1px;"
 
 
 <h1>Event Name</h1>
+<h1>@usern</h1>
 
 
 

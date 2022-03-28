@@ -9,9 +9,9 @@ namespace myArchery.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-        public UserManager<User> UserManager { get; }
+        public UserManager<AspNetUser> UserManager { get; }
 
-        public IndexModel(ILogger<IndexModel> logger, UserManager<User> userManager)
+        public IndexModel(ILogger<IndexModel> logger, UserManager<AspNetUser> userManager)
         {
             _logger = logger;
             UserManager = userManager;

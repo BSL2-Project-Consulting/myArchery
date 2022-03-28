@@ -12,7 +12,7 @@ namespace myArchery.Services
 
         public myArcheryContext Context { get; }
 
-        public List<User> GetAllUsers()
+        public List<AspNetUser> GetAllUsers()
         {
             return Context.Users.ToList();
         }
