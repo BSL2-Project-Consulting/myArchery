@@ -11,15 +11,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<myArcheryContext>(options =>
+builder.Services.AddDbContext<ArcheryDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 // RequireConfirmedAccount == email bestätigung
-builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<myArcheryContext>();
+builder.Services.AddDefaultIdentity<AspNetUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<ArcheryDbContext>();
 builder.Services.AddRazorPages();
-builder.Services.AddScoped<myArcheryContext>();
+builder.Services.AddScoped<ArcheryDbContext>();
 
 // Add Emailconfirmation here
 

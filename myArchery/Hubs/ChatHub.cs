@@ -9,6 +9,7 @@ namespace myArchery.Hubs
             await Clients.Group(eventId.ToString()).SendAsync("ReceiveMessage", name, message);
             Console.WriteLine("Message Sent");
         }
+
         public async Task AddToGroup(int eventId)
         {
             await Groups.AddToGroupAsync(Context.ConnectionId, eventId.ToString());

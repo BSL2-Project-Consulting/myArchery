@@ -21,7 +21,7 @@ var btn = document.getElementById('btn');
 function registered() {
     login.style.left = "-400px";
     register.style.left = "50px";
-    btn.style.left="110px";
+    btn.style.left = "110px";
 }
 
 function logined() {

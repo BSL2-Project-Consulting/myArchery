@@ -10,7 +10,6 @@ namespace myArchery.Persistance.Models
             AspNetRoleClaims = new HashSet<AspNetRoleClaim>();
             Users = new HashSet<AspNetUser>();
         }
-
         [Key]
         public string Id { get; set; } = null!;
         public string? Name { get; set; }

@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using myArchery.Persistance.Models;
 
-namespace myArchery.Persistance.Models
+namespace myArchery.Persistance
 {
     public partial class ArcheryDbContext : DbContext
     {
@@ -133,7 +134,7 @@ namespace myArchery.Persistance.Models
             modelBuilder.Entity<AspNetUserLogin>(entity =>
             {
                 entity.HasKey(e => new { e.LoginProvider, e.ProviderKey });
-                
+
                 entity.HasIndex(e => e.UserId, "IX_AspNetUserLogins_UserId");
 
                 entity.Property(e => e.LoginProvider).HasMaxLength(128);
@@ -181,6 +182,8 @@ namespace myArchery.Persistance.Models
 
                 entity.HasIndex(e => e.RolId, "IX_EventUserRole_RolId");
 
+                entity.HasIndex(e => e.UseId, "IX_EventUserRole_UseId");
+
                 entity.HasOne(d => d.Eve)
                     .WithMany(p => p.EventUserRoles)
                     .HasForeignKey(d => d.EveId);
@@ -188,6 +191,10 @@ namespace myArchery.Persistance.Models
                 entity.HasOne(d => d.Rol)
                     .WithMany(p => p.EventUserRoles)
                     .HasForeignKey(d => d.RolId);
+
+                entity.HasOne(d => d.Use)
+                    .WithMany(p => p.EventUserRoles)
+                    .HasForeignKey(d => d.UseId);
             });
 
             modelBuilder.Entity<Parcour>(entity =>

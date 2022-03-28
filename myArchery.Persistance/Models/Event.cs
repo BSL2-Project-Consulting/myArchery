@@ -10,7 +10,6 @@ namespace myArchery.Persistance.Models
             EventUserRoles = new HashSet<EventUserRole>();
             Points = new HashSet<Point>();
         }
-
         [Key]
         public int EveId { get; set; }
         public string Eventname { get; set; } = null!;
