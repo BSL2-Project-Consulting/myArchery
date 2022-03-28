@@ -6,6 +6,7 @@ using myArchery.Persistance.Models;
 using myArchery.Services;
 using myArchery.Data;
 using Microsoft.AspNetCore.Identity.UI.Services;
+using myArchery.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<AspNetUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<myArcheryContext>();
 builder.Services.AddRazorPages();
+builder.Services.AddSignalR();
 builder.Services.AddScoped<myArcheryContext>();
 
 // Add Emailconfirmation here
@@ -45,6 +47,9 @@ else
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+app.MapHub<ChatHub>("/chatHub");
+app.MapHub<LiverankingHub>("/liverankingHub");
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

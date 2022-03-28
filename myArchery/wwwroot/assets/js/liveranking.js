@@ -1,9 +1,17 @@
-var tabs = document.querySelectorAll(".lboard_tabs ul li");
-"use strict";
-
-
 var connection = new signalR.HubConnectionBuilder().withUrl("/liverankingHub").build();
 
+window.onload = function () {
+	console.log("connection started");
+	connection.invoke("AddToGroup", eventid);
+}
+
+window.onclose = function () {
+	console.log("closing");
+	connection.invoke("RemoveFromGroup", eventid);
+}
+
+var tabs = document.querySelectorAll(".lboard_tabs ul li");
+"use strict";
 
 var today = document.querySelector(".today");
 var month = document.querySelector(".month");
