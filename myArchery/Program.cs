@@ -17,9 +17,9 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 // RequireConfirmedAccount == email bestätigung
 builder.Services.AddDefaultIdentity<AspNetUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ArcheryDbContext>();
+    .AddEntityFrameworkStores<myArcheryContext>();
 builder.Services.AddRazorPages();
-builder.Services.AddScoped<ArcheryDbContext>();
+builder.Services.AddScoped<myArcheryContext>();
 
 // Add Emailconfirmation here
 
