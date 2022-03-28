@@ -2,11 +2,11 @@
 
 var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 
-window.onload(){
+window.onload{
     connection.invoke("AddToGroup", eventid);
 }
 
-window.onclose(){
+window.onclose{
     connection.invoke("RemoveFromGroup", eventid);
 }
 

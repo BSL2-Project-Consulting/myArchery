@@ -13,8 +13,6 @@
         RedirectToPage("/Account/Login");
     }
 
-
-
     var usern = User.Identity.Name;
     
     
@@ -26,7 +24,7 @@
         RedirectToPage("Index");
     }
 
-    var users = EventService.GetUsersWithPointsFromEventById(events[0].Id);
+    var users = EventService.GetUsersWithPointsFromEventById(1);
 
 
     var repheight = 400 / 5 * users.Count() + "px";
@@ -62,14 +60,12 @@
         }
        }
 
-
-    
-
 }
 
 <script>
-    let eventid = @events[0].Id;
-    let username = @User.Identity.Name;
+    //let eventid = @events[0].Id;
+    let eventid = 1;
+    let username = "@User.Identity.Name";
 </script>
 
 	
@@ -134,10 +130,6 @@ rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="~/assets/css/CurrentEvent.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-
-
-
-
 
 </head>
 
@@ -313,17 +305,5 @@ hier abgebildet werden können
 </div>
 </div>
 <script src="~/assets/js/CurrentEvent.js"></script>
-
-
-
-
-
-
-
-
 </body>
-
-
-
 </html>
-
