@@ -15,7 +15,6 @@ namespace myArchery.Persistance.Models
             Roles = new HashSet<AspNetRole>();
         }
 
-        public string? Password { get; set; }
         public string? Vname { get; set; }
         public string? Nname { get; set; }
         public int Getnewsletter { get; set; }
