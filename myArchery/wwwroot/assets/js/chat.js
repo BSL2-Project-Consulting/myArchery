@@ -1,14 +1,27 @@
 ﻿"use strict";
 
-var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
+const connection = new signalR.HubConnectionBuilder()
+    .withUrl("/chathub")
+    .configureLogging(signalR.LogLevel.Information)
+    .build();
 
-window.onload{
-    connection.invoke("AddToGroup", eventid);
-}
+async function start() {
+    try {
+        await connection.start();
+        document.getElementById("sendButton").disabled = false;
+        console.log("SignalR Connected.");
+    } catch (err) {
+        console.log(err);
+        setTimeout(start, 5000);
+    }
+};
 
-window.onclose{
-    connection.invoke("RemoveFromGroup", eventid);
-}
+connection.onclose(async () => {
+    await start();
+});
+
+// Start the connection.
+start();
 
 //Disable the send button until connection is established.
 document.getElementById("sendButton").disabled = true;
@@ -22,16 +35,9 @@ connection.on("ReceiveMessage", function (username, message) {
     li.textContent = `${username} : ${message}`;
 });
 
-connection.start().then(function () {
-    document.getElementById("sendButton").disabled = false;
-}).catch(function (err) {
-    return console.error(err.toString());
-});
-
 document.getElementById("sendButton").addEventListener("click", function (event) {
-    var user = document.getElementById("userInput").value;
     var message = document.getElementById("messageInput").value;
-    connection.invoke("SendMessage", eventid, user, message).catch(function (err) {
+    connection.invoke("SendMessage", eventid, username, message).catch(function (err) {
         return console.error(err.toString());
     });
     event.preventDefault();
