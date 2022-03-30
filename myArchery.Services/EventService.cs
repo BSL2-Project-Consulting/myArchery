@@ -65,7 +65,7 @@ namespace myArchery.Services
         /// <param name="pointList">List of point objects the user can hit</param>
         /// <param name="userId">Id of the User that is creating the event</param>
         /// <returns>-1 if the event already exists, otherwise the amount of changed rows will be returned</returns>
-        public static int CreateEventAndAddCreator(string eventName, int arrowAmount, DateTime startDate, DateTime endDate, sbyte isPrivate, string password, int ParId, List<Point> pointList, string userId)
+        public static async Task CreateEventAndAddCreator(string eventName, int arrowAmount, DateTime startDate, DateTime endDate, sbyte isPrivate, string? password, int ParId, List<Point> pointList, string userId)
         {
             // Create new Event
             Event newEvent = new Event
@@ -82,12 +82,12 @@ namespace myArchery.Services
             Event res;
             using (ArcheryDbContext db = new ArcheryDbContext())
             {
-                if (db.Events.Contains(newEvent)) return 1;
+                if (db.Events.Contains(newEvent)) return;
                 else
                 {
                     db.Events.Add(newEvent);
 
-                    db.SaveChanges();
+                    await db.SaveChangesAsync();
 
                     res = db.Events.First(x => x.Eventname == newEvent.Eventname && x.Startdate == newEvent.Startdate && x.Enddate == newEvent.Enddate);
                 }
@@ -99,7 +99,7 @@ namespace myArchery.Services
                 {
                     db.Points.Add(item);
 
-                    db.SaveChanges();
+                    await db.SaveChangesAsync();
                 }
             }
 
@@ -111,10 +111,10 @@ namespace myArchery.Services
             {
                 db.EventUserRoles.Add(eventUserRole);
 
-                return db.SaveChanges();
+                await db.SaveChangesAsync();
             }
 
-
+            return;
         }
 
         public static List<Event> GetAllPublicEvents()

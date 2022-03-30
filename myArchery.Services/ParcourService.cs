@@ -47,6 +47,14 @@ namespace myArchery.Services
             return parcour;            
         }
 
+        public static int GetParcourIdByName(string parcourname)
+        {
+            using (ArcheryDbContext db = new ArcheryDbContext())
+            {
+                return db.Parcours.First(x => x.Parcourname == parcourname).ParId;
+            }
+        }
+
         /// <summary>
         /// Get Parcour by Id
         /// </summary>
