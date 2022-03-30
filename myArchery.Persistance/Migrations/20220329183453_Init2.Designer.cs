@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using myArchery.Persistance;
 
@@ -11,9 +12,10 @@ using myArchery.Persistance;
 namespace myArchery.Persistance.Migrations
 {
     [DbContext(typeof(ArcheryDbContext))]
-    partial class ArcheryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220329183453_Init2")]
+    partial class Init2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -5,7 +5,7 @@
 --USE Archery;
 --SET IDENTITY_INSERT dbo.AspNetUsers ON;
 
-INSERT INTO Archery.dbo.AspNetUsers (id, password, vname, nname, email, getnewsletter, username, normalizedusername, normalizedemail, emailconfirmed, passwordhash, securitystamp, concurrencystamp, phonenumber, phonenumberConfirmed, twofactorenabled, lockoutend, lockoutenabled, accessfailedcount) VALUES (1, 'hashpw1', 'Julian', 'Pichler', 'julian@pichler.at', 1, 'AdminJulian', 'ADMINJULIAN', 'JULIAN@PICHLER.AT', 1, 'hashedPW', 'stamp', 'concurencystamp', '066488387154', 1, 0, null, 0, 0);
+INSERT INTO Archery.dbo.AspNetUsers (id, vname, nname, email, getnewsletter, username, normalizedusername, normalizedemail, emailconfirmed, passwordhash, securitystamp, concurrencystamp, phonenumber, phonenumberConfirmed, twofactorenabled, lockoutend, lockoutenabled, accessfailedcount) VALUES (1, 'Julian', 'Pichler', 'julian@pichler.at', 1, 'AdminJulian', 'ADMINJULIAN', 'JULIAN@PICHLER.AT', 1, 'hashedPW', 'stamp', 'concurencystamp', '066488387154', 1, 0, null, 0, 0);
 --INSERT INTO Archery.dbo.AspNetUsers (id, username, password, vname, nname, email, getnewsletter) VALUES (1, 'User1', 'lol', 'Usi', 'User', 'UsiAspNetUser@gmail.com', 1);
 --INSERT INTO Archery.dbo.AspNetUsers (id, username, password, vname, nname, email, getnewsletter) VALUES (2, 'User2', 'User2', 'Usr', 'Us', 'Usr.Us@gmail.com',  1);
 --INSERT INTO Archery.dbo.AspNetUsers (id, username, password, vname, nname, email, getnewsletter) VALUES (3, 'User3', 'User3', 'Ui', 'Usi', 'Ui.Usi@gmail.com', 0);
@@ -89,10 +89,10 @@ SET IDENTITY_INSERT dbo.target ON;
 
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (1, 'Adler');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (2, 'Alpensteinbock');
-INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (3, 'Bär');
+INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (3, 'BÃ¤r');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (4, 'Biber');
-INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (5, 'Büffel');
-INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (6, 'Eichhörnchen');
+INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (5, 'BÃ¼ffel');
+INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (6, 'EichhÃ¶rnchen');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (7, 'Elch');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (8, 'Ente');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (9, 'Falke');
@@ -110,13 +110,13 @@ INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (20, 'Giraffe');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (21, 'Gnu');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (22, 'Goldschakal');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (23, 'Hirsch');
-INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (24, 'Hyäne');
+INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (24, 'HyÃ¤ne');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (25, 'Kauz');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (26, 'Kormoran');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (27, 'Krokodil');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (28, 'Kuh');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (29, 'Leopard');
-INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (30, 'Löwe');
+INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (30, 'LÃ¶we');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (31, 'Luchs');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (32, 'Mader');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (33, 'Murmeltier');
@@ -134,11 +134,11 @@ INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (44, 'Schneehase');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (45, 'Schwan');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (46, 'Schwein');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (47, 'Spinne');
-INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (48, 'Strauß');
+INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (48, 'Strauss');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (49, 'T-Rex');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (50, 'Uhu');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (51, 'Walross');
-INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (52, 'Waschbär');
+INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (52, 'WaschbÃ¤r');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (53, 'Wiesel');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (54, 'Wildkaninchen');
 INSERT INTO Archery.dbo.target (tarid, targetname) VALUES (55, 'Wildschwein');
@@ -219,25 +219,25 @@ INSERT INTO Archery.dbo.role (rolid, rolename) VALUES (2, 'Player');
 
 SET IDENTITY_INSERT dbo.role OFF;
 -- -----------------------------------------------------
--- Data for table Archery.dbo.eventuserroles
+-- Data for table Archery.dbo.eventuserrole
 -- -----------------------------------------------------
 
-SET IDENTITY_INSERT dbo.eventuserroles ON;
+SET IDENTITY_INSERT dbo.eventuserrole ON;
 
-INSERT INTO Archery.dbo.eventuserroles (evusroid, eveid, useid, rolid) VALUES (1, 1, 1, 2);
-INSERT INTO Archery.dbo.eventuserroles (evusroid, eveid, useid, rolid) VALUES (2, 1, 2, 1);
-INSERT INTO Archery.dbo.eventuserroles (evusroid, eveid, useid, rolid) VALUES (3, 1, 3, 2);
-INSERT INTO Archery.dbo.eventuserroles (evusroid, eveid, useid, rolid) VALUES (4, 1, 4, 2);
-INSERT INTO Archery.dbo.eventuserroles (evusroid, eveid, useid, rolid) VALUES (5, 2, 4, 2);
-INSERT INTO Archery.dbo.eventuserroles (evusroid, eveid, useid, rolid) VALUES (6, 2, 11, 1);
-INSERT INTO Archery.dbo.eventuserroles (evusroid, eveid, useid, rolid) VALUES (7, 2, 12, 2);
-INSERT INTO Archery.dbo.eventuserroles (evusroid, eveid, useid, rolid) VALUES (8, 3, 1, 1);
-INSERT INTO Archery.dbo.eventuserroles (evusroid, eveid, useid, rolid) VALUES (9, 3, 2, 2);
-INSERT INTO Archery.dbo.eventuserroles (evusroid, eveid, useid, rolid) VALUES (10, 4, 8, 2);
-INSERT INTO Archery.dbo.eventuserroles (evusroid, eveid, useid, rolid) VALUES (11, 4, 9, 1);
-INSERT INTO Archery.dbo.eventuserroles (evusroid, eveid, useid, rolid) VALUES (12, 5, 12, 1);
+INSERT INTO Archery.dbo.eventuserrole (evusroid, eveid, useid, rolid) VALUES (1, 1, 1, 2);
+INSERT INTO Archery.dbo.eventuserrole (evusroid, eveid, useid, rolid) VALUES (2, 1, 2, 1);
+INSERT INTO Archery.dbo.eventuserrole (evusroid, eveid, useid, rolid) VALUES (3, 1, 3, 2);
+INSERT INTO Archery.dbo.eventuserrole (evusroid, eveid, useid, rolid) VALUES (4, 1, 4, 2);
+INSERT INTO Archery.dbo.eventuserrole (evusroid, eveid, useid, rolid) VALUES (5, 2, 4, 2);
+INSERT INTO Archery.dbo.eventuserrole (evusroid, eveid, useid, rolid) VALUES (6, 2, 11, 1);
+INSERT INTO Archery.dbo.eventuserrole (evusroid, eveid, useid, rolid) VALUES (7, 2, 12, 2);
+INSERT INTO Archery.dbo.eventuserrole (evusroid, eveid, useid, rolid) VALUES (8, 3, 1, 1);
+INSERT INTO Archery.dbo.eventuserrole (evusroid, eveid, useid, rolid) VALUES (9, 3, 2, 2);
+INSERT INTO Archery.dbo.eventuserrole (evusroid, eveid, useid, rolid) VALUES (10, 4, 8, 2);
+INSERT INTO Archery.dbo.eventuserrole (evusroid, eveid, useid, rolid) VALUES (11, 4, 9, 1);
+INSERT INTO Archery.dbo.eventuserrole (evusroid, eveid, useid, rolid) VALUES (12, 5, 12, 1);
 
-SET IDENTITY_INSERT dbo.eventuserroles OFF;
+SET IDENTITY_INSERT dbo.eventuserrole OFF;
 
 -- -----------------------------------------------------
 -- Data for table Archery.dbo.arrow
