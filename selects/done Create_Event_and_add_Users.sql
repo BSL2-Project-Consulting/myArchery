@@ -23,16 +23,18 @@ VALUES ('eventname_here', arrowamount_here, 'startdate', 'enddate', is_privat_he
 -- insert into points:
 -- we always make 5 inserts per event, one for Center Kill, Kill, Life, Body and no Hit (the insert for no hit never changes)
 -- replace eve_id with the event id (integer) and the poitns with the amount of points the user choose
+-- also replace the number of arrow with the arrow nubers (for arrow one you get 100 points for a CK and... for 
+-- arrow two you get 80 points for CK)
 -- insert for Center Kill:
-INSERT INTO points (eve_id, value_id, value) VALUES (eve_id, 1, points);
+INSERT INTO points (eve_id, value_id, value, ArrowNumber) VALUES (eve_id, 1, points, nuber of arrow);
 -- insert for Kill:
-INSERT INTO points (eve_id, value_id, value) VALUES (eve_id, 2, points);
+INSERT INTO points (eve_id, value_id, value, ArrowNumber) VALUES (eve_id, 2, points, nuber of arrow);
 -- insert for Life:
-INSERT INTO points (eve_id, value_id, value) VALUES (eve_id, 3, points);
+INSERT INTO points (eve_id, value_id, value, ArrowNumber) VALUES (eve_id, 3, points, nuber of arrow);
 -- insert for Body:
-INSERT INTO points (eve_id, value_id, value) VALUES (eve_id, 4, points);
+INSERT INTO points (eve_id, value_id, value, ArrowNumber) VALUES (eve_id, 4, points, nuber of arrow);
 -- insert for no Hit (always 0):
-INSERT INTO points (eve_id, value_id, value) VALUES (eve_id, 5, 0);
+INSERT INTO points (eve_id, value_id, value, ArrowNumber) VALUES (eve_id, 5, 0, nuber of arrow);
 
 
 -- insert into event_user_roles:
