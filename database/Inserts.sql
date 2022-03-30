@@ -5,7 +5,7 @@
 --USE Archery;
 --SET IDENTITY_INSERT dbo.AspNetUsers ON;
 
-INSERT INTO Archery.dbo.AspNetUsers (id, vname, nname, email, getnewsletter, username, normalizedusername, normalizedemail, emailconfirmed, passwordhash, securitystamp, concurrencystamp, phonenumber, phonenumberConfirmed, twofactorenabled, lockoutend, lockoutenabled, accessfailedcount) VALUES (1, 'Julian', 'Pichler', 'julian@pichler.at', 1, 'Admin', 'ADMIN', 'JULIAN@PICHLER.AT', 1, 'AQAAAAEAACcQAAAAEFwYMQ70ItKK75uXxmjnd9GlaSNwVrcVK8m2xBffhP7WYzofg+0bTwT4i8pDa4wFGA==', 'stamp', 'concurencystamp', '066488387154', 1, 0, null, 0, 0);
+INSERT INTO Archery.dbo.AspNetUsers (id, vname, nname, email, getnewsletter, username, normalizedusername, normalizedemail, emailconfirmed, passwordhash, securitystamp, concurrencystamp, phonenumber, phonenumberConfirmed, twofactorenabled, lockoutend, lockoutenabled, accessfailedcount) VALUES (1, 'Admin', 'Admin', 'admin@admin.at', 1, 'Admin', 'ADMIN', 'ADMIN@ADMIN.AT', 1, 'AQAAAAEAACcQAAAAEHFFvVuQKttjqfT9Q0cYzCpTXeLZ26slIbJ4NsmU2XXVadWC+bPB1uuJznt8OHALZQ==', 'AOIN6BP732EOTECM262HYF5WMKP3L3KK', 'f921a0b3-5423-43e3-8243-b106c09574a2', null, 1, 0, null, 0, 0);
 --INSERT INTO Archery.dbo.AspNetUsers (id, username, password, vname, nname, email, getnewsletter) VALUES (1, 'User1', 'lol', 'Usi', 'User', 'UsiAspNetUser@gmail.com', 1);
 --INSERT INTO Archery.dbo.AspNetUsers (id, username, password, vname, nname, email, getnewsletter) VALUES (2, 'User2', 'User2', 'Usr', 'Us', 'Usr.Us@gmail.com',  1);
 --INSERT INTO Archery.dbo.AspNetUsers (id, username, password, vname, nname, email, getnewsletter) VALUES (3, 'User3', 'User3', 'Ui', 'Usi', 'Ui.Usi@gmail.com', 0);
