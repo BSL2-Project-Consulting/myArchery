@@ -43,12 +43,12 @@ namespace myArchery.Pages
 
         }
 
-        public async Task<IActionResult> OnPostAsync()
-        {
-            if (ModelState.IsValid)
-            {
-                var getEvent = EventService.GetAllPublicEvents();
-            }
-        }
+        //public async Task<IActionResult> OnPostAsync()
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var getEvent = EventService.GetAllPublicEvents();
+        //    }
+        //}
     }
 }
