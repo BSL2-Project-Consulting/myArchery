@@ -3,6 +3,7 @@
 @model myArchery.Pages.CreateEventModel
 @{
     ViewData["Title"] = "Create Event";
+
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +17,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="../src/assets/img/logo/logo_archery.png" rel="icon">
+    <link href="assets/img/logo/logo_archery.png" rel="icon">
 
     <!-- Google Fonts -->
     <link
@@ -99,7 +100,7 @@
 
             <tr>
                 <td><label asp-for="ArrowAmount">Anzahl Pfeile:</label></td>
-                <td><input asp-for="ArrowAmount" id="arrowAmount" type="number" /></td>
+                <td><input asp-for="ArrowAmount" id="arrowAmount" onchange="GeneratePointInputs()" value="3" type="number" /></td>
             </tr>
             
             <tr>
@@ -126,16 +127,11 @@
                     }
                 </select></td>
             </tr>
-
-                <tr><td><label  asp-for="CenterKill">Centerkill:</label></td>
-                <td><input asp-for="CenterKill" type="number" /></td></tr>
-                <tr><td><label asp-for="Kill">Kill:</label></td>
-                <td><input asp-for="Kill" type="number" /></td></tr>
-                <tr><td><label asp-for="Life">Life:</label></td>
-                <td><input asp-for="Life" type="number" /></td></tr>
-                <tr><td><label asp-for="Body">Body:</label></td>
-                <td><input asp-for="Body" type="number" /></td></tr>
             
+            <div id="pointDiv">
+
+            </div>
+
             </table>  
 
             <button style="position: absolute; left:60% " class="btn btn-primary" type="button">
@@ -146,12 +142,16 @@
             <span>Save</span>
             </button>
           
-
-
-
-
             </form>
+            <script>
+                function GeneratePointInputs(){
+                    var amount = document.getElementById("arrowAmount").valueAsNumber;
+                    var text = "";
 
+                    
+                    
+                }
+            </script>
     </section>
 </body>
 
