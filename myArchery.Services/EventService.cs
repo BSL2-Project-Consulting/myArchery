@@ -117,11 +117,11 @@ namespace myArchery.Services
 
         }
 
-        public static Event GetAllPublicEvents()
+        public static List<Event> GetAllPublicEvents()
         {
             using (ArcheryDbContext db = new ArcheryDbContext())
             {
-                return db.Events.First(x => x.EveId == 1);
+                return db.Events.Where(x => x.Isprivat == 0).ToList();
             }
         }
 

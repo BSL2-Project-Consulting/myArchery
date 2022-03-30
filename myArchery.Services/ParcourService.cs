@@ -68,5 +68,13 @@ namespace myArchery.Services
                 return db.SaveChanges();
             }
         }
+
+        public static List<Parcour> GetAllParcours()
+        {
+            using (ArcheryDbContext db = new ArcheryDbContext())
+            {
+                return db.Parcours.ToList();
+            }
+        }
     }
 }

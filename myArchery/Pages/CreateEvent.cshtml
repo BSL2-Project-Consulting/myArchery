@@ -1,4 +1,5 @@
 ﻿@page
+@using myArchery.Services
 @model myArchery.Pages.CreateEventModel
 @{
     ViewData["Title"] = "Create Event";
@@ -22,16 +23,20 @@
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Krub:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
 
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css " rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+<!-- Vendor CSS Files -->
+<link href="assets/vendor/aos/aos.css" rel="stylesheet">
+<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="assets/vendor/boxicons/css/boxicons.min.css " rel="stylesheet">
+<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+<link href="assets/css/archery-event.css" rel="stylesheet">
 
-    <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
+
+
+<!-- Template Main CSS File -->
+<link href="assets/css/style.css" rel="stylesheet">
+<link href="assets/css/archery-event.css" rel="stylesheet">
 
     <!-- Navbar Login Form Input -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -84,7 +89,69 @@
     </header>
 
     <section id="CreateEvent">
-        
+        <form action="">
+        <table style="position:center">
+                    
+            <tr>
+                <td><label asp-for="EventName">Eventname:</label></td>
+                <td><input asp-for="EventName" id="eventName" type="text"/></td>
+            </tr>
+
+            <tr>
+                <td><label asp-for="ArrowAmount">Anzahl Pfeile:</label></td>
+                <td><input asp-for="ArrowAmount" id="arrowAmount" type="number" /></td>
+            </tr>
+            
+            <tr>
+                <td><label asp-for="StartDate">Event Start:</label></td>
+                <td><input asp-for="StartDate" type="datetime" id="beginEventTime" name="beginEventTime" value="@DateTime.Now"></td>
+            </tr>
+
+            <tr>
+                <td><label asp-for="EndDate">Event End:</label></td>
+                <td><input asp-for="EndDate" type="datetime" id="endEventTime" name="endEventTime" value="@DateTime.Now.AddHours(2)"></td>
+            </tr>
+
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault"> Privates Event</label>
+            </div>
+
+            <tr id="pickParcour">
+                <td><label asp-for="Parcourname">Parcourname:</label></td>
+                <td><select asp-for="Parcourname">
+                    @foreach (var item in ParcourService.GetAllParcours())
+                    {
+                        <option>@item.Parcourname</option>
+                    }
+                </select></td>
+            </tr>
+
+                <tr><td><label  asp-for="CenterKill">Centerkill:</label></td>
+                <td><input asp-for="CenterKill" type="number" /></td></tr>
+                <tr><td><label asp-for="Kill">Kill:</label></td>
+                <td><input asp-for="Kill" type="number" /></td></tr>
+                <tr><td><label asp-for="Life">Life:</label></td>
+                <td><input asp-for="Life" type="number" /></td></tr>
+                <tr><td><label asp-for="Body">Body:</label></td>
+                <td><input asp-for="Body" type="number" /></td></tr>
+            
+            </table>  
+
+            <button style="position: absolute; left:60% " class="btn btn-primary" type="button">
+            <span>Clear</span>
+            </button>
+
+            <button style="position: absolute; left:40%" class="btn btn-primary" type="button">
+            <span>Save</span>
+            </button>
+          
+
+
+
+
+            </form>
+
     </section>
 </body>
 
