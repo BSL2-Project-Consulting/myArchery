@@ -54,8 +54,7 @@
                               HitType = points.ValueId.ToString(),
                               HitTime = arrow.Hitdatetime,
                               Points = points.Value,
-                              TargetName = target.Targetname,
-                              
+                              TargetName = target.Targetname
                           };
 
                 return res.ToList();

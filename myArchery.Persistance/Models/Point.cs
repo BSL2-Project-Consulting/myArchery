@@ -15,7 +15,7 @@ namespace myArchery.Persistance.Models
         public int EveId { get; set; }
         public int ValueId { get; set; }
         public int Value { get; set; }
-        public string ArrowNumber { get; set; }
+        public int ArrowNumber { get; set; }
 
         public virtual Event Eve { get; set; } = null!;
         public virtual ICollection<Arrow> Arrows { get; set; }

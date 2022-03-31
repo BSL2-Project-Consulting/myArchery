@@ -91,82 +91,99 @@
 
     <section id="CreateEvent">
         <form method="post" runat="server">
+        <br />
+        <br /><br /><br /><br /><br /><br /><br />
         <table style="position:center">
-                    
-            @if (Model.State == 0)
-            {
-             <tr>
-                <td><label asp-for="EventName">Eventname:</label></td>
-                <td><input asp-for="EventName" id="eventName" value=" " type="text"/></td>
-            </tr>
 
-            <tr>
-                <td><label asp-for="ArrowAmount">Anzahl Pfeile:</label></td>
-                <td><input asp-for="ArrowAmount" id="arrowAmount" onchange="GeneratePointInputs()" value="3" type="number" /></td>
-            </tr>
+                <tr>
+                    <td><label asp-for="EventName">Eventname:</label></td>
+                    <td><input asp-for="EventName" id="eventName" value=" " type="text"/></td>
+                </tr>
+
+                <tr>
+                    <td><label asp-for="ArrowAmount">Anzahl Pfeile:</label></td>
+                    <td><input asp-for="ArrowAmount" id="arrowAmount" min="1" value="3" type="number" /></td>
+                </tr>
             
-            <tr>
-                <td><label asp-for="StartDate">Event Start:</label></td>
-                <td><input asp-for="StartDate" type="datetime" id="beginEventTime" name="beginEventTime" value="@DateTime.Now"></td>
-            </tr>
+                <tr>
+                    <td><label asp-for="StartDate">Event Start:</label></td>
+                    <td><input asp-for="StartDate" type="datetime" id="beginEventTime" name="beginEventTime" value="@DateTime.Now"></td>
+                </tr>
 
-            <tr>
-                <td><label asp-for="EndDate">Event End:</label></td>
-                <td><input asp-for="EndDate" type="datetime" id="endEventTime" name="endEventTime" value="@DateTime.Now.AddHours(2)"></td>
-            </tr>
+                <tr>
+                    <td><label asp-for="EndDate">Event End:</label></td>
+                    <td><input asp-for="EndDate" type="datetime" id="endEventTime" name="endEventTime" value="@DateTime.Now.AddHours(2)"></td>
+                </tr>
 
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                <label class="form-check-label" for="flexSwitchCheckDefault"> Privates Event</label>
-            </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                    <label class="form-check-label" for="flexSwitchCheckDefault"> Privates Event</label>
+                </div>
 
-            <tr id="pickParcour">
-                <td><label asp-for="Parcourname">Parcourname:</label></td>
-                <td><select asp-for="Parcourname">
-                    @foreach (var item in ParcourService.GetAllParcours())
-                    {
-                        <option>@item.Parcourname</option>
-                    }
-                </select></td>
-                    </tr>
-                }
-                else if(Model.State == 1)
-                {
-                    <tr>
-                        <td><label asp-for="CenterKill">Centerkill:</label></td>
-                        <td><input asp-for="CenterKill"></td>
-                    </tr>
-                    <tr>
-                        <td><label asp-for="Kill">Kill:</label></td>
-                        <td><input asp-for="Kill"></td>
-                    </tr>                    
-                    <tr>
-                        <td><label asp-for="Life">Life:</label></td>
-                        <td><input asp-for="Life"></td>
-                    </tr>                    
-                    <tr>
-                        <td><label asp-for="Body">Body:</label></td>
-                        <td><input asp-for="Body"></td>
-                    </tr>
-                }else if(Model.State == 2)
-                {
-                    <tr></tr>
-                    <tr></tr>
-                    <tr><td>Funktioniert</td></tr>
-                }
+                <tr id="pickParcour">
+                    <td><label asp-for="Parcourname">Parcourname:</label></td>
+                    <td>
+                        <select asp-for="Parcourname">
+                        @foreach (var item in ParcourService.GetAllParcours())
+                        {
+                            <option>@item.Parcourname</option>
+                        }
+                        </select>
+                   </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                    </td>
+                </tr>
+                
 
-            </table>  
+            
+        </table> 
+        <div id="arrowPoint">
+                    
+        </div>
+        </form>
 
-            <button style="position: absolute; left:60% " class="btn btn-primary" type="button">
+                    <button onclick="@Model.ClearInputs()" style="position: absolute; left:60% " class="btn btn-primary" type="button">
             <span>Clear</span>
             </button>
 
-            <button style="position: absolute; left:40%" class="btn btn-primary" type="submit">
+            <button asp-action="@Model.OnPostAsync()" style="position: absolute; left:40%" class="btn btn-primary" type="submit">
             <span>Save</span>
             </button>
-          
-            </form>
     </section>
-</body>
+    <script>
+        var arrowCount = $("#arrowAmount").val();
+        console.log(arrowCount);
+        $(document).ready(function(){
+            $("#arrowAmount").change(function(){
+                UpdateArrowInputs();
+                });
+                UpdateArrowInputs();
+        });
 
+        function UpdateArrowInputs(){
+            arrowCount = $("#arrowAmount").val();
+                $("#arrowPoint").children('div').remove();
+
+                var html = '';
+
+                for(var i = 0; i < arrowCount; i++){
+                    html += '<h4>Pfeil 1</h4>'+
+                            '<label for="centerkill'+i+'">CenterKill</label>'+
+                            '<input id="centerkill'+i+'" type="number" /><br />'+
+                            '<label for="kill'+i+'">Kill</label>'+
+                            '<input id="kill'+i+'" type="number" /><br />'+
+                            '<label for="life'+i+'">Life</label>'+
+                            '<input id="life'+i+'" type="number" /><br />'+
+                            '<label for="body'+i+'">Body</label>'+
+                            '<input type="number" id="body'+i+'" /><br />';
+                }
+
+                $("#arrowPoint").html(html);            
+        }
+    </script>
+</body>
 </html>
+

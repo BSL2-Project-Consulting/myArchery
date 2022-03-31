@@ -18,6 +18,8 @@ namespace myArchery.Pages
             UserManager = userManager;
         }
 
+        public Action<int> ClearInputAction { get; set; }
+
         public UserManager<AspNetUser> UserManager { get; }
         [Required]
         [BindProperty]
@@ -70,7 +72,7 @@ namespace myArchery.Pages
             {
                 return RedirectToPage("./Login");
             }
-            else
+            else if(EventName != " ")
             {
                 if (State == 0)
                 {
@@ -110,9 +112,66 @@ namespace myArchery.Pages
                 else if (State == 2)
                 {
                     // Generate Event and Points and Add Current User as Creator
+                    // Generate Points from Lists
+                    
+                    List<Point> points = new List<Point>();
 
+                    for (int i = 0; i < CenterKillList.Count; i++)
+                    {
+                        Point centerKill = new Point
+                        {
+                            ArrowNumber = i + 1,
+                            Value = CenterKillList[i]
+                        };
+
+                        Point kill = new Point
+                        {
+                            ArrowNumber= i + 1,
+                            Value= KillList[i]
+                        };
+
+                        Point life = new Point
+                        {
+                            ArrowNumber = i + 1,
+                            Value = LifeList[i]
+                        };
+
+                        Point body = new Point
+                        {
+                            ArrowNumber = i + 1,
+                            Value = BodyList[i]
+                        };
+
+                        Point nohit = new Point
+                        {
+                            ArrowNumber = i + 1,
+                            Value = 0
+                        };
+
+                        points.Add(centerKill);
+                        points.Add(kill);
+                        points.Add(life);
+                        points.Add(body);
+                        points.Add(nohit);
+                    }
+
+                    NewEvent.Points = points;
+
+
+                    return RedirectToPage("Index");
                 }
             }
+            else
+            {
+                return Page();
+            }
+            return Page();
+        }
+
+        public int ClearInputs()
+        {
+            Console.WriteLine("Clear Inputs");
+            return 1;
         }
     }
 }
