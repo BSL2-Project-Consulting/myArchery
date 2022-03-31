@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace myArchery.Services
+﻿namespace myArchery.Services
 {
     public class ArrowService
     {
@@ -60,7 +54,8 @@ namespace myArchery.Services
                               HitType = points.ValueId.ToString(),
                               HitTime = arrow.Hitdatetime,
                               Points = points.Value,
-                              TargetName = target.Targetname
+                              TargetName = target.Targetname,
+                              
                           };
 
                 return res.ToList();
