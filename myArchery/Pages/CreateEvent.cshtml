@@ -90,12 +90,14 @@
     </header>
 
     <section id="CreateEvent">
-        <form action="">
+        <form method="post" runat="server">
         <table style="position:center">
                     
-            <tr>
+            @if (Model.State == 0)
+            {
+             <tr>
                 <td><label asp-for="EventName">Eventname:</label></td>
-                <td><input asp-for="EventName" id="eventName" type="text"/></td>
+                <td><input asp-for="EventName" id="eventName" value=" " type="text"/></td>
             </tr>
 
             <tr>
@@ -126,11 +128,32 @@
                         <option>@item.Parcourname</option>
                     }
                 </select></td>
-            </tr>
-            
-            <div id="pointDiv">
-
-            </div>
+                    </tr>
+                }
+                else if(Model.State == 1)
+                {
+                    <tr>
+                        <td><label asp-for="CenterKill">Centerkill:</label></td>
+                        <td><input asp-for="CenterKill"></td>
+                    </tr>
+                    <tr>
+                        <td><label asp-for="Kill">Kill:</label></td>
+                        <td><input asp-for="Kill"></td>
+                    </tr>                    
+                    <tr>
+                        <td><label asp-for="Life">Life:</label></td>
+                        <td><input asp-for="Life"></td>
+                    </tr>                    
+                    <tr>
+                        <td><label asp-for="Body">Body:</label></td>
+                        <td><input asp-for="Body"></td>
+                    </tr>
+                }else if(Model.State == 2)
+                {
+                    <tr></tr>
+                    <tr></tr>
+                    <tr><td>Funktioniert</td></tr>
+                }
 
             </table>  
 
@@ -138,20 +161,11 @@
             <span>Clear</span>
             </button>
 
-            <button style="position: absolute; left:40%" class="btn btn-primary" type="button">
+            <button style="position: absolute; left:40%" class="btn btn-primary" type="submit">
             <span>Save</span>
             </button>
           
             </form>
-            <script>
-                function GeneratePointInputs(){
-                    var amount = document.getElementById("arrowAmount").valueAsNumber;
-                    var text = "";
-
-                    
-                    
-                }
-            </script>
     </section>
 </body>
 
