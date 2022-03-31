@@ -1,11 +1,8 @@
 ﻿@page
 
 @inject UserManager<AspNetUser> UserManager
-
 @using myArchery.Services
 @model myArchery.Pages.CurrentEventModel
-
-
 
 @{
     if (User.Identity == null)
@@ -14,8 +11,8 @@
     }
 
     var usern = User.Identity.Name;
-    
-    
+
+
     var events = EventService.GetUsersCurrentEventsByUsername(usern);
 
     if (events.Count == 0)
@@ -39,11 +36,12 @@
     var overallPoints = users.Select(x => x.Points);
 
 
-    var points = tmp.Select(x => x.Points);
+    var points = Utility.ConvertListToJson<int>(tmp.Select(x => x.Points).ToList());
 
     var targetName = tmp.Select(x => x.TargetName);
 
     var username = tmp.Select(x => x.Username);
+
 
 
         var hitted = 0;
