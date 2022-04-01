@@ -115,12 +115,7 @@
                     <td><label asp-for="EndDate">Event End:</label></td>
                     <td><input asp-for="EndDate" type="datetime" id="endEventTime" name="endEventTime" value="@DateTime.Now.AddHours(2)"></td>
                 </tr>
-
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckDefault"> Privates Event</label>
-                </div>
-
+                
                 <tr id="pickParcour">
                     <td><label asp-for="Parcourname">Parcourname:</label></td>
                     <td>
@@ -146,15 +141,38 @@
         </div>
         </form>
 
-                    <button onclick="@Model.ClearInputs()" style="position: absolute; left:60% " class="btn btn-primary" type="button">
+                    <button onclick="ClearInputs()" style="position: absolute; left:60% " class="btn btn-primary" type="button">
             <span>Clear</span>
             </button>
 
-            <button asp-action="@Model.OnPostAsync()" style="position: absolute; left:40%" class="btn btn-primary" type="submit">
+            <button onclick="CreateEvent()" style="position: absolute; left:40%" class="btn btn-primary" type="submit">
             <span>Save</span>
             </button>
     </section>
     <script>
+        function ClearInputs(){
+
+        }
+
+        function CreateEvent(){
+            var data = $("#studenteForm").serialize();
+            
+            $.ajax({
+            type: 'POST',
+            url: '/Home/CreateStudent',
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
+            data: data,
+            success: function (result) {
+                alert('Successfully received Data ');
+                console.log(result);
+            },
+            error: function () {
+                alert('Failed to receive the Data');
+                console.log('Failed ');
+            }
+        })
+        }
+
         var arrowCount = $("#arrowAmount").val();
         console.log(arrowCount);
         $(document).ready(function(){
@@ -170,16 +188,16 @@
 
                 var html = '';
 
-                for(var i = 0; i < arrowCount; i++){
-                    html += '<h4>Pfeil '+i+'</h4>'+
-                            '<label for="centerkill'+i+'">CenterKill</label>'+
-                            '<input id="centerkill'+i+'" type="number" /><br />'+
-                            '<label for="kill'+i+'">Kill</label>'+
-                            '<input id="kill'+i+'" type="number" /><br />'+
-                            '<label for="life'+i+'">Life</label>'+
-                            '<input id="life'+i+'" type="number" /><br />'+
-                            '<label for="body'+i+'">Body</label>'+
-                            '<input type="number" id="body'+i+'" /><br />';
+                for(var i = 1; i <= arrowCount; i++){
+                    html += '<tr><td><h4>Pfeil '+i+'</h4></td></tr>'+
+                            '<tr><td><label for="centerkill'+i+'">CenterKill</label></td>'+
+                            '<td><input id="centerkill'+i+'" type="number" /></td></tr>'+
+                            '<tr><td><label for="kill'+i+'">Kill</label></td><'+
+                            '<td><input id="kill'+i+'" type="number" /></td></tr>'+
+                            '<tr><td><label for="life'+i+'">Life</label></td>'+
+                            '<td><input id="life'+i+'" type="number" /></td></tr>'+
+                            '<tr><td><label for="body'+i+'">Body</label></td>'+
+                            '<td><input type="number" id="body'+i+'" /></td></tr>';
                 }
 
                 $("#arrowPoint").html(html);            
