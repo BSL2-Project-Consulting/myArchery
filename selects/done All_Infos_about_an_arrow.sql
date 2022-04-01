@@ -1,27 +1,25 @@
 use myArchery;
 
 -- all infos about an arrow (you have to set eve_id)
-SELECT 
-	e.name AS 'Event Name',
-    u.username AS 'Username',
-    CASE 
-		WHEN p.value_id = 1 THEN 'Center Kill'
-        WHEN p.value_id = 2 THEN 'Kill'
-        WHEN p.value_id = 3 THEN 'Life'
-        WHEN p.value_id = 4 THEN 'Body'
-        WHEN p.value_id = 5 THEN 'No Hit'
-	END AS 'Hit_Type',
-    p.value AS 'Points',
-    a.hitdatetime AS 'Hit Time',
-    t.targetname AS 'Target'
+SELECT
+	e.Eventname AS 'Event Name',
+	u.username AS 'Username',
+	CASE
+		WHEN p.valueid = 1 THEN 'Center Kill'
+		WHEN p.valueid = 2 THEN 'Kill'
+		WHEN p.valueid = 3 THEN 'Life'
+		WHEN p.valueid = 4 THEN 'Body'
+		WHEN p.valueid = 5 THEN 'No Hit'
+	END AS 'HitType',
+	p.value AS 'Points',
+	a.hitdatetime AS 'Hit Time',
+	t.targetname AS 'Target'
 FROM arrow a
-LEFT JOIN event_user_roles eur ON a.evusro_id = eur.evusro_id
-LEFT JOIN points p ON a.poi_id = p.poi_id
-LEFT JOIN user u ON eur.use_id = u.use_id
-LEFT JOIN event e ON eur.eve_id = e.eve_id
-LEFT JOIN parcours_target pt ON a.pata_id = pt.pata_id
-LEFT JOIN target t ON pt.tar_id = t.tar_id
-WHERE eur.eve_id = 4
+LEFT JOIN eventuserrole eur ON a.evusroid = eur.evusroid
+LEFT JOIN point p ON a.poiid = p.poiid
+LEFT JOIN AspNetUsers u ON eur.useid = u.id
+LEFT JOIN event e ON eur.eveid = e.eveid
+LEFT JOIN parcourstarget pt ON a.pataid = pt.pataid
+LEFT JOIN target t ON pt.tarid = t.tarid
+WHERE eur.eveid = 3
 ORDER BY u.username, a.hitdatetime;
-
-
