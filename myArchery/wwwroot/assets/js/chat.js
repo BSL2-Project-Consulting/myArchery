@@ -37,7 +37,7 @@ connection.on("ReceiveMessage", function (username, message) {
 
 document.getElementById("sendButton").addEventListener("click", function (event) {
     var message = document.getElementById("messageInput").value;
-    connection.invoke("SendMessage", eventid, username, message).catch(function (err) {
+    connection.invoke("SendMessage", username, message).catch(function (err) {
         return console.error(err.toString());
     });
     event.preventDefault();

@@ -67,5 +67,9 @@ namespace myArchery.Services
             return JsonSerializer.Serialize(users);
         }
 
+        public static string ConvertListToJson<T>(List<T> list)
+        {
+            return JsonSerializer.Serialize(list);
+        }
     } 
 }

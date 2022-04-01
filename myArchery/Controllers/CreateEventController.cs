@@ -6,6 +6,7 @@ namespace myArchery.Controllers
     {
         public IActionResult Index()
         {
+            Console.WriteLine("Create Event Controller");
             return View();
         }
     }

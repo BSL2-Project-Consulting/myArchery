@@ -4,7 +4,11 @@ namespace myArchery.Hubs
 {
     public class ChatHub : Hub
     {
-        public async Task SendMessage(int eventId, string name, string message)
+        public async Task SendMessage(string name, string message)
+        {
+            await Clients.All.SendAsync("ReceiveMessage",name, message);
+        }
+        public async Task SendMessageInGroup(int eventId, string name, string message)
         {
             await Clients.Group(eventId.ToString()).SendAsync("ReceiveMessage", name, message);
             Console.WriteLine("Message Sent");
