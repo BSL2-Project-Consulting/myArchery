@@ -1,13 +1,83 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace myArchery.Controllers
 {
     public class CreateEventController : Controller
     {
-        public IActionResult Index()
+        // GET: CreateEventController
+        public ActionResult Index()
         {
-            Console.WriteLine("Create Event Controller");
             return View();
+        }
+
+        // GET: CreateEventController/Details/5
+        public ActionResult Details(int id)
+        {
+            return View();
+        }
+
+        // GET: CreateEventController/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: CreateEventController/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(IFormCollection collection)
+        {
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: CreateEventController/Edit/5
+        public ActionResult Edit(int id)
+        {
+            return View();
+        }
+
+        // POST: CreateEventController/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, IFormCollection collection)
+        {
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: CreateEventController/Delete/5
+        public ActionResult Delete(int id)
+        {
+            return View();
+        }
+
+        // POST: CreateEventController/Delete/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id, IFormCollection collection)
+        {
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }

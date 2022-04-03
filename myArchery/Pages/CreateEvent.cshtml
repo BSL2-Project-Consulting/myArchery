@@ -1,6 +1,7 @@
 ﻿@page
 @using myArchery.Services
 @model myArchery.Pages.CreateEventModel
+
 @{
     ViewData["Title"] = "Create Event";
 
@@ -92,54 +93,52 @@
     </header>
 
     <section id="CreateEvent">
-        <form method="post" runat="server">
+        <form id="form" method="post" runat="server">
         <br />
         <br /><br /><br /><br /><br /><br /><br />
         <table style="position:center">
 
-                <tr>
-                    <td><label asp-for="EventName">Eventname:</label></td>
-                    <td><input asp-for="EventName" id="eventName" value=" " type="text"/></td>
-                </tr>
+            <tr>
+                <td><label asp-for="EventName">Eventname:</label></td>
+                <td><input asp-for="EventName" id="eventName" value=" " type="text"/></td>
+            </tr>
 
-                <tr>
-                    <td><label asp-for="ArrowAmount">Anzahl Pfeile:</label></td>
-                    <td><input asp-for="ArrowAmount" id="arrowAmount" min="1" value="3" type="number" /></td>
-                </tr>
+            <tr>
+                <td><label asp-for="ArrowAmount">Anzahl Pfeile:</label></td>
+                <td><input asp-for="ArrowAmount" id="arrowAmount" min="1" value="3" type="number" /></td>
+            </tr>
             
-                <tr>
-                    <td><label asp-for="StartDate">Event Start:</label></td>
-                    <td><input asp-for="StartDate" type="datetime" id="beginEventTime" name="beginEventTime" value="@DateTime.Now"></td>
-                </tr>
+            <tr>
+                <td><label asp-for="StartDate">Event Start:</label></td>
+                <td><input asp-for="StartDate" type="datetime" id="beginEventTime" name="beginEventTime" value="@DateTime.Now"></td>
+            </tr>
 
-                <tr>
-                    <td><label asp-for="EndDate">Event End:</label></td>
-                    <td><input asp-for="EndDate" type="datetime" id="endEventTime" name="endEventTime" value="@DateTime.Now.AddHours(2)"></td>
-                </tr>
+            <tr>
+                <td><label asp-for="EndDate">Event End:</label></td>
+                <td><input asp-for="EndDate" type="datetime" id="endEventTime" name="endEventTime" value="@DateTime.Now.AddHours(2)"></td>
+            </tr>
                 
-                <tr id="pickParcour">
-                    <td><label asp-for="Parcourname">Parcourname:</label></td>
-                    <td>
-                        <select asp-for="Parcourname">
-                        @foreach (var item in ParcourService.GetAllParcours())
-                        {
-                            <option>@item.Parcourname</option>
-                        }
-                        </select>
-                   </td>
-                </tr>
+            <tr id="pickParcour">
+                <td><label asp-for="Parcourname">Parcourname:</label></td>
+                <td>
+                    <select asp-for="Parcourname">
+                    @foreach (var item in ParcourService.GetAllParcours())
+                    {
+                        <option>@item.Parcourname</option>
+                    }
+                    </select>
+                </td>
+            </tr>
                 
-                <tr>
-                    <td>
-                    </td>
-                </tr>
-                
-
-            
-        </table> 
-        <div id="arrowPoint">
+            <tr>
+                <td>
+                </td>
+            </tr>
+            <div id="arrowPoint">
                     
-        </div>
+            </div>
+        </table> 
+        
         </form>
 
                     <button onclick="ClearInputs()" style="position: absolute; left:60% " class="btn btn-primary" type="button">
@@ -156,11 +155,16 @@
         }
 
         function CreateEvent(){
+
+            $.each($("form").elements, function(){ 
+            console.log($(this));
+            });
+
             var data = $("#studenteForm").serialize();
             
             $.ajax({
             type: 'POST',
-            url: '/Home/CreateStudent',
+            url: '/CreateEvent',
             contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
             data: data,
             success: function (result) {
@@ -171,15 +175,18 @@
                 alert('Failed to receive the Data');
                 console.log('Failed ');
             }
-        })
+        });
         }
 
         var arrowCount = $("#arrowAmount").val();
         console.log(arrowCount);
         $(document).ready(function(){
+            $("#clearInputs").click(function(){
+                foreach(item in $("input"))
+            });
             $("#arrowAmount").change(function(){
                 UpdateArrowInputs();
-                });
+            });
                 UpdateArrowInputs();
         });
 
