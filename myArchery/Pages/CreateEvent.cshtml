@@ -34,12 +34,22 @@
 <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 <link href="../wwwroot/assets/css/archery-event.css" rel="stylesheet">
 <link href="../wwwroot/assets/css/CreateEvent.css" rel="stylesheet">
+ <link href="~/assets/css/CreateEvent.css" rel="stylesheet">
 
 
 
 <!-- Template Main CSS File -->
 <link href="assets/css/style.css" rel="stylesheet">
 <link href="assets/css/archery-event.css" rel="stylesheet">
+
+ <link rel="stylesheet" href="https://use.typekit.net/ltr8ukh.css">
+
+ 
+ <script src="./assets/js/CreateEvent.js"></script>
+ 
+
+
+
 
     <!-- Navbar Login Form Input -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -211,6 +221,23 @@
                 $("#arrowPoint").html(html);            
         }
     </script>
-</body>
-</html>
 
+
+
+     
+    <div class="container">
+      <div id="content">
+        <p id="code">GENERATE INVITE CODE BELOW</p>
+      </div>
+    </div>
+    <div id="b-nav">
+      <ul>
+        <button id="gen" onclick="genCode()">Generate Invite Code</button>
+      </ul>
+    </div>
+
+  
+</body>
+
+
+</html>
