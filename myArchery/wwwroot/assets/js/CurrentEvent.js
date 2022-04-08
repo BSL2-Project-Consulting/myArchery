@@ -73,19 +73,9 @@ function myChart2(ponitsPerArrow, ponitsPerArrowLength, targetname, targetlaenge
 
 function myChart3() {
 
-    let array3 = [];
+    let datas = [1, 2, 3, 4, 5];
+    let username = ['user1', 'user2'];
 
-    for (var i = 0; i < targetlaenge - 1; i++) {
-        array3.push(targetname);
-        let labels3 = array3[i];
-    }
-
-    let array4 = [];
-
-    for (var i = 0; i < pointsPerArrowLength; i++) {
-        array4.push(pointsPerArrow);
-        let data3 = array4[i];// Points per User per animal
-    }
 
 
     let labels3 = ['Target 1', 'Target 2', 'Target 3', 'Target 4'];    // All animals
