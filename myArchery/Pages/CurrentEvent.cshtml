@@ -207,7 +207,7 @@ src="assets/img/logo/firmen_logo.jfif" alt="" class="img-fluid"></a></h1>
 <li><a class="nav-link srollto" href="../html/archery-event.html">Current Event</a></li>
 <li><a class="nav-link scrollto" href="../html/liveranking.html">Live Ranking</a></li> -->
 <partial name="_HeaderPartial">
-        <div class="navbar-nav" style="padding-left: 1rem;">
+<div class="navbar-nav" style="padding-left: 1rem;">
 <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle ">Login</a>
 <div class="dropdown-menu login-form">
 <form action="LoginServer.php" method="post">
@@ -525,33 +525,70 @@ function myChart2() {
 
 function myChart3() {
 
+ var tmpString = "@name";
+
+   var tmpString = tmpString.replace(/&#x27;/g, "'");
+
+   const words = tmpString.split(',');
+
+   let labels3 = words;
+
+
+
+          
+    var tmpString2 = "@listofAllNames";
+
+   var tmpString2 = tmpString2.replace(/&#x27;/g, "'");
+
+   let words2 = tmpString2.split(',');
+
+  const temp = words2
+
+  
+   const uniqueset = new Set(words2);
    
-   let labels3 = ['Attack', 'Defense', 'Passing', 'Tackle', 'Speed'];
-let myChart3 = document.getElementById("myChart3").getContext('2d');
+   const backToArray = [...uniqueset]
+
+
+
+
+   var tmpString2 = "@punkte";
+       
+        var tmpString3 = tmpString2.replace(/&#x27;/g, " ");
+
+      
+       var tmpString4 = tmpString3.split(',');
+       
+       let data2 = new Array();
+
+
+       //Punkte pro User herausbekommen
+
+
+var i = 0;
+
+
+      let myChart3 = document.getElementById("myChart3").getContext('2d');
+
+
 
 let chart3 = new Chart(myChart3, {
     type: 'radar',
     data: {
-        labels: labels3,
+        labels: backToArray[0],
         datasets: [
           {
-            label: 'Messi',
+
+
+            label: 
             fill: true,
             backgroundColor: "rgba(179, 181, 198, 0.2)",
             borderColor: "rgba(179, 181, 198, 1)",
             pointBorderColor: "#fff",
             pointBackgroundColor: "rgba(179, 181, 198, 1)",
-            data: [50, 12, 55, 7, 29]
+            data: data2
           },
-          {
-            label: 'Ronaldo',
-            fill: true,
-            backgroundColor: "rgba(255, 99, 132, 0.2)",
-            borderColor: "rgba(255, 99, 132, 1)",
-            pointBorderColor: "#fff",
-            pointBackgroundColor: "rgba(255, 99, 132, 1)",
-            data: [51, 10, 32, 20, 44]
-          }
+          
         ]
     },
     options: {
