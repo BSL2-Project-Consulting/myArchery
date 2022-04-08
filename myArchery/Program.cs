@@ -7,6 +7,7 @@ using myArchery.Services;
 using myArchery.Data;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using myArchery.Hubs;
+using Microsoft.AspNetCore.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,6 +48,10 @@ else
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapHub<ChatHub>("/chatHub");
 app.MapHub<LiverankingHub>("/liverankingHub");

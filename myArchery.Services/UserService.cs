@@ -24,7 +24,7 @@ namespace myArchery.Services
             }
         }
 
-        internal static AspNetUser? GetUserById(string userId)
+        public static AspNetUser? GetUserById(string userId)
         {
             using (ArcheryDbContext db = new ArcheryDbContext())
             {

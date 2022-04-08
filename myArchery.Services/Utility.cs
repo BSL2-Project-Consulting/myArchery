@@ -10,11 +10,16 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace myArchery.Services
 {
     public static class Utility
     {
+        public static int ToInt(this string val)
+        {
+            return Convert.ToInt32(val);
+        }
         public static string ConvertToSha256(this string pw)
         {
             string hashedPW = pw;
