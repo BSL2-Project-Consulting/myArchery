@@ -524,80 +524,41 @@ function myChart2() {
 }
 
 function myChart3() {
+    let labels3 = ['Target 1', 'Target 2', 'Target 3', 'Target 4'];    // All animals
+    let myChart3 = document.getElementById("myChart3").getContext('2d');
 
- var tmpString = "@name";
-
-   var tmpString = tmpString.replace(/&#x27;/g, "'");
-
-   const words = tmpString.split(',');
-
-   let labels3 = words;
-
-
-
-          
-    var tmpString2 = "@listofAllNames";
-
-   var tmpString2 = tmpString2.replace(/&#x27;/g, "'");
-
-   let words2 = tmpString2.split(',');
-
-  const temp = words2
-
-  
-   const uniqueset = new Set(words2);
-   
-   const backToArray = [...uniqueset]
-
-
-
-
-   var tmpString2 = "@punkte";
-       
-        var tmpString3 = tmpString2.replace(/&#x27;/g, " ");
-
-      
-       var tmpString4 = tmpString3.split(',');
-       
-       let data2 = new Array();
-
-
-       //Punkte pro User herausbekommen
-
-
-var i = 0;
-
-
-      let myChart3 = document.getElementById("myChart3").getContext('2d');
-
-
-
-let chart3 = new Chart(myChart3, {
-    type: 'radar',
-    data: {
-        labels: backToArray[0],
-        datasets: [
-          {
-
-
-            label: 
-            fill: true,
-            backgroundColor: "rgba(179, 181, 198, 0.2)",
-            borderColor: "rgba(179, 181, 198, 1)",
-            pointBorderColor: "#fff",
-            pointBackgroundColor: "rgba(179, 181, 198, 1)",
-            data: data2
-          },
-          
-        ]
-    },
-    options: {
-        title: {
-            text: "Skills",
-            display: true
+    let chart3 = new Chart(myChart3, {
+        type: 'radar',
+        data: {
+            labels: labels3,
+            datasets: [
+                {
+                    label: 'Messi',     //Username
+                    fill: true,
+                    backgroundColor: "rgba(179, 181, 198, 0.2)",
+                    borderColor: "rgba(179, 181, 198, 1)",
+                    pointBorderColor: "#fff",
+                    pointBackgroundColor: "rgba(179, 181, 198, 1)",
+                    data: [1,2,3,4]  //User datas per User how much points per animal
+                },
+                {
+                    label: 'Ronaldo',   //Username
+                    fill: true,
+                    backgroundColor: "rgba(255, 99, 132, 0.2)",
+                    borderColor: "rgba(255, 99, 132, 1)",
+                    pointBorderColor: "#fff",
+                    pointBackgroundColor: "rgba(255, 99, 132, 1)",
+                    data: [10,20,40,30]      //User datas per User how much points per animal
+                }
+            ]
+        },
+        options: {
+            title: {
+                text: "Aim",
+                display: true
+            }
         }
-    }
-});
+    });
 
 }
 
