@@ -1,0 +1,58 @@
+﻿@model IEnumerable<myArchery.Persistance.Models.Event>
+
+@{
+    Layout = "_Layout";
+}
+
+<h1>AllEvents</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Eventname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Arrowamount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Startdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Enddate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Par.Parcourname)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Eventname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Arrowamount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Startdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Enddate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Par.Parcourname)
+            </td>
+            <td>
+                <a asp-action="Join" asp-route-id="@item.EveId, @User.Identity.Name">Join</a> |
+                <a asp-action="Details" asp-route-id="@item.EveId">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

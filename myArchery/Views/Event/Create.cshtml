@@ -1,0 +1,109 @@
+﻿@using myArchery.Services
+@model Event
+<script src="~/assets/lib/jquery/dist/jquery.min.js"></script>
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_Layout";
+
+    List<SelectListItem> GetParcoursAsListItem(){
+        var par = ParcourService.GetAllParcours().ConvertAll(a =>
+            {
+                return new SelectListItem()
+                {
+                    Text = a.Parcourname.ToString(),
+                    Value = a.Parcourname.ToString(),
+                    Selected = false
+                };
+            });
+
+            return par;
+    }
+}
+
+<h1>Create</h1>
+
+<h4>Event</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Eventname" class="control-label">Eventname:</label>
+                <input asp-for="Eventname" class="form-control" />
+                <span asp-validation-for="Eventname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Arrowamount" class="control-label">Arrowamount</label>
+                <input id="arrowAmount" id="arrowAmount" asp-for="Arrowamount" class="form-control" type="number"/>
+                <span asp-validation-for="Arrowamount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Startdate" class="control-label">StartDate:</label>
+                <input asp-for="Startdate" class="form-control" />
+                <span asp-validation-for="Startdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Enddate" class="control-label">EndDate:</label>
+                <input asp-for="Enddate" class="form-control" />
+                <span asp-validation-for="Enddate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label">Password:</label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParId" class="control-label"></label>
+                <select asp-for="ParId" class ="form-control" asp-items="GetParcoursAsListItem()">
+        </select>
+            </div>
+            <div id="arrowPoint">
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to Index</a>
+</div>
+
+@section Scripts {
+    
+
+    <script>
+        var arrowCount = $("#arrowAmount").val();
+        console.log(arrowCount);
+        $(document).ready(function(){
+            $("#arrowAmount").change(function(){
+                UpdateArrowInputs();
+                });
+                UpdateArrowInputs();
+        });
+
+        function UpdateArrowInputs(){
+            arrowCount = $("#arrowAmount").val();
+                $("#arrowPoint").children('div').remove();
+
+                var html = '';
+
+                for(var i = 0; i < arrowCount; i++){
+                    var count = i+1;
+                    html += '<h4>Pfeil '+count+'</h4>'+
+                            '<label for="centerkill'+count+'">CenterKill</label>'+
+                            '<input id="centerkill'+count+'" type="number" /><br />'+
+                            '<label for="kill'+count+'">Kill</label>'+
+                            '<input id="kill'+count+'" type="number" /><br />'+
+                            '<label for="body'+count+'">Body</label>'+
+                            '<input type="number" id="body'+count+'" /><br />';
+                }
+
+                $("#arrowPoint").html(html);            
+        }
+    </script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

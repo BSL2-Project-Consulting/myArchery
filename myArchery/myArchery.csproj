@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\CreateEvent.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\CreateEvent.cshtml" />
     <Content Remove="Pages\resetPassword.cshtml" />
   </ItemGroup>
 

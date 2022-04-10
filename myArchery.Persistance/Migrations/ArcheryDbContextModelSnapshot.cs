@@ -387,9 +387,8 @@ namespace myArchery.Persistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PoiId"), 1L, 1);
 
-                    b.Property<string>("ArrowNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("ArrowNumber")
+                        .HasColumnType("int");
 
                     b.Property<int>("EveId")
                         .HasColumnType("int");

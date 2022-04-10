@@ -1,0 +1,61 @@
+﻿@model myArchery.Persistance.Models.Event
+@{
+    ViewData["Title"] = "CreateEvent";
+}
+
+<h1>CreateEvent</h1>
+
+<h4>Event</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateEvent">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Eventname" class="control-label"></label>
+                <input asp-for="Eventname" class="form-control" />
+                <span asp-validation-for="Eventname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Arrowamount" class="control-label"></label>
+                <input asp-for="Arrowamount" class="form-control" />
+                <span asp-validation-for="Arrowamount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Startdate" class="control-label"></label>
+                <input asp-for="Startdate" class="form-control" />
+                <span asp-validation-for="Startdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Enddate" class="control-label"></label>
+                <input asp-for="Enddate" class="form-control" />
+                <span asp-validation-for="Enddate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Isprivat" class="control-label"></label>
+                <input asp-for="Isprivat" class="form-control" />
+                <span asp-validation-for="Isprivat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParId" class="control-label"></label>
+                <select asp-for="ParId" class ="form-control" asp-items="ViewBag.ParId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

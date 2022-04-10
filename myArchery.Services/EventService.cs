@@ -1,4 +1,5 @@
-﻿using myArchery.Services.TmpClasses;
+﻿using Microsoft.EntityFrameworkCore;
+using myArchery.Services.TmpClasses;
 
 namespace myArchery.Services
 {
@@ -10,7 +11,7 @@ namespace myArchery.Services
         -- 2) Amount of arrows a player has for each target 
         -- 3) start- and enddate
         -- 4) is event privat and if yes, a password
-        -- 5) a parcour (my personal idea is to give the user a list of all parcour names, he choose the name we insert the id of the chosen parcour)
+        -- 5) a parcour (my personal idea is to give the user a list of all parcour names, he choose the name we insert the eventId of the chosen parcour)
         -- 6) the points you get for Center Kill, Kill, Life, Body (if he dont hit, no hit, we always give 0 points the user cant change this fact)
 
         -- You have to make three or more inserts (depends on how many player you wanna add). 
@@ -25,7 +26,7 @@ namespace myArchery.Services
 
         -- insert into points:
         -- we always make 5 inserts per event, one for Center Kill, Kill, Life, Body and no Hit (the insert for no hit never changes)
-        -- replace eve_id with the event id (integer) and the poitns with the amount of points the user choose
+        -- replace eve_id with the event eventId (integer) and the poitns with the amount of points the user choose
         -- insert for Center Kill:
         INSERT INTO points (eve_id, value_id, value) VALUES (eve_id, 1, points);
         -- insert for Kill:
@@ -121,20 +122,30 @@ namespace myArchery.Services
         {
             using (ArcheryDbContext db = new ArcheryDbContext())
             {
-                return db.Events.Where(x => x.Isprivat == 0).ToList();
+                return db.Events.Include(x => x.Par).Where(x => x.Isprivat == 0).ToList();
             }
         }
 
-        public static Event? JoinEvent(int id, string password, string username)
+        public static Event? JoinEvent(int eventId, string username, string? password = null)
         {
+            Event? evt;
             using (ArcheryDbContext db = new ArcheryDbContext())
             {
-                var evt = db.Events.FirstOrDefault(x => x.EveId == id && x.Password == password.ConvertToSha256());
+                if (password == null)
+                {
+                    evt = db.Events.FirstOrDefault(x => x.EveId == eventId);
+                }
+                else
+                {
+                    evt = db.Events.FirstOrDefault(x => x.EveId == eventId && x.Password == password.ConvertToSha256());
+                }
 
                 var user = db.AspNetUsers.FirstOrDefault(x => x.UserName == username);
                 if (user != null)
                 {
                     // add user to event as Player
+                    EventUserRole eventUser = new EventUserRole { Use = UserService.GetUserByName(username), RolId = 2, EveId = eventId };
+                    db.EventUserRoles.Add(eventUser);
                 }
 
                 db.SaveChanges();
@@ -256,7 +267,7 @@ namespace myArchery.Services
 
 
 		/// <summary>
-		/// Get all AspNetUsers in an Event with Roles by given event id
+		/// Get all AspNetUsers in an Event with Roles by given event eventId
 		/// </summary>
 		/// <param name="eve_id">Event Id that coresponds with Event in the db</param>
 		/// <returns>List of objects with Event Name</returns>
@@ -329,5 +340,33 @@ namespace myArchery.Services
                           
             }
 		}
+
+        public static Event? GetEventById(int id)
+        {
+            using (ArcheryDbContext db = new ArcheryDbContext())
+            {
+                return db.Events.FirstOrDefault(x => x.EveId == id);
+            }
+        }
+
+        public static bool UserIsInEvent(int eventId, string username)
+        {
+            using (ArcheryDbContext db = new ArcheryDbContext())
+            {
+                var _event = db.EventUserRoles.Where(x => x.EveId == eventId && x.Use == UserService.GetUserByName(username));
+                return _event.Count() > 0;
+            }
+
+
+        }
+
+        public static void AddUserToEvent(int eventId, string username)
+        {
+            EventUserRole eventUser = new EventUserRole { Use = UserService.GetUserByName(username), RolId = 2, EveId = eventId };
+            using (ArcheryDbContext db = new ArcheryDbContext())
+            {
+                db.EventUserRoles.Add(eventUser);
+            }
+        }
     }
 }
