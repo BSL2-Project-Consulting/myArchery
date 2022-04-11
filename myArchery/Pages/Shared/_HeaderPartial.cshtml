@@ -19,30 +19,20 @@
         <i class="fas fa-bars"></i>
       </label>
       <ul>
-                    <li><a class="nav-link scrollto active" href="#">Home</a></li>
-                    <li><a class="nav-link scrollto" href="About">About</a></li>
+        <!-- <li><a class="active" href="#">Home</a></li> -->
+                    <li><a class="nav-link scrollto active" href="Index">Home</a></li>
+                    <li><a class="nav-link scrollto" href="/About">About</a></li>
                     <li><a class="nav-link scrollto" href="Event/AllEvents">All Events</a></li>
                     <li><a class="nav-link scrollto" href="Event/Create">Create Events</a></li>
-                    <li><a class="nav-link scrollto" href="CurrentEvent">Current Event</a></li>
-      </ul>
-    </nav>
-    <div class="content">
-      <h1>Archery</h1>
-      <div>Our Software to bring your archery club to a new level.</div>
-      <!-- <div>using only HTML & CSS</div> -->
-    </div>
-
-  </body>
-</html>
-
-@if (SignInManager.IsSignedIn(User))
+                    <li><a class="nav-link scrollto" href="Event/CurrentEvent">Current Event</a></li>
+                    @if (SignInManager.IsSignedIn(User))
 {
     <li class="nav-item">
         <a  class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
     </li>
     <li class="nav-item">
         <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post" >
-            <button  type="submit" class="nav-link btn btn-link">Logout</button>
+            <button  type="submit" class="nav-link">Logout</button>
         </form>
     </li>
 }
@@ -55,3 +45,10 @@ else
         <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">Login</a>
     </li>
 }
+      </ul>
+    </nav>
+
+  </body>
+</html>
+
+

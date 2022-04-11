@@ -153,6 +153,14 @@ namespace myArchery.Services
             }
         }
 
+        public static Target GetCurrentTargetForUsername(string? name)
+        {
+            using (ArcheryDbContext db = new ArcheryDbContext())
+            {
+                return db.Targets.First();
+            }
+        }
+
         public static int RemoveEvent(int evtId)
         {
             using (ArcheryDbContext db = new ArcheryDbContext())
