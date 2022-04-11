@@ -80,10 +80,9 @@ namespace myArchery.Controllers
                     ParId = ParcourService.GetParcourIdByName(collection["ParId"])
                 };
 
-                for (int i = 0; i < collection.Count; i += 5)
+                for (int i = 6; i < collection.Count-1; i+=3)
                 {
-                    int currentIndex = (i / 5)+1;
-
+                    int currentIndex = i - 6;
                     string centerkillVal = "centerkill" + currentIndex;
                     string killVal = "kill" + currentIndex;
                     string bodyVal = "body" + currentIndex;
@@ -93,10 +92,10 @@ namespace myArchery.Controllers
                     Point body = new Point();
                     Point nohit = new Point();
 
-                    centerKill.ArrowNumber = currentIndex;
-                    kill.ArrowNumber = currentIndex;
-                    body.ArrowNumber = currentIndex;
-                    nohit.ArrowNumber = currentIndex;
+                    centerKill.ArrowNumber = currentIndex+1;
+                    kill.ArrowNumber = currentIndex+1;
+                    body.ArrowNumber = currentIndex+1;
+                    nohit.ArrowNumber = currentIndex+1;
 
 
                     _ = int.TryParse(collection[$"Points[{currentIndex}].CenterkillValue"], out int result1);
