@@ -9,7 +9,8 @@ namespace myArchery.Controllers
         // GET: EventController
         public ActionResult Index()
         {
-            return View();
+            var test = EventService.GetAllPublicEvents();
+            return View(test);
         }
 
         //GET: EventController/AllEvents
@@ -55,7 +56,7 @@ namespace myArchery.Controllers
         // GET: EventController/Create
         public ActionResult Create()
         {
-            return View(new Event { Startdate = DateTime.Now, Enddate = DateTime.Now.AddHours(2), Arrowamount = 3 }) ;
+            return View();
         }
 
         // POST: EventController/Create
