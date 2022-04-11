@@ -99,13 +99,13 @@ namespace myArchery.Controllers
                     nohit.ArrowNumber = currentIndex;
 
 
-                    _ = int.TryParse(collection[centerkillVal], out int result1);
+                    _ = int.TryParse(collection[$"Points[{currentIndex}].CenterkillValue"], out int result1);
                     centerKill.Value = result1;
 
-                    _ = int.TryParse(collection[killVal], out int result2);
+                    _ = int.TryParse(collection[$"Points[{currentIndex}].KillValue"], out int result2);
                     kill.Value = result2;
 
-                    _ = int.TryParse(collection[bodyVal], out int result3);
+                    _ = int.TryParse(collection[$"Points[{currentIndex}].BodyValue"], out int result3);
                     body.Value = result3;
 
                     nohit.Value = 0;
@@ -141,8 +141,6 @@ namespace myArchery.Controllers
             catch(Exception ex)
             {
                 throw;
-                Console.WriteLine(ex.Source + " " + ex.Message);
-                return View();
             }
         }
 
@@ -170,7 +168,7 @@ namespace myArchery.Controllers
         // GET: EventController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(EventService.GetEventById(id));
         }
 
         // POST: EventController/Delete/5
@@ -180,27 +178,7 @@ namespace myArchery.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: EventController/Currentevent
-        public ActionResult CurrentEvent()
-        {
-            return View(EventService.GetCurrentTargetForUsername(User.Identity.Name));
-        }
-
-        // POST: EventController/Currentevent/{id}
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult CurrentEvent(int id, IFormCollection collection)
-        {
-            try
-            {
+                EventService.RemoveEvent(id);
                 return RedirectToAction(nameof(Index));
             }
             catch
