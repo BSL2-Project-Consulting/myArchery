@@ -8,11 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< Updated upstream
     <Content Remove="Pages\resetPassword.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="Pages\resetPassword.cshtml" />
+=======
+    <Compile Remove="Pages\CreateEvent.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\CreateEvent.cshtml" />
+>>>>>>> Stashed changes
   </ItemGroup>
 
   <ItemGroup>
