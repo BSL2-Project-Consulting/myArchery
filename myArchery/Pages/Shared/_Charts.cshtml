@@ -151,66 +151,43 @@
       
     <h1>Charts, Charts, Charts</h1>
 
-    <script>
+<script>
+    function clickHandler1() {
+
+    window.alert('Button wurde geklickt! 11111');
+      myChart1(@hitted, @missed);  
+    }
 
 
+    function clickHandler2() {
 
-function clickHandler1() {
+    window.alert('Button wurde geklickt! 222222');
+      myChart2();
+    }
 
-window.alert('Button wurde geklickt! 11111');
+    function clickHandler3() {
 
+    window.alert('Button wurde geklickt! 333333');
+      myChart3();
+    }
 
-   
-  myChart1(@hitted, @missed);
-  
-}
+    function clickHandler4() {
 
-
-function clickHandler2() {
-
-window.alert('Button wurde geklickt! 222222');
-
-
-   
-  
-  myChart2();
-}
-
-function clickHandler3() {
-
-window.alert('Button wurde geklickt! 333333');
+    window.alert('Button wurde geklickt! 444444');
+      myChart4();
+    }
 
 
-   
-  
-  myChart3();
-}
+    function dokumentGeladen(event) {
+      //window.alert('Dokument wurde geladen! Zugriff auf das komplette DOM möglich.');
+      document.getElementById('1').addEventListener('click', clickHandler1, false);
+      document.getElementById('2').addEventListener('click', clickHandler2, false);
+      document.getElementById('3').addEventListener('click', clickHandler3, false);
+      document.getElementById('4').addEventListener('click', clickHandler4, false);
+    }
 
-function clickHandler4() {
+    document.addEventListener('DOMContentLoaded', dokumentGeladen, false);
 
-window.alert('Button wurde geklickt! 444444');
-
-
-   
-  
-  myChart4();
-}
-
-
-function dokumentGeladen(event) {
-  window.alert('Dokument wurde geladen! Zugriff auf das komplette DOM möglich.');
-  document.getElementById('1').addEventListener('click', clickHandler1, false);
-  document.getElementById('2').addEventListener('click', clickHandler2, false);
-  document.getElementById('3').addEventListener('click', clickHandler3, false);
-  document.getElementById('4').addEventListener('click', clickHandler4, false);
-}
-
-
-
-document.addEventListener('DOMContentLoaded', dokumentGeladen, false);
-
-
-  
 
 </script>
 
@@ -249,16 +226,8 @@ document.addEventListener('DOMContentLoaded', dokumentGeladen, false);
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
-
-
-
-
-
-    
-</div>
-
-
+    <div>
+        <div>
             <div class="col-6 chart">
                 <canvas id="myChart" width="500" height="400"></canvas>
                 
@@ -277,8 +246,7 @@ document.addEventListener('DOMContentLoaded', dokumentGeladen, false);
         </div>
     </div>
 
-@section Scripts{
-    <script>
+<script>
 
 function myChart1(hitted, missed) {
 
@@ -319,16 +287,10 @@ function myChart1(hitted, missed) {
 
 
 function myChart2() {
-    const htmlconvert = {
-        "'" : "&#x27;"
+   const htmlconvert = {"'" : "&#x27;"};
 
-    };
-
-    alert("A");
+   alert("A");
     
-
-
-
    var tmpString = "@name";
 
    var tmpString = tmpString.replace(/&#x27;/g, "'");
@@ -380,7 +342,6 @@ function myChart2() {
             }
         }
     });
-
 }
 
 function myChart3() {
@@ -419,7 +380,6 @@ function myChart3() {
             }
         }
     });
-
 }
 
 function myChart4() {
@@ -444,7 +404,6 @@ function myChart4() {
                 display: true
             }
         }
-});
+    });
 }
 </script>
-}
