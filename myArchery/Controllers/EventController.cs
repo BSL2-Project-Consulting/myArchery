@@ -186,5 +186,27 @@ namespace myArchery.Controllers
                 return View();
             }
         }
+
+        // GET: EventController/Currentevent
+        public ActionResult CurrentEvent()
+        {
+            return View(EventService.GetCurrentTargetForUsername(User.Identity.Name));
+        }
+
+        // POST: EventController/Currentevent/{id}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CurrentEvent(int id, IFormCollection collection)
+        {
+            try
+            {
+                EventService.RemoveEvent(id);
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
 }
