@@ -1,6 +1,5 @@
-@page
-@using myArchery.Services
-@model myArchery.Pages.AllEvents.IndexModel
+@model IEnumerable<myArchery.Persistance.Models.Event>
+
 @{
     ViewData["Title"] = "All Events";
     Layout = "_Layout";
@@ -14,25 +13,25 @@
     <thead>
         <tr>
             <th>                
-                @Html.DisplayNameFor(model => model.Event[0].Eventname)
+                @Html.DisplayNameFor(model => model.Eventname)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Event[0].Startdate)
+                @Html.DisplayNameFor(model => model.Startdate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Event[0].Enddate)
+                @Html.DisplayNameFor(model => model.Enddate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Event[0].Isprivat)
+                @Html.DisplayNameFor(model => model.Isprivat)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Event[0].Par)
+                @Html.DisplayNameFor(model => model.Par)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Event) {
+@foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Eventname)
