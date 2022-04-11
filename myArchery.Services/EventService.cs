@@ -144,7 +144,7 @@ namespace myArchery.Services
                 if (user != null)
                 {
                     // add user to event as Player
-                    EventUserRole eventUser = new EventUserRole { Use = UserService.GetUserByName(username), RolId = 2, EveId = eventId };
+                    EventUserRole eventUser = new EventUserRole { UseId = UserService.GetUserByName(username).Id, RolId = 2, EveId = eventId };
                     db.EventUserRoles.Add(eventUser);
                 }
 
