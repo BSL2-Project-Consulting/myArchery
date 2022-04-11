@@ -27,7 +27,8 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        @using (Html.BeginForm())
+        {
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Eventname" class="control-label">Eventname:</label>
@@ -36,7 +37,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Arrowamount" class="control-label">Arrowamount</label>
-                <input id="arrowAmount" id="arrowAmount" asp-for="Arrowamount" class="form-control" type="number"/>
+                <input id="arrowAmount" asp-for="Arrowamount" class="form-control" type="number"/>
                 <span asp-validation-for="Arrowamount" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -59,11 +60,16 @@
                 <select asp-for="ParId" class ="form-control" asp-items="GetParcoursAsListItem()">
                 </select>
             </div>
-            @Html.EditorFor(x => x.Points)
+            <div class="form-group" id="item-list">
+                <a href="#" id="add">Add</a>
+                @Html.EditorFor(f => f.Points)
+            </div>
+            <div id="arrowPoint">
+            </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
-        </form>
+        }
     </div>
 </div>
 
@@ -75,13 +81,34 @@
     
 
     <script>
-        var arrowCount = $("#arrowAmount").val();
+        let prev_val;
+        var arrowCount = document.getElementById("arrowAmount");
         console.log(arrowCount);
         $(document).ready(function(){
-            $("#arrowAmount").change(function(){
-                UpdateArrowInputs();
-                });
-                UpdateArrowInputs();
+            //$("#arrowAmount").change(function(){
+            //    UpdateArrowInputs();
+            //    });
+            //    UpdateArrowInputs();
+
+
+
+                $("#arrowAmount").change(function (e) {
+               e.preventDefault();
+               var i = $("#arrowAmount").val();
+               //var p = '<label for="Points['+i+'].Value">Test</label>';
+               //$("#item-list").append(p);
+               //var n = '<input type="number" id="Centerkill'+i+'" class="items" name="Points[' + i + '].CenterkillValue" />';
+               //$("#item-list").append(n);
+
+               $("#item-list").children().remove();
+
+               for(var x = 0; x < i; x++){
+                   var count = x+1;
+                   var html = '<label for="Centerkill'+count+'">Centerkill:</label> '+
+                                '<input type="number" id="Centerkill'+count+'" class="items" name="Points[' + x + '].CenterkillValue" /><br>';
+                   $("#item-list").append(html);
+               }
+   });          
         });
 
         function UpdateArrowInputs(){

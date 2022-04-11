@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using myArchery.Services;
+using myArchery.Services.TmpClasses;
 
 namespace myArchery.Controllers
 {
@@ -56,7 +57,7 @@ namespace myArchery.Controllers
         // GET: EventController/Create
         public ActionResult Create()
         {
-            return View();
+            return View(new CreateEventTemplate { Arrowamount = 1, Startdate = DateTime.Parse(DateTime.Now.ToShortDateString()), Enddate = DateTime.Parse(DateTime.Now.AddHours(2).ToShortDateString()) });
         }
 
         // POST: EventController/Create
@@ -73,6 +74,7 @@ namespace myArchery.Controllers
                     Eventname = collection["EventName"],
                     Startdate = DateTime.Parse(collection["Startdate"]),
                     Enddate = DateTime.Parse(collection["EndDate"]),
+                    Arrowamount = Convert.ToInt32(collection["Arrowamount"]),
                     Isprivat = 0,
                     Password = null,
                     ParId = ParcourService.GetParcourIdByName(collection["ParId"])
@@ -126,8 +128,7 @@ namespace myArchery.Controllers
                     var res = db.Events.First(x => x.Equals(newEvent));
                     var user = UserService.GetUserByName(userName);
 
-                    EventUserRole eventUserRole = new EventUserRole { EveId = res.EveId, Use = user, RolId = 1 };
-
+                    EventUserRole eventUserRole = new EventUserRole { EveId = res.EveId, UseId = user.Id, RolId = 1 };
 
                     db.EventUserRoles.Add(eventUserRole);
 

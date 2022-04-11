@@ -2,6 +2,11 @@
 
 @{
     Layout = "_Layout";
+
+    if (User.Identity == null)
+    {
+        // redirect to Login Page
+    }
 }
 
 <h1>AllEvents</h1>
@@ -49,8 +54,8 @@
                 @Html.DisplayFor(modelItem => item.Par.Parcourname)
             </td>
             <td>
-                <a asp-action="Join" asp-route-id="@item.EveId, @User.Identity.Name">Join</a> |
-                <a asp-action="Details" asp-route-id="@item.EveId">Details</a>
+                <a asp-action="Join" asp-route-eventid="@item.EveId" asp-route-username="@User.Identity.Name">Join</a> |
+                <a asp-action="Details" asp-route-eventid="@item.EveId">Details</a>
             </td>
         </tr>
 }
