@@ -199,5 +199,20 @@ namespace myArchery.Controllers
         {
             return View(EventService.GetCurrentTargetForUsername(User.Identity.Name));
         }
+
+        // GET: EventController/MyEvents
+        public ActionResult MyEvents()
+        {
+            var tmp = EventService.GetListOfCurrentEventsByUsername(User.Identity.Name);
+            return View(tmp);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult MyEvents(int id)
+        {
+            var tmp = EventService.GetListOfCurrentEventsByUsername(User.Identity.Name);
+            return View(tmp);
+        }
     }
 }

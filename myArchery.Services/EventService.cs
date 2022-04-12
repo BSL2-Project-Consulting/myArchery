@@ -195,17 +195,67 @@ namespace myArchery.Services
             using (ArcheryDbContext db = new ArcheryDbContext())
             {
                 var res = from AspNetUsers in db.AspNetUsers
+                                          join eventRoles in db.EventUserRoles on AspNetUsers.Id equals eventRoles.UseId
+                                          join events in db.Events on eventRoles.EveId equals events.EveId
+                                          into result1
+                                          from finalResult in result1
+                                          where finalResult.Startdate < DateTime.Now
+                                          select new EventWithId
+                                          {
+                                              Eventname = finalResult.Eventname,
+                                              Id = finalResult.EveId
+                                          };
+                return res.ToList();                
+            }
+        }
+
+        public static IEnumerable<EventWithDetails> GetListOfCurrentEventsByUsername(string username)
+        {
+            using (ArcheryDbContext db = new ArcheryDbContext())
+            {
+                IEnumerable<EventWithDetails> res = from AspNetUsers in db.AspNetUsers
+                          where AspNetUsers.UserName == username
                           join eventRoles in db.EventUserRoles on AspNetUsers.Id equals eventRoles.UseId
+                          join parcours in db.Parcours on eventRoles.Eve.ParId equals parcours.ParId
                           join events in db.Events on eventRoles.EveId equals events.EveId
                           into result1
                           from finalResult in result1
-                          where finalResult.Startdate < DateTime.Now
-                          select new EventWithId
+                          where finalResult.Startdate < DateTime.Now && finalResult.Enddate < DateTime.Now
+                          select new EventWithDetails
                           {
-                              Eventname = finalResult.Eventname,
-                              Id = finalResult.EveId
+                              Name = finalResult.Eventname,
+                              Id = finalResult.EveId,
+                              ArrowAmount = finalResult.Arrowamount,
+                              UserCount = db.EventUserRoles.Where(x => x.EveId == finalResult.EveId).Count(),
+                              StartDate = finalResult.Startdate,
+                              EndDate = finalResult.Enddate,
+                              IsPrivate = finalResult.Isprivat
                           };
-                return res.ToList();                
+
+                return res;
+            }
+        }
+
+        public static TargetTemplate GetUsersCurrentTargetInEvent(int eveId, string username)
+        {
+            using (ArcheryDbContext db = new ArcheryDbContext())
+            {
+                var user = UserService.GetUserByName(username);
+
+                var result = from ParcoursTarget in db.ParcoursTargets
+                             join Parcour in db.Parcours on ParcoursTarget.ParId equals Parcour.ParId
+                             join Event in db.Events on Parcour.ParId equals Event.ParId
+                             join EventUserRole in db.EventUserRoles on Event.EveId equals EventUserRole.EveId
+                             join Target in db.Targets on ParcoursTarget.TarId equals Target.TarId
+                             join Arrow in db.Arrows on ParcoursTarget.PataId equals Arrow.PataId
+                             join Point in db.Points on Arrow.PoiId equals Point.PoiId
+                             where Event.EveId == eveId && EventUserRole.UseId == user.Id
+                             select new TargetTemplate
+                             {
+                                 TargetName = Target.Targetname,
+                                 TarId = Target.TarId,
+                             };
+                return result.First();
             }
         }
 
