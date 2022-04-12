@@ -32,11 +32,7 @@
                 </div>
                 <div class="chatbox__messages">
                     <div id="messagesList">
-                        <div class="messages__item messages__item--typing">
-                            <span class="messages__dot"></span>
-                            <span class="messages__dot"></span>
-                            <span class="messages__dot"></span>
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="chatbox__footer">
@@ -56,7 +52,8 @@
     <script src="~/assets/js/app.js"></script>
     <script src="~/assets/js/signalr/dist/browser/signalr.js"></script>
     <script>
-        let user = '@User.Identity.Name'
+        let user = '@User.Identity.Name';
+        let html = "";
 
         "use strict";
 
@@ -92,25 +89,29 @@
             if(username == user){
                 // user is sender
                 messageString = '<div class="messages__item messages__item--operator">'+
-                                    'Me:'+
-                                    message+
+                                    'Me:'
+                                    +message+
                                     '</div>';
             }else{
                 // user is receiver
                 messageString = '<div class="messages__item messages__item--visitor">'+
-                                    'Me:'+
-                                    message+
+                                    'Me:'
+                                    +message+
                                     '</div>';
             }
 
-            document.getElementById("messagesList").append(messageString);
+            //document.getElementById("messagesList").append(messageString);
+            html += messageString;
+            document.getElementById("messagesList").innerHTML = html;
         });
 
         document.getElementById("sendButton").addEventListener("click", function (event) {
             var message = document.getElementById("messageInput").value;
-            connection.invoke("SendMessage", user, message).catch(function (err) {
+            if(message != ""){
+                connection.invoke("SendMessage", user, message).catch(function (err) {
                 return console.error(err.toString());
             });
+            }
             event.preventDefault();
         });
     </script>
