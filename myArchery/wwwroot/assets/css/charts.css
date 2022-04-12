@@ -1,0 +1,72 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;500;600;700&display=swap');
+
+:root {
+  --light: #a9d6e5;
+  --light2: #61a5c2;
+  --light3: #2c7da0;
+  --light4: #014f86;
+  --dark: #012a4a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  transition: .6s;
+}
+.hidden {
+  display: none;
+}
+.heading {
+  text-align: center;
+  color: var(--dark);
+
+}
+
+#main {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100vw;
+
+  font-family: 'Hind', sans-serif;
+  background: var(--light2);
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem 2rem;
+  gap: 2rem;
+overflow: scroll;
+}
+#content-img {
+  width: 40vw;
+  height: auto;
+  margin-top: calc(1rem + 2rem) 
+}
+.tab-bar {
+  display: flex;
+}
+.tab {
+  padding: .5rem 1rem;
+  cursor: pointer;
+  border-radius: 10px 10px 0 0;
+  margin: 0 .3rem;
+  color: var(--light);
+  background: var(--dark);
+}
+.tab:hover {
+  color: var(--dark);
+  background: var(--light2);
+  border: 3px solid red;
+  border-style: inherit;
+}
+.tab-content {
+  background: var(--light4);
+  color: var(--light);
+  padding: .7rem;
+  width: 40vw;
+  height: 400px;
+  
+
+}
