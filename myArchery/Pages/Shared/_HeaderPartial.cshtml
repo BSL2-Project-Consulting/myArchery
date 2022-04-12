@@ -8,6 +8,7 @@
     <meta charset="utf-8">
    <!--------- <title>Responsive Navigation Menu</title>------>
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/wwwroot/assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
@@ -20,11 +21,12 @@
       </label>
       <ul>
         <!-- <li><a class="active" href="#">Home</a></li> -->
-                    <li><a class="nav-link scrollto active" href="Index">Home</a></li>
+                    <li><a class="nav-link scrollto active" href="~/Index">Home</a></li>
                     <li><a class="nav-link scrollto" href="~/About">About</a></li>
                     <li><a class="nav-link scrollto" href="~/Event/AllEvents">All Events</a></li>
                     <li><a class="nav-link scrollto" href="~/Event/Create">Create Events</a></li>
                     <li><a class="nav-link scrollto" href="~/Event/CurrentEvent">Current Event</a></li>
+                    <li><a class="nav-link scrollto" href="~/Chat">Chat</a></li>
                     @if (SignInManager.IsSignedIn(User))
 {
     <li class="nav-item">
