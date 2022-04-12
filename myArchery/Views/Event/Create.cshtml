@@ -27,16 +27,17 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        @using (Html.BeginForm())
+        {
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Eventname" class="control-label">Eventname:</label>
-                <input asp-for="Eventname" class="form-control" />
+                <input asp-for="Eventname" class="form-control" required/>
                 <span asp-validation-for="Eventname" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Arrowamount" class="control-label">Arrowamount</label>
-                <input id="arrowAmount" id="arrowAmount" asp-for="Arrowamount" class="form-control" type="number"/>
+                <input id="arrowAmount" min="1" asp-for="Arrowamount" class="form-control" type="number"/>
                 <span asp-validation-for="Arrowamount" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -59,11 +60,15 @@
                 <select asp-for="ParId" class ="form-control" asp-items="GetParcoursAsListItem()">
                 </select>
             </div>
-            @Html.EditorFor(x => x.Points)
+            <div class="form-group" id="item-list">
+                @Html.EditorFor(f => f.Points)
+            </div>
+            <div id="arrowPoint">
+            </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
-        </form>
+        }
     </div>
 </div>
 
@@ -75,33 +80,49 @@
     
 
     <script>
-        var arrowCount = $("#arrowAmount").val();
+        let prev_val;
+        var arrowCount = document.getElementById("arrowAmount");
         console.log(arrowCount);
-        $(document).ready(function(){
-            $("#arrowAmount").change(function(){
-                UpdateArrowInputs();
-                });
-                UpdateArrowInputs();
-        });
+            $(document).ready(function(){
+                //$("#arrowAmount").change(function(){
+                //    UpdateArrowInputs();
+                //    });
+                    UpdateArrowInputs();
 
+                    $("#arrowAmount").change(function (e) {
+                    e.preventDefault();
+                    UpdateArrowInputs();
+                   });
+            });
         function UpdateArrowInputs(){
-            arrowCount = $("#arrowAmount").val();
-                $("#arrowPoint").children('div').remove();
+                var i = $("#arrowAmount").val();
+               //var p = '<label for="Points['+i+'].Value">Test</label>';
+               //$("#item-list").append(p);
+               //var n = '<input type="number" id="Centerkill'+i+'" class="items" name="Points[' + i + '].CenterkillValue" />';
+               //$("#item-list").append(n);
 
-                var html = '';
+               $("#item-list").children().remove();
 
-                for(var i = 0; i < arrowCount; i++){
-                    var count = i+1;
-                    html += '<h4>Pfeil '+count+'</h4>'+
-                            '<label for="centerkill'+count+'">CenterKill</label>'+
-                            '<input id="centerkill'+count+'" type="number" /><br />'+
-                            '<label for="kill'+count+'">Kill</label>'+
-                            '<input id="kill'+count+'" type="number" /><br />'+
-                            '<label for="body'+count+'">Body</label>'+
-                            '<input type="number" id="body'+count+'" /><br />';
-                }
+               for(var x = 0; x < i; x++){
+                   var count = x+1;
+                   //var html = '<label for="Centerkill'+count+'">Centerkill:</label> '+
+                   //             '<input type="number" id="Centerkill'+count+'" class="items" name="Points[' + x + '].CenterkillValue" /><br>';
 
-                $("#arrowPoint").html(html);            
+                   var html = '<div>'+
+                                '<h3>Pfeil '+count+'</h3>'+
+                                '<label for="CenterkillValue">Centerkill:</label>'+
+                                '<input type="number" min="0" name="Points['+x+'].CenterkillValue" class="items"/>'+
+                                '</div>'+
+                                '<div>'+
+                                    '<label asp-for="KillValue">Kill:</label>'+
+                                    '<input type="number" min="0" name="Points['+x+'].KillValue" class="items"/>'+
+                                '</div>'+
+                                '<div>'+
+                                    '<label for="BodyValue">Body:</label>'+
+                                    '<input type="number" min="0" name="Points['+x+'].BodyValue" class="items"/>'+
+                                '</div>';
+                   $("#item-list").append(html);
+            }
         }
     </script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

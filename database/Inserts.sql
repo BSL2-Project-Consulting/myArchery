@@ -1,3 +1,4 @@
+USE Archery;
 -- -----------------------------------------------------
 -- Data for table Archery.dboAspNetUser
 -- -----------------------------------------------------
@@ -53,31 +54,31 @@ SET IDENTITY_INSERT dbo.event OFF;
 
 SET IDENTITY_INSERT dbo.point ON;
 
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (1, 1, 1, 20);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (2, 1, 2, 10);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (3, 1, 3, 5);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (4, 1, 4, 2);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (5, 1, 5, 0);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (6, 2, 1, 200);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (7, 2, 2, 100);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (8, 2, 3, 10);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (9, 2, 4, 0);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (10, 2, 5, 0);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (11, 3, 1, 100);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (12, 3, 2, 50);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (13, 3, 3, 25);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (14, 3, 4, 0);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (15, 3, 5, 0);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (16, 4, 1, 58);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (17, 4, 2, 50);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (18, 4, 3, 10);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (19, 4, 4, 5);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (20, 4, 5, 0);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (21, 5, 1, 60);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (22, 5, 2, 30);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (23, 5, 3, 10);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (24, 5, 4, 0);
-INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value) VALUES (25, 5, 5, 0);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (1, 1, 1, 20, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (2, 1, 2, 10, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (3, 1, 3, 5, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (4, 1, 4, 2, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (5, 1, 5, 0, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (6, 2, 1, 200, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (7, 2, 2, 100, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (8, 2, 3, 10, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (9, 2, 4, 0, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (10, 2, 5, 0, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (11, 3, 1, 100, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (12, 3, 2, 50, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (13, 3, 3, 25, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (14, 3, 4, 0, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (15, 3, 5, 0, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (16, 4, 1, 58, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (17, 4, 2, 50, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (18, 4, 3, 10, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (19, 4, 4, 5, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (20, 4, 5, 0, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (21, 5, 1, 60, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (22, 5, 2, 30, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (23, 5, 3, 10, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (24, 5, 4, 0, 1);
+INSERT INTO Archery.dbo.point (poiid, eveid, valueid, value, ArrowNumber) VALUES (25, 5, 5, 0, 1);
 
 SET IDENTITY_INSERT dbo.point OFF;
 

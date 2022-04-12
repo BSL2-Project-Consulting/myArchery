@@ -1,18 +1,14 @@
-  /**
-   * Mobile nav toggle
-   */
-   on('click', '.mobile-nav-toggle', function(e) {
-    select('#navbar').classList.toggle('navbar-mobile')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
-  })
+//toggle switch view
+var imputswitch = document.getElementById("lol-checkbox");
+var targets = document.getElementById("targets");
+var ranking = document.getElementById("ranking");
 
-  /**
-   * Mobile nav dropdowns activate
-   */
-  on('click', '.navbar .dropdown > a', function(e) {
-    if (select('#navbar').classList.contains('navbar-mobile')) {
-      e.preventDefault()
-      this.nextElementSibling.classList.toggle('dropdown-active')
+imputswitch.addEventListener('change',function(){
+    if(imputswitch.checked && ranking.style.display === "none") {
+        targets.style.display = "none";
+        ranking.style.display = "block";
+    } else {
+        targets.style.display = "block";
+        ranking.style.display = "none";
     }
-  }, true)
+});

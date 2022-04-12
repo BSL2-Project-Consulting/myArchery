@@ -1,24 +1,31 @@
 @using Microsoft.AspNetCore.Identity
 @inject SignInManager<AspNetUser> SignInManager
 @inject UserManager<AspNetUser> UserManager
-
- 
- 
-  <header id="header" class="fixed-top">
-        <div class="container d-flex align-items-center justify-content-between">
-            <h1 class="logo">ARCHERY<a href="Index" class="logo"><img src="assets/img/logo/firmen_logo.jfif"
-                        alt="" class="img-fluid"></a></h1>
-            <nav id="navbar" class="navbar navbar-expand-lg " style="background-color:#f6f7ff">
-                <ul>
-                    <li><a class="nav-link scrollto active" href="#">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#">About</a></li>
-                    <li><a class="nav-link scrollto" href="Event/AllEvents">All Events</a></li>
-                    <li><a class="nav-link scrollto" href="Event/Create">Create Events</a></li>
-                    <li><a class="nav-link scrollto" href="CurrentEvent">Current Event</a></li>
-                    <li><a class="nav-link scrollto" href="LiveRanking">LiveRanking</a></li>
-   
-<ul class="navbar-nav">
-@if (SignInManager.IsSignedIn(User))
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+   <!--------- <title>Responsive Navigation Menu</title>------>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <nav>
+      <div class="logo">My Archery</div>
+      <input type="checkbox" id="click">
+      <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <!-- <li><a class="active" href="#">Home</a></li> -->
+                    <li><a class="nav-link scrollto active" href="Index">Home</a></li>
+                    <li><a class="nav-link scrollto" href="~/About">About</a></li>
+                    <li><a class="nav-link scrollto" href="~/Event/AllEvents">All Events</a></li>
+                    <li><a class="nav-link scrollto" href="~/Event/Create">Create Events</a></li>
+                    <li><a class="nav-link scrollto" href="~/Event/CurrentEvent">Current Event</a></li>
+                    @if (SignInManager.IsSignedIn(User))
 {
     <li class="nav-item">
         <a  class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
@@ -38,11 +45,10 @@ else
         <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">Login</a>
     </li>
 }
-</ul>
+      </ul>
+    </nav>
 
-                    <img src="assets/img/icons/login_icon.png"
-                        style="max-width: 20px; max-height: 20px; margin-left: 5px; margin-bottom: 1px;">
-                </ul>
-            </nav>
-        </div>
-    </header>
+  </body>
+</html>
+
+

@@ -1,0 +1,194 @@
+﻿@model Target
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    if (!User.Identity.IsAuthenticated)
+    {
+        // redirect to Login
+    }
+    ViewData["Title"] = "Current Event";
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="uft-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Event - Erstes Event</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/assets/img/logo/logo_archery.png" rel="icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Krub:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/assets/css/vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/assets/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/css/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/assets/css/vendor/boxicons/css/boxicons.min.css " rel="stylesheet">
+    <link href="~/assets/css/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/assets/css/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="~/assets/css/archery-event.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/assets/css/style.css" rel="stylesheet">
+    <link href="~/assets/css/archery-event.css" rel="stylesheet">
+
+    <!-- Navbar Login Form Input -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/archery.js"></script>
+    <script src="~/assets/js/CurrentEvent.js"></script>
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+    <!-- CHARTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js" integrity="sha512-Lii3WMtgA0C0qmmkdCpsG0Gjr6M0ajRyQRQSbTF6BsrVh/nhZdHpVZ76iMIPvQwz1eoXC3DmAg9K51qT5/dEVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <partial name="_HeaderPartial"/>
+
+
+    <section id="current-event">
+
+        <!-- <div class="view_toggle" style="display: block; margin-top: 80px;">
+                <input id="toggle" class="toggle" type="checkbox" />
+            </div>
+        -->
+        <div class="vertical-center">
+            <input type="checkbox" id="lol-checkbox">
+            <label id="button" for="lol-checkbox">
+                <div id="knob"></div>
+                <div id="subscribe">Target</div>
+                <div id="alright">Ranking</div>
+            </label>
+        </div>
+
+        
+
+        <div id="targets" class="targets current-event-element" style="display: block;">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Target</h1>
+                    <h2>@Model.Targetname</h2>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-12">
+                    <form class="">
+                        <div class="radiobtn">
+                            <input type="radio" id="ck" name="drone" value="ck" checked />
+                            <label for="ck">Center Kill</label>
+                        </div>
+
+                        <div class="radiobtn">
+                            <input type="radio" id="k" name="drone" value="k" />
+                            <label for="k">Kill</label>
+                        </div>
+
+                        <div class="radiobtn">
+                            <input type="radio" id="b" name="drone" value="b" />
+                            <label for="b">Body</label>
+                        </div>
+
+                        <div class="radiobtn">
+                            <input type="radio" id="nh" name="drone" value="nh" />
+                            <label for="nh">No Hit</label>
+                        </div>
+
+                        <div class="radiobtn">
+                            <button class="save_button" type="submit" name="save">Save</button>
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="col-2"></div>
+            </div>
+
+        </div>
+
+        <div id="ranking" class="ranking current-event-element" style="display: none;">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Live Ranking</h1>
+                    <h2></h2>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-12">
+                    <table id="players">
+                        <tr>
+                            <th>Spieler</th>
+                            <th>Punkte</th>
+                        </tr>
+                        <tr>
+                            <td>Hans</td>
+                            <td>101</td>
+                        </tr>
+                        <tr>
+                            <td>Sören</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>May</td>
+                            <td>51</td>
+                        </tr>
+                        <tr>
+                            <td>Paul</td>
+                            <td>45</td>
+                        </tr>
+                        <tr>
+                            <td>Danis Mum</td>
+                            <td>22</td>
+                        </tr>
+                        <tr>
+                            <td>Kevin</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Julian</td>
+                            <td>1</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-2"></div>
+            </div>
+
+        </div>
+    </section>
+    <section id="chat">
+        <partial name="_Chat" />
+    </section>
+    <section id="charts">
+        <partial name="_Charts" />
+    </section>
+
+    <script src="~/assets/js/main.js"></script>
+
+</body>
+
+</html>

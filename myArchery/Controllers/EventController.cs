@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using myArchery.Services;
+using myArchery.Services.TmpClasses;
 
 namespace myArchery.Controllers
 {
@@ -56,7 +57,7 @@ namespace myArchery.Controllers
         // GET: EventController/Create
         public ActionResult Create()
         {
-            return View();
+            return View(new CreateEventTemplate { Arrowamount = 1, Startdate = DateTime.Parse(DateTime.Now.ToShortDateString()), Enddate = DateTime.Parse(DateTime.Now.AddHours(2).ToShortDateString()) });
         }
 
         // POST: EventController/Create
@@ -73,15 +74,15 @@ namespace myArchery.Controllers
                     Eventname = collection["EventName"],
                     Startdate = DateTime.Parse(collection["Startdate"]),
                     Enddate = DateTime.Parse(collection["EndDate"]),
+                    Arrowamount = Convert.ToInt32(collection["Arrowamount"]),
                     Isprivat = 0,
                     Password = null,
                     ParId = ParcourService.GetParcourIdByName(collection["ParId"])
                 };
 
-                for (int i = 0; i < collection.Count; i += 5)
+                for (int i = 6; i < collection.Count-1; i+=3)
                 {
-                    int currentIndex = (i / 5)+1;
-
+                    int currentIndex = i - 6;
                     string centerkillVal = "centerkill" + currentIndex;
                     string killVal = "kill" + currentIndex;
                     string bodyVal = "body" + currentIndex;
@@ -91,19 +92,19 @@ namespace myArchery.Controllers
                     Point body = new Point();
                     Point nohit = new Point();
 
-                    centerKill.ArrowNumber = currentIndex;
-                    kill.ArrowNumber = currentIndex;
-                    body.ArrowNumber = currentIndex;
-                    nohit.ArrowNumber = currentIndex;
+                    centerKill.ArrowNumber = currentIndex+1;
+                    kill.ArrowNumber = currentIndex+1;
+                    body.ArrowNumber = currentIndex+1;
+                    nohit.ArrowNumber = currentIndex+1;
 
 
-                    _ = int.TryParse(collection[centerkillVal], out int result1);
+                    _ = int.TryParse(collection[$"Points[{currentIndex}].CenterkillValue"], out int result1);
                     centerKill.Value = result1;
 
-                    _ = int.TryParse(collection[killVal], out int result2);
+                    _ = int.TryParse(collection[$"Points[{currentIndex}].KillValue"], out int result2);
                     kill.Value = result2;
 
-                    _ = int.TryParse(collection[bodyVal], out int result3);
+                    _ = int.TryParse(collection[$"Points[{currentIndex}].BodyValue"], out int result3);
                     body.Value = result3;
 
                     nohit.Value = 0;
@@ -126,8 +127,7 @@ namespace myArchery.Controllers
                     var res = db.Events.First(x => x.Equals(newEvent));
                     var user = UserService.GetUserByName(userName);
 
-                    EventUserRole eventUserRole = new EventUserRole { EveId = res.EveId, Use = user, RolId = 1 };
-
+                    EventUserRole eventUserRole = new EventUserRole { EveId = res.EveId, UseId = user.Id, RolId = 1 };
 
                     db.EventUserRoles.Add(eventUserRole);
 
@@ -140,8 +140,6 @@ namespace myArchery.Controllers
             catch(Exception ex)
             {
                 throw;
-                Console.WriteLine(ex.Source + " " + ex.Message);
-                return View();
             }
         }
 
@@ -169,7 +167,7 @@ namespace myArchery.Controllers
         // GET: EventController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(EventService.GetEventById(id));
         }
 
         // POST: EventController/Delete/5
@@ -179,12 +177,27 @@ namespace myArchery.Controllers
         {
             try
             {
+                EventService.RemoveEvent(id);
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
                 return View();
             }
+        }
+
+        // GET: EventController/Currentevent
+        public ActionResult CurrentEvent()
+        {
+            return View(EventService.GetCurrentTargetForUsername(User.Identity.Name));
+        }
+
+        // POST: EventController/Currentevent/{id}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CurrentEvent(IFormCollection collection)
+        {
+            return View(EventService.GetCurrentTargetForUsername(User.Identity.Name));
         }
     }
 }

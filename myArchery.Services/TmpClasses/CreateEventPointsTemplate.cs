@@ -8,8 +8,9 @@ namespace myArchery.Services.TmpClasses
 {
     public class CreateEventPointsTemplate
     {
-        public string? Hittype { get; set; }
         public int ArrowNumber { get; set; }
-        public int Value { get; set; }
+        public int CenterkillValue { get; set; }
+        public int KillValue { get; set; }
+        public int BodyValue { get; set; }        
     }
 }

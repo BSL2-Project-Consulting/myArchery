@@ -13,11 +13,6 @@
 
   <ItemGroup>
     <Content Remove="Pages\CreateEvent.cshtml" />
-    <Content Remove="Pages\resetPassword.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Pages\resetPassword.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
