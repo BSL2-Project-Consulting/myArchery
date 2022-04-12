@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
+using myArchery.Hubs;
 using myArchery.Services;
 using myArchery.Services.TmpClasses;
 
@@ -10,12 +12,14 @@ namespace myArchery.Controllers
         private readonly EventService _eventService;
         private readonly ParcourService _parcourService;
         private readonly ArrowService _arrowService;
+        private readonly IHubContext<LiverankingHub> _hubContext;
 
-        public EventController(EventService eventService, ParcourService parcourService, ArrowService arrowService)
+        public EventController(EventService eventService, ParcourService parcourService, ArrowService arrowService, IHubContext<LiverankingHub> hubContext)
         {
             _eventService = eventService;
             _parcourService = parcourService;
             _arrowService = arrowService;
+            _hubContext = hubContext;
         }
         // GET: EventController
         public ActionResult Index()
@@ -205,7 +209,7 @@ namespace myArchery.Controllers
         // POST: EventController/Currentevent/{id}
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CurrentEvent(int id,IFormCollection collection)
+        public async Task<ActionResult> CurrentEvent(int id,IFormCollection collection)
         {
             var eventId = id;
 
@@ -230,6 +234,8 @@ namespace myArchery.Controllers
                 default:
                     break;
             }
+
+            await _hubContext.Clients.All.SendAsync("SendRanking", id);
 
             return View(_eventService.GetUsersCurrentTargetInEvent(id, User.Identity.Name));
         }
