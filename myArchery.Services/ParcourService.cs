@@ -2,9 +2,16 @@
 
 namespace myArchery.Services
 {
-    public static class ParcourService
+    public class ParcourService
     {
-        public static int AddParcours(string name, string adress, int postalCode, string town, ICollection<ParcoursTarget> targets)
+        private ArcheryDbContext _context;
+
+        public ParcourService(ArcheryDbContext context)
+        {
+            _context = context;
+        }
+
+        public int AddParcours(string name, string adress, int postalCode, string town, ICollection<ParcoursTarget> targets)
         {
             Parcour parcour = new Parcour
             {
@@ -17,14 +24,11 @@ namespace myArchery.Services
             
             parcour.Counttargets = parcour.ParcoursTargets.Count;
 
-            using (ArcheryDbContext db = new ArcheryDbContext())
-            {
-                db.Parcours.Add(parcour);
-                return db.SaveChanges();
-            }
+            _context.Parcours.Add(parcour);
+            return _context.SaveChanges();
         }
 
-        public static Parcour ModifyParcour(int par_id, string? name = null, string? adress = null, int postalCode = 0, string? town = null, ICollection<ParcoursTarget>? targets = null)
+        public Parcour ModifyParcour(int par_id, string? name = null, string? adress = null, int postalCode = 0, string? town = null, ICollection<ParcoursTarget>? targets = null)
         {
             var parcour = GetParcourById(par_id);
 
@@ -38,21 +42,15 @@ namespace myArchery.Services
             parcour.ParcoursTargets = targets ?? parcour.ParcoursTargets;
             parcour.Counttargets = parcour.ParcoursTargets.Count();
 
-            using (ArcheryDbContext db = new ArcheryDbContext())
-            {
-                db.Parcours.Update(parcour);
-                db.SaveChanges();
-            }
-            
+            _context.Parcours.Update(parcour);
+            _context.SaveChanges();
+
             return parcour;            
         }
 
-        public static int GetParcourIdByName(string parcourname)
+        public int GetParcourIdByName(string parcourname)
         {
-            using (ArcheryDbContext db = new ArcheryDbContext())
-            {
-                return db.Parcours.First(x => x.Parcourname == parcourname).ParId;
-            }
+            return _context.Parcours.First(x => x.Parcourname == parcourname).ParId;
         }
 
         /// <summary>
@@ -83,6 +81,11 @@ namespace myArchery.Services
             {
                 return db.Parcours.ToList();
             }
+        }
+
+        public int GetParcourFromEvent(int eveId)
+        {
+            return _context.Events.Where(x => x.EveId == eveId).First().ParId;
         }
     }
 }

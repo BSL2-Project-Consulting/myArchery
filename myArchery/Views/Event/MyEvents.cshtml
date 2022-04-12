@@ -16,6 +16,9 @@
         <tr>
             <th>
                 @Html.DisplayNameFor(x => x.Name)
+            </th>            
+            <th>
+                @Html.DisplayNameFor(model => model.UserCount)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ArrowAmount)
@@ -30,7 +33,7 @@
                 @Html.DisplayNameFor(model => model.IsPrivate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Par)
+                @Html.DisplayNameFor(model => model.Par.Parcourname)
             </th>
             <th></th>
         </tr>
@@ -41,6 +44,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.UserCount)
+            </th>
             <td>
                 @Html.DisplayFor(modelItem => item.ArrowAmount)
             </td>
@@ -57,7 +63,7 @@
                 @Html.DisplayFor(modelItem => item.Par.Parcourname)
             </td>
             <td>
-                <a asp-action="Play" asp-route-id="@item.Id">Play</a> |
+                <a asp-action="CurrentEvent" asp-route-id="@item.Id">Play</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a>
             </td>
         </tr>

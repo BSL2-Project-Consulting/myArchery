@@ -7,6 +7,16 @@ namespace myArchery.Controllers
 {
     public class EventController : Controller
     {
+        private readonly EventService _eventService;
+        private readonly ParcourService _parcourService;
+        private readonly ArrowService _arrowService;
+
+        public EventController(EventService eventService, ParcourService parcourService, ArrowService arrowService)
+        {
+            _eventService = eventService;
+            _parcourService = parcourService;
+            _arrowService = arrowService;
+        }
         // GET: EventController
         public ActionResult Index()
         {
@@ -77,7 +87,7 @@ namespace myArchery.Controllers
                     Arrowamount = Convert.ToInt32(collection["Arrowamount"]),
                     Isprivat = 0,
                     Password = null,
-                    ParId = ParcourService.GetParcourIdByName(collection["ParId"])
+                    ParId = _parcourService.GetParcourIdByName(collection["ParId"])
                 };
 
                 for (int i = 6; i < collection.Count-1; i+=3)
@@ -186,24 +196,48 @@ namespace myArchery.Controllers
             }
         }
 
-        // GET: EventController/Currentevent
-        public ActionResult CurrentEvent()
+        // GET: EventController/Currentevent/{id}
+        public ActionResult CurrentEvent(int id)
         {
-            return View(EventService.GetCurrentTargetForUsername(User.Identity.Name));
+            return View(_eventService.GetUsersCurrentTargetInEvent(id, User.Identity.Name));
         }
 
         // POST: EventController/Currentevent/{id}
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CurrentEvent(IFormCollection collection)
+        public ActionResult CurrentEvent(int id,IFormCollection collection)
         {
-            return View(EventService.GetCurrentTargetForUsername(User.Identity.Name));
+            var eventId = id;
+
+            switch (collection["drone"])
+            {
+                case "ck":
+                    // Centerkill                                                                  \/ Get Arrow Number
+                    _arrowService.AddArrow(id, UserService.GetUserByName(User.Identity.Name).Id, 1, 1);
+                    break;
+                case "k":
+                    // Kill                                                                         \/ Get Arrow Number
+                    _arrowService.AddArrow(id, UserService.GetUserByName(User.Identity.Name).Id, 2, 1);
+                    break;
+                case "b":
+                    _arrowService.AddArrow(id, UserService.GetUserByName(User.Identity.Name).Id, 3, 1);
+                    // Body                                                                         /\ Get Arrow Number
+                    break;
+                case "nh":
+                    _arrowService.AddArrow(id, UserService.GetUserByName(User.Identity.Name).Id, 4, 1);
+                    // No Hit                                                                       /\ Get Arrow Number
+                    break;
+                default:
+                    break;
+            }
+
+            return View(_eventService.GetUsersCurrentTargetInEvent(id, User.Identity.Name));
         }
 
         // GET: EventController/MyEvents
         public ActionResult MyEvents()
         {
-            var tmp = EventService.GetListOfCurrentEventsByUsername(User.Identity.Name);
+            var tmp = _eventService.GetListOfCurrentEventsByUsername(User.Identity.Name);
             return View(tmp);
         }
 
@@ -211,7 +245,7 @@ namespace myArchery.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult MyEvents(int id)
         {
-            var tmp = EventService.GetListOfCurrentEventsByUsername(User.Identity.Name);
+            var tmp = _eventService.GetListOfCurrentEventsByUsername(User.Identity.Name);
             return View(tmp);
         }
     }

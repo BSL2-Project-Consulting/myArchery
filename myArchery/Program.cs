@@ -22,7 +22,14 @@ builder.Services.AddDefaultIdentity<AspNetUser>(options => options.SignIn.Requir
     .AddEntityFrameworkStores<myArcheryContext>();
 builder.Services.AddRazorPages();
 builder.Services.AddSignalR();
-builder.Services.AddScoped<myArcheryContext>();
+builder.Services.AddScoped<ArcheryDbContext>();
+builder.Services.AddScoped<EventService>();
+builder.Services.AddScoped<ParcourService>();
+builder.Services.AddScoped<ParcourTargetService>();
+builder.Services.AddScoped<ArrowService>();
+builder.Services.AddScoped<EventRoleService>();
+builder.Services.AddScoped<EventService>();
+builder.Services.AddScoped<PointService>();
 
 // Add Emailconfirmation here
 WebApplication app;

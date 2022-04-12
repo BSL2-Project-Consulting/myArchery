@@ -2,6 +2,18 @@
 {
     public class ArrowService
     {
+        private ArcheryDbContext _context;
+        private EventRoleService _everoService;
+        private PointService _pointService;
+        private ParcourTargetService _parcourTargetService;
+
+        public ArrowService(ArcheryDbContext context, EventRoleService everoService, PointService pointService, ParcourTargetService parcourTargetService)
+        {
+            _context = context;
+            _everoService = everoService;
+            _pointService = pointService;
+            _parcourTargetService = parcourTargetService;
+        }
         /*-- 
          all infos about an arrow (you have to set eve_id)
         SELECT 
@@ -59,6 +71,23 @@
 
                 return res.ToList();
             }
+        }
+
+        public void AddArrow(int eve_id, string use_id, int value_id, int arrowNumber)
+        {
+            var evusro = _everoService.GetEventRole(eve_id, use_id);
+
+            var poi = _pointService.GetPoint(eve_id, value_id, arrowNumber);
+
+            var pata = _parcourTargetService.GetParcoursTarget(eve_id);
+
+            Arrow arrow = new Arrow
+            {
+                EvusroId = evusro.EvusroId,
+                Hitdatetime = DateTime.Now,
+                PataId = pata.PataId,
+                PoiId = poi.PoiId
+            };
         }
     }
 }
