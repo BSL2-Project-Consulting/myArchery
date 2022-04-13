@@ -182,7 +182,6 @@ namespace myArchery.Services
         WHERE u.username = 'User2'
         ORDER BY u.username
          */
-
         /// <summary>
         /// Gets the Current Running Event a specified user is in
         /// </summary>
@@ -197,7 +196,7 @@ namespace myArchery.Services
                                           join events in db.Events on eventRoles.EveId equals events.EveId
                                           into result1
                                           from finalResult in result1
-                                          where finalResult.Startdate < DateTime.Now
+                                          where finalResult.Startdate < DateTime.Now && finalResult.Enddate > DateTime.Now
                                           select new EventWithId
                                           {
                                               Eventname = finalResult.Eventname,
@@ -318,8 +317,6 @@ namespace myArchery.Services
         LEFT JOIN roles r ON eur.rol_id = r.rol_id
         ORDER BY e.name, r.name;
         */
-
-
 		/// <summary>
 		/// Get all AspNetUsers in an Event with Roles by given event eventId
 		/// </summary>
@@ -361,7 +358,6 @@ namespace myArchery.Services
         WHERE eur.eve_id = 1
         GROUP BY e.eventname, u.username
         */
-
         public static List<UsersWithPoints> GetUsersWithPointsFromEventById(int eveId)
 		{
 			using (ArcheryDbContext db = new ArcheryDbContext())

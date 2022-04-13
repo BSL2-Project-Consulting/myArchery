@@ -113,14 +113,18 @@ namespace myArchery.Controllers
 
 
                     _ = int.TryParse(collection[$"Points[{currentIndex}].CenterkillValue"], out int result1);
+                    centerKill.ValueId = 1;
                     centerKill.Value = result1;
 
                     _ = int.TryParse(collection[$"Points[{currentIndex}].KillValue"], out int result2);
+                    kill.ValueId = 2;
                     kill.Value = result2;
 
                     _ = int.TryParse(collection[$"Points[{currentIndex}].BodyValue"], out int result3);
+                    body.ValueId = 3;
                     body.Value = result3;
 
+                    nohit.ValueId = 4;
                     nohit.Value = 0;
 
                     newEvent.Points.Add(centerKill);
@@ -217,18 +221,18 @@ namespace myArchery.Controllers
             {
                 case "ck":
                     // Centerkill                                                                  \/ Get Arrow Number
-                    _arrowService.AddArrow(id, UserService.GetUserByName(User.Identity.Name).Id, 1, 1);
+                    await _arrowService.AddArrow(id, UserService.GetUserByName(User.Identity.Name).Id, 1, 1);
                     break;
                 case "k":
                     // Kill                                                                         \/ Get Arrow Number
-                    _arrowService.AddArrow(id, UserService.GetUserByName(User.Identity.Name).Id, 2, 1);
+                    await _arrowService.AddArrow(id, UserService.GetUserByName(User.Identity.Name).Id, 2, 1);
                     break;
                 case "b":
-                    _arrowService.AddArrow(id, UserService.GetUserByName(User.Identity.Name).Id, 3, 1);
+                    await _arrowService.AddArrow(id, UserService.GetUserByName(User.Identity.Name).Id, 3, 1);
                     // Body                                                                         /\ Get Arrow Number
                     break;
                 case "nh":
-                    _arrowService.AddArrow(id, UserService.GetUserByName(User.Identity.Name).Id, 4, 1);
+                    await _arrowService.AddArrow(id, UserService.GetUserByName(User.Identity.Name).Id, 4, 1);
                     // No Hit                                                                       /\ Get Arrow Number
                     break;
                 default:

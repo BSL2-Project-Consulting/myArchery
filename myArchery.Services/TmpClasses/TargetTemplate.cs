@@ -11,5 +11,6 @@ namespace myArchery.Services.TmpClasses
         public int TarId { get; set; }
         public string TargetName { get; set; }
         public int EventId { get; set; }
+        public int Value { get; set; }
     }
 }

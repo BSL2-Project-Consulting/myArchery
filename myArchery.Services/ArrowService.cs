@@ -73,7 +73,7 @@
             }
         }
 
-        public void AddArrow(int eve_id, string use_id, int value_id, int arrowNumber)
+        public async Task AddArrow(int eve_id, string use_id, int value_id, int arrowNumber)
         {
             var evusro = _everoService.GetEventRole(eve_id, use_id);
 
@@ -88,6 +88,9 @@
                 PataId = pata.PataId,
                 PoiId = poi.PoiId
             };
+
+            _context.Add(arrow);
+            await _context.SaveChangesAsync();
         }
     }
 }
