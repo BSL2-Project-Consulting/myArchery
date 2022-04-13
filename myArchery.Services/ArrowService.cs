@@ -92,5 +92,13 @@
             _context.Add(arrow);
             await _context.SaveChangesAsync();
         }
+
+        public int GetCurrentArrowNumber(int eventId, string userId)
+        {
+            var arrowNumber = 1; // place linq query here
+
+
+            return arrowNumber;
+        }
     }
 }

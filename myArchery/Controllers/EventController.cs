@@ -207,7 +207,7 @@ namespace myArchery.Controllers
         // GET: EventController/Currentevent/{id}
         public ActionResult CurrentEvent(int id)
         {
-            return View(_eventService.GetUsersCurrentTargetInEvent(id, User.Identity.Name));
+            return View(_eventService.GetUsersCurrentTargetInEvent(id, User.Identity.Name).First());
         }
 
         // POST: EventController/Currentevent/{id}
@@ -216,32 +216,33 @@ namespace myArchery.Controllers
         public async Task<ActionResult> CurrentEvent(int id,IFormCollection collection)
         {
             var eventId = id;
+            var userId = UserService.GetUserByName(User.Identity.Name).Id;
 
             switch (collection["drone"])
             {
                 case "ck":
-                    // Centerkill                                                                  \/ Get Arrow Number
-                    await _arrowService.AddArrow(id, UserService.GetUserByName(User.Identity.Name).Id, 1, 1);
+                    // Centerkill                                                                             \/ Get Arrow Number
+                    await _arrowService.AddArrow(eventId, userId, 1, _arrowService.GetCurrentArrowNumber(eventId, userId));
                     break;
                 case "k":
-                    // Kill                                                                         \/ Get Arrow Number
-                    await _arrowService.AddArrow(id, UserService.GetUserByName(User.Identity.Name).Id, 2, 1);
+                    // Kill                                                                                    \/ Get Arrow Number
+                    await _arrowService.AddArrow(eventId, userId, 2, _arrowService.GetCurrentArrowNumber(eventId));
                     break;
                 case "b":
-                    await _arrowService.AddArrow(id, UserService.GetUserByName(User.Identity.Name).Id, 3, 1);
-                    // Body                                                                         /\ Get Arrow Number
+                    await _arrowService.AddArrow(eventId, userId, 3, _arrowService.GetCurrentArrowNumber(eventId));
+                    // Body                                                                                    /\ Get Arrow Number
                     break;
                 case "nh":
-                    await _arrowService.AddArrow(id, UserService.GetUserByName(User.Identity.Name).Id, 4, 1);
-                    // No Hit                                                                       /\ Get Arrow Number
+                    await _arrowService.AddArrow(eventId, userId, 4, _arrowService.GetCurrentArrowNumber(eventId));
+                    // No Hit                                                                                  /\ Get Arrow Number
                     break;
                 default:
                     break;
             }
 
             await _hubContext.Clients.All.SendAsync("SendRanking", id);
-
-            return View(_eventService.GetUsersCurrentTargetInEvent(id, User.Identity.Name));
+            var list = _eventService.GetUsersCurrentTargetInEvent(id, User.Identity.Name);
+            return View(list.First());
         }
 
         // GET: EventController/MyEvents

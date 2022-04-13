@@ -230,7 +230,7 @@ namespace myArchery.Services
             return res;
         }
 
-        public TargetTemplate GetUsersCurrentTargetInEvent(int eveId, string username)
+        public List<TargetTemplate> GetUsersCurrentTargetInEvent(int eveId, string username)
         {
             var user = UserService.GetUserByName(username);
 
@@ -251,7 +251,7 @@ namespace myArchery.Services
                               EventId = eveId
                           };
 
-            return result2.First();
+            return result2.ToList();
         }
 
         /// <summary>
