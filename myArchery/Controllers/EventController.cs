@@ -207,7 +207,7 @@ namespace myArchery.Controllers
         // GET: EventController/Currentevent/{id}
         public ActionResult CurrentEvent(int id)
         {
-            return View(_eventService.GetUsersCurrentTargetInEvent(id, User.Identity.Name).First());
+            return View(_eventService.GetUsersCurrentTargetInEvent(id, User.Identity.Name).FirstOrDefault());
         }
 
         // POST: EventController/Currentevent/{id}
@@ -216,24 +216,29 @@ namespace myArchery.Controllers
         public async Task<ActionResult> CurrentEvent(int id,IFormCollection collection)
         {
             var eventId = id;
-            var userId = UserService.GetUserByName(User.Identity.Name).Id;
+            var user = UserService.GetUserByName(User.Identity.Name);
+
+            if (user == null)
+            {
+                return NoContent();
+            }
 
             switch (collection["drone"])
             {
                 case "ck":
                     // Centerkill                                                                             \/ Get Arrow Number
-                    await _arrowService.AddArrow(eventId, userId, 1, _arrowService.GetCurrentArrowNumber(eventId, userId));
+                    await _arrowService.AddArrow(eventId, user.Id, 1, _arrowService.GetCurrentArrowNumber(eventId, user.Id));
                     break;
                 case "k":
                     // Kill                                                                                    \/ Get Arrow Number
-                    await _arrowService.AddArrow(eventId, userId, 2, _arrowService.GetCurrentArrowNumber(eventId, userId));
+                    await _arrowService.AddArrow(eventId, user.Id, 2, _arrowService.GetCurrentArrowNumber(eventId, user.Id));
                     break;
                 case "b":
-                    await _arrowService.AddArrow(eventId, userId, 3, _arrowService.GetCurrentArrowNumber(eventId, userId));
+                    await _arrowService.AddArrow(eventId, user.Id, 3, _arrowService.GetCurrentArrowNumber(eventId, user.Id));
                     // Body                                                                                    /\ Get Arrow Number
                     break;
                 case "nh":
-                    await _arrowService.AddArrow(eventId, userId, 4, _arrowService.GetCurrentArrowNumber(eventId, userId));
+                    await _arrowService.AddArrow(eventId, user.Id, 4, _arrowService.GetCurrentArrowNumber(eventId, user.Id));
                     // No Hit                                                                                  /\ Get Arrow Number
                     break;
                 default:

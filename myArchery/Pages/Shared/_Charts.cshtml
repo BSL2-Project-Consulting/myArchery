@@ -2,6 +2,8 @@
 
 @inject UserManager<AspNetUser> UserManager
 
+@inject ArrowService _arrowService
+
 @using myArchery.Services
 @model myArchery.Pages.ChartsModel
 
@@ -31,7 +33,7 @@
 
     double maxPoints = 50;
 
-    var tmp = ArrowService.GetArrowInfo(events[0].Id);
+    var tmp = _arrowService.GetArrowInfo(events[0].Id);
     var tmp2 = tmp;
 
     var allNames = tmp2.Select(x => x.Username).ToArray();
@@ -187,9 +189,7 @@ document.addEventListener('DOMContentLoaded', dokumentGeladen, false);
     <div class="container">
         <div class="row">
             <div class="col-6 chart">
-                <canvas id="myChart" width="500" height="400"></canvas>
-                 
-
+                <canvas id="myChart" width="500" height="400"></canvas>         
             </div>
             <div class="col-6 chart">
                 <canvas id="myChart2" width="500" height="400" onload=" myChart2(@points2, @targetName)"></canvas>
@@ -228,12 +228,7 @@ document.addEventListener('DOMContentLoaded', dokumentGeladen, false);
 <script>
 
 function myChart1(hitted, missed) {
-
- 
-
     var hitted = hitted;
-
-
     let labels1 = ['Hitted', 'Missed'];
     let data1 = [hitted, missed];
 

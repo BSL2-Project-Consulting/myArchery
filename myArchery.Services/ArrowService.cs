@@ -14,6 +14,7 @@
             _pointService = pointService;
             _parcourTargetService = parcourTargetService;
         }
+
         /*-- 
          all infos about an arrow (you have to set eve_id)
         SELECT 
@@ -39,38 +40,34 @@
         WHERE eur.eve_id = 4
         ORDER BY u.username, a.hitdatetime;
         */
-
         /// <summary>
         /// Gets all Arrows shot in an Event by given id
         /// </summary>
         /// <param name="eve_id">Event id that is coresponding with the given id</param>
         /// <returns>List of Arrows with additional Info</returns>
-        public static List<ArrowWithInfo> GetArrowInfo(int eve_id)
+        public List<ArrowWithInfo> GetArrowInfo(int eve_id)
         {
-            using (ArcheryDbContext db = new ArcheryDbContext())
-            {
-                var res = from arrow in db.Arrows
-                          join eventUserRoles in db.EventUserRoles on arrow.EvusroId equals eventUserRoles.EvusroId
-                          join points in db.Points on arrow.PoiId equals points.PoiId
-                          join user in db.AspNetUsers on eventUserRoles.Use.Id equals user.Id
-                          join events in db.Events on eventUserRoles.EveId equals events.EveId
-                          join pt in db.ParcoursTargets on arrow.PataId equals pt.PataId
-                          join target in db.Targets on pt.TarId equals target.TarId
-                          where events.EveId == eve_id
-                          orderby user.UserName
-                          orderby arrow.Hitdatetime
-                          select new ArrowWithInfo
-                          {
-                              EventName = events.Eventname,
-                              Username = user.UserName,
-                              HitType = points.ValueId.ToString(),
-                              HitTime = arrow.Hitdatetime,
-                              Points = points.Value,
-                              TargetName = target.Targetname
-                          };
+            var res = from arrow in _context.Arrows
+                      join eventUserRoles in _context.EventUserRoles on arrow.EvusroId equals eventUserRoles.EvusroId
+                      join points in _context.Points on arrow.PoiId equals points.PoiId
+                      join user in _context.AspNetUsers on eventUserRoles.Use.Id equals user.Id
+                      join events in _context.Events on eventUserRoles.EveId equals events.EveId
+                      join pt in _context.ParcoursTargets on arrow.PataId equals pt.PataId
+                      join target in _context.Targets on pt.TarId equals target.TarId
+                      where events.EveId == eve_id
+                      orderby user.UserName
+                      orderby arrow.Hitdatetime
+                      select new ArrowWithInfo
+                      {
+                          EventName = events.Eventname,
+                          Username = user.UserName,
+                          HitType = points.ValueId.ToString(),
+                          HitTime = arrow.Hitdatetime,
+                          Points = points.Value,
+                          TargetName = target.Targetname,
+                      };
 
-                return res.ToList();
-            }
+            return res.ToList();
         }
 
         public async Task AddArrow(int eve_id, string use_id, int value_id, int arrowNumber)

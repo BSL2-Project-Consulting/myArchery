@@ -215,7 +215,7 @@ namespace myArchery.Services
                                                 join events in _context.Events on eventRoles.EveId equals events.EveId
                                                 into result1
                                                 from finalResult in result1
-                                                where finalResult.Startdate < DateTime.Now && finalResult.Enddate < DateTime.Now
+                                                where finalResult.Startdate < DateTime.Now && finalResult.Enddate > DateTime.Now
                                                 select new EventWithDetails
                                                 {
                                                     Name = finalResult.Eventname,
@@ -224,7 +224,8 @@ namespace myArchery.Services
                                                     UserCount = _context.EventUserRoles.Where(x => x.EveId == finalResult.EveId).Count(),
                                                     StartDate = finalResult.Startdate,
                                                     EndDate = finalResult.Enddate,
-                                                    IsPrivate = finalResult.Isprivat
+                                                    IsPrivate = finalResult.Isprivat,
+                                                    Par = parcours
                                                 };
 
             return res;
@@ -232,26 +233,34 @@ namespace myArchery.Services
 
         public List<TargetTemplate> GetUsersCurrentTargetInEvent(int eveId, string username)
         {
-            var user = UserService.GetUserByName(username);
+            AspNetUser user = UserService.GetUserByName(username);
 
-            var result2 = from ParcoursTarget in _context.ParcoursTargets
-                          join Parcour in _context.Parcours on ParcoursTarget.ParId equals Parcour.ParId
-                          join Event in _context.Events on Parcour.ParId equals Event.ParId
-                          join EventUserRole in _context.EventUserRoles on Event.EveId equals EventUserRole.EveId
-                          join Target in _context.Targets on ParcoursTarget.TarId equals Target.TarId
-                          join Arrow in _context.Arrows on ParcoursTarget.PataId equals Arrow.PataId into a
-                          from asdf in a.DefaultIfEmpty()
-                          join qwer in _context.Points on asdf.PoiId equals qwer.PoiId into p
-                          from Point in p.DefaultIfEmpty()
-                          where Event.EveId == eveId && EventUserRole.UseId == user.Id
-                          select new TargetTemplate
-                          {
-                              TargetName = Target.Targetname,
-                              TarId = Target.TarId,
-                              EventId = eveId
-                          };
+            var result2 =   from ParcoursTarget in _context.ParcoursTargets
+                            join Parcour in _context.Parcours on ParcoursTarget.ParId equals Parcour.ParId
+                            join Event in _context.Events on Parcour.ParId equals Event.ParId
+                            join EventUserRole in _context.EventUserRoles on Event.EveId equals EventUserRole.EveId
+                            join Target in _context.Targets on ParcoursTarget.TarId equals Target.TarId
+                            join Arrow in _context.Arrows on ParcoursTarget.PataId equals Arrow.PataId into a
+                            from asdf in a.DefaultIfEmpty(_context.Arrows.Single(u => u == null))
+                            join qwer in _context.Points on asdf.PoiId equals qwer.PoiId into p
+                            from Point in p.DefaultIfEmpty(_context.Points.Single(u => u == null))
+                            where Event.EveId == eveId && EventUserRole.UseId == user.Id
+                            select new TargetTemplate
+                            {
+                                TargetName = Target.Targetname,
+                                TarId = Target.TarId,
+                                EventId = eveId,
+                                Point = Point                              
+                            };
 
-            return result2.ToList();
+            if (result2 == null)
+            {
+                return new List<TargetTemplate>();
+            }
+            else
+            {
+                return result2.ToList();
+            }
         }
 
         /// <summary>
@@ -406,8 +415,6 @@ namespace myArchery.Services
                 var _event = db.EventUserRoles.Where(x => x.EveId == eventId && x.Use == UserService.GetUserByName(username));
                 return _event.Count() > 0;
             }
-
-
         }
 
         public static void AddUserToEvent(int eventId, string username)
