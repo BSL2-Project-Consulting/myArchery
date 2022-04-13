@@ -110,84 +110,16 @@
         }
     }
 
-    
-
-
-
 }
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js" integrity="sha512-Lii3WMtgA0C0qmmkdCpsG0Gjr6M0ajRyQRQSbTF6BsrVh/nhZdHpVZ76iMIPvQwz1eoXC3DmAg9K51qT5/dEVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     //let eventid = @events[0].Id;
     let eventid = 1;
     let username = "@User.Identity.Name";
 </script>
 
-	
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-
-
-<head>
-    <meta charset="uft-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>Event - Erstes Event</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-
-    <!-- Favicons -->
-    <link href="~/assets/img/logo/logo_archery.png" rel="icon">
-
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Krub:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <link href="~/assets/css/vendor/aos/aos.css" rel="stylesheet">
-    <link href="~/assets/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="~/assets/css/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="~/assets/css/vendor/boxicons/css/boxicons.min.css " rel="stylesheet">
-    <link href="~/assets/css/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="~/assets/css/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <link href="~/assets/css/archery-event.css" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
-    <link href="~/assets/css/style.css" rel="stylesheet">
-    <link href="~/assets/css/archery-event.css" rel="stylesheet">
-
-    <!-- Navbar Login Form Input -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script src="~/assets/js/archery.js"></script>
-    <script src="~/assets/js/CurrentEvent.js"></script>
-
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-
-    <!-- CHARTS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js" integrity="sha512-Lii3WMtgA0C0qmmkdCpsG0Gjr6M0ajRyQRQSbTF6BsrVh/nhZdHpVZ76iMIPvQwz1eoXC3DmAg9K51qT5/dEVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
-
-
 <body>
-
-
-
-
 <section id="current-event">
-
-
-
 
 <!-- <div class="form-box">
 <div class="button-box">
@@ -209,49 +141,29 @@
 
 
 function clickHandler1() {
-
-window.alert('Button wurde geklickt! 222222');
-
-
-   
-  myChart1(@hitted, @missed);
-  
+    console.log('Button wurde geklickt! 1');
+    myChart1(@hitted, @missed);
 }
 
 
 function clickHandler2() {
-
-window.alert('Button wurde geklickt! 222222');
-
-
-   
-  
-  myChart2();
+    console.log('Button wurde geklickt! 2');
+    myChart2();
 }
 
 function clickHandler3() {
-
-window.alert('Button wurde geklickt! 333333');
-
-
-   
-  
+  console.log('Button wurde geklickt! 3');
   myChart3();
 }
 
 function clickHandler4() {
-
-window.alert('Button wurde geklickt! 444444');
-
-
-   
-  
-  myChart4();
+    console.log('Button wurde geklickt! 4');
+    myChart4();
 }
 
 
 function dokumentGeladen(event) {
-  window.alert('Dokument wurde geladen! Zugriff auf das komplette DOM möglich.');
+  //window.console.log('Dokument wurde geladen! Zugriff auf das komplette DOM möglich.');
   document.getElementById('1').addEventListener('click', clickHandler1, false);
   document.getElementById('2').addEventListener('click', clickHandler2, false);
   document.getElementById('3').addEventListener('click', clickHandler3, false);
@@ -267,22 +179,12 @@ document.addEventListener('DOMContentLoaded', dokumentGeladen, false);
 
 </script>
 
+<button id="1">1</button>
+<button id="2">2</button>
+<button id="3">3</button>
+<button id="4">4</button>
 
-<button id="1">
- 1
-</button>
-<button id="2">
- 2
-</button>
-<button id="3">
- 3
-</button>
-<button id="4">
- 4
-</button>
-
-
-        <div class="container">
+    <div class="container">
         <div class="row">
             <div class="col-6 chart">
                 <canvas id="myChart" width="500" height="400"></canvas>
@@ -303,15 +205,7 @@ document.addEventListener('DOMContentLoaded', dokumentGeladen, false);
         </div>
     </div>
     
-
-
-
-
-
-    
-</div>
-
-
+        <div>
             <div class="col-6 chart">
                 <canvas id="myChart" width="500" height="400"></canvas>
                 
@@ -331,8 +225,6 @@ document.addEventListener('DOMContentLoaded', dokumentGeladen, false);
     </div>
     
   </body>
-</html>
-
 <script>
 
 function myChart1(hitted, missed) {
@@ -344,8 +236,6 @@ function myChart1(hitted, missed) {
 
     let labels1 = ['Hitted', 'Missed'];
     let data1 = [hitted, missed];
-
-
 
 
     // let data1 = [59, 31];               //User Data per User how often he missed
@@ -380,39 +270,27 @@ function myChart2() {
 
     };
 
-    alert("A");
+    console.log("A");
     
 
 
 
-       var tmpString = "@name";
+    var tmpString = "@name";
 
-   var tmpString = tmpString.replace(/&#x27;/g, "'");
+    var tmpString = tmpString.replace(/&#x27;/g, "'");
 
-   const words = tmpString.split(',');
+    const words = tmpString.split(',');
 
-   let labels2 = words;
-
-
-
-
-        alert("B");
-
-
-       
-        var tmpString2 = "@punkte";
-       
-        var tmpString3 = tmpString2.replace(/&#x27;/g, " ");
-
-      
-       var tmpString4 = tmpString3.split(',');
-       
-       let data2 = new Array();
-
-       for(var i = 0; i < tmpString4.length; i++)
-       {
-           data2.push(parseInt(tmpString4[i]));
-       }
+    let labels2 = words;
+    console.log("B");
+    var tmpString2 = "@punkte";
+    var tmpString3 = tmpString2.replace(/&#x27;/g, " ");
+    var tmpString4 = tmpString3.split(',');
+    let data2 = new Array();
+    for(var i = 0; i < tmpString4.length; i++)
+    {
+        data2.push(parseInt(tmpString4[i]));
+    }
 
 
     //let data2 = [1,2,3];
@@ -510,3 +388,4 @@ let chart4 = new Chart(myChart4, {
     }
 });
 }
+</script>

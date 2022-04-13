@@ -226,14 +226,14 @@ namespace myArchery.Controllers
                     break;
                 case "k":
                     // Kill                                                                                    \/ Get Arrow Number
-                    await _arrowService.AddArrow(eventId, userId, 2, _arrowService.GetCurrentArrowNumber(eventId));
+                    await _arrowService.AddArrow(eventId, userId, 2, _arrowService.GetCurrentArrowNumber(eventId, userId));
                     break;
                 case "b":
-                    await _arrowService.AddArrow(eventId, userId, 3, _arrowService.GetCurrentArrowNumber(eventId));
+                    await _arrowService.AddArrow(eventId, userId, 3, _arrowService.GetCurrentArrowNumber(eventId, userId));
                     // Body                                                                                    /\ Get Arrow Number
                     break;
                 case "nh":
-                    await _arrowService.AddArrow(eventId, userId, 4, _arrowService.GetCurrentArrowNumber(eventId));
+                    await _arrowService.AddArrow(eventId, userId, 4, _arrowService.GetCurrentArrowNumber(eventId, userId));
                     // No Hit                                                                                  /\ Get Arrow Number
                     break;
                 default:
