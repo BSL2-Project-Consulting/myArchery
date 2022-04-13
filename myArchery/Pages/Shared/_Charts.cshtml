@@ -1,8 +1,16 @@
-﻿@using myArchery.Services
+﻿@page
+
+@inject UserManager<AspNetUser> UserManager
+
+@using myArchery.Services
+@model myArchery.Pages.ChartsModel
+
+
+
 @{
     if (User.Identity == null)
     {
-        
+        RedirectToPage("/Account/Login");
     }
 
     var usern = User.Identity.Name;
@@ -13,6 +21,7 @@
     if (events.Count == 0)
     {
         events = new List<Services.TmpClasses.EventWithId>{new Services.TmpClasses.EventWithId()};
+        RedirectToPage("Index");
     }
 
     var users = EventService.GetUsersWithPointsFromEventById(1);
@@ -113,6 +122,72 @@
     let username = "@User.Identity.Name";
 </script>
 
+	
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="uft-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Event - Erstes Event</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/assets/img/logo/logo_archery.png" rel="icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Krub:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/assets/css/vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/assets/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/css/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/assets/css/vendor/boxicons/css/boxicons.min.css " rel="stylesheet">
+    <link href="~/assets/css/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/assets/css/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="~/assets/css/archery-event.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/assets/css/style.css" rel="stylesheet">
+    <link href="~/assets/css/archery-event.css" rel="stylesheet">
+
+    <!-- Navbar Login Form Input -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/archery.js"></script>
+    <script src="~/assets/js/CurrentEvent.js"></script>
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+    <!-- CHARTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js" integrity="sha512-Lii3WMtgA0C0qmmkdCpsG0Gjr6M0ajRyQRQSbTF6BsrVh/nhZdHpVZ76iMIPvQwz1eoXC3DmAg9K51qT5/dEVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+
+<body>
+
+
+
+
+<section id="current-event">
+
+
+
 
 <!-- <div class="form-box">
 <div class="button-box">
@@ -122,97 +197,141 @@
 </div>
 -->
 
+</section>
+
+<div class="container">
 
 
-<script>
+       <h1>Charts, Charts, Charts</h1>
 
-
-let h = document.querySelector(".tb-history").innerHTML
-let v = document.querySelector(".tb-vision").innerHTML
-let g = document.querySelector(".tb-goals").innerHTML
+    <script>
 
 
 
+function clickHandler1() {
 
-const tabButtons = document.querySelector(".tab-bar")
-const contentContainer = document.querySelector(".tab-content")
-
-console.log(tabButtons)
-tabButtons.addEventListener("click", function(e) {
-  newAction(e.target.innerText)
-})
-
-function newAction(tabTarget) {
-  switch(tabTarget) {
-    case "History":
-    changeTextTo(h)
-    break
-    case "Vision":
-    changeTextTo(v)
-    break
-    case "Goals":
-    changeTextTo(g)
-    break
-  }
-}
-
-function changeTextTo(newText) {
-  contentContainer.innerHTML = newText;
-}
-</script>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="/assets/css/charts.css" rel="stylesheet">
-    
-</head>
-
-<body>
-  <div id="main">
-    <div class="wrapper">
-        <div class="heading">
-              <h1>Charts, Charts, Charts</h1>
-        </div>
-        <div class="content">
-          <div class="tab-item" id="tabs">
-            <div class="tab-bar">
-              <div class="tab">
-                History
-              </div>
-              <div class="tab">
-                Vision
-              </div>
-              <div class="tab">
-                Goals
-              </div>
-            </div>
-            <div class="tab-content">
-              <!--Paste your content here, it´ll be invisible until you need it-->
-Click a tab to see content
-
-             <canvas id="myChart1" width="500" height="400"></canvas>
-             <canvas id="myChart2" width="500" height="400"></canvas>
-             <canvas id="myChart3" width="500" height="400"></canvas>
-             <canvas id="myChart4" width="500" height="400"></canvas>
-
-             </div>
-
-          </div>
-        </div>
-    </div>
-  </div> 
-</body>
-</html>
-
-
+window.alert('Button wurde geklickt! 222222');
 
 
    
+  myChart1(@hitted, @missed);
+  
+}
+
+
+function clickHandler2() {
+
+window.alert('Button wurde geklickt! 222222');
+
+
+   
+  
+  myChart2();
+}
+
+function clickHandler3() {
+
+window.alert('Button wurde geklickt! 333333');
+
+
+   
+  
+  myChart3();
+}
+
+function clickHandler4() {
+
+window.alert('Button wurde geklickt! 444444');
+
+
+   
+  
+  myChart4();
+}
+
+
+function dokumentGeladen(event) {
+  window.alert('Dokument wurde geladen! Zugriff auf das komplette DOM möglich.');
+  document.getElementById('1').addEventListener('click', clickHandler1, false);
+  document.getElementById('2').addEventListener('click', clickHandler2, false);
+  document.getElementById('3').addEventListener('click', clickHandler3, false);
+  document.getElementById('4').addEventListener('click', clickHandler4, false);
+}
+
+
+
+document.addEventListener('DOMContentLoaded', dokumentGeladen, false);
+
+
+  
+
+</script>
+
+
+<button id="1">
+ 1
+</button>
+<button id="2">
+ 2
+</button>
+<button id="3">
+ 3
+</button>
+<button id="4">
+ 4
+</button>
+
+
+        <div class="container">
+        <div class="row">
+            <div class="col-6 chart">
+                <canvas id="myChart" width="500" height="400"></canvas>
+                 
+
+            </div>
+            <div class="col-6 chart">
+                <canvas id="myChart2" width="500" height="400" onload=" myChart2(@points2, @targetName)"></canvas>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 chart">
+                <canvas id="myChart3" width="500" height="400"></canvas>
+            </div>
+            <div class="col-6 chart">
+                <canvas id="myChart4" width="500" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+
+    
+</div>
+
+
+            <div class="col-6 chart">
+                <canvas id="myChart" width="500" height="400"></canvas>
+                
+            </div>
+            <div class="col-6 chart">
+                <canvas id="myChart2" width="500" height="400"></canvas>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 chart">
+                <canvas id="myChart3" width="500" height="400"></canvas>
+            </div>
+            <div class="col-6 chart">
+                <canvas id="myChart4" width="500" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+    
+  </body>
+</html>
 
 <script>
 
@@ -251,15 +370,22 @@ function myChart1(hitted, missed) {
             }
         }
     });
+
 }
 
 
 function myChart2() {
-   const htmlconvert = {"'" : "&#x27;"};
+    const htmlconvert = {
+        "'" : "&#x27;"
 
-   alert("A");
+    };
+
+    alert("A");
     
-   var tmpString = "@name";
+
+
+
+       var tmpString = "@name";
 
    var tmpString = tmpString.replace(/&#x27;/g, "'");
 
@@ -267,21 +393,26 @@ function myChart2() {
 
    let labels2 = words;
 
+
+
+
         alert("B");
 
+
+       
         var tmpString2 = "@punkte";
        
         var tmpString3 = tmpString2.replace(/&#x27;/g, " ");
 
       
-           var tmpString4 = tmpString3.split(',');
+       var tmpString4 = tmpString3.split(',');
        
-           let data2 = new Array();
+       let data2 = new Array();
 
-           for(var i = 0; i < tmpString4.length; i++)
-           {
-               data2.push(parseInt(tmpString4[i]));
-           }
+       for(var i = 0; i < tmpString4.length; i++)
+       {
+           data2.push(parseInt(tmpString4[i]));
+       }
 
 
     //let data2 = [1,2,3];
@@ -310,68 +441,72 @@ function myChart2() {
             }
         }
     });
+
 }
 
 function myChart3() {
-    let labels3 = ['Target 1', 'Target 2', 'Target 3', 'Target 4'];    // All animals
-    let myChart3 = document.getElementById("myChart3").getContext('2d');
 
-    let chart3 = new Chart(myChart3, {
-        type: 'radar',
-        data: {
-            labels: labels3,
-            datasets: [
-                {
-                    label: 'Messi',     //Username
-                    fill: true,
-                    backgroundColor: "rgba(179, 181, 198, 0.2)",
-                    borderColor: "rgba(179, 181, 198, 1)",
-                    pointBorderColor: "#fff",
-                    pointBackgroundColor: "rgba(179, 181, 198, 1)",
-                    data: [1,2,3,4]  //User datas per User how much points per animal
-                },
-                {
-                    label: 'Ronaldo',   //Username
-                    fill: true,
-                    backgroundColor: "rgba(255, 99, 132, 0.2)",
-                    borderColor: "rgba(255, 99, 132, 1)",
-                    pointBorderColor: "#fff",
-                    pointBackgroundColor: "rgba(255, 99, 132, 1)",
-                    data: [10,20,40,30]      //User datas per User how much points per animal
-                }
-            ]
-        },
-        options: {
-            title: {
-                text: "Aim",
-                display: true
-            }
+   
+   let labels3 = ['Attack', 'Defense', 'Passing', 'Tackle', 'Speed'];
+let myChart3 = document.getElementById("myChart3").getContext('2d');
+
+let chart3 = new Chart(myChart3, {
+    type: 'radar',
+    data: {
+        labels: labels3,
+        datasets: [
+          {
+            label: 'Messi',
+            fill: true,
+            backgroundColor: "rgba(179, 181, 198, 0.2)",
+            borderColor: "rgba(179, 181, 198, 1)",
+            pointBorderColor: "#fff",
+            pointBackgroundColor: "rgba(179, 181, 198, 1)",
+            data: [50, 12, 55, 7, 29]
+          },
+          {
+            label: 'Ronaldo',
+            fill: true,
+            backgroundColor: "rgba(255, 99, 132, 0.2)",
+            borderColor: "rgba(255, 99, 132, 1)",
+            pointBorderColor: "#fff",
+            pointBackgroundColor: "rgba(255, 99, 132, 1)",
+            data: [51, 10, 32, 20, 44]
+          }
+        ]
+    },
+    options: {
+        title: {
+            text: "Skills",
+            display: true
         }
-    });
+    }
+});
+
 }
 
 function myChart4() {
+
     let labels4 = ['Germany', 'France', 'UK', 'Italy', 'Spain', 'Others(23)'];
-    let data4 = [83, 67, 66, 61, 47, 187];
-    let colors4 = ['#49A9EA', '#36CAAB', '#34495E', '#B370CF', '#AC5353', '#CFD4D8'];
+let data4 = [83, 67, 66, 61, 47, 187];
+let colors4 = ['#49A9EA', '#36CAAB', '#34495E', '#B370CF', '#AC5353', '#CFD4D8'];
 
-    let myChart4 = document.getElementById("myChart4").getContext('2d');
+let myChart4 = document.getElementById("myChart4").getContext('2d');
 
-    let chart4 = new Chart(myChart4, {
-        type: 'pie',
-        data: {
-            labels: labels4,
-            datasets: [ {
-                data: data4,
-                backgroundColor: colors4
-            }]
-        },
-        options: {
-            title: {
-                text: "Population of the European Union (in mio)",
-                display: true
-            }
+let chart4 = new Chart(myChart4, {
+    type: 'pie',
+    data: {
+        labels: labels4,
+        datasets: [ {
+            data: data4,
+            backgroundColor: colors4
+        }]
+    },
+    options: {
+        title: {
+            text: "Population of the European Union (in mio)",
+            display: true
         }
-    });
+    }
+});
 }
-</script>
