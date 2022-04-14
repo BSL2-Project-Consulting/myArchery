@@ -1,2 +1,13 @@
 E-Mail:		myarchery.bslinz2@gmail.com
 PW:		    bs-linz2-myarchery
+
+Admin-User Webseite
+
+Username: Admin
+Passwort: Admin12!
+
+
+Azure SQL:
+
+Username: AdminArchery
+Passwort: Admin12!

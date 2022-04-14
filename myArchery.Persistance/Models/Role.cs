@@ -9,9 +9,9 @@ namespace myArchery.Persistance.Models
         {
             EventUserRoles = new HashSet<EventUserRole>();
         }
-
+        [Key]
         public int RolId { get; set; }
-        public string Name { get; set; } = null!;
+        public string Rolename { get; set; } = null!;
 
         public virtual ICollection<EventUserRole> EventUserRoles { get; set; }
     }

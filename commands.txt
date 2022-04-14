@@ -1,0 +1,11 @@
+-- PM-Console Command for Table First Code Generation
+	Scaffold-DbContext "Server=localhost;Database=myarchery;User=root;password=test1234;" Pomelo.EntityFrameworkCore.MySql -OutputDir Models -Project myArchery.Persistance
+
+-- Update-Database when Model or DbContext Changed
+
+	Update-Database -Project myArchery.Persistance -Context ArcheryDbContext
+
+-- Update Database model
+	
+	Add-Migration {EinmaligenNamenEingeben} -Project myArchery.Persistance -Context ArcheryDbContext
+

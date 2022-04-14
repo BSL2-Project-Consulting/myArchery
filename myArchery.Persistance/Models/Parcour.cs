@@ -10,9 +10,9 @@ namespace myArchery.Persistance.Models
             Events = new HashSet<Event>();
             ParcoursTargets = new HashSet<ParcoursTarget>();
         }
-
+        [Key]
         public int ParId { get; set; }
-        public string Name { get; set; } = null!;
+        public string Parcourname { get; set; } = null!;
         public string Town { get; set; } = null!;
         public int Postalcode { get; set; }
         public string StreetHousenumber { get; set; } = null!;

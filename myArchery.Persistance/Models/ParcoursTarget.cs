@@ -9,13 +9,13 @@ namespace myArchery.Persistance.Models
         {
             Arrows = new HashSet<Arrow>();
         }
-
+        [Key]
         public int PataId { get; set; }
-        public int ParcoursParId { get; set; }
-        public int TargetTarId { get; set; }
+        public int ParId { get; set; }
+        public int TarId { get; set; }
 
-        public virtual Parcour ParcoursPar { get; set; } = null!;
-        public virtual Target TargetTar { get; set; } = null!;
+        public virtual Parcour Par { get; set; } = null!;
+        public virtual Target Tar { get; set; } = null!;
         public virtual ICollection<Arrow> Arrows { get; set; }
     }
 }

@@ -1,0 +1,386 @@
+﻿@page
+
+@inject UserManager<AspNetUser> UserManager
+
+@inject ArrowService _arrowService
+
+@using myArchery.Services
+@model myArchery.Pages.ChartsModel
+
+
+
+@{
+    if (User.Identity == null)
+    {
+        RedirectToPage("/Account/Login");
+    }
+
+    var usern = User.Identity.Name;
+
+
+    var events = EventService.GetUsersCurrentEventsByUsername(usern);
+
+    if (events.Count == 0)
+    {
+        events = new List<Services.TmpClasses.EventWithId>{new Services.TmpClasses.EventWithId()};
+        RedirectToPage("Index");
+    }
+
+    var users = EventService.GetUsersWithPointsFromEventById(1);
+
+
+    var repheight = 400 / 5 * users.Count() + "px";
+
+    double maxPoints = 50;
+
+    var tmp = _arrowService.GetArrowInfo(events[0].Id);
+    var tmp2 = tmp;
+
+    var allNames = tmp2.Select(x => x.Username).ToArray();
+    var allPoints = tmp2.Select(x => x.Points);
+
+    tmp = tmp.Where(x => x.Username == User.Identity.Name).ToList();
+
+
+    var overallPoints = users.Select(x => x.Points);
+
+
+    var points = tmp.Select(x => x.Points);
+
+    var points2 = tmp.Select(x => x.Points).ToArray();
+
+
+
+    var targetName = tmp.Select(x => x.TargetName).ToArray();
+
+    var username = tmp.Select(x => x.Username);
+
+
+
+    var hitted = 0;
+    var missed = 0;
+
+
+    foreach (var item in points) {
+
+        if (item > 0.0){
+            hitted++;
+        }
+        else{
+            missed++;
+        }
+    }
+    string listofAllNames = " ";
+
+    string punkte = " ";
+
+    string name = " ";
+
+    for (var i = 0; i < points2.Count(); i++)
+    {
+        if (i+1 == points2.Count())
+        {
+            punkte += $"'{points2[i]}'";
+        }
+        else
+        {
+            punkte += $"'{points2[i]}',";
+        }
+    }
+
+   for (var i = 0; i < targetName.Count(); i++)
+    {
+        if (i+1 == targetName.Count())
+        {
+            name += $"'{targetName[i]}'";
+        }
+        else
+        {
+            name += $"'{targetName[i]}',";
+        }
+    }
+
+    for (var i = 0; i < allNames.Count(); i++)
+    {
+        if (i+1 == allNames.Count())
+        {
+            listofAllNames += $"'{allNames[i]}'";
+        }
+        else
+        {
+            listofAllNames += $"'{allNames[i]}',";
+        }
+    }
+
+}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js" integrity="sha512-Lii3WMtgA0C0qmmkdCpsG0Gjr6M0ajRyQRQSbTF6BsrVh/nhZdHpVZ76iMIPvQwz1eoXC3DmAg9K51qT5/dEVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    //let eventid = @events[0].Id;
+    let eventid = 1;
+    let username = "@User.Identity.Name";
+</script>
+
+<body>
+<section id="current-event">
+
+<!-- <div class="form-box">
+<div class="button-box">
+<div id="btn"></div>
+<button class="toogle-btn" onclick="event()">Login</button>
+<button class="toogle-btn" onclick="ranking()">Register</button>
+</div>
+-->
+
+</section>
+
+<div class="container">
+
+
+       <h1>Charts, Charts, Charts</h1>
+
+    <script>
+
+
+
+function clickHandler1() {
+    console.log('Button wurde geklickt! 1');
+    myChart1(@hitted, @missed);
+}
+
+
+function clickHandler2() {
+    console.log('Button wurde geklickt! 2');
+    myChart2();
+}
+
+function clickHandler3() {
+  console.log('Button wurde geklickt! 3');
+  myChart3();
+}
+
+function clickHandler4() {
+    console.log('Button wurde geklickt! 4');
+    myChart4();
+}
+
+
+function dokumentGeladen(event) {
+  //window.console.log('Dokument wurde geladen! Zugriff auf das komplette DOM möglich.');
+  document.getElementById('1').addEventListener('click', clickHandler1, false);
+  document.getElementById('2').addEventListener('click', clickHandler2, false);
+  document.getElementById('3').addEventListener('click', clickHandler3, false);
+  document.getElementById('4').addEventListener('click', clickHandler4, false);
+}
+
+
+
+document.addEventListener('DOMContentLoaded', dokumentGeladen, false);
+
+
+  
+
+</script>
+
+<button id="1">1</button>
+<button id="2">2</button>
+<button id="3">3</button>
+<button id="4">4</button>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6 chart">
+                <canvas id="myChart" width="500" height="400"></canvas>         
+            </div>
+            <div class="col-6 chart">
+                <canvas id="myChart2" width="500" height="400" onload=" myChart2(@points2, @targetName)"></canvas>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 chart">
+                <canvas id="myChart3" width="500" height="400"></canvas>
+            </div>
+            <div class="col-6 chart">
+                <canvas id="myChart4" width="500" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+    
+        <div>
+            <div class="col-6 chart">
+                <canvas id="myChart" width="500" height="400"></canvas>
+                
+            </div>
+            <div class="col-6 chart">
+                <canvas id="myChart2" width="500" height="400"></canvas>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 chart">
+                <canvas id="myChart3" width="500" height="400"></canvas>
+            </div>
+            <div class="col-6 chart">
+                <canvas id="myChart4" width="500" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+    
+  </body>
+<script>
+
+function myChart1(hitted, missed) {
+    var hitted = hitted;
+    let labels1 = ['Hitted', 'Missed'];
+    let data1 = [hitted, missed];
+
+
+    // let data1 = [59, 31];               //User Data per User how often he missed
+    let colors1 = ['#49A9EA', '#36CAAB'];
+
+    let myDoughnutChart = document.getElementById("myChart").getContext('2d');
+
+    let chart1 = new Chart(myDoughnutChart, {
+        type: 'doughnut',
+        data: {
+            labels: ['Hitted', 'Missed'],
+            datasets: [{
+                data: [data1[0], data1[1]],
+    //            data: [59, 31],      //User Data per User how often he missed
+                backgroundColor: ['#49A9EA', '#36CAAB']
+            }]
+        },
+        options: {
+            title: {
+                text: "How accurate is my aim?",
+                display: true
+            }
+        }
+    });
+
+}
+
+
+function myChart2() {
+    const htmlconvert = {
+        "'" : "&#x27;"
+
+    };
+
+    console.log("A");
+    
+
+
+
+    var tmpString = "@name";
+
+    var tmpString = tmpString.replace(/&#x27;/g, "'");
+
+    const words = tmpString.split(',');
+
+    let labels2 = words;
+    console.log("B");
+    var tmpString2 = "@punkte";
+    var tmpString3 = tmpString2.replace(/&#x27;/g, " ");
+    var tmpString4 = tmpString3.split(',');
+    let data2 = new Array();
+    for(var i = 0; i < tmpString4.length; i++)
+    {
+        data2.push(parseInt(tmpString4[i]));
+    }
+
+
+    //let data2 = [1,2,3];
+
+
+    let colors2 = ['#49A9EA', '#36CAAB', '#34495E', '#B370CF'];
+
+    let myChart2 = document.getElementById("myChart2").getContext('2d');
+
+    let chart2 = new Chart(myChart2, {
+        type: 'bar',
+        data: {
+            labels: labels2,
+            datasets: [{
+                data: data2,
+                backgroundColor: colors2
+            }]
+        },
+        options: {
+            title: {
+                text: "Ponits per Target per User",
+                display: true
+            },
+            legend: {
+                display: false
+            }
+        }
+    });
+
+}
+
+function myChart3() {
+
+   
+   let labels3 = ['Attack', 'Defense', 'Passing', 'Tackle', 'Speed'];
+let myChart3 = document.getElementById("myChart3").getContext('2d');
+
+let chart3 = new Chart(myChart3, {
+    type: 'radar',
+    data: {
+        labels: labels3,
+        datasets: [
+          {
+            label: 'Messi',
+            fill: true,
+            backgroundColor: "rgba(179, 181, 198, 0.2)",
+            borderColor: "rgba(179, 181, 198, 1)",
+            pointBorderColor: "#fff",
+            pointBackgroundColor: "rgba(179, 181, 198, 1)",
+            data: [50, 12, 55, 7, 29]
+          },
+          {
+            label: 'Ronaldo',
+            fill: true,
+            backgroundColor: "rgba(255, 99, 132, 0.2)",
+            borderColor: "rgba(255, 99, 132, 1)",
+            pointBorderColor: "#fff",
+            pointBackgroundColor: "rgba(255, 99, 132, 1)",
+            data: [51, 10, 32, 20, 44]
+          }
+        ]
+    },
+    options: {
+        title: {
+            text: "Skills",
+            display: true
+        }
+    }
+});
+
+}
+
+function myChart4() {
+
+    let labels4 = ['Germany', 'France', 'UK', 'Italy', 'Spain', 'Others(23)'];
+let data4 = [83, 67, 66, 61, 47, 187];
+let colors4 = ['#49A9EA', '#36CAAB', '#34495E', '#B370CF', '#AC5353', '#CFD4D8'];
+
+let myChart4 = document.getElementById("myChart4").getContext('2d');
+
+let chart4 = new Chart(myChart4, {
+    type: 'pie',
+    data: {
+        labels: labels4,
+        datasets: [ {
+            data: data4,
+            backgroundColor: colors4
+        }]
+    },
+    options: {
+        title: {
+            text: "Population of the European Union (in mio)",
+            display: true
+        }
+    }
+});
+}
+</script>

@@ -1,0 +1,48 @@
+{
+  "dependencies": {
+    "mssql2": {
+      "restored": true,
+      "restoreTime": "2022-04-14T11:07:06.3749938Z"
+    },
+    "mssql1": {
+      "restored": true,
+      "restoreTime": "2022-04-14T11:07:27.4224552Z"
+    },
+    "signalr1": {
+      "restored": true,
+      "restoreTime": "2022-04-14T11:01:14.8359294Z"
+    }
+  },
+  "parameters": {
+    "mssql1.subscriptionId": {
+      "Name": "mssql1.subscriptionId",
+      "Type": "subscription",
+      "Value": "fb01fbc8-d638-40be-8197-a88d9d36dfc1"
+    },
+    "signalr1.resourceGroupName": {
+      "Name": "signalr1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "DefaultResourceGroup-WEU"
+    },
+    "mssql1.resourceGroupName": {
+      "Name": "mssql1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "DefaultResourceGroup-WEU"
+    },
+    "mssql2.resourceGroupName": {
+      "Name": "mssql2.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "DefaultResourceGroup-WEU"
+    },
+    "mssql2.subscriptionId": {
+      "Name": "mssql2.subscriptionId",
+      "Type": "subscription",
+      "Value": "fb01fbc8-d638-40be-8197-a88d9d36dfc1"
+    },
+    "signalr1.subscriptionId": {
+      "Name": "signalr1.subscriptionId",
+      "Type": "subscription",
+      "Value": "fb01fbc8-d638-40be-8197-a88d9d36dfc1"
+    }
+  }
+}

@@ -1,0 +1,138 @@
+﻿@page
+
+@using myArchery.Controllers
+@model myArchery.Pages.LoginModel
+@{
+
+}
+
+    <!--
+<h1>Login</h1>
+
+<h4>User</h4>
+<br />
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="User.Username" class="control-label"></label>
+                <input asp-for="User.Username" class="form-control" />
+                <span asp-validation-for="User.Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="User.Password" class="control-label"></label>
+                <input type="password" asp-for="User.Password" class="form-control" />
+                <span asp-validation-for="User.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="User.Vname" class="control-label"></label>
+                <input asp-for="User.Vname" class="form-control" />
+                <span asp-validation-for="User.Vname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="User.Nname" class="control-label"></label>
+                <input asp-for="User.Nname" class="form-control" />
+                <span asp-validation-for="User.Nname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="User.Email" class="control-label"></label>
+                <input asp-for="User.Email" class="form-control" />
+                <span asp-validation-for="User.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="User.Getnewsletter" class="control-label"></label>
+                <input type="checkbox" asp-for="User.Getnewsletter" checked class="form-control" />
+                <span asp-validation-for="User.Getnewsletter" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register / Login</title>
+    <link rel="stylesheet" href="assets/css/archery-loginForm.css">
+    <link rel="stylesheet" href="~/assets/css/site.css" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="assets/js/eastereggs.js"></script>
+</head>
+
+
+<body>
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button class="toogle-btn" onclick="logined()">Login</button>
+                <button class="toogle-btn" onclick="registered()">Register</button>
+            </div>
+            <!-- <div class="social-icons">
+                <img src="../src/assets/img/icons/facebook_img.png" alt="fb">
+                <img src="../src/assets/img/icons/twitter_img.png" alt="tw">
+                <img src="../src/assets/img/icons/google_img.png" alt="gp">
+            </div> -->
+           
+
+           <!--  <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <img src="../src/assets/img/icons/facebook_img.png" style="height: 20px; width: 20px;">
+                    </div>
+                    <div class="col-sm">
+                        <img src="../src/assets/img/icons/google_img.png" style="height: 20px; width: 20px;">
+                    </div>
+                    <div class="col-sm">
+                        <img src="../src/assets/img/icons/twitter_img.png" style="height: 20px; width: 20px;">
+                    </div>
+                </div>
+            </div> -->
+            <form id="login" class="input-group" method="post">
+                <div class="form-group">
+                    <label asp-for="LoginUser.UserName" ></label>
+                    <input asp-for="LoginUser.UserName" class="input-field" />
+                    <span asp-validation-for="LoginUser.UserName" class="text-danger"></span>
+                </div>
+               <div class="form-group">
+                    <label asp-for="LoginUser.Password" ></label>
+                    <input type="password" asp-for="LoginUser.Password" class="input-field" />
+                    <span asp-validation-for="LoginUser.Password" class="text-danger"></span>
+                </div> 
+                <a class="btn" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif" href="resetPassword">Forget Password</a>
+                <br>
+                <input type="checkbox" class="check-box"><span>Remember Password</span>
+                <button type="submit" class="submit-btn" asp-action="@Model.OnPostLoginAsync()" >Login</button>
+            </form>
+            <form id="register" class="input-group" method="post">
+                <input type="text" asp-for="RegisterUser.Vname" name="vname" class="input-field" placeholder="Enter First Name" required>
+                <input type="text" asp-for="RegisterUser.Nname" name="nname" class="input-field" placeholder="Enter Last Name" required>
+                <input type="email" asp-for="RegisterUser.Email" name="email" class="input-field" placeholder="Enter Email" required>
+                <input type="text" asp-for="RegisterUser.UserName" name="username" class="input-field" placeholder="Enter Username" required>
+                <input type="password" asp-for="RegisterUser.Password" name="password" class="input-field" placeholder="Enter Password" required>
+                <input type="checkbox" asp-for="GetNewsletterChecked" class="check-box"><span style="color: white !important;">I want to get Notified for Updates and offers</span>
+                <button type="submit" class="submit-btn"  asp-action="@Model.OnPostRegisterAsync()">Register</button>
+            </form>
+        </div>
+    </div>
+    <script src="~/assets/js/archery.js"></script>
+</body>
+
+</html>
+
+<div>
+    <a asp-page="Index">Back to Index</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

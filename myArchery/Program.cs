@@ -1,21 +1,48 @@
+using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using myArchery.Persistance;
+using myArchery.Persistance.Models;
+using myArchery.Services;
+using myArchery.Data;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using myArchery.Hubs;
+using Microsoft.AspNetCore.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<myarcheryContext>(options =>
+builder.Services.AddDbContext<myArcheryContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-// RequireConfirmedAccount == email best‰tigung
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<myarcheryContext>();
+// RequireConfirmedAccount == email best√§tigung
+builder.Services.AddDefaultIdentity<AspNetUser>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddEntityFrameworkStores<myArcheryContext>();
 builder.Services.AddRazorPages();
+builder.Services.AddSignalR();
+builder.Services.AddScoped<ArcheryDbContext>();
+builder.Services.AddScoped<EventService>();
+builder.Services.AddScoped<ParcourService>();
+builder.Services.AddScoped<ParcourTargetService>();
+builder.Services.AddScoped<ArrowService>();
+builder.Services.AddScoped<EventRoleService>();
+builder.Services.AddScoped<EventService>();
+builder.Services.AddScoped<PointService>();
 
-var app = builder.Build();
+// Add Emailconfirmation here
+WebApplication app;
+
+try
+{
+    app = builder.Build();
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"{ex.Source} : {ex.Message}");
+    throw;
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -29,6 +56,13 @@ else
     app.UseHsts();
 }
 
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapHub<ChatHub>("/chatHub");
+app.MapHub<LiverankingHub>("/liverankingHub");
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -40,3 +74,5 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.Run();
+
+//Utility.GenerateDummyValues();
