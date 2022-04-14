@@ -202,6 +202,8 @@ namespace myArchery.Services
                                               Eventname = finalResult.Eventname,
                                               Id = finalResult.EveId
                                           };
+
+
                 return res.ToList();                
             }
         }
@@ -278,6 +280,8 @@ namespace myArchery.Services
             //                  TarId = Target.TarId
             //              };
 
+
+            // INSERT PICHLERS CODE
 
             var result2 = _context.ParcoursTargets.FromSqlRaw("SELECT e.EveId, e.Eventname, p.ParId,p.Parcourname,t.TarId,t.Targetname,a.Hitdatetime,po.Value "+
                                                                 "FROM ParcoursTarget pt "+
