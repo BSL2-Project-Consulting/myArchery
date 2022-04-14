@@ -5,3 +5,9 @@ Admin-User Webseite
 
 Username: Admin
 Passwort: Admin12!
+
+
+Azure SQL:
+
+Username: AdminArchery
+Passwort: Admin12!
