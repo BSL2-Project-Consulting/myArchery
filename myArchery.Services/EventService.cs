@@ -233,96 +233,28 @@ namespace myArchery.Services
 
         public List<TargetTemplate> GetUsersCurrentTargetInEvent(int eveId, string username)
         {
-            AspNetUser user = UserService.GetUserByName(username);
+            var user = UserService.GetUserByName(username);
 
-            //var result2 =   from ParcoursTarget in _context.ParcoursTargets
-            //                join Parcour in _context.Parcours on ParcoursTarget.ParId equals Parcour.ParId
-            //                join Event in _context.Events on Parcour.ParId equals Event.ParId
-            //                join EventUserRole in _context.EventUserRoles on Event.EveId equals EventUserRole.EveId
-            //                join Target in _context.Targets on ParcoursTarget.TarId equals Target.TarId
-            //                join Arrow in _context.Arrows on ParcoursTarget.PataId equals Arrow.PataId into a
-            //                from asdf in a.DefaultIfEmpty(_context.Arrows.Single(u => u == null))
-            //                join qwer in _context.Points on asdf.PoiId equals qwer.PoiId into p
-            //                from Point in p.DefaultIfEmpty(_context.Points.Single(u => u == null))
-            //                where Event.EveId == eveId && EventUserRole.UseId == user.Id
-            //                select new TargetTemplate
-            //                {
-            //                    TargetName = Target.Targetname,
-            //                    TarId = Target.TarId,
-            //                    EventId = eveId,
-            //                    Point = Point                              
-            //                };
+            var result = from Pt in _context.ParcoursTargets
+                         group Pt by new {Pt.PataId} into Pt
+                         join P in _context.Parcours on Pt.ParId equals P.ParId
+                         join E in _context.Events on P.ParId equals E.ParId
+                         where E.EveId == eveId
+                         join Eur in _context.EventUserRoles on E.EveId equals Eur.EveId
+                         where Eur.UseId == user.Id
+                         join T in _context.Targets on Pt.TarId equals T.TarId 
+                         join A in _context.Arrows on Pt.PataId equals A.PataId
+                         join Po in _context.Points on A.PoiId equals Po.PoiId                         
+                         orderby Pt.PataId ascending
+                         select new TargetTemplate
+                         {
+                             TarId = T.TarId,
+                             TargetName = T.Targetname,
+                             EventId = eveId,
+                             Point = Po
+                         };
 
-            //var arrow = from ParcoursTarget in _context.ParcoursTargets
-            //            join Target in _context.Targets on ParcoursTarget.TarId equals Target.TarId
-            //            join Arrow in _context.Arrows on ParcoursTarget.PataId equals Arrow.PataId
-            //            select new
-            //            {
-            //                Arrow.Poi.Value,
-            //                Target.Targetname
-            //            };
-
-            //var result2 = from ParcoursTarget in _context.ParcoursTargets
-            //              join Parcour in _context.Parcours on ParcoursTarget.ParId equals Parcour.ParId
-            //              join Event in _context.Events on Parcour.ParId equals Event.ParId
-            //              join EventUserRole in _context.EventUserRoles on Event.EveId equals EventUserRole.EveId
-            //              join Target in _context.Targets on ParcoursTarget.TarId equals Target.TarId
-            //              join Arrow in _context.Arrows on ParcoursTarget.PataId equals Arrow.PataId
-            //              join Point in _context.Points on Arrow.PoiId equals Point.PoiId
-            //              where Event.EveId == eveId && EventUserRole.UseId == user.Id && (_context.Arrows.Where(x => x.Poi.Value == 0).Count() < Event.Arrowamount && _context.Arrows.Where(x => x.Poi.Value > 0).Count() == 0)
-            //              select new TargetTemplate
-            //              {
-            //                  EventId = eveId,
-            //                  Point = Point,
-            //                  TargetName = Target.Targetname,
-            //                  TarId = Target.TarId
-            //              };
-
-
-            var result2 = _context.ParcoursTargets.FromSqlRaw("SELECT e.EveId, e.Eventname, p.ParId,p.Parcourname,t.TarId,t.Targetname,a.Hitdatetime,po.Value "+
-                                                                "FROM ParcoursTarget pt "+
-                                                                "LEFT JOIN Parcour p ON pt.ParId = p.ParId " +
-                                                                "LEFT JOIN Event e ON p.ParId = e.ParId " +
-                                                                "LEFT JOIN EventUserRole eur ON e.EveId = eur.EveId " +
-                                                                "LEFT JOIN Target t ON pt.TarId = t.TarId " +
-                                                                "LEFT JOIN Arrow a ON pt.PataId = a.PataId " +
-                                                                "LEFT JOIN Point po ON a.PoiId = po.PoiId " +
-                                                                "WHERE e.EveId = {0} " +
-                                                                "AND eur.UseId = {1} " +
-                                                                "ORDER BY pt.PataId ", eveId, user.Id);
-
-
-            var targetsNotHit = from Pt in _context.ParcoursTargets
-                                join P in _context.Parcours on Pt.ParId equals P.ParId
-                                join E in _context.Events on P.ParId equals E.ParId
-                                where E.EveId == eveId
-                                join Eur in _context.EventUserRoles on E.EveId equals Eur.EveId
-                                where Eur.UseId == user.Id
-                                join T in _context.Targets on Pt.TarId equals T.TarId
-                                join A in _context.Arrows on Pt.PataId equals A.PataId
-                                join Po in _context.Points on A.PoiId equals Po.PoiId
-                                orderby Pt.PataId descending
-                                select new
-                                {
-                                    E.EveId,
-                                    E.Eventname,
-                                    P.ParId,
-                                    P.Parcourname,
-                                    T.TarId,
-                                    T.Targetname,
-                                    A.Hitdatetime,
-                                    Po.Value
-                                };
-
-            
-            if (result2 == null)
-            {
-            }
-            //else
-            //{
-            //    return result2.ToList();
-            //}
-            return new List<TargetTemplate>();
+            return result.ToList();
 
         }
 

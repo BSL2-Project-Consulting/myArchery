@@ -207,7 +207,8 @@ namespace myArchery.Controllers
         // GET: EventController/Currentevent/{id}
         public ActionResult CurrentEvent(int id)
         {
-            return View(_eventService.GetUsersCurrentTargetInEvent(id, User.Identity.Name).FirstOrDefault());
+            var tmp = _eventService.GetUsersCurrentTargetInEvent(id, User.Identity.Name).FirstOrDefault();
+            return View(new TargetTemplate { TargetName = "Adler"});
         }
 
         // POST: EventController/Currentevent/{id}
