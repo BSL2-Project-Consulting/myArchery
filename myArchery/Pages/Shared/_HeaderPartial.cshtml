@@ -2,11 +2,9 @@
 @inject SignInManager<AspNetUser> SignInManager
 @inject UserManager<AspNetUser> UserManager
 <!DOCTYPE html>
-<!-- Created By CodingLab - www.codinglabweb.com -->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-   <!--------- <title>Responsive Navigation Menu</title>------>
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/wwwroot/assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
@@ -19,9 +17,9 @@
       <label for="click" class="menu-btn">
         <i class="fas fa-bars"></i>
       </label>
-      <ul>
+      <ul style="margin-bottom: 0rem !important;">
         <!-- <li><a class="active" href="#">Home</a></li> -->
-                    <li><a class="nav-link scrollto active" href="~/Index">Home</a></li>
+                    <li><a class="nav-link scrollto" href="~/Index">Home</a></li>
                     <li><a class="nav-link scrollto" href="~/About">About</a></li>
                     <li><a class="nav-link scrollto" href="~/Event/AllEvents">All Events</a></li>
                     <li><a class="nav-link scrollto" href="~/Event/Create">Create Events</a></li>
