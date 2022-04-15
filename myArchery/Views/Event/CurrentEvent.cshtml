@@ -1,6 +1,7 @@
 ﻿@using myArchery.Services
 @using myArchery.Services.TmpClasses
 @inject ArrowService _arrowService
+@inject EventService _eventService
 
 @model TargetTemplate
 @*
@@ -23,7 +24,7 @@
 
     var events = EventService.GetEventById(Model.EveId);
 
-    var users = EventService.GetUsersWithPointsFromEventById(Model.EveId);
+    var users = _eventService.GetUsersWithPointsFromEventById(Model.EveId);
 
 
     var repheight = 400 / 5 * users.Count() + "px";

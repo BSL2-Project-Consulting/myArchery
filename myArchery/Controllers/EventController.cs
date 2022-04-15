@@ -216,7 +216,8 @@ namespace myArchery.Controllers
                 Eventname = _event.Eventname,
                 ArrowAmount = _event.Arrowamount,
                 ArrowCount = list.Arrows,
-                ParcourName = _event.Par.Parcourname
+                ParcourName = _event.Par.Parcourname,
+                TargetName = list.Tar.Targetname
             };
 
             return View(targetTemplate);

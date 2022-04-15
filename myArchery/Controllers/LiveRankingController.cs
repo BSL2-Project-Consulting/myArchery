@@ -5,6 +5,13 @@ namespace myArchery.Controllers
 {
     public class LiveRankingController : Controller
     {
+        private EventService _eventService;
+
+        public LiveRankingController(EventService eventService)
+        {
+            _eventService = eventService;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -14,7 +21,7 @@ namespace myArchery.Controllers
         // Liveranking/GetLiverankingDataAsJson/{id}
         public string GetLiverankingDataAsJson(int id)
         {
-            return Utility.ConvertListToJson(EventService.GetUsersWithPointsFromEventById(id));
+            return Utility.ConvertListToJson(_eventService.GetUsersWithPointsFromEventById(id));
         }
     }
 }

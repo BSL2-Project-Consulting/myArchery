@@ -6,10 +6,12 @@ namespace myArchery.Services
     public class EventService
     {
         private readonly ArcheryDbContext _context;
+        private readonly TargetService _targetService;
 
-        public EventService(ArcheryDbContext context)
+        public EventService(ArcheryDbContext context, TargetService targetService)
         {
             _context = context;
+            _targetService = targetService;
         }
         /*
          * -- the create event user interface must request the following information:
@@ -258,8 +260,12 @@ namespace myArchery.Services
                                                             $"AND eur.UseId = {user.Id} " +
                                                             "GROUP BY pt.PataId, e.EveId, e.Eventname, e.Arrowamount, p.ParId, p.Parcourname, t.TarId, t.Targetname " +
                                                             "ORDER BY pt.PataId");
+            var targetId = result2.ToList()[0];
+            var target = _targetService.GetTargetById(targetId.TarId);
 
-            return result2.ToList().FirstOrDefault(x => x.Arrows.Count < _event.Arrowamount);
+            ParcoursTarget? tmp = result2.ToList().FirstOrDefault(x => x.Arrows.Count < _event.Arrowamount);
+            tmp.Tar = target;
+            return tmp;
         }
 
         /// <summary>
@@ -366,44 +372,38 @@ namespace myArchery.Services
         WHERE eur.eve_id = 1
         GROUP BY e.eventname, u.username
         */
-        public static List<UsersWithPoints> GetUsersWithPointsFromEventById(int eveId)
+        public List<UsersWithPoints> GetUsersWithPointsFromEventById(int eveId)
 		{
-			using (ArcheryDbContext db = new ArcheryDbContext())
-			{
-                var res = from eventuserroles in db.EventUserRoles
-                          where eventuserroles.EveId == eveId
-                          join eve in db.Events on eventuserroles.EveId equals eve.EveId
-                          join user in db.AspNetUsers on eventuserroles.Use.Id equals user.Id
-                          join arrow in db.Arrows on eventuserroles.EvusroId equals arrow.EvusroId
-                          join points in db.Points on arrow.PoiId equals points.PoiId
-                          into result1
-                          from finalResult in result1
-                          orderby user.UserName
-                          orderby eve.Eventname                          
-                          select new UsersWithPoints
-                          {
-                              Username = user.UserName,
-                              Points = arrow.Poi.Value,
-                          };
+            var res = from eventuserroles in _context.EventUserRoles
+                      where eventuserroles.EveId == eveId
+                      join eve in _context.Events on eventuserroles.EveId equals eve.EveId
+                      join user in _context.AspNetUsers on eventuserroles.Use.Id equals user.Id
+                      join arrow in _context.Arrows on eventuserroles.EvusroId equals arrow.EvusroId
+                      join points in _context.Points on arrow.PoiId equals points.PoiId
+                      into result1
+                      from finalResult in result1
+                      select new UsersWithPoints
+                      {
+                          Username = user.UserName,
+                          Points = arrow.Poi.Value,
+                      };
 
-                var res1 = from AspNetUsers in res
-                           group AspNetUsers by AspNetUsers.Username into result2
-                           select new UsersWithPoints
-                           {
-                               Username = result2.Key,
-                               Points = result2.Sum(x => x.Points)
-                           };
+            var res1 = from AspNetUsers in res
+                       group AspNetUsers by AspNetUsers.Username into result2
+                       select new UsersWithPoints
+                       {
+                           Username = result2.Key,
+                           Points = result2.Sum(x => x.Points)
+                       };
 
-                return res1.OrderByDescending(x => x.Points).ToList();
-                          
-            }
-		}
+            return res1.OrderByDescending(x => x.Points).ToList();
+        }
 
         public static Event? GetEventById(int id)
         {
             using (ArcheryDbContext db = new ArcheryDbContext())
             {
-                return db.Events.FirstOrDefault(x => x.EveId == id);
+                return db.Events.Include(x => x.Par).FirstOrDefault(x => x.EveId == id);
             }
         }
 

@@ -30,6 +30,7 @@ builder.Services.AddScoped<ArrowService>();
 builder.Services.AddScoped<EventRoleService>();
 builder.Services.AddScoped<EventService>();
 builder.Services.AddScoped<PointService>();
+builder.Services.AddScoped<TargetService>();
 
 // Add Emailconfirmation here
 WebApplication app;
