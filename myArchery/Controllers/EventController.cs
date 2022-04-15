@@ -207,8 +207,19 @@ namespace myArchery.Controllers
         // GET: EventController/Currentevent/{id}
         public ActionResult CurrentEvent(int id)
         {
-            var tmp = _eventService.GetUsersCurrentTargetInEvent(id, User.Identity.Name).FirstOrDefault();
-            return View(new TargetTemplate { TargetName = "Adler"});
+            var _event = EventService.GetEventById(id);
+            var list = _eventService.GetUsersCurrentTargetInEvent(id, User.Identity.Name);
+
+            TargetTemplate targetTemplate = new TargetTemplate
+            {
+                EveId = id,
+                Eventname = _event.Eventname,
+                ArrowAmount = _event.Arrowamount,
+                ArrowCount = list.Arrows,
+                ParcourName = _event.Par.Parcourname
+            };
+
+            return View(targetTemplate);
         }
 
         // POST: EventController/Currentevent/{id}
@@ -217,6 +228,7 @@ namespace myArchery.Controllers
         public async Task<ActionResult> CurrentEvent(int id,IFormCollection collection)
         {
             var eventId = id;
+            var _event = EventService.GetEventById(eventId);
             var user = UserService.GetUserByName(User.Identity.Name);
 
             if (user == null)
@@ -248,7 +260,16 @@ namespace myArchery.Controllers
 
             await _hubContext.Clients.All.SendAsync("SendRanking", id);
             var list = _eventService.GetUsersCurrentTargetInEvent(id, User.Identity.Name);
-            return View(list.First());
+            
+            TargetTemplate targetTemplate = new TargetTemplate
+            {
+                EveId = id,
+                Eventname = _event.Eventname,
+                ArrowAmount = _event.Arrowamount,
+                ArrowCount = list.Arrows,
+                ParcourName = _event.Par.Parcourname
+            };
+            return View(list);
         }
 
         // GET: EventController/MyEvents

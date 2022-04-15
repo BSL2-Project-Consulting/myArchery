@@ -231,31 +231,35 @@ namespace myArchery.Services
             return res;
         }
 
-        public List<TargetTemplate> GetUsersCurrentTargetInEvent(int eveId, string username)
+        public ParcoursTarget GetUsersCurrentTargetInEvent(int eveId, string username)
         {
             var user = UserService.GetUserByName(username);
+            var _event = GetEventById(eveId);
 
-            var result = from Pt in _context.ParcoursTargets
-                         group Pt by new {Pt.PataId} into Pt
-                         join P in _context.Parcours on Pt.ParId equals P.ParId
-                         join E in _context.Events on P.ParId equals E.ParId
-                         where E.EveId == eveId
-                         join Eur in _context.EventUserRoles on E.EveId equals Eur.EveId
-                         where Eur.UseId == user.Id
-                         join T in _context.Targets on Pt.TarId equals T.TarId 
-                         join A in _context.Arrows on Pt.PataId equals A.PataId
-                         join Po in _context.Points on A.PoiId equals Po.PoiId                         
-                         orderby Pt.PataId ascending
-                         select new TargetTemplate
-                         {
-                             TarId = T.TarId,
-                             TargetName = T.Targetname,
-                             EventId = eveId,
-                             Point = Po
-                         };
+            var result2 = _context.ParcoursTargets.FromSqlRaw("SELECT " +
+                                                            "pt.PataId, " +
+                                                            "e.EveId, " +
+                                                            "e.Eventname, " +
+                                                            "e.Arrowamount, " +
+                                                            "p.ParId, " +
+                                                            "p.Parcourname, " +
+                                                            "t.TarId, " +
+                                                            "t.Targetname, " +
+                                                            "COUNT(a.PataId) AS 'Count_Arrows', " +
+                                                            "SUM(po.Value) AS 'Points' " +
+                                                            "FROM ParcoursTarget pt " +
+                                                            "LEFT JOIN Parcour p ON pt.ParId = p.ParId " +
+                                                            "LEFT JOIN Event e ON p.ParId = e.ParId " +
+                                                            "LEFT JOIN EventUserRole eur ON e.EveId = eur.EveId " +
+                                                            "LEFT JOIN Target t ON pt.TarId = t.TarId " +
+                                                            "LEFT JOIN Arrow a ON pt.PataId = a.PataId " +
+                                                            "LEFT JOIN Point po ON a.PoiId = po.PoiId " +
+                                                            $"WHERE e.EveId = {eveId} " +
+                                                            $"AND eur.UseId = {user.Id} " +
+                                                            "GROUP BY pt.PataId, e.EveId, e.Eventname, e.Arrowamount, p.ParId, p.Parcourname, t.TarId, t.Targetname " +
+                                                            "ORDER BY pt.PataId");
 
-            return result.ToList();
-
+            return result2.ToList().FirstOrDefault(x => x.Arrows.Count < _event.Arrowamount);
         }
 
         /// <summary>
