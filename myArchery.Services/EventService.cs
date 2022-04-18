@@ -7,11 +7,13 @@ namespace myArchery.Services
     {
         private readonly ArcheryDbContext _context;
         private readonly TargetService _targetService;
+        private readonly EventRoleService _eventRoleService;
 
-        public EventService(ArcheryDbContext context, TargetService targetService)
+        public EventService(ArcheryDbContext context, TargetService targetService, EventRoleService eventRoleService)
         {
             _context = context;
             _targetService = targetService;
+            _eventRoleService = eventRoleService;
         }
         /*
          * -- the create event user interface must request the following information:
@@ -194,16 +196,16 @@ namespace myArchery.Services
             using (ArcheryDbContext db = new ArcheryDbContext())
             {
                 var res = from AspNetUsers in db.AspNetUsers
-                                          join eventRoles in db.EventUserRoles on AspNetUsers.Id equals eventRoles.UseId
-                                          join events in db.Events on eventRoles.EveId equals events.EveId
-                                          into result1
-                                          from finalResult in result1
-                                          where finalResult.Startdate < DateTime.Now && finalResult.Enddate > DateTime.Now
-                                          select new EventWithId
-                                          {
-                                              Eventname = finalResult.Eventname,
-                                              Id = finalResult.EveId
-                                          };
+                            join eventRoles in db.EventUserRoles on AspNetUsers.Id equals eventRoles.UseId
+                            join events in db.Events on eventRoles.EveId equals events.EveId
+                            into result1
+                            from finalResult in result1
+                            where finalResult.Startdate < DateTime.Now && finalResult.Enddate > DateTime.Now
+                            select new EventWithId
+                            {
+                                Eventname = finalResult.Eventname,
+                                Id = finalResult.EveId
+                            };
                 return res.ToList();                
             }
         }
@@ -237,6 +239,7 @@ namespace myArchery.Services
         {
             var user = UserService.GetUserByName(username);
             var _event = GetEventById(eveId);
+            var eveusro = _eventRoleService.GetEventRole(eveId, user.Id);
 
             var result2 = _context.ParcoursTargets.FromSqlRaw("SELECT " +
                                                             "pt.PataId, " +
@@ -260,12 +263,33 @@ namespace myArchery.Services
                                                             $"AND eur.UseId = {user.Id} " +
                                                             "GROUP BY pt.PataId, e.EveId, e.Eventname, e.Arrowamount, p.ParId, p.Parcourname, t.TarId, t.Targetname " +
                                                             "ORDER BY pt.PataId");
-            var targetId = result2.ToList()[0];
-            var target = _targetService.GetTargetById(targetId.TarId);
 
-            ParcoursTarget? tmp = result2.ToList().FirstOrDefault(x => x.Arrows.Count < _event.Arrowamount);
-            tmp.Tar = target;
-            return tmp;
+            int cont = 0;
+            ParcoursTarget pta = new();
+            int count = 0;
+            do
+            {
+                var tmp1 = from arrow in _context.ParcoursTargets.Include(x => x.Arrows)
+                           where arrow.TarId == result2.ToList()[count].TarId
+                           select arrow;
+
+                var tmp2 = from pt in _context.ParcoursTargets.Include(x => x.Arrows).Include(x => x.Tar).Include(x => x.Par).Where(x => x.TarId == result2.ToList()[count].TarId) select pt;
+                pta = tmp2.First();
+                if (pta.Arrows.Count == 0)
+                {
+                    cont = -1;
+                }
+                else
+                {
+                    count++;
+                }
+            } while (cont == 0);
+                      
+
+            
+            //ParcoursTarget? tmp = result2.ToList().FirstOrDefault(x => x.Arrows.Count < _event.Arrowamount);
+            //tmp.Tar = target;
+            return pta;
         }
 
         /// <summary>

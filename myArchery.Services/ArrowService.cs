@@ -1,4 +1,6 @@
-﻿namespace myArchery.Services
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace myArchery.Services
 {
     public class ArrowService
     {
@@ -70,13 +72,17 @@
             return res.ToList();
         }
 
-        public async Task AddArrow(int eve_id, string use_id, int value_id, int arrowNumber)
+        public void AddArrow(int eve_id, string use_id, int value_id, int arrowNumber, int TargetId)
         {
+            var test = _context.Arrows.Include(x => x.Pata).Include(x => x.Evusro).Where(x => x.Evusro.EveId == eve_id);
+
             var evusro = _everoService.GetEventRole(eve_id, use_id);
 
             var poi = _pointService.GetPoint(eve_id, value_id, arrowNumber);
 
             var pata = _parcourTargetService.GetParcoursTarget(eve_id);
+
+            var target = _context.Targets.First(x => x.TarId == TargetId);
 
             Arrow arrow = new Arrow
             {
@@ -85,9 +91,11 @@
                 PataId = pata.PataId,
                 PoiId = poi.PoiId
             };
+            
+            pata.Arrows.Add(arrow);
 
-            _context.Add(arrow);
-            await _context.SaveChangesAsync();
+            _context.Arrows.Add(arrow);
+            _context.SaveChanges();
         }
 
         public int GetCurrentArrowNumber(int eventId, string userId)

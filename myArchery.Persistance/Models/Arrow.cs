@@ -14,6 +14,6 @@ namespace myArchery.Persistance.Models
 
         public virtual EventUserRole Evusro { get; set; } = null!;
         public virtual ParcoursTarget Pata { get; set; } = null!;
-        public virtual Point Poi { get; set; } = new Point();
+        public virtual Point Poi { get; set; } = null!;
     }
 }

@@ -231,6 +231,7 @@ namespace myArchery.Controllers
             var eventId = id;
             var _event = EventService.GetEventById(eventId);
             var user = UserService.GetUserByName(User.Identity.Name);
+            var targetId = _eventService.GetUsersCurrentTargetInEvent(id, User.Identity.Name).TarId;
 
             if (user == null)
             {
@@ -241,18 +242,18 @@ namespace myArchery.Controllers
             {
                 case "ck":
                     // Centerkill                                                                             \/ Get Arrow Number
-                    await _arrowService.AddArrow(eventId, user.Id, 1, _arrowService.GetCurrentArrowNumber(eventId, user.Id));
+                    _arrowService.AddArrow(eventId, user.Id, 1, 1, targetId/*_arrowService.GetCurrentArrowNumber(eventId, user.Id)*/);
                     break;
                 case "k":
                     // Kill                                                                                    \/ Get Arrow Number
-                    await _arrowService.AddArrow(eventId, user.Id, 2, _arrowService.GetCurrentArrowNumber(eventId, user.Id));
+                    _arrowService.AddArrow(eventId, user.Id, 2, 1, targetId/*_arrowService.GetCurrentArrowNumber(eventId, user.Id)*/);
                     break;
                 case "b":
-                    await _arrowService.AddArrow(eventId, user.Id, 3, _arrowService.GetCurrentArrowNumber(eventId, user.Id));
+                    _arrowService.AddArrow(eventId, user.Id, 3, 1, targetId/*_arrowService.GetCurrentArrowNumber(eventId, user.Id)*/);
                     // Body                                                                                    /\ Get Arrow Number
                     break;
                 case "nh":
-                    await _arrowService.AddArrow(eventId, user.Id, 4, _arrowService.GetCurrentArrowNumber(eventId, user.Id));
+                    _arrowService.AddArrow(eventId, user.Id, 4, 1, targetId/*_arrowService.GetCurrentArrowNumber(eventId, user.Id)*/);
                     // No Hit                                                                                  /\ Get Arrow Number
                     break;
                 default:
@@ -270,7 +271,7 @@ namespace myArchery.Controllers
                 ArrowCount = list.Arrows,
                 ParcourName = _event.Par.Parcourname
             };
-            return View(list);
+            return View(targetTemplate);
         }
 
         // GET: EventController/MyEvents
