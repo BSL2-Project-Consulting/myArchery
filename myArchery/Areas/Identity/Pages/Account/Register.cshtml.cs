@@ -105,6 +105,9 @@ namespace myArchery.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+            [Display(Name = "Remember for next visit")]
+            public bool RememberMe { get; set; } = false;
         }
 
 

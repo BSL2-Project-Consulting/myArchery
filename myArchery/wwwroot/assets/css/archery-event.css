@@ -114,6 +114,7 @@ h2 {
     padding: 60px;
     box-shadow: 0 0 1em rgb(196, 196, 196);
     border-radius: 25px;
+    transition: visibility 0s, opacity 0.5s linear;
 }
 
 h2 {
@@ -244,7 +245,7 @@ form {
     display: block;
     width: 200px;
     height: 40px;
-    border-radius: 18px;
+    border-radius: 7px;
     background-color: #ffffff;
     border: solid 2px black;
     color: rgb(0, 0, 0);
@@ -323,6 +324,7 @@ input[type="checkbox"] {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     margin-left: 277px;
     z-index: 1;
+
 }
 
 #alright {
@@ -333,5 +335,7 @@ input[type="checkbox"] {
     left: 223px;
     background-position: -350px 0;
 }
+
+
 
 
