@@ -14,11 +14,7 @@
     }
 
     ViewData["Title"] = "Current Event";
-
-    if (User.Identity == null)
-    {
-        
-    }
+    ViewData["Event"] = Model.Eventname;
 
     var usern = User.Identity.Name;
 
@@ -625,6 +621,6 @@ let chart4 = new Chart(myChart4, {
 }
             </script>
     <script src="~/assets/js/main.js"></script>
-
+    <script src="~/assets/js/liveranking.js"></script>
 </body>
 </html>
