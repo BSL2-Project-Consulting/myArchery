@@ -324,34 +324,13 @@ else
                             <th>Spieler</th>
                             <th>Punkte</th>
                         </tr>
-                        <tr>
-                            <td>Hans</td>
-                            <td>101</td>
-                        </tr>
-                        <tr>
-                            <td>Sören</td>
-                            <td>100</td>
-                        </tr>
-                        <tr>
-                            <td>May</td>
-                            <td>51</td>
-                        </tr>
-                        <tr>
-                            <td>Paul</td>
-                            <td>45</td>
-                        </tr>
-                        <tr>
-                            <td>Danis Mum</td>
-                            <td>22</td>
-                        </tr>
-                        <tr>
-                            <td>Kevin</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>Julian</td>
-                            <td>1</td>
-                        </tr>
+                        @foreach (var item in tmp)
+                        {
+                            <tr>
+                                <td>@item.Username</td>
+                                <td>@item.Points</td>
+                            </tr>
+                        }
                     </table>
                 </div>
                 <div class="col-2"></div>
