@@ -8,13 +8,15 @@ namespace myArchery.Services
         private EventRoleService _everoService;
         private PointService _pointService;
         private ParcourTargetService _parcourTargetService;
+        private EventService _eventService;
 
-        public ArrowService(ArcheryDbContext context, EventRoleService everoService, PointService pointService, ParcourTargetService parcourTargetService)
+        public ArrowService(ArcheryDbContext context, EventRoleService everoService, PointService pointService, ParcourTargetService parcourTargetService, EventService eventService)
         {
             _context = context;
             _everoService = everoService;
             _pointService = pointService;
             _parcourTargetService = parcourTargetService;
+            _eventService = eventService;
         }
 
         /*-- 
@@ -80,7 +82,7 @@ namespace myArchery.Services
 
             var poi = _pointService.GetPoint(eve_id, value_id, arrowNumber);
 
-            var pata = _parcourTargetService.GetParcoursTarget(eve_id);
+            var pata = _eventService.GetUsersCurrentTargetInEvent(eve_id, UserService.GetUserById(use_id).UserName);
 
             var target = _context.Targets.First(x => x.TarId == TargetId);
 

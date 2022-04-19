@@ -16,10 +16,5 @@ namespace myArchery.Services
             _context = context;
             _parcourService = parcourService;
         }
-
-        public ParcoursTarget GetParcoursTarget(int eveid)
-        {
-            return _context.ParcoursTargets.Where(x => x.ParId == _parcourService.GetParcourFromEvent(eveid)).First();
-        }
     }
 }

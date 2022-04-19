@@ -270,7 +270,7 @@ namespace myArchery.Services
             do
             {
                 var tmp1 = from arrow in _context.ParcoursTargets.Include(x => x.Arrows)
-                           where arrow.TarId == result2.ToList()[count].TarId
+                           where arrow.TarId == result2.ToList()[count].TarId && _context.Events.First(x => x.EveId == eveId).ParId == arrow.ParId
                            select arrow;
 
                 var tmp2 = from pt in _context.ParcoursTargets.Include(x => x.Arrows).Include(x => x.Tar).Include(x => x.Par).Where(x => x.TarId == result2.ToList()[count].TarId) select pt;
