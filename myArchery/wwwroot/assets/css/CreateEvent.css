@@ -4,7 +4,7 @@ html, body {
     height: 100%;
     width: 100%;
     position: absolute;
-    background-color: black;
+    background-color: red;
     background-repeat: repeat-x;
     background-position: top;
     z-index: -2;
@@ -90,3 +90,8 @@ p {
         border: thin solid black;
         opacity: 0.8;
     }
+
+.inputs { 
+    margin: 10px;
+    margin-left: 50px;
+}

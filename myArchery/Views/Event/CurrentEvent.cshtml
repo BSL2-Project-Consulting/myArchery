@@ -17,7 +17,7 @@
 
     if (User.Identity == null)
     {
-        
+
     }
 
     var usern = User.Identity.Name;
@@ -40,8 +40,8 @@
     tmp = tmp.Where(x => x.Username == User.Identity.Name).ToList();
 
 
-    var overallPoints = users.Select(x => x.Points);
-
+    var punkte = _eventService.GetUsersWithPointsFromEventById(events.EveId).ToArray();
+  
 
     var points = tmp.Select(x => x.Points);
 
@@ -66,19 +66,19 @@
     }
     string listofAllNames = " ";
 
-    string punkte = " ";
+    string listofAllPoints = " ";
 
     string name = " ";
 
-    for (var i = 0; i < points2.Count(); i++)
+    for (var i = 0; i < punkte.Count(); i++)
     {
-        if (i+1 == points2.Count())
+        if (i+1 == punkte.Count())
         {
-            punkte += $"'{points2[i]}'";
+            listofAllPoints += $"'{punkte[i]}'";
         }
         else
         {
-            punkte += $"'{points2[i]}',";
+            listofAllPoints += $"'{punkte[i]}',";
         }
     }
 
@@ -463,6 +463,7 @@ function myChart2() {
         data: {
             labels: labels2,
             datasets: [{
+                label:"Ponits per Target per User",
                 data: data2,
                 backgroundColor: colors2
             }]
@@ -521,10 +522,58 @@ let chart3 = new Chart(myChart3, {
 
 }
 
-function myChart4() {
+function myChart4(points) {
 
-    let labels4 = ['Germany', 'France', 'UK', 'Italy', 'Spain', 'Others(23)'];
-let data4 = [83, 67, 66, 61, 47, 187];
+
+    var tmpString = "@name";
+
+   var tmpString = tmpString.replace(/&#x27;/g, "'");
+
+   const words = tmpString.split(',');
+
+   let labels3 = words;
+
+
+
+          
+    var tmpString2 = "@listofAllNames";
+       alert(tmpString2);
+
+   var tmpString2 = tmpString2.replace(/&#x27;/g, "'");
+
+   let words2 = tmpString2.split(',');
+
+  const temp = words2
+
+  
+   const uniqueset = new Set(words2);
+   
+   const backToArray = [...uniqueset]
+
+  backToArray.pop();
+
+  /*
+
+   var tmpString5= "@listofAllPoints";
+   
+   alert(tmpString5);
+       
+        var tmpString6 = tmpString5.replace(/&#x27;/g, " ");
+
+      
+       var tmpString7 = tmpString6.split(',');
+ */      
+       let data4 = new Array();
+       data4.push(points);
+
+     
+       //Punkte pro User herausbekommen
+
+
+    
+
+
+
 let colors4 = ['#49A9EA', '#36CAAB', '#34495E', '#B370CF', '#AC5353', '#CFD4D8'];
 
 let myChart4 = document.getElementById("myChart4").getContext('2d');
@@ -532,7 +581,7 @@ let myChart4 = document.getElementById("myChart4").getContext('2d');
 let chart4 = new Chart(myChart4, {
     type: 'pie',
     data: {
-        labels: labels4,
+        labels: backToArray,
         datasets: [ {
             data: data4,
             backgroundColor: colors4
