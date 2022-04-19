@@ -91,7 +91,6 @@
 
 @section Scripts {
     
-
     <script>
         let prev_val;
         var arrowCount = document.getElementById("arrowAmount");
@@ -108,11 +107,7 @@
                    });
             });
         function UpdateArrowInputs(){
-                var i = $("#arrowAmount").val();
-               //var p = '<label for="Points['+i+'].Value">Test</label>';
-               //$("#item-list").append(p);
-               //var n = '<input type="number" id="Centerkill'+i+'" class="items" name="Points[' + i + '].CenterkillValue" />';
-               //$("#item-list").append(n);
+               var i = $("#arrowAmount").val();
 
                $("#item-list").children().remove();
 
@@ -135,7 +130,7 @@
                                     '<input type="number" class="inputs3" min="0" name="Points['+x+'].BodyValue" class="items"/>'+
                                 '</div>';
                    $("#item-list").append(html);
-            }
+                }
         }
     </script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

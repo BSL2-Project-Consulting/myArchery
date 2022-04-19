@@ -26,20 +26,18 @@
 
     var users = _eventService.GetUsersWithPointsFromEventById(Model.EveId);
 
-
     var repheight = 400 / 5 * users.Count() + "px";
 
     double maxPoints = 50;
 
     var tmp = _arrowService.GetArrowInfo(events.EveId);
     var tmp2 = tmp;
-
+    
     var allNames = tmp2.Select(x => x.Username).ToArray();
     var allPoints = tmp2.Select(x => x.Points);
 
     tmp = tmp.Where(x => x.Username == User.Identity.Name).ToList();
-
-
+    
     var punkte = _eventService.GetUsersWithPointsFromEventById(events.EveId).ToArray();
   
 
@@ -169,14 +167,6 @@
 </script>
 
 <section id="current-event">
-
-<!-- <div class="form-box">
-<div class="button-box">
-<div id="btn"></div>
-<button class="toogle-btn" onclick="event()">Login</button>
-<button class="toogle-btn" onclick="ranking()">Register</button>
-</div>
--->
 
 </section>
     <script>

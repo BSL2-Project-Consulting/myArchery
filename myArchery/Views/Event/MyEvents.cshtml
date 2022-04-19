@@ -7,66 +7,31 @@
 }
 
 <h1>MyEvents</h1>
-
+<link rel="stylesheet" href="~/assets/css/style.css">
+<link href="~/assets/css/allEvents.css" rel="stylesheet">
+    <link href="~/assets/css/archery-event.css" rel="stylesheet">
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(x => x.Name)
-            </th>            
-            <th>
-                @Html.DisplayNameFor(model => model.UserCount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ArrowAmount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StartDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EndDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsPrivate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Par.Parcourname)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+    <ul class="responsive-table">
+        <li class="table-header">
+                <div class="col col-1">Eventname</div>
+                <div class="col col-2">Arrowamount</div>
+                <div class="col col-3">Startdate</div>
+                <div class="col col-4">Enddate</div>
+                <div class="col col-5">Parcourname</div>
+                <div class="col col-6">Options</div>
+              </li>
+
 @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <th>
-                @Html.DisplayFor(modelItem => item.UserCount)
-            </th>
-            <td>
-                @Html.DisplayFor(modelItem => item.ArrowAmount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EndDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsPrivate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Par.Parcourname)
-            </td>
-            <td>
-                <a asp-action="CurrentEvent" asp-route-id="@item.Id">Play</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
-            </td>
-        </tr>
+               <li class="table-row">
+                <div class="col col-1" data-label="Eventname">Test Event1</div>
+                <div class="col col-2" data-label="Arrowamount">4</div>
+                <div class="col col-3" data-label="Startdate">01.01.2022</div>
+                <div class="col col-4" data-label="Enddate">04.01.2022</div>
+                <div class="col col-5" data-label="Parcourname">HSV Verein</div>
+                <div class="col col-6" data-label="Options"><a asp-action="CurrentEvent" asp-route-id="@item.Id">Play</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a></div>
+              </li>
 }
-    </tbody>
-</table>
+    </ul>
