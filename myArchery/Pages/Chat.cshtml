@@ -2,6 +2,7 @@
 @using myArchery.Services
 @{
     string eventName = @EventService.GetUsersCurrentEventsByUsername(User.Identity.Name)[0].Eventname;
+    ViewData["Event"] = "Event 1";
 }
 
 <!DOCTYPE html>
@@ -11,110 +12,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/assets/css/chat.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/typing.css">
-
-    <!-- Chat -->
     
-    <script src="assets/js/chat2.js"></script>
+
 
     <title>Chatbox</title>
 </head>
+<partial name="_Chat">
 <body>
-    <div class="container">
-        <div class="chatbox">
-            <div class="chatbox__support">
-                <div class="chatbox__header">
-                    <div class="chatbox__content--header">
-                        <h4 class="chatbox__heading--header">@eventName</h4>
-                        <p class="chatbox__description--header">This is the Chat for the @eventName Event</p>
-                    </div>
-                </div>
-                <div class="chatbox__messages">
-                    <div id="messagesList">
-                        
-                    </div>
-                </div>
-                <div class="chatbox__footer">
-                    <img src="~/assets/img/icons/emojis.svg" alt="">
-                    <img src="~/assets/img/icons/microphone.svg" alt="">
-                    <input type="text" id="messageInput" placeholder="Write a message...">
-                    <p class="chatbox__send--footer">Send</p>
-                    <button id="sendButton">Send Message</button>
-                    <img src="~/assets/img/icons/attachment.svg" alt="">
-                </div>
-            </div>
-            <div  class="chatbox__button">
-                <button id="sendButton">send message</button>
-            </div>
-        </div>
-    </div>
-    <script src="/assets/js/app.js"></script>
-    <script src="/assets/js/signalr/dist/browser/signalr.js"></script>
-    <script>
-        let user = '@User.Identity.Name';
-        let html = "";
-
-        "use strict";
-
-        const connection = new signalR.HubConnectionBuilder()
-            .withUrl("/chathub")
-            .configureLogging(signalR.LogLevel.Information)
-            .build();
-
-        async function start() {
-            try {
-                await connection.start();
-                document.getElementById("sendButton").disabled = false;
-                console.log("SignalR Connected.");
-            } catch (err) {
-                console.log(err);
-                setTimeout(start, 5000);
-            }
-        };
-
-        connection.onclose(async () => {
-            await start();
-        });
-
-        // Start the connection.
-        start();
-
-        //Disable the send button until connection is established.
-        document.getElementById("sendButton").disabled = true;
-
-        connection.on("ReceiveMessage", function (username, message) {
-            var messageString;
-            
-            if(username == user){
-                // user is sender
-                messageString = '<div class="messages__item messages__item--operator">'+
-                                    'Me:'
-                                    +message+
-                                    '</div>';
-            }else{
-                // user is receiver
-                messageString = '<div class="messages__item messages__item--visitor">'+
-                                    username +':'
-                                    +message+
-                                    '</div>';
-            }
-
-            //document.getElementById("messagesList").append(messageString);
-            html += messageString;
-            document.getElementById("messagesList").innerHTML = html;
-        });
-
-        document.getElementById("sendButton").addEventListener("click", function (event) {
-            var message = document.getElementById("messageInput").value;
-            if(message != ""){
-                connection.invoke("SendMessage", user, message).catch(function (err) {
-                return console.error(err.toString());
-            });
-            }
-            event.preventDefault();
-        });
-    </script>
 </body>
 </html>
