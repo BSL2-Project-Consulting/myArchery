@@ -71,7 +71,20 @@
         }
     </div>
 </div>
-
+<style>
+    .inputs1 { 
+    margin: 10px;
+    margin-left: 50px;
+}
+.inputs2 { 
+    margin: 10px;
+    margin-left: 80px;
+}
+.inputs3 { 
+    margin: 10px;
+    margin-left: 50px;
+}
+</style>
 <div>
     <a asp-action="Index">Back to Index</a>
 </div>
@@ -111,15 +124,15 @@
                    var html = '<div>'+
                                 '<h3>Pfeil '+count+'</h3>'+
                                 '<label for="CenterkillValue">Centerkill:</label>'+
-                                '<input type="number" min="0" name="Points['+x+'].CenterkillValue" class="items"/>'+
+                                '<input type="number" class="inputs1" min="0" name="Points['+x+'].CenterkillValue" class="items"/>'+
                                 '</div>'+
                                 '<div>'+
                                     '<label for="KillValue">Kill:</label>'+
-                                    '<input type="number" min="0" name="Points['+x+'].KillValue" class="items"/>'+
+                                    '<input type="number" class="inputs2" min="0" name="Points['+x+'].KillValue" class="items"/>'+
                                 '</div>'+
                                 '<div>'+
                                     '<label for="BodyValue">Body:</label>'+
-                                    '<input type="number" min="0" name="Points['+x+'].BodyValue" class="items"/>'+
+                                    '<input type="number" class="inputs3" min="0" name="Points['+x+'].BodyValue" class="items"/>'+
                                 '</div>';
                    $("#item-list").append(html);
             }
