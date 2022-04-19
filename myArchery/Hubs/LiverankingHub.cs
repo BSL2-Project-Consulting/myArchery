@@ -17,13 +17,19 @@ namespace myArchery.Hubs
         public async Task SendRanking(int eventId)
         {
             _logger.LogError("Sent Ranking");
+            await Clients.All.SendAsync("RecieveLeaderboard", Utility.GetUserWithPointsAsJson(_eventService.GetUsersWithPointsFromEventById(eventId)));
+        }
+
+        public async Task SendRankingInGroup(int eventId)
+        {
+            _logger.LogError("Sent Ranking");
             await Clients.Group(eventId.ToString()).SendAsync("RecieveLeaderboard", Utility.GetUserWithPointsAsJson(_eventService.GetUsersWithPointsFromEventById(eventId)));
         }
 
         public async Task AddToGroup(int eventId)
         {
             await Groups.AddToGroupAsync(Context.ConnectionId, eventId.ToString());
-            await SendRanking(eventId);
+            await SendRankingInGroup(eventId);
         }
 
         public async Task RemoveFromGroup(int eventId)
