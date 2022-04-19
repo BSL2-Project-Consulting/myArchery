@@ -26,27 +26,22 @@
 
     var users = _eventService.GetUsersWithPointsFromEventById(Model.EveId);
 
+
     var repheight = 400 / 5 * users.Count() + "px";
 
     double maxPoints = 50;
 
     var tmp = _arrowService.GetArrowInfo(events.EveId);
     var tmp2 = tmp;
-    
+
     var allNames = tmp2.Select(x => x.Username).ToArray();
     var allPoints = tmp2.Select(x => x.Points);
 
     tmp = tmp.Where(x => x.Username == User.Identity.Name).ToList();
-<<<<<<< Updated upstream
-    
-    var punkte = _eventService.GetUsersWithPointsFromEventById(events.EveId).ToArray();
-  
-=======
 
 
     var overallPoints = users.Select(x => x.Points).ToArray();
 
->>>>>>> Stashed changes
 
     var points = tmp.Select(x => x.Points);
 
@@ -189,37 +184,24 @@
 
 <section id="current-event">
 
+<!-- <div class="form-box">
+<div class="button-box">
+<div id="btn"></div>
+<button class="toogle-btn" onclick="event()">Login</button>
+<button class="toogle-btn" onclick="ranking()">Register</button>
+</div>
+-->
+
 </section>
     <script>
 
+           window.onload = function () {
+        console.log('Dokument geladen');
+        myChart1(@hitted, @missed);
+        myChart2();
+        myChart4();
+    }
 
-
-function clickHandler1() {
-    myChart1(@hitted, @missed);
-}
-
-
-function clickHandler2() {
-    myChart2();
-}
-
-
-
-function clickHandler4() {
-    myChart4();
-}
-
-
-function dokumentGeladen(event) {
-  //window.console.log('Dokument wurde geladen! Zugriff auf das komplette DOM möglich.');
-  document.getElementById('1').addEventListener('click', clickHandler1, false);
-  document.getElementById('2').addEventListener('click', clickHandler2, false);
-  document.getElementById('4').addEventListener('click', clickHandler4, false);
-}
-
-
-
-document.addEventListener('DOMContentLoaded', dokumentGeladen, false);
 
 
 
@@ -230,9 +212,7 @@ document.addEventListener('DOMContentLoaded', dokumentGeladen, false);
 {
     <div class="container">
 
-    <button id="1">1</button>
-    <button id="2">2</button>
-    <button id="4">4</button>
+    
 
     <div class="container">
         <div class="row">
