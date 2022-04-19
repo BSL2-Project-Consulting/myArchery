@@ -179,12 +179,6 @@
 -->
 
 </section>
-
-<div class="container">
-
-
-       <h1>Charts, Charts, Charts</h1>
-
     <script>
 
 
@@ -227,11 +221,17 @@ document.addEventListener('DOMContentLoaded', dokumentGeladen, false);
   
 
 </script>
+@if (Model.TargetName == null)
+{
+    <div class="container">
+        <h3>Deine GesamtPunkte:</h3>
+        <h4>@points.Sum()</h4>
 
-<button id="1">1</button>
-<button id="2">2</button>
-<button id="3">3</button>
-<button id="4">4</button>
+       <h1>Charts, Charts, Charts</h1>
+    <button id="1">1</button>
+    <button id="2">2</button>
+    <button id="3">3</button>
+    <button id="4">4</button>
 
     <div class="container">
         <div class="row">
@@ -270,8 +270,125 @@ document.addEventListener('DOMContentLoaded', dokumentGeladen, false);
             </div>
         </div>
     </div>
+}
+else
+{
+    <section id="current-event">
 
-<script>
+        <!-- <div class="view_toggle" style="display: block; margin-top: 80px;">
+                <input id="toggle" class="toggle" type="checkbox" />
+            </div>
+        -->
+        <div class="vertical-center">
+            <input type="checkbox" id="lol-checkbox">
+            <label id="button" for="lol-checkbox">
+                <div id="knob"></div>
+                <div id="subscribe">Target</div>
+                <div id="alright">Ranking</div>
+            </label>
+        </div>
+        <div id="targets" class="targets current-event-element" style="display: block;">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Target</h1>
+                    <h2>@Model.TargetName</h2>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-12">
+                    <form method="post">
+                        <div class="radiobtn">
+                            <input type="radio" id="ck" name="drone" value="ck" checked />
+                            <label for="ck">Center Kill</label>
+                        </div>
+
+                        <div class="radiobtn">
+                            <input type="radio" id="k" name="drone" value="k" />
+                            <label for="k">Kill</label>
+                        </div>
+
+                        <div class="radiobtn">
+                            <input type="radio" id="b" name="drone" value="b" />
+                            <label for="b">Body</label>
+                        </div>
+
+                        <div class="radiobtn">
+                            <input type="radio" id="nh" name="drone" value="nh" />
+                            <label for="nh">No Hit</label>
+                        </div>
+
+                        <div class="radiobtn">
+                            <button class="save_button" value="CurrentEvent" asp-route-id="@Model.EveId" type="submit" name="save">Save</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-2"></div>
+            </div>
+
+        </div>
+
+        <div id="ranking" class="ranking current-event-element" style="display: none;">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Live Ranking</h1>
+                    <h2></h2>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-12">
+                    <table id="players">
+                        <tr>
+                            <th>Spieler</th>
+                            <th>Punkte</th>
+                        </tr>
+                        <tr>
+                            <td>Hans</td>
+                            <td>101</td>
+                        </tr>
+                        <tr>
+                            <td>Sören</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>May</td>
+                            <td>51</td>
+                        </tr>
+                        <tr>
+                            <td>Paul</td>
+                            <td>45</td>
+                        </tr>
+                        <tr>
+                            <td>Danis Mum</td>
+                            <td>22</td>
+                        </tr>
+                        <tr>
+                            <td>Kevin</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Julian</td>
+                            <td>1</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-2"></div>
+            </div>
+
+        </div>
+    </section>
+        }
+
+    
+    <section id="charts">
+        <!--<partial name="_Charts" />-->
+    </section>
+    <script>
 
 function myChart1(hitted, missed) {
     var hitted = hitted;
@@ -429,121 +546,7 @@ let chart4 = new Chart(myChart4, {
     }
 });
 }
-</script>
-
-    <section id="current-event">
-
-        <!-- <div class="view_toggle" style="display: block; margin-top: 80px;">
-                <input id="toggle" class="toggle" type="checkbox" />
-            </div>
-        -->
-        <div class="vertical-center">
-            <input type="checkbox" id="lol-checkbox">
-            <label id="button" for="lol-checkbox">
-                <div id="knob"></div>
-                <div id="subscribe">Target</div>
-                <div id="alright">Ranking</div>
-            </label>
-        </div>
-        <div id="targets" class="targets current-event-element" style="display: block;">
-            <div class="row">
-                <div class="col-12">
-                    <h1>Target</h1>
-                    <h2>@Model.TargetName</h2>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-2"></div>
-                <div class="col-12">
-                    <form method="post">
-                        <div class="radiobtn">
-                            <input type="radio" id="ck" name="drone" value="ck" checked />
-                            <label for="ck">Center Kill</label>
-                        </div>
-
-                        <div class="radiobtn">
-                            <input type="radio" id="k" name="drone" value="k" />
-                            <label for="k">Kill</label>
-                        </div>
-
-                        <div class="radiobtn">
-                            <input type="radio" id="b" name="drone" value="b" />
-                            <label for="b">Body</label>
-                        </div>
-
-                        <div class="radiobtn">
-                            <input type="radio" id="nh" name="drone" value="nh" />
-                            <label for="nh">No Hit</label>
-                        </div>
-
-                        <div class="radiobtn">
-                            <button class="save_button" value="CurrentEvent" asp-route-id="@Model.EveId" type="submit" name="save">Save</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-2"></div>
-            </div>
-
-        </div>
-
-        <div id="ranking" class="ranking current-event-element" style="display: none;">
-            <div class="row">
-                <div class="col-12">
-                    <h1>Live Ranking</h1>
-                    <h2></h2>
-                </div>
-            </div>
-
-            <br>
-
-            <div class="row">
-                <div class="col-2"></div>
-                <div class="col-12">
-                    <table id="players">
-                        <tr>
-                            <th>Spieler</th>
-                            <th>Punkte</th>
-                        </tr>
-                        <tr>
-                            <td>Hans</td>
-                            <td>101</td>
-                        </tr>
-                        <tr>
-                            <td>Sören</td>
-                            <td>100</td>
-                        </tr>
-                        <tr>
-                            <td>May</td>
-                            <td>51</td>
-                        </tr>
-                        <tr>
-                            <td>Paul</td>
-                            <td>45</td>
-                        </tr>
-                        <tr>
-                            <td>Danis Mum</td>
-                            <td>22</td>
-                        </tr>
-                        <tr>
-                            <td>Kevin</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>Julian</td>
-                            <td>1</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="col-2"></div>
-            </div>
-
-        </div>
-    </section>
-    <section id="charts">
-        <!--<partial name="_Charts" />-->
-    </section>
-
+            </script>
     <script src="~/assets/js/main.js"></script>
 
 </body>

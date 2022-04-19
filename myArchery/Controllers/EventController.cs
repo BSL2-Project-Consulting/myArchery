@@ -210,17 +210,32 @@ namespace myArchery.Controllers
             var _event = EventService.GetEventById(id);
             var list = _eventService.GetUsersCurrentTargetInEvent(id, User.Identity.Name);
 
-            TargetTemplate targetTemplate = new TargetTemplate
+            if (list == null)
             {
-                EveId = id,
-                Eventname = _event.Eventname,
-                ArrowAmount = _event.Arrowamount,
-                ArrowCount = list.Arrows,
-                ParcourName = _event.Par.Parcourname,
-                TargetName = list.Tar.Targetname
-            };
-
-            return View(targetTemplate);
+                TargetTemplate targetTemplate = new TargetTemplate
+                {
+                    EveId = id,
+                    Eventname = _event.Eventname,
+                    ArrowAmount = _event.Arrowamount,
+                    ArrowCount = null,
+                    ParcourName = _event.Par.Parcourname,
+                    TargetName = null
+                };
+                return View(targetTemplate);
+            }
+            else
+            {
+                TargetTemplate targetTemplate = new TargetTemplate
+                {
+                    EveId = id,
+                    Eventname = _event.Eventname,
+                    ArrowAmount = _event.Arrowamount,
+                    ArrowCount = list.Arrows,
+                    ParcourName = _event.Par.Parcourname,
+                    TargetName = list.Tar.Targetname
+                };
+                return View(targetTemplate);
+            }
         }
 
         // POST: EventController/Currentevent/{id}
@@ -262,17 +277,33 @@ namespace myArchery.Controllers
 
             await _hubContext.Clients.All.SendAsync("SendRanking", id);
             var list = _eventService.GetUsersCurrentTargetInEvent(id, User.Identity.Name);
-            
-            TargetTemplate targetTemplate = new TargetTemplate
+
+            if (list == null)
             {
-                EveId = id,
-                Eventname = _event.Eventname,
-                ArrowAmount = _event.Arrowamount,
-                ArrowCount = list.Arrows,
-                ParcourName = _event.Par.Parcourname,
-                TargetName = list.Tar.Targetname
-            };
-            return View(targetTemplate);
+                TargetTemplate targetTemplate = new TargetTemplate
+                {
+                    EveId = id,
+                    Eventname = _event.Eventname,
+                    ArrowAmount = _event.Arrowamount,
+                    ArrowCount = null,
+                    ParcourName = _event.Par.Parcourname,
+                    TargetName = null
+                };
+                return View(targetTemplate);
+            }
+            else
+            {
+                TargetTemplate targetTemplate = new TargetTemplate
+                {
+                    EveId = id,
+                    Eventname = _event.Eventname,
+                    ArrowAmount = _event.Arrowamount,
+                    ArrowCount = list.Arrows,
+                    ParcourName = _event.Par.Parcourname,
+                    TargetName = list.Tar.Targetname
+                };
+                return View(targetTemplate);
+            }
         }
 
         // GET: EventController/MyEvents
