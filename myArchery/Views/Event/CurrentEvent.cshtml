@@ -17,7 +17,7 @@
 
     if (User.Identity == null)
     {
-
+        
     }
 
     var usern = User.Identity.Name;
@@ -37,9 +37,16 @@
     var allPoints = tmp2.Select(x => x.Points);
 
     tmp = tmp.Where(x => x.Username == User.Identity.Name).ToList();
+<<<<<<< Updated upstream
     
     var punkte = _eventService.GetUsersWithPointsFromEventById(events.EveId).ToArray();
   
+=======
+
+
+    var overallPoints = users.Select(x => x.Points).ToArray();
+
+>>>>>>> Stashed changes
 
     var points = tmp.Select(x => x.Points);
 
@@ -64,19 +71,32 @@
     }
     string listofAllNames = " ";
 
-    string listofAllPoints = " ";
+    string punkte = " ";
+    string punkte2 = " ";
 
     string name = " ";
 
-    for (var i = 0; i < punkte.Count(); i++)
+    for (var i = 0; i < points2.Count(); i++)
     {
-        if (i+1 == punkte.Count())
+        if (i+1 == points2.Count())
         {
-            listofAllPoints += $"'{punkte[i]}'";
+            punkte += $"'{points2[i]}'";
         }
         else
         {
-            listofAllPoints += $"'{punkte[i]}',";
+            punkte += $"'{points2[i]}',";
+        }
+    }
+
+    for (var i = 0; i < overallPoints.Count(); i++)
+    {
+        if (i+1 == overallPoints.Count())
+        {
+            punkte2 += $"{overallPoints[i]}";
+        }
+        else
+        {
+            punkte2 += $"{overallPoints[i]},";
         }
     }
 
@@ -111,6 +131,7 @@
 
 <head>
     <meta charset="uft-8">
+    <meta http-equiv="content-type" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>Event - Erstes Event</title>
@@ -174,23 +195,17 @@
 
 
 function clickHandler1() {
-    console.log('Button wurde geklickt! 1');
     myChart1(@hitted, @missed);
 }
 
 
 function clickHandler2() {
-    console.log('Button wurde geklickt! 2');
     myChart2();
 }
 
-function clickHandler3() {
-  console.log('Button wurde geklickt! 3');
-  myChart3();
-}
+
 
 function clickHandler4() {
-    console.log('Button wurde geklickt! 4');
     myChart4();
 }
 
@@ -199,7 +214,6 @@ function dokumentGeladen(event) {
   //window.console.log('Dokument wurde geladen! Zugriff auf das komplette DOM möglich.');
   document.getElementById('1').addEventListener('click', clickHandler1, false);
   document.getElementById('2').addEventListener('click', clickHandler2, false);
-  document.getElementById('3').addEventListener('click', clickHandler3, false);
   document.getElementById('4').addEventListener('click', clickHandler4, false);
 }
 
@@ -208,19 +222,16 @@ function dokumentGeladen(event) {
 document.addEventListener('DOMContentLoaded', dokumentGeladen, false);
 
 
+
   
 
 </script>
 @if (Model.TargetName == null)
 {
     <div class="container">
-        <h3>Deine GesamtPunkte:</h3>
-        <h4>@points.Sum()</h4>
 
-       <h1>Charts, Charts, Charts</h1>
     <button id="1">1</button>
     <button id="2">2</button>
-    <button id="3">3</button>
     <button id="4">4</button>
 
     <div class="container">
@@ -453,7 +464,7 @@ function myChart2() {
         data: {
             labels: labels2,
             datasets: [{
-                label:"Ponits per Target per User",
+                label: "Ponits per Target per User",
                 data: data2,
                 backgroundColor: colors2
             }]
@@ -471,63 +482,10 @@ function myChart2() {
 
 }
 
-function myChart3() {
-
-   
-   let labels3 = ['Attack', 'Defense', 'Passing', 'Tackle', 'Speed'];
-let myChart3 = document.getElementById("myChart3").getContext('2d');
-
-let chart3 = new Chart(myChart3, {
-    type: 'radar',
-    data: {
-        labels: labels3,
-        datasets: [
-          {
-            label: 'Messi',
-            fill: true,
-            backgroundColor: "rgba(179, 181, 198, 0.2)",
-            borderColor: "rgba(179, 181, 198, 1)",
-            pointBorderColor: "#fff",
-            pointBackgroundColor: "rgba(179, 181, 198, 1)",
-            data: [50, 12, 55, 7, 29]
-          },
-          {
-            label: 'Ronaldo',
-            fill: true,
-            backgroundColor: "rgba(255, 99, 132, 0.2)",
-            borderColor: "rgba(255, 99, 132, 1)",
-            pointBorderColor: "#fff",
-            pointBackgroundColor: "rgba(255, 99, 132, 1)",
-            data: [51, 10, 32, 20, 44]
-          }
-        ]
-    },
-    options: {
-        title: {
-            text: "Skills",
-            display: true
-        }
-    }
-});
-
-}
-
-function myChart4(points) {
 
 
-    var tmpString = "@name";
-
-   var tmpString = tmpString.replace(/&#x27;/g, "'");
-
-   const words = tmpString.split(',');
-
-   let labels3 = words;
-
-
-
-          
-    var tmpString2 = "@listofAllNames";
-       alert(tmpString2);
+function myChart4() {
+ var tmpString2 = "@listofAllNames";
 
    var tmpString2 = tmpString2.replace(/&#x27;/g, "'");
 
@@ -540,29 +498,31 @@ function myChart4(points) {
    
    const backToArray = [...uniqueset]
 
-  backToArray.pop();
+   backToArray.pop();
 
-  /*
 
-   var tmpString5= "@listofAllPoints";
-   
-   alert(tmpString5);
+
+       var tmpString2 = "@punkte2";
        
-        var tmpString6 = tmpString5.replace(/&#x27;/g, " ");
+        var tmpString3 = tmpString2.replace(/&#x27;/g, " ");
 
       
-       var tmpString7 = tmpString6.split(',');
- */      
+       var tmpString4 = tmpString3.split(',');
+       
+
+
        let data4 = new Array();
-       data4.push(points);
 
-     
-       //Punkte pro User herausbekommen
+      
+       
+       for(var i = 0; i < tmpString4.length; i++)
+    {
+        data4.push(parseInt(tmpString4[i]));
+    }
 
 
-    
 
-
+ 
 
 let colors4 = ['#49A9EA', '#36CAAB', '#34495E', '#B370CF', '#AC5353', '#CFD4D8'];
 
