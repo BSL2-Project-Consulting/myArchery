@@ -29,7 +29,7 @@ nav ul li{
   margin: 0 5px;
 }
 nav ul li a{
-  color: #f2f2f2;
+  color: #f2f2f2 !important;
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
@@ -40,11 +40,11 @@ nav ul li a{
 }
 nav ul li a.active,
 nav ul li a:hover{
-  color: #111;
+  color: #111 !important;
   background: #fff;
 }
 nav .menu-btn i{
-  color: #fff;
+  color: #fff !important;
   font-size: 22px;
   cursor: pointer;
   display: none;
@@ -95,7 +95,7 @@ input[type="checkbox"]{
   nav ul li a.active,
   nav ul li a:hover{
     background: none;
-    color: cyan;
+    color: cyan !important;
   }
 }
 .content{
@@ -107,10 +107,11 @@ input[type="checkbox"]{
   z-index: -1;
   width: 100%;
   padding: 0 30px;
-  color: #1b1b1b;
+  color: #1b1b1b !important;
 }
 .content div{
   font-size: 40px;
   font-weight: 700;
 }
+
 
