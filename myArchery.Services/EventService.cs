@@ -260,7 +260,7 @@ namespace myArchery.Services
                                                             "LEFT JOIN Arrow a ON pt.PataId = a.PataId " +
                                                             "LEFT JOIN Point po ON a.PoiId = po.PoiId " +
                                                             $"WHERE e.EveId = {eveId} " +
-                                                            $"AND eur.UseId = {user.Id} " +
+                                                            $"AND eur.UseId = '{user.Id}' " +
                                                             "GROUP BY pt.PataId, e.EveId, e.Eventname, e.Arrowamount, p.ParId, p.Parcourname, t.TarId, t.Targetname " +
                                                             "ORDER BY pt.PataId");
 

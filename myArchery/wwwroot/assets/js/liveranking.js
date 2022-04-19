@@ -17,11 +17,16 @@ window.onclose = function () {
 start();
 
 connection.on("RecieveLeaderboard", function (rankings) {
+	console.log("Recieved Leaderboard");
 	var table = document.getElementById("players");
 	var rank = JSON.parse(rankings);
-
+	table.innerHTML = '';
+	var html = "";
+	html += "<tr><th>Spieler</th><th>Punkte</th></tr >";
     for (var i in rank) {
-		var string = `<tr>	<td> ${i.Username}</td> <td>${i.Points}</td> </tr >`;
+		html += `<tr>	<td> ${i.Username}</td> <td>${i.Points}</td> </tr >`;
 		table.appendChild(string);
-    }
+	}
+
+	table.innerHTML = html;
 });

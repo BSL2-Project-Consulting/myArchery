@@ -1,4 +1,4 @@
-﻿@using myArchery.Services
+@using myArchery.Services
 @using myArchery.Services.TmpClasses
 @inject ArrowService _arrowService
 @inject EventService _eventService
@@ -36,6 +36,7 @@
 
     var allNames = tmp2.Select(x => x.Username).ToArray();
     var allPoints = tmp2.Select(x => x.Points);
+       
 
     tmp = tmp.Where(x => x.Username == User.Identity.Name).ToList();
 
@@ -179,48 +180,9 @@
 -->
 
 </section>
-    <script>
 
+    <script src="~/assets/js/signalr/dist/browser/signalr.js"></script>
 
-
-function clickHandler1() {
-    console.log('Button wurde geklickt! 1');
-    myChart1(@hitted, @missed);
-}
-
-
-function clickHandler2() {
-    console.log('Button wurde geklickt! 2');
-    myChart2();
-}
-
-function clickHandler3() {
-  console.log('Button wurde geklickt! 3');
-  myChart3();
-}
-
-function clickHandler4() {
-    console.log('Button wurde geklickt! 4');
-    myChart4();
-}
-
-
-function dokumentGeladen(event) {
-  //window.console.log('Dokument wurde geladen! Zugriff auf das komplette DOM möglich.');
-  document.getElementById('1').addEventListener('click', clickHandler1, false);
-  document.getElementById('2').addEventListener('click', clickHandler2, false);
-  document.getElementById('3').addEventListener('click', clickHandler3, false);
-  document.getElementById('4').addEventListener('click', clickHandler4, false);
-}
-
-
-
-document.addEventListener('DOMContentLoaded', dokumentGeladen, false);
-
-
-  
-
-</script>
 @if (Model.TargetName == null)
 {
     <div class="container">
@@ -270,6 +232,192 @@ document.addEventListener('DOMContentLoaded', dokumentGeladen, false);
             </div>
         </div>
     </div>
+    <script>
+        function myChart1(hitted, missed) {
+            var hitted = hitted;
+            let labels1 = ['Hitted', 'Missed'];
+            let data1 = [hitted, missed];
+
+
+            // let data1 = [59, 31];               //User Data per User how often he missed
+            let colors1 = ['#49A9EA', '#36CAAB'];
+
+            let myDoughnutChart = document.getElementById("myChart").getContext('2d');
+
+            let chart1 = new Chart(myDoughnutChart, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Hitted', 'Missed'],
+                    datasets: [{
+                        data: [data1[0], data1[1]],
+            //            data: [59, 31],      //User Data per User how often he missed
+                        backgroundColor: ['#49A9EA', '#36CAAB']
+                    }]
+                },
+                options: {
+                    title: {
+                        text: "How accurate is my aim?",
+                        display: true
+                    }
+                }
+            });
+        }
+
+
+        function myChart2() {
+            const htmlconvert = {
+                "'" : "&#x27;"
+
+            };
+
+            console.log("A");
+    
+
+
+
+            var tmpString = "@name";
+
+            var tmpString = tmpString.replace(/&#x27;/g, "'");
+
+            const words = tmpString.split(',');
+
+            let labels2 = words;
+            console.log("B");
+            var tmpString2 = "@punkte";
+            var tmpString3 = tmpString2.replace(/&#x27;/g, " ");
+            var tmpString4 = tmpString3.split(',');
+            let data2 = new Array();
+            for(var i = 0; i < tmpString4.length; i++)
+            {
+                data2.push(parseInt(tmpString4[i]));
+            }
+
+
+            //let data2 = [1,2,3];
+
+
+            let colors2 = ['#49A9EA', '#36CAAB', '#34495E', '#B370CF'];
+
+            let myChart2 = document.getElementById("myChart2").getContext('2d');
+
+            let chart2 = new Chart(myChart2, {
+                type: 'bar',
+                data: {
+                    labels: labels2,
+                    datasets: [{
+                        data: data2,
+                        backgroundColor: colors2
+                    }]
+                },
+                options: {
+                    title: {
+                        text: "Ponits per Target per User",
+                        display: true
+                    },
+                    legend: {
+                        display: false
+                    }
+                }
+            });
+        }
+
+        function myChart3() {
+            let labels3 = ['Attack', 'Defense', 'Passing', 'Tackle', 'Speed'];
+            let myChart3 = document.getElementById("myChart3").getContext('2d');
+            let chart3 = new Chart(myChart3, {
+                type: 'radar',
+                data: {
+                    labels: labels3,
+                    datasets: [
+                      {
+                        label: 'Messi',
+                        fill: true,
+                        backgroundColor: "rgba(179, 181, 198, 0.2)",
+                        borderColor: "rgba(179, 181, 198, 1)",
+                        pointBorderColor: "#fff",
+                        pointBackgroundColor: "rgba(179, 181, 198, 1)",
+                        data: [50, 12, 55, 7, 29]
+                      },
+                      {
+                        label: 'Ronaldo',
+                        fill: true,
+                        backgroundColor: "rgba(255, 99, 132, 0.2)",
+                        borderColor: "rgba(255, 99, 132, 1)",
+                        pointBorderColor: "#fff",
+                        pointBackgroundColor: "rgba(255, 99, 132, 1)",
+                        data: [51, 10, 32, 20, 44]
+                      }
+                    ]
+                },
+                options: {
+                    title: {
+                        text: "Skills",
+                        display: true
+                    }
+                }
+            });
+        }
+
+        function myChart4() {
+
+            let labels4 = ['Germany', 'France', 'UK', 'Italy', 'Spain', 'Others(23)'];
+            let data4 = [83, 67, 66, 61, 47, 187];
+            let colors4 = ['#49A9EA', '#36CAAB', '#34495E', '#B370CF', '#AC5353', '#CFD4D8'];
+
+            let myChart4 = document.getElementById("myChart4").getContext('2d');
+
+            let chart4 = new Chart(myChart4, {
+                type: 'pie',
+                data: {
+                    labels: labels4,
+                    datasets: [ {
+                        data: data4,
+                        backgroundColor: colors4
+                    }]
+                },
+                options: {
+                    title: {
+                        text: "Population of the European Union (in mio)",
+                        display: true
+                    }
+                }
+            });
+        }
+    </script>
+<script>
+
+    function clickHandler1() {
+        console.log('Button wurde geklickt! 1');
+        myChart1(@hitted, @missed);
+    }
+
+
+    function clickHandler2() {
+        console.log('Button wurde geklickt! 2');
+        myChart2();
+    }
+
+    function clickHandler3() {
+      console.log('Button wurde geklickt! 3');
+      myChart3();
+    }
+
+    function clickHandler4() {
+        console.log('Button wurde geklickt! 4');
+        myChart4();
+    }
+
+
+    function dokumentGeladen(event) {
+      //window.console.log('Dokument wurde geladen! Zugriff auf das komplette DOM m�glich.');
+      document.getElementById('1').addEventListener('click', clickHandler1, false);
+      document.getElementById('2').addEventListener('click', clickHandler2, false);
+      document.getElementById('3').addEventListener('click', clickHandler3, false);
+      document.getElementById('4').addEventListener('click', clickHandler4, false);
+    }
+
+    document.addEventListener('DOMContentLoaded', dokumentGeladen, false);
+</script>
 }
 else
 {
@@ -325,11 +473,7 @@ else
                     </form>
                 </div>
                 <div class="col-2"></div>
-            </div>
-
-        </div>
-
-        <div id="ranking" class="ranking current-event-element" style="display: none;">
+                <div id="ranking" class="ranking current-event-element" style="display: none;">
             <div class="row">
                 <div class="col-12">
                     <h1>Live Ranking</h1>
@@ -351,203 +495,65 @@ else
                             <td>Hans</td>
                             <td>101</td>
                         </tr>
-                        <tr>
-                            <td>Sören</td>
-                            <td>100</td>
-                        </tr>
-                        <tr>
-                            <td>May</td>
-                            <td>51</td>
-                        </tr>
-                        <tr>
-                            <td>Paul</td>
-                            <td>45</td>
-                        </tr>
-                        <tr>
-                            <td>Danis Mum</td>
-                            <td>22</td>
-                        </tr>
-                        <tr>
-                            <td>Kevin</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>Julian</td>
-                            <td>1</td>
-                        </tr>
                     </table>
                 </div>
                 <div class="col-2"></div>
             </div>
 
         </div>
+            </div>
+
+        </div>
     </section>
-        }
+}
 
-    
-    <section id="charts">
-        <!--<partial name="_Charts" />-->
-    </section>
-    <script>
+        
 
-function myChart1(hitted, missed) {
-    var hitted = hitted;
-    let labels1 = ['Hitted', 'Missed'];
-    let data1 = [hitted, missed];
+<script>
 
+        "use strict";
 
-    // let data1 = [59, 31];               //User Data per User how often he missed
-    let colors1 = ['#49A9EA', '#36CAAB'];
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/liverankingHub")
+            .configureLogging(signalR.LogLevel.Information)
+            .build();
 
-    let myDoughnutChart = document.getElementById("myChart").getContext('2d');
-
-    let chart1 = new Chart(myDoughnutChart, {
-        type: 'doughnut',
-        data: {
-            labels: ['Hitted', 'Missed'],
-            datasets: [{
-                data: [data1[0], data1[1]],
-    //            data: [59, 31],      //User Data per User how often he missed
-                backgroundColor: ['#49A9EA', '#36CAAB']
-            }]
-        },
-        options: {
-            title: {
-                text: "How accurate is my aim?",
-                display: true
+        async function start() {
+            try {
+                await connection.start();
+                console.log("SignalR Connected.");
+            } catch (err) {
+                console.log(err);
+                setTimeout(start, 5000);
             }
-        }
-    });
+        };
 
-}
+        connection.onclose(async () => {
+            await start();
+        });
 
+        // Start the connection.
+        start();
 
-function myChart2() {
-    const htmlconvert = {
-        "'" : "&#x27;"
+        connection.on("RecieveLeaderboard", function (rankings) {
+	        LoadRanking(rankings);
+        });
 
-    };
+        function LoadRanking(rankings){
+                var table = document.getElementById("players");
+	            var rank = JSON.parse(rankings);
+	            table.innerHTML = '';
+	            var html = "";
+	            html += "<tr><th>Spieler</th><th>Punkte</th></tr >";
+                for (var i in rank) {
+		            html += `<tr>	<td> ${i.Username}</td> <td>${i.Points}</td> </tr >`;
+		            table.appendChild(string);
+	            }
 
-    console.log("A");
-    
-
-
-
-    var tmpString = "@name";
-
-    var tmpString = tmpString.replace(/&#x27;/g, "'");
-
-    const words = tmpString.split(',');
-
-    let labels2 = words;
-    console.log("B");
-    var tmpString2 = "@punkte";
-    var tmpString3 = tmpString2.replace(/&#x27;/g, " ");
-    var tmpString4 = tmpString3.split(',');
-    let data2 = new Array();
-    for(var i = 0; i < tmpString4.length; i++)
-    {
-        data2.push(parseInt(tmpString4[i]));
-    }
-
-
-    //let data2 = [1,2,3];
-
-
-    let colors2 = ['#49A9EA', '#36CAAB', '#34495E', '#B370CF'];
-
-    let myChart2 = document.getElementById("myChart2").getContext('2d');
-
-    let chart2 = new Chart(myChart2, {
-        type: 'bar',
-        data: {
-            labels: labels2,
-            datasets: [{
-                data: data2,
-                backgroundColor: colors2
-            }]
-        },
-        options: {
-            title: {
-                text: "Ponits per Target per User",
-                display: true
-            },
-            legend: {
-                display: false
+	            table.innerHTML = html;
             }
-        }
-    });
-
-}
-
-function myChart3() {
-
-   
-   let labels3 = ['Attack', 'Defense', 'Passing', 'Tackle', 'Speed'];
-let myChart3 = document.getElementById("myChart3").getContext('2d');
-
-let chart3 = new Chart(myChart3, {
-    type: 'radar',
-    data: {
-        labels: labels3,
-        datasets: [
-          {
-            label: 'Messi',
-            fill: true,
-            backgroundColor: "rgba(179, 181, 198, 0.2)",
-            borderColor: "rgba(179, 181, 198, 1)",
-            pointBorderColor: "#fff",
-            pointBackgroundColor: "rgba(179, 181, 198, 1)",
-            data: [50, 12, 55, 7, 29]
-          },
-          {
-            label: 'Ronaldo',
-            fill: true,
-            backgroundColor: "rgba(255, 99, 132, 0.2)",
-            borderColor: "rgba(255, 99, 132, 1)",
-            pointBorderColor: "#fff",
-            pointBackgroundColor: "rgba(255, 99, 132, 1)",
-            data: [51, 10, 32, 20, 44]
-          }
-        ]
-    },
-    options: {
-        title: {
-            text: "Skills",
-            display: true
-        }
-    }
-});
-
-}
-
-function myChart4() {
-
-    let labels4 = ['Germany', 'France', 'UK', 'Italy', 'Spain', 'Others(23)'];
-let data4 = [83, 67, 66, 61, 47, 187];
-let colors4 = ['#49A9EA', '#36CAAB', '#34495E', '#B370CF', '#AC5353', '#CFD4D8'];
-
-let myChart4 = document.getElementById("myChart4").getContext('2d');
-
-let chart4 = new Chart(myChart4, {
-    type: 'pie',
-    data: {
-        labels: labels4,
-        datasets: [ {
-            data: data4,
-            backgroundColor: colors4
-        }]
-    },
-    options: {
-        title: {
-            text: "Population of the European Union (in mio)",
-            display: true
-        }
-    }
-});
-}
-            </script>
+    </script>
+    
     <script src="~/assets/js/main.js"></script>
-
 </body>
 </html>

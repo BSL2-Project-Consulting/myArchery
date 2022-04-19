@@ -31,7 +31,8 @@ namespace myArchery.Controllers
         //GET: EventController/AllEvents
         public ActionResult AllEvents()
         {
-            return View(EventService.GetAllPublicEvents());
+            var tmp = EventService.GetAllPublicEvents();
+            return View(tmp);
         }
 
         // POST: EventController/Join/ABCDEFG
@@ -275,7 +276,7 @@ namespace myArchery.Controllers
                     break;
             }
 
-            await _hubContext.Clients.All.SendAsync("SendRanking", id);
+            await _hubContext.Clients.Group(eventId.ToString()).SendAsync("RecieveLeaderboard", Utility.GetUserWithPointsAsJson(_eventService.GetUsersWithPointsFromEventById(eventId)));
             var list = _eventService.GetUsersCurrentTargetInEvent(id, User.Identity.Name);
 
             if (list == null)
