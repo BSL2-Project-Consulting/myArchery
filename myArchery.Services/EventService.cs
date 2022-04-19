@@ -282,7 +282,7 @@ namespace myArchery.Services
 
                     var tmp2 = from pt in _context.ParcoursTargets.Include(x => x.Arrows).ThenInclude(x => x.Poi).Include(x => x.Tar).Include(x => x.Par).Where(x => x.TarId == result2.ToList()[count].TarId) select pt;
                     pta = tmp2.First();
-                    if (pta.Arrows.Count < _event.Arrowamount && tmp2.Arrows.Sum(x => x.Poi.Value) == 0)
+                    if (pta.Arrows.Count < _event.Arrowamount && pta.Arrows.Sum(x => x.Poi.Value) == 0)
                     {
                         cont = -1;
                     }
