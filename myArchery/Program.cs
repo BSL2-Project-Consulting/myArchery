@@ -33,6 +33,10 @@ builder.Services.AddScoped<PointService>();
 builder.Services.AddScoped<TargetService>();
 
 // Add Emailconfirmation here
+
+builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
+builder.Services.AddTransient<IMailService, MailService>();
+
 WebApplication app;
 
 try

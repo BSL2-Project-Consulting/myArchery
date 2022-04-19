@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using myArchery.Persistance.Models;
+using myArchery.Services;
 
 namespace myArchery.Areas.Identity.Pages.Account
 {
@@ -19,9 +20,9 @@ namespace myArchery.Areas.Identity.Pages.Account
     public class RegisterConfirmationModel : PageModel
     {
         private readonly UserManager<AspNetUser> _userManager;
-        private readonly IEmailSender _sender;
+        private readonly IMailService _sender;
 
-        public RegisterConfirmationModel(UserManager<AspNetUser> userManager, IEmailSender sender)
+        public RegisterConfirmationModel(UserManager<AspNetUser> userManager, IMailService sender)
         {
             _userManager = userManager;
             _sender = sender;
