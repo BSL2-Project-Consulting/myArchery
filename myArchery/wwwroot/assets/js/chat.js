@@ -21,7 +21,7 @@ connection.onclose(async () => {
 });
 
 // Start the connection.
-start();
+await start();
 
 //Disable the send button until connection is established.
 document.getElementById("sendButton").disabled = true;

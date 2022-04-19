@@ -366,10 +366,108 @@ else
         }
 
     
-    <section id="charts">
-        <!--<partial name="_Charts" />-->
-    </section>
-    <script>
+    <section id="Chat">
+        <script src="~/assets/js/chat2.js"></script>
+        <link rel="stylesheet" href="~/assets/css/chat.css">
+        <link rel="stylesheet" href="~/assets/css/style.css">
+        <link rel="stylesheet" href="~/assets/css/typing.css">
+
+        <div class="container">
+            <div class="chatbox">
+                <div class="chatbox__support">
+                    <div class="chatbox__header">
+                        <div class="chatbox__content--header">
+                            <h4 class="chatbox__heading--header">@ViewData["Event"]</h4>
+                            <p class="chatbox__description--header">This is the Chat for the @ViewData["Event"] Event</p>
+                        </div>
+                    </div>
+                    <div class="chatbox__messages">
+                        <div id="messagesList">
+                        </div>
+        
+                    </div>
+                    <div class="chatbox__footer">
+                        <img src="~/assets/img/icons/emojis.svg" alt="">
+                        <img src="~/assets/img/icons/microphone.svg" alt="">
+                        <input type="text" id="messageInput" placeholder="Write a message...">
+                        <button id="sendButton">Send Message</button>
+                        <img src="~/assets/img/icons/attachment.svg" alt="">
+                    </div>
+                </div>
+                <div  class="chatbox__button">
+                    <button id="sendButton">send message</button>
+                </div>
+            </div>
+        </div>
+        <script src="~/assets/js/app.js"></script>
+        <script src="~/assets/js/signalr/dist/browser/signalr.js"></script>
+        <script>
+            let user = '@User.Identity.Name';
+            let html = "";
+
+            "use strict";
+
+            const connection = new signalR.HubConnectionBuilder()
+                .withUrl("/chathub")
+                .configureLogging(signalR.LogLevel.Information)
+                .build();
+
+            async function start() {
+                try {
+                    await connection.start();
+                    document.getElementById("sendButton").disabled = false;
+                    console.log("SignalR Connected.");
+                } catch (err) {
+                    console.log(err);
+                    setTimeout(start, 5000);
+                }
+            };
+
+            connection.onclose(async () => {
+                await start();
+            });
+
+            // Start the connection.
+            start();
+
+            //Disable the send button until connection is established.
+            document.getElementById("sendButton").disabled = true;
+
+            connection.on("ReceiveMessage", function (username, message) {
+                var messageString;
+            
+                if(username == user){
+                    // user is sender
+                    messageString = '<div class="messages__item messages__item--operator">'+
+                                        'Me:'
+                                        +message+
+                                        '</div>';
+                }else{
+                    // user is receiver
+                    messageString = '<div class="messages__item messages__item--visitor">'+
+                                        username +':'
+                                        +message+
+                                        '</div>';
+        }
+
+                //document.getElementById("messagesList").append(messageString);
+                html += messageString;
+                document.getElementById("messagesList").innerHTML = html;
+            });
+
+            document.getElementById("sendButton").addEventListener("click", function (event) {
+                var message = document.getElementById("messageInput").value;
+                if(message != ""){
+                    connection.invoke("SendMessage", user, message).catch(function (err) {
+                    return console.error(err.toString());
+                });
+                }
+                event.preventDefault();
+            });
+        </script>
+</section>
+
+<script>
 
 function myChart1(hitted, missed) {
     var hitted = hitted;
