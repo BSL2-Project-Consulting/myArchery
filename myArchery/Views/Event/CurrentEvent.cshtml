@@ -14,11 +14,10 @@
     }
 
     ViewData["Title"] = "Current Event";
-    ViewData["Event"] = Model.Eventname;
 
     if (User.Identity == null)
     {
-
+        
     }
 
     var usern = User.Identity.Name;
@@ -27,20 +26,22 @@
 
     var users = _eventService.GetUsersWithPointsFromEventById(Model.EveId);
 
+
     var repheight = 400 / 5 * users.Count() + "px";
 
     double maxPoints = 50;
 
     var tmp = _arrowService.GetArrowInfo(events.EveId);
     var tmp2 = tmp;
-    
+
     var allNames = tmp2.Select(x => x.Username).ToArray();
     var allPoints = tmp2.Select(x => x.Points);
 
     tmp = tmp.Where(x => x.Username == User.Identity.Name).ToList();
-    
-    var punkte = _eventService.GetUsersWithPointsFromEventById(events.EveId).ToArray();
-  
+
+
+    var overallPoints = users.Select(x => x.Points).ToArray();
+
 
     var points = tmp.Select(x => x.Points);
 
@@ -65,19 +66,32 @@
     }
     string listofAllNames = " ";
 
-    string listofAllPoints = " ";
+    string punkte = " ";
+    string punkte2 = " ";
 
     string name = " ";
 
-    for (var i = 0; i < punkte.Count(); i++)
+    for (var i = 0; i < points2.Count(); i++)
     {
-        if (i+1 == punkte.Count())
+        if (i+1 == points2.Count())
         {
-            listofAllPoints += $"'{punkte[i]}'";
+            punkte += $"'{points2[i]}'";
         }
         else
         {
-            listofAllPoints += $"'{punkte[i]}',";
+            punkte += $"'{points2[i]}',";
+        }
+    }
+
+    for (var i = 0; i < overallPoints.Count(); i++)
+    {
+        if (i+1 == overallPoints.Count())
+        {
+            punkte2 += $"{overallPoints[i]}";
+        }
+        else
+        {
+            punkte2 += $"{overallPoints[i]},";
         }
     }
 
@@ -112,6 +126,7 @@
 
 <head>
     <meta charset="uft-8">
+    <meta http-equiv="content-type" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>Event - Erstes Event</title>
@@ -169,54 +184,35 @@
 
 <section id="current-event">
 
+<!-- <div class="form-box">
+<div class="button-box">
+<div id="btn"></div>
+<button class="toogle-btn" onclick="event()">Login</button>
+<button class="toogle-btn" onclick="ranking()">Register</button>
+</div>
+-->
+
 </section>
     <script>
 
-
-        function clickHandler1() {
-            console.log('Button wurde geklickt! 1');
-            myChart1(@hitted, @missed);
-        }
-
-
-        function clickHandler2() {
-            console.log('Button wurde geklickt! 2');
-            myChart2();
-        }
-
-        function clickHandler3() {
-          console.log('Button wurde geklickt! 3');
-          myChart3();
-        }
-
-        function clickHandler4() {
-            console.log('Button wurde geklickt! 4');
-            myChart4();
-        }
+           window.onload = function () {
+        console.log('Dokument geladen');
+        myChart1(@hitted, @missed);
+        myChart2();
+        myChart4();
+    }
 
 
-        function dokumentGeladen(event) {
-          //window.console.log('Dokument wurde geladen! Zugriff auf das komplette DOM möglich.');
-          document.getElementById('1').addEventListener('click', clickHandler1, false);
-          document.getElementById('2').addEventListener('click', clickHandler2, false);
-          document.getElementById('3').addEventListener('click', clickHandler3, false);
-          document.getElementById('4').addEventListener('click', clickHandler4, false);
-        }
 
-        document.addEventListener('DOMContentLoaded', dokumentGeladen, false);
 
-    </script>
+  
+
+</script>
 @if (Model.TargetName == null)
 {
     <div class="container">
-        <h3>Deine GesamtPunkte:</h3>
-        <h4>@points.Sum()</h4>
 
-       <h1>Charts, Charts, Charts</h1>
-    <button id="1">1</button>
-    <button id="2">2</button>
-    <button id="3">3</button>
-    <button id="4">4</button>
+    
 
     <div class="container">
         <div class="row">
@@ -229,10 +225,10 @@
         </div>
         <div class="row">
             <div class="col-6 chart">
-                <canvas id="myChart3" width="500" height="400"></canvas>
+                <canvas id="myChart4" width="500" height="400"></canvas>
             </div>
             <div class="col-6 chart">
-                <canvas id="myChart4" width="500" height="400"></canvas>
+                <canvas id="myChart3" width="500" height="400"></canvas>
             </div>
         </div>
     </div>
@@ -248,440 +244,289 @@
         </div>
         <div class="row">
             <div class="col-6 chart">
-                <canvas id="myChart3" width="500" height="400"></canvas>
+                <canvas id="myChart4" width="500" height="400"></canvas>
             </div>
             <div class="col-6 chart">
-                <canvas id="myChart4" width="500" height="400"></canvas>
+                <canvas id="myChart3" width="500" height="400"></canvas>
             </div>
         </div>
     </div>
 }
 else
 {
-<section id="current-event">
+    <section id="current-event">
 
-    <!-- <div class="view_toggle" style="display: block; margin-top: 80px;">
-            <input id="toggle" class="toggle" type="checkbox" />
-        </div>
-    -->
-    <div class="vertical-center">
-        <input type="checkbox" id="lol-checkbox">
-        <label id="button" for="lol-checkbox">
-            <div id="knob"></div>
-            <div id="subscribe">Target</div>
-            <div id="alright">Ranking</div>
-        </label>
-    </div>
-    <div id="targets" class="targets current-event-element" style="display: block;">
-        <div class="row">
-            <div class="col-12">
-                <h1>Target</h1>
-                <h2>@Model.TargetName</h2>
+        <!-- <div class="view_toggle" style="display: block; margin-top: 80px;">
+                <input id="toggle" class="toggle" type="checkbox" />
             </div>
+        -->
+        <div class="vertical-center">
+            <input type="checkbox" id="lol-checkbox">
+            <label id="button" for="lol-checkbox">
+                <div id="knob"></div>
+                <div id="subscribe">Target</div>
+                <div id="alright">Ranking</div>
+            </label>
         </div>
-        <br>
-        <div class="row">
-            <div class="col-2"></div>
-            <div class="col-12">
-                <form method="post">
-                    <div class="radiobtn">
-                        <input type="radio" id="ck" name="drone" value="ck" checked />
-                        <label for="ck">Center Kill</label>
-                    </div>
-
-                    <div class="radiobtn">
-                        <input type="radio" id="k" name="drone" value="k" />
-                        <label for="k">Kill</label>
-                    </div>
-
-                    <div class="radiobtn">
-                        <input type="radio" id="b" name="drone" value="b" />
-                        <label for="b">Body</label>
-                    </div>
-
-                    <div class="radiobtn">
-                        <input type="radio" id="nh" name="drone" value="nh" />
-                        <label for="nh">No Hit</label>
-                    </div>
-
-                    <div class="radiobtn">
-                        <button class="save_button" value="CurrentEvent" asp-route-id="@Model.EveId" type="submit" name="save">Save</button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-2"></div>
-        </div>
-
-    </div>
-    
-        <!-- Liveranking -->
-    <div id="ranking" class="ranking current-event-element" style="display: none;">
-        <div class="row">
-            <div class="col-12">
-                <h1>Live Ranking</h1>
-                <h2></h2>
-            </div>
-        </div>
-
-        <br>
-
-        <div class="row">
-            <div class="col-2"></div>
-            <div class="col-12">
-                <table id="players">
-                    <tr>
-                        <th>Spieler</th>
-                        <th>Punkte</th>
-                    </tr>
-                    <tr>
-                        <td>Hans</td>
-                        <td>101</td>
-                    </tr>
-                    <tr>
-                        <td>Sören</td>
-                        <td>100</td>
-                    </tr>
-                    <tr>
-                        <td>May</td>
-                        <td>51</td>
-                    </tr>
-                    <tr>
-                        <td>Paul</td>
-                        <td>45</td>
-                    </tr>
-                    <tr>
-                        <td>Danis Mum</td>
-                        <td>22</td>
-                    </tr>
-                    <tr>
-                        <td>Kevin</td>
-                        <td>20</td>
-                    </tr>
-                    <tr>
-                        <td>Julian</td>
-                        <td>1</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="col-2"></div>
-        </div>
-    </div>
-</section>
-}
-<section id="Chat">
-        <script src="~/assets/js/chat2.js"></script>
-        <link rel="stylesheet" href="~/assets/css/chat.css">
-        <link rel="stylesheet" href="~/assets/css/style.css">
-        <link rel="stylesheet" href="~/assets/css/typing.css">
-
-        <div class="container">
-            <div class="chatbox">
-                <div class="chatbox__support">
-                    <div class="chatbox__header">
-                        <div class="chatbox__content--header">
-                            <h4 class="chatbox__heading--header">@ViewData["Event"]</h4>
-                            <p class="chatbox__description--header">This is the Chat for the @ViewData["Event"] Event</p>
-                        </div>
-                    </div>
-                    <div class="chatbox__messages">
-                        <div id="messagesList">
-                        
-                        </div>
-                    </div>
-                    <div class="chatbox__footer">
-                        <img src="~/assets/img/icons/emojis.svg" alt="">
-                        <img src="~/assets/img/icons/microphone.svg" alt="">
-                        <input type="text" id="messageInput" placeholder="Write a message...">
-                        <button id="sendButton">Send Message</button>
-                        <img src="~/assets/img/icons/attachment.svg" alt="">
-                    </div>
-                </div>
-                <div  class="chatbox__button">
-                    <button id="sendButton">send message</button>
+        <div id="targets" class="targets current-event-element" style="display: block;">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Target</h1>
+                    <h2>@Model.TargetName</h2>
                 </div>
             </div>
+            <br>
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-12">
+                    <form method="post">
+                        <div class="radiobtn">
+                            <input type="radio" id="ck" name="drone" value="ck" checked />
+                            <label for="ck">Center Kill</label>
+                        </div>
+
+                        <div class="radiobtn">
+                            <input type="radio" id="k" name="drone" value="k" />
+                            <label for="k">Kill</label>
+                        </div>
+
+                        <div class="radiobtn">
+                            <input type="radio" id="b" name="drone" value="b" />
+                            <label for="b">Body</label>
+                        </div>
+
+                        <div class="radiobtn">
+                            <input type="radio" id="nh" name="drone" value="nh" />
+                            <label for="nh">No Hit</label>
+                        </div>
+
+                        <div class="radiobtn">
+                            <button class="save_button" value="CurrentEvent" asp-route-id="@Model.EveId" type="submit" name="save">Save</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-2"></div>
+            </div>
+
         </div>
-        <script src="~/assets/js/app.js"></script>
-        <script src="~/assets/js/signalr/dist/browser/signalr.js"></script>
-        <script>
-            let user = '@User.Identity.Name';
-            let html = "";
 
-            "use strict";
+        <div id="ranking" class="ranking current-event-element" style="display: none;">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Live Ranking</h1>
+                    <h2></h2>
+                </div>
+            </div>
 
-            const connection = new signalR.HubConnectionBuilder()
-                .withUrl("/chathub")
-                .configureLogging(signalR.LogLevel.Information)
-                .build();
+            <br>
 
-            async function start() {
-                try {
-                    await connection.start();
-                    document.getElementById("sendButton").disabled = false;
-                    console.log("SignalR Connected.");
-                } catch (err) {
-                    console.log(err);
-                    setTimeout(start, 5000);
-                }
-            };
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-12">
+                    <table id="players">
+                        <tr>
+                            <th>Spieler</th>
+                            <th>Punkte</th>
+                        </tr>
+                        <tr>
+                            <td>Hans</td>
+                            <td>101</td>
+                        </tr>
+                        <tr>
+                            <td>Sören</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>May</td>
+                            <td>51</td>
+                        </tr>
+                        <tr>
+                            <td>Paul</td>
+                            <td>45</td>
+                        </tr>
+                        <tr>
+                            <td>Danis Mum</td>
+                            <td>22</td>
+                        </tr>
+                        <tr>
+                            <td>Kevin</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Julian</td>
+                            <td>1</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-2"></div>
+            </div>
 
-            connection.onclose(async () => {
-                await start();
-            });
-
-            // Start the connection.
-            start();
-
-            //Disable the send button until connection is established.
-            document.getElementById("sendButton").disabled = true;
-
-            connection.on("ReceiveMessage", function (username, message) {
-                var messageString;
-            
-                if(username == user){
-                    // user is sender
-                    messageString = '<div class="messages__item messages__item--operator">'+
-                                        'Me:'
-                                        +message+
-                                        '</div>';
-                }else{
-                    // user is receiver
-                    messageString = '<div class="messages__item messages__item--visitor">'+
-                                        username +':'
-                                        +message+
-                                        '</div>';
-                }
-
-                //document.getElementById("messagesList").append(messageString);
-                html += messageString;
-                document.getElementById("messagesList").innerHTML = html;
-            });
-
-            document.getElementById("sendButton").addEventListener("click", function (event) {
-                var message = document.getElementById("messageInput").value;
-                if(message != ""){
-                    connection.invoke("SendMessage", user, message).catch(function (err) {
-                    return console.error(err.toString());
-                });
-                }
-                event.preventDefault();
-            });
-        </script>
-</section>
-    
-<section id="charts">
-    <!--<partial name="_Charts" />-->
-</section>
-
-<script>
-
-    function myChart1(hitted, missed) {
-        var hitted = hitted;
-        let labels1 = ['Hitted', 'Missed'];
-        let data1 = [hitted, missed];
-
-
-        // let data1 = [59, 31];               //User Data per User how often he missed
-        let colors1 = ['#49A9EA', '#36CAAB'];
-
-        let myDoughnutChart = document.getElementById("myChart").getContext('2d');
-
-        let chart1 = new Chart(myDoughnutChart, {
-            type: 'doughnut',
-            data: {
-                labels: ['Hitted', 'Missed'],
-                datasets: [{
-                    data: [data1[0], data1[1]],
-        //            data: [59, 31],      //User Data per User how often he missed
-                    backgroundColor: ['#49A9EA', '#36CAAB']
-                }]
-            },
-            options: {
-                title: {
-                    text: "How accurate is my aim?",
-                    display: true
-                }
-            }
-        });
-
-    }
-
-
-    function myChart2() {
-        const htmlconvert = {
-            "'" : "&#x27;"
-
-        };
-
-        console.log("A");
-    
-
-
-
-        var tmpString = "@name";
-
-        var tmpString = tmpString.replace(/&#x27;/g, "'");
-
-        const words = tmpString.split(',');
-
-        let labels2 = words;
-        console.log("B");
-        var tmpString2 = "@punkte";
-        var tmpString3 = tmpString2.replace(/&#x27;/g, " ");
-        var tmpString4 = tmpString3.split(',');
-        let data2 = new Array();
-        for(var i = 0; i < tmpString4.length; i++)
-        {
-            data2.push(parseInt(tmpString4[i]));
+        </div>
+    </section>
         }
 
-
-        //let data2 = [1,2,3];
-
-
-        let colors2 = ['#49A9EA', '#36CAAB', '#34495E', '#B370CF'];
-
-        let myChart2 = document.getElementById("myChart2").getContext('2d');
-
-        let chart2 = new Chart(myChart2, {
-            type: 'bar',
-            data: {
-                labels: labels2,
-                datasets: [{
-                    label:"Ponits per Target per User",
-                    data: data2,
-                    backgroundColor: colors2
-                }]
-            },
-            options: {
-                title: {
-                    text: "Ponits per Target per User",
-                    display: true
-                },
-                legend: {
-                    display: false
-                }
-            }
-        });
-
-    }
-
-    function myChart3() {
-
-   
-       let labels3 = ['Attack', 'Defense', 'Passing', 'Tackle', 'Speed'];
-    let myChart3 = document.getElementById("myChart3").getContext('2d');
-
-    let chart3 = new Chart(myChart3, {
-        type: 'radar',
-        data: {
-            labels: labels3,
-            datasets: [
-              {
-                label: 'Messi',
-                fill: true,
-                backgroundColor: "rgba(179, 181, 198, 0.2)",
-                borderColor: "rgba(179, 181, 198, 1)",
-                pointBorderColor: "#fff",
-                pointBackgroundColor: "rgba(179, 181, 198, 1)",
-                data: [50, 12, 55, 7, 29]
-              },
-              {
-                label: 'Ronaldo',
-                fill: true,
-                backgroundColor: "rgba(255, 99, 132, 0.2)",
-                borderColor: "rgba(255, 99, 132, 1)",
-                pointBorderColor: "#fff",
-                pointBackgroundColor: "rgba(255, 99, 132, 1)",
-                data: [51, 10, 32, 20, 44]
-              }
-            ]
-        },
-        options: {
-            title: {
-                text: "Skills",
-                display: true
-            }
-        }
-    });
-
-    }
-
-    function myChart4(points) {
-
-
-        var tmpString = "@name";
-
-       var tmpString = tmpString.replace(/&#x27;/g, "'");
-
-       const words = tmpString.split(',');
-
-       let labels3 = words;
-
-
-
-          
-        var tmpString2 = "@listofAllNames";
-           alert(tmpString2);
-
-       var tmpString2 = tmpString2.replace(/&#x27;/g, "'");
-
-       let words2 = tmpString2.split(',');
-
-      const temp = words2
-
-  
-       const uniqueset = new Set(words2);
-   
-       const backToArray = [...uniqueset]
-
-      backToArray.pop();
-
-      /*
-
-       var tmpString5= "@listofAllPoints";
-   
-       alert(tmpString5);
-       
-            var tmpString6 = tmpString5.replace(/&#x27;/g, " ");
-
-      
-           var tmpString7 = tmpString6.split(',');
-     */      
-           let data4 = new Array();
-           data4.push(points);
-
-     
-           //Punkte pro User herausbekommen
-
-
     
+    <section id="charts">
+        <!--<partial name="_Charts" />-->
+    </section>
+    <script>
+
+function myChart1(hitted, missed) {
+    var hitted = hitted;
+    let labels1 = ['Hitted', 'Missed'];
+    let data1 = [hitted, missed];
 
 
+    // let data1 = [59, 31];               //User Data per User how often he missed
+    let colors1 = ['#49A9EA', '#36CAAB'];
 
-    let colors4 = ['#49A9EA', '#36CAAB', '#34495E', '#B370CF', '#AC5353', '#CFD4D8'];
+    let myDoughnutChart = document.getElementById("myChart").getContext('2d');
 
-    let myChart4 = document.getElementById("myChart4").getContext('2d');
-
-    let chart4 = new Chart(myChart4, {
-        type: 'pie',
+    let chart1 = new Chart(myDoughnutChart, {
+        type: 'doughnut',
         data: {
-            labels: backToArray,
-            datasets: [ {
-                data: data4,
-                backgroundColor: colors4
+            labels: ['Hitted', 'Missed'],
+            datasets: [{
+                data: [data1[0], data1[1]],
+    //            data: [59, 31],      //User Data per User how often he missed
+                backgroundColor: ['#49A9EA', '#36CAAB']
             }]
         },
         options: {
             title: {
-                text: "Population of the European Union (in mio)",
+                text: "How accurate is my aim?",
                 display: true
             }
         }
     });
+
+}
+
+
+function myChart2() {
+    const htmlconvert = {
+        "'" : "&#x27;"
+
+    };
+
+    console.log("A");
+    
+
+
+
+    var tmpString = "@name";
+
+    var tmpString = tmpString.replace(/&#x27;/g, "'");
+
+    const words = tmpString.split(',');
+
+    let labels2 = words;
+    console.log("B");
+    var tmpString2 = "@punkte";
+    var tmpString3 = tmpString2.replace(/&#x27;/g, " ");
+    var tmpString4 = tmpString3.split(',');
+    let data2 = new Array();
+    for(var i = 0; i < tmpString4.length; i++)
+    {
+        data2.push(parseInt(tmpString4[i]));
     }
-</script>
-<script src="~/assets/js/main.js"></script>
-<script src="~/assets/js/liveranking.js"></script>
+
+
+    //let data2 = [1,2,3];
+
+
+    let colors2 = ['#49A9EA', '#36CAAB', '#34495E', '#B370CF'];
+
+    let myChart2 = document.getElementById("myChart2").getContext('2d');
+
+    let chart2 = new Chart(myChart2, {
+        type: 'bar',
+        data: {
+            labels: labels2,
+            datasets: [{
+                label: "Points per Target per User",
+                data: data2,
+                backgroundColor: colors2
+            }]
+        },
+        options: {
+            title: {
+                text: "Points per Target per User",
+                display: true
+            },
+            legend: {
+                display: false
+            }
+        }
+    });
+
+}
+
+
+
+function myChart4() {
+ var tmpString2 = "@listofAllNames";
+
+   var tmpString2 = tmpString2.replace(/&#x27;/g, "'");
+
+   let words2 = tmpString2.split(',');
+
+  const temp = words2
+
+  
+   const uniqueset = new Set(words2);
+   
+   const backToArray = [...uniqueset]
+
+   backToArray.pop();
+
+
+
+       var tmpString2 = "@punkte2";
+       
+        var tmpString3 = tmpString2.replace(/&#x27;/g, " ");
+
+      
+       var tmpString4 = tmpString3.split(',');
+       
+
+
+       let data4 = new Array();
+
+      
+       
+       for(var i = 0; i < tmpString4.length; i++)
+    {
+        data4.push(parseInt(tmpString4[i]));
+    }
+
+
+
+ 
+
+let colors4 = ['#49A9EA', '#36CAAB', '#34495E', '#B370CF', '#AC5353', '#CFD4D8'];
+
+let myChart4 = document.getElementById("myChart4").getContext('2d');
+
+let chart4 = new Chart(myChart4, {
+    type: 'pie',
+    data: {
+        labels: backToArray,
+        datasets: [ {
+            data: data4,
+            backgroundColor: colors4
+        }]
+    },
+    options: {
+        title: {
+            text: "Population of the European Union (in mio)",
+            display: true
+        }
+    }
+});
+}
+            </script>
+    <script src="~/assets/js/main.js"></script>
+
 </body>
 </html>
