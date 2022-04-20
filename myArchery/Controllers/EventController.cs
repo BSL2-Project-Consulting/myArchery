@@ -36,8 +36,10 @@ namespace myArchery.Controllers
         }
 
         // POST: EventController/Join/ABCDEFG
-        public ActionResult Join(int eventId, string username)
+        
+        public ActionResult Join(int eventId)
         {
+            var username = User.Identity.Name;
             var isInEvent = EventService.UserIsInEvent(eventId, username);
             // add user to event with join code
 
@@ -48,7 +50,7 @@ namespace myArchery.Controllers
 
             return RedirectToAction(nameof(Index));
         }
-
+        [HttpPost]
         public ActionResult JoinWithCode(int eventId, string username, string code)
         {
             var isInEvent = EventService.UserIsInEvent(eventId, username);
