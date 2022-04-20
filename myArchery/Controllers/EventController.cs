@@ -50,6 +50,7 @@ namespace myArchery.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
         [HttpPost]
         public ActionResult JoinWithCode(int eventId, string username, string code)
         {
