@@ -30,7 +30,7 @@
                 <div class="col col-3" data-label="Startdate">@item.Startdate</div>
                 <div class="col col-4" data-label="Enddate">@item.Enddate</div>
                 <div class="col col-5" data-label="Parcourname">@item.Par.Parcourname</div>
-                <div class="col col-6" data-label="Options"><a asp-action="Join" asp-route-id="@item.EveId">Join</a> |
+                <div class="col col-6" data-label="Options"><a asp-action="Join" asp-route-eventId="@item.EveId">Join</a> |
                 <a asp-action="Details" asp-route-id="@item.EveId">Details</a></div>
               </li>
 }

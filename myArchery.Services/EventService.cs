@@ -151,7 +151,7 @@ namespace myArchery.Services
                 }
 
                 var user = db.AspNetUsers.FirstOrDefault(x => x.UserName == username);
-                if (user != null)
+                if (user != null && eventId != 0)
                 {
                     // add user to event as Player
                     EventUserRole eventUser = new EventUserRole { UseId = UserService.GetUserByName(username).Id, RolId = 2, EveId = eventId };
