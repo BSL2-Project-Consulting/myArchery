@@ -235,10 +235,51 @@ namespace myArchery.Services
             return res;
         }
 
-        public ParcoursTarget GetUsersCurrentTargetInEvent(int eveId, string username)
+        // TODO: Change Name ( NEW )
+        public ParcoursTarget? GetUsersCurrentTargetInEvent(int eveId, string username)
         {
-            var user = UserService.GetUserByName(username);
-            var _event = GetEventById(eveId);
+            AspNetUser user = UserService.GetUserByName(username);
+            Event _event = GetEventById(eveId);
+            var eveusro = _eventRoleService.GetEventRole(eveId, user.Id);
+
+            var par = _event.Par;
+
+            var pata = _context.Events.Include(x => x.Par)
+                                     .ThenInclude(x => x.ParcoursTargets)
+                                     .ThenInclude(x => x.Tar)
+                                     .First(x => x.EveId == eveId)
+                                     .Par.ParcoursTargets;
+                        
+            var allTargetsFromUser = _context.EventUserRoles.Include(x => x.Arrows.Where(x => x.Pata.ParId == _event.ParId))
+                                                            .ThenInclude(x => x.Pata)
+                                                            .ThenInclude(x => x.Tar)
+                                                            .Include(x => x.Arrows.Where(x => x.Pata.ParId == _event.ParId))
+                                                            .ThenInclude(x => x.Poi)
+                                                            .First(x => x.Equals(eveusro));
+            var uTar = allTargetsFromUser.Arrows.Where(x => x.Pata.Par.Equals(pata.First().Par));
+            /*.Where(x => (x.Arrows.Count < _event.Arrowamount && x.Arrows.Sum(y => y.Poi.Value) == 0))*/
+            // all targets in event
+            var tar = _context.ParcoursTargets.Include(x => x.Tar).Where(x => x.ParId == par.ParId).Select(x => x.Tar);
+
+            // all Arrows
+            var test = _context.Arrows.Include(x => x.Evusro).Include(x => x.Pata).ThenInclude(x => x.Tar);
+
+            //all Arrows
+            var test1 = _context.Targets.Include(x => x.ParcoursTargets).ThenInclude(x => x.Arrows).ThenInclude(x => x.Evusro);
+
+            var tmp1 = uTar.Where(x => x.Pata.Arrows.Count() < _event.Arrowamount && x.Pata.Arrows.Select(x => x.Poi.Value).Sum() == 0);
+
+            var zs = tmp1.Select(x => x.Pata).Except(pata);
+            var t = pata.Where(x => x.Arrows.Count() < _event.Arrowamount && x.Arrows.Select(x => x.Poi.Value).Sum() == 0);
+            
+            return t.FirstOrDefault();
+        }
+
+        // TODO: Change Name ( OLD )
+        public ParcoursTarget? GetCurrentTargetInEvent(int eveId, string username)
+        {
+            AspNetUser user = UserService.GetUserByName(username);
+            Event _event = GetEventById(eveId);
             var eveusro = _eventRoleService.GetEventRole(eveId, user.Id);
 
             var result2 = _context.ParcoursTargets.FromSqlRaw("SELECT " +
@@ -265,7 +306,7 @@ namespace myArchery.Services
                                                             "ORDER BY pt.PataId");
 
             int cont = 0;
-            ParcoursTarget pta = new();
+            ParcoursTarget? pta = new();
             int count = 0;
             do
             {
@@ -276,13 +317,14 @@ namespace myArchery.Services
                 }
                 else
                 {
-                    var tmp1 = from arrow in _context.ParcoursTargets.Include(x => x.Arrows)
+                    var tmp1 = from arrow in _context.ParcoursTargets.Include(x => x.Arrows).ThenInclude(x => x.Evusro)
                                where arrow.TarId == result2.ToList()[count].TarId && _context.Events.First(x => x.EveId == eveId).ParId == arrow.ParId
                                select arrow;
 
-                    var tmp2 = from pt in _context.ParcoursTargets.Include(x => x.Arrows).ThenInclude(x => x.Poi).Include(x => x.Tar).Include(x => x.Par).Where(x => x.TarId == result2.ToList()[count].TarId) select pt;
-                    pta = tmp2.First();
-                    if (pta.Arrows.Count < _event.Arrowamount && pta.Arrows.Sum(x => x.Poi.Value) == 0)
+                    var tmp2 = from pt in _context.ParcoursTargets.Include(x => x.Arrows.Where(x => x.Evusro.UseId == user.Id)).ThenInclude(x => x.Evusro).Include(x => x.Arrows).ThenInclude(x => x.Poi).Include(x => x.Tar).Include(x => x.Par).Where(x => x.TarId == result2.ToList()[count].TarId) select pt;
+                    var tapu = tmp2.Where(x => x.Arrows.Where(y => y.Evusro.UseId == user.Id).Count() > 0);
+                    pta = tapu.FirstOrDefault();
+                    if (pta == null || pta.Arrows.Count < _event.Arrowamount && pta.Arrows.Sum(x => x.Poi.Value) == 0)
                     {
                         cont = -1;
                     }
@@ -294,11 +336,17 @@ namespace myArchery.Services
 
             } while (cont == 0);
                       
-
-            
+            var ftarget = _context.Events.Include(x => x.Par).ThenInclude(x => x.ParcoursTargets).ThenInclude(x => x.Tar).First(x => x.EveId == eveId).Par.ParcoursTargets;
+            if (ftarget.Count >= count)
+            {
+                return null;
+            }
+            else
+            {
+                return ftarget.ElementAt(count);
+            }
             //ParcoursTarget? tmp = result2.ToList().FirstOrDefault(x => x.Arrows.Count < _event.Arrowamount);
-            //tmp.Tar = target;
-            return pta;
+            //tmp.Tar = target;            
         }
 
         /// <summary>
