@@ -20,12 +20,10 @@ namespace myArchery.Areas.Identity.Pages.Account
     public class RegisterConfirmationModel : PageModel
     {
         private readonly UserManager<AspNetUser> _userManager;
-        private readonly IMailService _sender;
 
-        public RegisterConfirmationModel(UserManager<AspNetUser> userManager, IMailService sender)
+        public RegisterConfirmationModel(UserManager<AspNetUser> userManager)
         {
             _userManager = userManager;
-            _sender = sender;
         }
 
         /// <summary>
