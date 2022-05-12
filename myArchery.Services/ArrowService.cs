@@ -1,4 +1,6 @@
-﻿namespace myArchery.Services
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace myArchery.Services
 {
     public class ArrowService
     {
@@ -6,13 +8,15 @@
         private EventRoleService _everoService;
         private PointService _pointService;
         private ParcourTargetService _parcourTargetService;
+        private EventService _eventService;
 
-        public ArrowService(ArcheryDbContext context, EventRoleService everoService, PointService pointService, ParcourTargetService parcourTargetService)
+        public ArrowService(ArcheryDbContext context, EventRoleService everoService, PointService pointService, ParcourTargetService parcourTargetService, EventService eventService)
         {
             _context = context;
             _everoService = everoService;
             _pointService = pointService;
             _parcourTargetService = parcourTargetService;
+            _eventService = eventService;
         }
 
         /*-- 
@@ -64,19 +68,23 @@
                           HitType = points.ValueId.ToString(),
                           HitTime = arrow.Hitdatetime,
                           Points = points.Value,
-                          TargetName = target.Targetname,
+                          TargetName = target.Targetname
                       };
 
             return res.ToList();
         }
 
-        public async Task AddArrow(int eve_id, string use_id, int value_id, int arrowNumber)
+        public void AddArrow(int eve_id, string use_id, int value_id, int arrowNumber, int TargetId)
         {
+            var test = _context.Arrows.Include(x => x.Pata).Include(x => x.Evusro).Where(x => x.Evusro.EveId == eve_id);
+
             var evusro = _everoService.GetEventRole(eve_id, use_id);
 
             var poi = _pointService.GetPoint(eve_id, value_id, arrowNumber);
 
-            var pata = _parcourTargetService.GetParcoursTarget(eve_id);
+            var pata = _eventService.GetUsersCurrentTargetInEvent(eve_id, UserService.GetUserById(use_id).UserName);
+
+            var target = _context.Targets.First(x => x.TarId == TargetId);
 
             Arrow arrow = new Arrow
             {
@@ -85,9 +93,11 @@
                 PataId = pata.PataId,
                 PoiId = poi.PoiId
             };
+            
+            pata.Arrows.Add(arrow);
 
-            _context.Add(arrow);
-            await _context.SaveChangesAsync();
+            _context.Arrows.Add(arrow);
+            _context.SaveChanges();
         }
 
         public int GetCurrentArrowNumber(int eventId, string userId)

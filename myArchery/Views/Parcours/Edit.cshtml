@@ -1,0 +1,55 @@
+﻿@model myArchery.Persistance.Models.Parcour
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Parcour</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ParId" />
+            <div class="form-group">
+                <label asp-for="Parcourname" class="control-label"></label>
+                <input asp-for="Parcourname" class="form-control" />
+                <span asp-validation-for="Parcourname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Town" class="control-label"></label>
+                <input asp-for="Town" class="form-control" />
+                <span asp-validation-for="Town" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Postalcode" class="control-label"></label>
+                <input asp-for="Postalcode" class="form-control" />
+                <span asp-validation-for="Postalcode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StreetHousenumber" class="control-label"></label>
+                <input asp-for="StreetHousenumber" class="form-control" />
+                <span asp-validation-for="StreetHousenumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Counttargets" class="control-label"></label>
+                <input asp-for="Counttargets" class="form-control" />
+                <span asp-validation-for="Counttargets" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

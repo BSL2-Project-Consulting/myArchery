@@ -1,4 +1,6 @@
-﻿namespace myArchery.Services
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace myArchery.Services
 {
     public class EventRoleService
     {
@@ -25,7 +27,8 @@
 
         public EventUserRole GetEventRole(int eve_id, string use_id)
         {
-            return _context.EventUserRoles.Where(x => x.EveId == eve_id && use_id.Equals(use_id)).First();                         
+            var tmp = _context.EventUserRoles.Include(x => x.Use).Include(x => x.Eve).First(x => x.EveId == eve_id && x.UseId == use_id);
+            return tmp;
         }
     }
 }

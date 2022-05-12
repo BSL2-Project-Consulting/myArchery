@@ -1,0 +1,92 @@
+﻿@model myArchery.Persistance.Models.Parcour
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<script src="~/assets/lib/jquery/dist/jquery.min.js"></script>
+<h1>Create</h1>
+
+<h4>Parcour</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Parcourname" class="control-label"></label>
+                <input asp-for="Parcourname" class="form-control" />
+                <span asp-validation-for="Parcourname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Town" class="control-label"></label>
+                <input asp-for="Town" class="form-control" />
+                <span asp-validation-for="Town" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Postalcode" class="control-label"></label>
+                <input asp-for="Postalcode" class="form-control" />
+                <span asp-validation-for="Postalcode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StreetHousenumber" class="control-label"></label>
+                <input asp-for="StreetHousenumber" class="form-control" />
+                <span asp-validation-for="StreetHousenumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Counttargets" class="control-label"></label>
+                <input id="targetsAmount" min="1" asp-for="Counttargets" class="form-control" />
+                <span asp-validation-for="Counttargets" class="text-danger"></span>
+            </div>
+            <div id="item-list">
+
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    <script>
+        let prev_val;
+        var targetsCount = document.getElementById("targetsAmount");
+        console.log(targetsCount);
+            $(document).ready(function(){
+                //$("#arrowAmount").change(function(){
+                //    UpdateArrowInputs();
+                //    });
+                    UpdateArrowInputs();
+
+                    $("#targetsAmount").change(function (e) {
+                    e.preventDefault();
+                    UpdateArrowInputs();
+                   });
+            });
+        function UpdateArrowInputs(){
+               var i = $("#targetsAmount").val();
+
+               $("#item-list").children().remove();
+
+               for(var x = 0; x < i; x++){
+                   var count = x+1;
+                   //var html = '<label for="Centerkill'+count+'">Centerkill:</label> '+
+                   //             '<input type="number" id="Centerkill'+count+'" class="items" name="Points[' + x + '].CenterkillValue" /><br>';
+
+                   var html = '<div><label for="Target'+count+'">Name Target '+count+':</label></div>'+
+                                '<input type="text" id="Target'+count+'" class="items" name="Targets['+x+'].Name"/><br>';
+                   $("#item-list").append(html);
+                }
+        }
+    </script>
+
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

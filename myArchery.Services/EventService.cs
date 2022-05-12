@@ -6,10 +6,14 @@ namespace myArchery.Services
     public class EventService
     {
         private readonly ArcheryDbContext _context;
+        private readonly TargetService _targetService;
+        private readonly EventRoleService _eventRoleService;
 
-        public EventService(ArcheryDbContext context)
+        public EventService(ArcheryDbContext context, TargetService targetService, EventRoleService eventRoleService)
         {
             _context = context;
+            _targetService = targetService;
+            _eventRoleService = eventRoleService;
         }
         /*
          * -- the create event user interface must request the following information:
@@ -147,7 +151,7 @@ namespace myArchery.Services
                 }
 
                 var user = db.AspNetUsers.FirstOrDefault(x => x.UserName == username);
-                if (user != null)
+                if (user != null && eventId != 0)
                 {
                     // add user to event as Player
                     EventUserRole eventUser = new EventUserRole { UseId = UserService.GetUserByName(username).Id, RolId = 2, EveId = eventId };
@@ -192,18 +196,16 @@ namespace myArchery.Services
             using (ArcheryDbContext db = new ArcheryDbContext())
             {
                 var res = from AspNetUsers in db.AspNetUsers
-                                          join eventRoles in db.EventUserRoles on AspNetUsers.Id equals eventRoles.UseId
-                                          join events in db.Events on eventRoles.EveId equals events.EveId
-                                          into result1
-                                          from finalResult in result1
-                                          where finalResult.Startdate < DateTime.Now && finalResult.Enddate > DateTime.Now
-                                          select new EventWithId
-                                          {
-                                              Eventname = finalResult.Eventname,
-                                              Id = finalResult.EveId
-                                          };
-
-
+                            join eventRoles in db.EventUserRoles on AspNetUsers.Id equals eventRoles.UseId
+                            join events in db.Events on eventRoles.EveId equals events.EveId
+                            into result1
+                            from finalResult in result1
+                            where finalResult.Startdate < DateTime.Now && finalResult.Enddate > DateTime.Now
+                            select new EventWithId
+                            {
+                                Eventname = finalResult.Eventname,
+                                Id = finalResult.EveId
+                            };
                 return res.ToList();                
             }
         }
@@ -233,55 +235,118 @@ namespace myArchery.Services
             return res;
         }
 
-        /*
-         SELECT
-        pt.PataId,
-        e.EveId,
-        e.Eventname,
-        e.Arrowamount,
-        p.ParId,
-        p.Parcourname,
-        t.TarId,
-        t.Targetname,
-        COUNT(a.PataId) AS 'Count_Arrows',
-        SUM(po.Value) AS 'Points'
-        FROM ParcoursTarget pt
-        LEFT JOIN Parcour p ON pt.ParId = p.ParId
-        LEFT JOIN Event e ON p.ParId = e.ParId
-        LEFT JOIN EventUserRole eur ON e.EveId = eur.EveId
-        LEFT JOIN Target t ON pt.TarId = t.TarId
-        LEFT JOIN Arrow a ON pt.PataId = a.PataId
-        LEFT JOIN Point po ON a.PoiId = po.PoiId
-        WHERE e.EveId = 5
-        AND eur.UseId = 1
-        GROUP BY pt.PataId, e.EveId, e.Eventname, e.Arrowamount, p.ParId, p.Parcourname, t.TarId, t.Targetname
-        ORDER BY pt.PataId
-         */
-
-
-        public List<TargetTemplate> GetUsersCurrentTargetInEvent(int eveId, string username)
+        // TODO: Change Name ( NEW )
+        public ParcoursTarget? GetUsersCurrentTargetInEvent(int eveId, string username)
         {
-            var user = UserService.GetUserByName(username);
+            AspNetUser user = UserService.GetUserByName(username);
+            Event _event = GetEventById(eveId);
+            var eveusro = _eventRoleService.GetEventRole(eveId, user.Id);
 
-            var result = from Pt in _context.ParcoursTargets
-                         join P in _context.Parcours on Pt.ParId equals P.ParId
-                         join E in _context.Events on P.ParId equals E.ParId
-                         where E.EveId == eveId
-                         join Eur in _context.EventUserRoles on E.EveId equals Eur.EveId
-                         where Eur.UseId == user.Id
-                         join T in _context.Targets on Pt.TarId equals T.TarId
-                         join A in _context.Arrows on Pt.PataId equals A.PataId
-                         join Po in _context.Points on A.PoiId equals Po.PoiId
-                         orderby Pt.PataId ascending
-                         select new TargetTemplate
-                         {
-                             TarId = T.TarId,
-                             TargetName = T.Targetname,
-                             EventId = eveId,
-                             Point = Po
-                         };
+            var par = _event.Par;
 
-            return result.ToList();
+            var pata = _context.Events.Include(x => x.Par)
+                                     .ThenInclude(x => x.ParcoursTargets)
+                                     .ThenInclude(x => x.Tar)
+                                     .First(x => x.EveId == eveId)
+                                     .Par.ParcoursTargets;
+                        
+            var allTargetsFromUser = _context.EventUserRoles.Include(x => x.Arrows.Where(x => x.Pata.ParId == _event.ParId))
+                                                            .ThenInclude(x => x.Pata)
+                                                            .ThenInclude(x => x.Tar)
+                                                            .Include(x => x.Arrows.Where(x => x.Pata.ParId == _event.ParId))
+                                                            .ThenInclude(x => x.Poi)
+                                                            .First(x => x.Equals(eveusro));
+            var uTar = allTargetsFromUser.Arrows.Where(x => x.Pata.Par.Equals(pata.First().Par));
+            /*.Where(x => (x.Arrows.Count < _event.Arrowamount && x.Arrows.Sum(y => y.Poi.Value) == 0))*/
+            // all targets in event
+            var tar = _context.ParcoursTargets.Include(x => x.Tar).Where(x => x.ParId == par.ParId).Select(x => x.Tar);
+
+            // all Arrows
+            var test = _context.Arrows.Include(x => x.Evusro).Include(x => x.Pata).ThenInclude(x => x.Tar);
+
+            //all Arrows
+            var test1 = _context.Targets.Include(x => x.ParcoursTargets).ThenInclude(x => x.Arrows).ThenInclude(x => x.Evusro);
+
+            var tmp1 = uTar.Where(x => x.Pata.Arrows.Count() < _event.Arrowamount && x.Pata.Arrows.Select(x => x.Poi.Value).Sum() == 0);
+
+            var zs = tmp1.Select(x => x.Pata).Except(pata);
+            var t = pata.Where(x => x.Arrows.Count() < _event.Arrowamount && x.Arrows.Select(x => x.Poi.Value).Sum() == 0);
+            
+            return t.FirstOrDefault();
+        }
+
+        // TODO: Change Name ( OLD )
+        public ParcoursTarget? GetCurrentTargetInEvent(int eveId, string username)
+        {
+            AspNetUser user = UserService.GetUserByName(username);
+            Event _event = GetEventById(eveId);
+            var eveusro = _eventRoleService.GetEventRole(eveId, user.Id);
+
+            var result2 = _context.ParcoursTargets.FromSqlRaw("SELECT " +
+                                                            "pt.PataId, " +
+                                                            "e.EveId, " +
+                                                            "e.Eventname, " +
+                                                            "e.Arrowamount, " +
+                                                            "p.ParId, " +
+                                                            "p.Parcourname, " +
+                                                            "t.TarId, " +
+                                                            "t.Targetname, " +
+                                                            "COUNT(a.PataId) AS 'Count_Arrows', " +
+                                                            "SUM(po.Value) AS 'Points' " +
+                                                            "FROM ParcoursTarget pt " +
+                                                            "LEFT JOIN Parcour p ON pt.ParId = p.ParId " +
+                                                            "LEFT JOIN Event e ON p.ParId = e.ParId " +
+                                                            "LEFT JOIN EventUserRole eur ON e.EveId = eur.EveId " +
+                                                            "LEFT JOIN Target t ON pt.TarId = t.TarId " +
+                                                            "LEFT JOIN Arrow a ON pt.PataId = a.PataId " +
+                                                            "LEFT JOIN Point po ON a.PoiId = po.PoiId " +
+                                                            $"WHERE e.EveId = {eveId} " +
+                                                            $"AND eur.UseId = '{user.Id}' " +
+                                                            "GROUP BY pt.PataId, e.EveId, e.Eventname, e.Arrowamount, p.ParId, p.Parcourname, t.TarId, t.Targetname " +
+                                                            "ORDER BY pt.PataId");
+
+            int cont = 0;
+            ParcoursTarget? pta = new();
+            int count = 0;
+            do
+            {
+                if (count >= result2.ToList().Count())
+                {
+                    cont = -1;
+                    pta = null;
+                }
+                else
+                {
+                    var tmp1 = from arrow in _context.ParcoursTargets.Include(x => x.Arrows).ThenInclude(x => x.Evusro)
+                               where arrow.TarId == result2.ToList()[count].TarId && _context.Events.First(x => x.EveId == eveId).ParId == arrow.ParId
+                               select arrow;
+
+                    var tmp2 = from pt in _context.ParcoursTargets.Include(x => x.Arrows.Where(x => x.Evusro.UseId == user.Id)).ThenInclude(x => x.Evusro).Include(x => x.Arrows).ThenInclude(x => x.Poi).Include(x => x.Tar).Include(x => x.Par).Where(x => x.TarId == result2.ToList()[count].TarId) select pt;
+                    var tapu = tmp2.Where(x => x.Arrows.Where(y => y.Evusro.UseId == user.Id).Count() > 0);
+                    pta = tapu.FirstOrDefault();
+                    if (pta == null || pta.Arrows.Count < _event.Arrowamount && pta.Arrows.Sum(x => x.Poi.Value) == 0)
+                    {
+                        cont = -1;
+                    }
+                    else
+                    {
+                        count++;
+                    }
+                }
+
+            } while (cont == 0);
+                      
+            var ftarget = _context.Events.Include(x => x.Par).ThenInclude(x => x.ParcoursTargets).ThenInclude(x => x.Tar).First(x => x.EveId == eveId).Par.ParcoursTargets;
+            if (ftarget.Count >= count)
+            {
+                return null;
+            }
+            else
+            {
+                return ftarget.ElementAt(count);
+            }
+            //ParcoursTarget? tmp = result2.ToList().FirstOrDefault(x => x.Arrows.Count < _event.Arrowamount);
+            //tmp.Tar = target;            
         }
 
         /// <summary>
@@ -388,44 +453,38 @@ namespace myArchery.Services
         WHERE eur.eve_id = 1
         GROUP BY e.eventname, u.username
         */
-        public static List<UsersWithPoints> GetUsersWithPointsFromEventById(int eveId)
+        public List<UsersWithPoints> GetUsersWithPointsFromEventById(int eveId)
 		{
-			using (ArcheryDbContext db = new ArcheryDbContext())
-			{
-                var res = from eventuserroles in db.EventUserRoles
-                          where eventuserroles.EveId == eveId
-                          join eve in db.Events on eventuserroles.EveId equals eve.EveId
-                          join user in db.AspNetUsers on eventuserroles.Use.Id equals user.Id
-                          join arrow in db.Arrows on eventuserroles.EvusroId equals arrow.EvusroId
-                          join points in db.Points on arrow.PoiId equals points.PoiId
-                          into result1
-                          from finalResult in result1
-                          orderby user.UserName
-                          orderby eve.Eventname                          
-                          select new UsersWithPoints
-                          {
-                              Username = user.UserName,
-                              Points = arrow.Poi.Value,
-                          };
+            var res = from eventuserroles in _context.EventUserRoles
+                      where eventuserroles.EveId == eveId
+                      join eve in _context.Events on eventuserroles.EveId equals eve.EveId
+                      join user in _context.AspNetUsers on eventuserroles.Use.Id equals user.Id
+                      join arrow in _context.Arrows on eventuserroles.EvusroId equals arrow.EvusroId
+                      join points in _context.Points on arrow.PoiId equals points.PoiId
+                      into result1
+                      from finalResult in result1
+                      select new UsersWithPoints
+                      {
+                          Username = user.UserName,
+                          Points = arrow.Poi.Value,
+                      };
 
-                var res1 = from AspNetUsers in res
-                           group AspNetUsers by AspNetUsers.Username into result2
-                           select new UsersWithPoints
-                           {
-                               Username = result2.Key,
-                               Points = result2.Sum(x => x.Points)
-                           };
+            var res1 = from AspNetUsers in res
+                       group AspNetUsers by AspNetUsers.Username into result2
+                       select new UsersWithPoints
+                       {
+                           Username = result2.Key,
+                           Points = result2.Sum(x => x.Points)
+                       };
 
-                return res1.OrderByDescending(x => x.Points).ToList();
-                          
-            }
-		}
+            return res1.OrderByDescending(x => x.Points).ToList();
+        }
 
         public static Event? GetEventById(int id)
         {
             using (ArcheryDbContext db = new ArcheryDbContext())
             {
-                return db.Events.FirstOrDefault(x => x.EveId == id);
+                return db.Events.Include(x => x.Par).FirstOrDefault(x => x.EveId == id);
             }
         }
 

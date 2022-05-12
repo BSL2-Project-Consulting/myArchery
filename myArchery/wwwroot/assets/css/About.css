@@ -1,13 +1,14 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+﻿
 
 body {
     margin: 0;
+    
 }
 
 .container {
-    width: 80%;
+    width: 100%;
     max-width: 100%;
-    background-color: #f9f9f9;
+   
     margin: 0;
     min-height: 100vh;
 }
@@ -33,7 +34,7 @@ body {
     }
 
 .tab-container {
-    padding: 20px 7rem;
+    padding: 20px 2rem;
 }
 
 /* Tab Accordian */
@@ -86,16 +87,16 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #fff;
+    
     -webkit-user-select: none;
     user-select: none;
-    transition: background-color .8s linear;
+    
 }
 /* .titleWrapper.active{
     background: #fff;
 } */
 .desWrapper {
-    background: #fff;
+    
     max-height: 500px;
     display: none;
     padding: 20px;
@@ -138,4 +139,7 @@ a {
 
 .titleWrapper.active .collapse-icon .acc-open {
     opacity: 0;
+}
+.container {
+    background-color:white;
 }

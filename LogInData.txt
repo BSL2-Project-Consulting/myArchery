@@ -11,3 +11,5 @@ Azure SQL:
 
 Username: AdminArchery
 Passwort: Admin12!
+
+Move to Notion???

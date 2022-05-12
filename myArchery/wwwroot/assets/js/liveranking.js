@@ -1,46 +1,58 @@
-var connection = new signalR.HubConnectionBuilder().withUrl("/liverankingHub").build();
-
-window.onload = function () {
-	console.log("connection started");
-	connection.invoke("AddToGroup", eventid);
-}
-
-window.onclose = function () {
-	console.log("closing");
-	connection.invoke("RemoveFromGroup", eventid);
-}
-
-var tabs = document.querySelectorAll(".lboard_tabs ul li");
 "use strict";
 
-var today = document.querySelector(".today");
-var month = document.querySelector(".month");
-var year = document.querySelector(".year");
-var items = document.querySelectorAll(".lboard_item");
+const connection = new signalR.HubConnectionBuilder()
+    .withUrl("/liverankingHub")
+    .configureLogging(signalR.LogLevel.Information)
+    .build();
 
-tabs.forEach(function (tab) {
-	tab.addEventListener("click", function () {
-		var currenttab = tab.getAttribute("data-li");
+async function start() {
+    try {
+        await connection.start();
+		console.log("SignalR Connected.");
+		connec.invoke("SendRanking", eventid);
+    } catch (err) {
+        console.log(err);
+        setTimeout(start, 5000);
+    }
+};
 
-		tabs.forEach(function (tab) {
-			tab.classList.remove("active");
-		})
 
-		tab.classList.add("active");
+connection.onclose(async () => {
+    await start();
+});
 
-		items.forEach(function (item) {
-			item.style.display = "none";
-		})
+// Start the connection.
+await start();
 
-		if (currenttab == "today") {
-			today.style.display = "block";
-		}
-		else if (currenttab == "month") {
-			month.style.display = "block";
-		}
-		else {
-			year.style.display = "block";
-		}
+connection.on("RecieveLeaderboard", function (rankings) {
+	 console.log("Recieved Leaderboard");
+	 var table = document.getElementById("players");
+	 var rank = JSON.parse(rankings);
+	 var html = "";
+	 html += "<tr><th>Spieler</th><th>Punkte</th></tr >";
+	 for (var i in rank) {
+		 html += `<tr>	<td> ${i.Username}</td> <td>${i.Points}</td> </tr >`;
+		 table.appendChild(string);
+	 }
 
-	})
-})
+	 table.innerHTML = html;
+ });
+
+
+
+/*
+ * connection.on("RecieveLeaderboard", function (rankings) {
+	console.log("Recieved Leaderboard");
+	var table = document.getElementById("players");
+	var rank = JSON.parse(rankings);
+	table.innerHTML = '';
+	var html = "";
+	html += "<tr><th>Spieler</th><th>Punkte</th></tr >";
+    for (var i in rank) {
+		html += `<tr>	<td> ${i.Username}</td> <td>${i.Points}</td> </tr >`;
+		table.appendChild(string);
+	}
+
+	table.innerHTML = html;
+});
+ */

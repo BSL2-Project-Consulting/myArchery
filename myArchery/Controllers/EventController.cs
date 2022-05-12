@@ -31,12 +31,15 @@ namespace myArchery.Controllers
         //GET: EventController/AllEvents
         public ActionResult AllEvents()
         {
-            return View(EventService.GetAllPublicEvents());
+            var tmp = EventService.GetAllPublicEvents();
+            return View(tmp);
         }
 
         // POST: EventController/Join/ABCDEFG
-        public ActionResult Join(int eventId, string username)
+        
+        public ActionResult Join(int eventId)
         {
+            var username = User.Identity.Name;
             var isInEvent = EventService.UserIsInEvent(eventId, username);
             // add user to event with join code
 
@@ -48,6 +51,7 @@ namespace myArchery.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [HttpPost]
         public ActionResult JoinWithCode(int eventId, string username, string code)
         {
             var isInEvent = EventService.UserIsInEvent(eventId, username);
@@ -207,7 +211,35 @@ namespace myArchery.Controllers
         // GET: EventController/Currentevent/{id}
         public ActionResult CurrentEvent(int id)
         {
-            return View(_eventService.GetUsersCurrentTargetInEvent(id, User.Identity.Name).FirstOrDefault());
+            var _event = EventService.GetEventById(id);
+            var list = _eventService.GetUsersCurrentTargetInEvent(id, User.Identity.Name);
+
+            if (list == null)
+            {
+                TargetTemplate targetTemplate = new TargetTemplate
+                {
+                    EveId = id,
+                    Eventname = _event.Eventname,
+                    ArrowAmount = _event.Arrowamount,
+                    ArrowCount = null,
+                    ParcourName = _event.Par.Parcourname,
+                    TargetName = null
+                };
+                return View(targetTemplate);
+            }
+            else
+            {
+                TargetTemplate targetTemplate = new TargetTemplate
+                {
+                    EveId = id,
+                    Eventname = _event.Eventname,
+                    ArrowAmount = _event.Arrowamount,
+                    ArrowCount = list.Arrows,
+                    ParcourName = _event.Par.Parcourname,
+                    TargetName = list.Tar.Targetname
+                };
+                return View(targetTemplate);
+            }
         }
 
         // POST: EventController/Currentevent/{id}
@@ -216,7 +248,9 @@ namespace myArchery.Controllers
         public async Task<ActionResult> CurrentEvent(int id,IFormCollection collection)
         {
             var eventId = id;
+            var _event = EventService.GetEventById(eventId);
             var user = UserService.GetUserByName(User.Identity.Name);
+            var targetId = _eventService.GetUsersCurrentTargetInEvent(id, User.Identity.Name).TarId;
 
             if (user == null)
             {
@@ -227,27 +261,53 @@ namespace myArchery.Controllers
             {
                 case "ck":
                     // Centerkill                                                                             \/ Get Arrow Number
-                    await _arrowService.AddArrow(eventId, user.Id, 1, _arrowService.GetCurrentArrowNumber(eventId, user.Id));
+                    _arrowService.AddArrow(eventId, user.Id, 1, 1, targetId/*_arrowService.GetCurrentArrowNumber(eventId, user.Id)*/);
                     break;
                 case "k":
                     // Kill                                                                                    \/ Get Arrow Number
-                    await _arrowService.AddArrow(eventId, user.Id, 2, _arrowService.GetCurrentArrowNumber(eventId, user.Id));
+                    _arrowService.AddArrow(eventId, user.Id, 2, 1, targetId/*_arrowService.GetCurrentArrowNumber(eventId, user.Id)*/);
                     break;
                 case "b":
-                    await _arrowService.AddArrow(eventId, user.Id, 3, _arrowService.GetCurrentArrowNumber(eventId, user.Id));
+                    _arrowService.AddArrow(eventId, user.Id, 3, 1, targetId/*_arrowService.GetCurrentArrowNumber(eventId, user.Id)*/);
                     // Body                                                                                    /\ Get Arrow Number
                     break;
                 case "nh":
-                    await _arrowService.AddArrow(eventId, user.Id, 4, _arrowService.GetCurrentArrowNumber(eventId, user.Id));
+                    _arrowService.AddArrow(eventId, user.Id, 4, 1, targetId/*_arrowService.GetCurrentArrowNumber(eventId, user.Id)*/);
                     // No Hit                                                                                  /\ Get Arrow Number
                     break;
                 default:
                     break;
             }
 
-            await _hubContext.Clients.All.SendAsync("SendRanking", id);
+            await _hubContext.Clients.Group(eventId.ToString()).SendAsync("RecieveLeaderboard", Utility.GetUserWithPointsAsJson(_eventService.GetUsersWithPointsFromEventById(eventId)));
             var list = _eventService.GetUsersCurrentTargetInEvent(id, User.Identity.Name);
-            return View(list.First());
+
+            if (list == null)
+            {
+                TargetTemplate targetTemplate = new TargetTemplate
+                {
+                    EveId = id,
+                    Eventname = _event.Eventname,
+                    ArrowAmount = _event.Arrowamount,
+                    ArrowCount = null,
+                    ParcourName = _event.Par.Parcourname,
+                    TargetName = null
+                };
+                return View(targetTemplate);
+            }
+            else
+            {
+                TargetTemplate targetTemplate = new TargetTemplate
+                {
+                    EveId = id,
+                    Eventname = _event.Eventname,
+                    ArrowAmount = _event.Arrowamount,
+                    ArrowCount = list.Arrows,
+                    ParcourName = _event.Par.Parcourname,
+                    TargetName = list.Tar.Targetname
+                };
+                return View(targetTemplate);
+            }
         }
 
         // GET: EventController/MyEvents
